@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ab__msg_critic_main"
+        android:id="@+id/rl_evaluation"
+       >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="50dp"
+            android:id="@+id/rl_line_shadow2"
+            android:background="@drawable/ab_shadow_line">
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rl__msg_up"
+            android:layout_below="@+id/rl_line_shadow2">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/tv_evaluation"
+                android:layout_centerInParent="true"
+                android:textSize="16dp"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rl_evaluation2"
+            android:layout_below="@+id/rl__msg_up">
+            <RatingBar
+                android:id="@+id/ratingBar1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:max="5"
+                android:stepSize="1"
+                android:isIndicator="false"
+                android:maxWidth="60dp"
+                android:maxHeight="60dp"
+                android:soundEffectsEnabled="true"
+                style="?android:attr/ratingBarStyle"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/ll_evaluation_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_evaluation2"
+            android:layout_marginTop="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_evaluation_hated"
+                    android:text="Hated it!"
+                    android:layout_marginLeft="50dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_evaluation_loved"
+                    android:text="Loved it!"
+                    android:layout_marginRight="50dp"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/ll_evaluation_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_evaluation_tv"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:id="@+id/rg_evaluation"
+                android:layout_marginLeft="50dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp">
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/rl_btn_evaluation"
+                    android:background="@drawable/evaluate_submit"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ab__msg_critic_result2"
+        android:layout_below="@+id/rl_evaluation"
+        android:visibility="gone"
+        android:layout_alignParentStart="false"
+        android:background="@drawable/ecs_text_bg_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Small Text"
+            android:id="@+id/ab__critic_result2"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+</RelativeLayout>

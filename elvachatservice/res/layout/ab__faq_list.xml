@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ab__faq_list_ll"
+    android:orientation="vertical">
+
+    <TextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="48dp"
+        android:padding="16dp"
+        android:textColor="#de000000"
+        android:textSize="18sp"
+        android:id="@+id/ab__faq_list_tv"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#C0C0C0"
+        android:layout_below="@+id/ab__faq_list_tv"/>
+</LinearLayout>
