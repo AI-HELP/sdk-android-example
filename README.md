@@ -3,24 +3,24 @@
     把ECServiceCocos2dx.h、ECServiceCocos2dx.cpp放入Classes文件夹
 # 二、elvachatservice导入到项目
 # 三、接入工程配置
-    1、增加需要的权限
-      修改AndroidManifest.xml，增加需要的配置：
+    修改AndroidManifest.xml，增加需要的配置：
+      1、增加需要的权限
         <uses-permission android:name="android.permission.INTERNET" />
         <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
         <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
         <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
         <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-    2、增加activity:
-      <activity
-        android:name="com.ljoy.chatbot.ChatMainActivity"
-        android:configChanges="orientation|screenSize|locale"
-        android:screenOrientation="portrait">
-      </activity>
-      <activity
-        android:name="com.ljoy.chatbot.FAQActivity"
-        android:configChanges="orientation|screenSize|locale"
-        android:screenOrientation="portrait">
-      </activity>
+     2、增加activity:
+        <activity
+            android:name="com.ljoy.chatbot.ChatMainActivity"
+            android:configChanges="orientation|screenSize|locale"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ljoy.chatbot.FAQActivity"
+            android:configChanges="orientation|screenSize|locale"
+            android:screenOrientation="portrait">
+        </activity>
 # 四、接口调用说明
       1、进行初始化，创建一个在JNI环境和Activity中传递的应用：（必须在游戏开始阶段调用）
         a、如果是在主Activity的onCreate中调用初始化接口init，则：
