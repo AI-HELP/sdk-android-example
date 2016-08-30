@@ -13,9 +13,14 @@
     <string name="smaller_picture"> Picture uploaded is too big!</string>
     <string name="net_work_error">check your network</string>
     <string name="main_title">Elva</string>
-    <string name="goto_Elva">Customer Service</string>
+    <string name="goto_Elva">Contact Us</string>
     <string name="self_service_interface">Self-Service</string>
     <string name="break_off_remind">Your network is disconnected,please try again later</string>
     <string name="elva__help_header">help</string>
     <string name="elva__question_header">question</string>
+    <string name="hs__mark_helpful_toast">You found this helpful</string>
+    <string name="hs__mark_no">NO</string>
+    <string name="hs__mark_unhelpful_toast">You didn\'t find this helpful</string>
+    <string name="hs__mark_yes">YES</string>
+    <string name="hs__mark_yes_no_question">Was this helpful?</string>
 </resources>

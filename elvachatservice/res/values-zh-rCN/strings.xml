@@ -17,4 +17,9 @@
     <string name="break_off_remind">您的链接已经断开,请重新进入!</string>
     <string name="elva__help_header">帮助</string>
     <string name="elva__question_header">问题</string>
+    <string name="hs__mark_helpful_toast">你发现这有帮助</string>
+    <string name="hs__mark_no">否</string>
+    <string name="hs__mark_unhelpful_toast">你发现这无帮助</string>
+    <string name="hs__mark_yes">是</string>
+    <string name="hs__mark_yes_no_question">这有帮助吗？</string>
 </resources>

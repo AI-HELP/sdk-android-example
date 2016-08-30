@@ -12,8 +12,8 @@
         android:gravity="center_vertical"
         android:minHeight="48dp"
         android:padding="16dp"
-        android:textColor="#de000000"
-        android:textSize="18sp"
+        android:textColor="#aa000000"
+        android:textSize="17sp"
         android:id="@+id/ab__faq_list_tv"/>
     <View
         android:layout_width="match_parent"
