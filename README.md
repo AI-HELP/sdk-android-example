@@ -54,7 +54,7 @@
         	  ｝
           }
         );
-    3、展示单条FAQ，调用showSingleFAQ方法
+      3、展示单条FAQ，调用showSingleFAQ方法
         ECServiceCocos2dx:: showSingleFAQ (string faqId,cocos2d::ValueMap& config);
         参数说明：
           faqId：FAQ的PublishID,可以在Web后台https://cs30.net/elva中，从FAQs菜单下找到指定FAQ，查看PublishID。
