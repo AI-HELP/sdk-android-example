@@ -261,7 +261,6 @@ public class ElvaChatServiceHelper {
 	public static void showFAQ(String faqId,HashMap customData){
 		// System.out.println("showFAQ HashMap start");
 		boolean showMap = false;
-		GetSSIStateRequest(faqId);
 		final String tempFaqId = faqId;
 		String customDataStr = "";
 		if(customData.size()>0){
@@ -282,6 +281,7 @@ public class ElvaChatServiceHelper {
 				@Override
 				public void run() {
 					try {
+						GetSSIStateRequest(tempFaqId);
 						Intent intent = new Intent(hostActivity, FAQActivity.class);
 						intent.putExtra("showType", 1);   //跳转单独faq页面
 						intent.putExtra("faqId", tempFaqId);
@@ -453,7 +453,6 @@ public class ElvaChatServiceHelper {
 	/*init 初始化后，从hostActivity跳转到FAQ主界面FAQActivity.class,并向showFAQSection传递参数：带config*/
 	public static void showFAQSection(String sectionPublishId,HashMap customData){
 		boolean showMap = false;
-		GetSSIStateRequest(sectionPublishId);
 		final String tempSectionPublishId = sectionPublishId;
 		String customDataStr = "";
 		if(customData.size()>0){
@@ -474,6 +473,7 @@ public class ElvaChatServiceHelper {
 				@Override
 				public void run() {
 					try {
+						GetSSIStateRequest(tempSectionPublishId);
 						Intent intent = new Intent(hostActivity, FAQActivity.class);
 						intent.putExtra("showType", 2);
 						intent.putExtra("sectionPublishId", tempSectionPublishId);
