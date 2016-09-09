@@ -15,13 +15,11 @@ import com.ljoy.chatbot.core.mqtt.NetMQTT;
 import com.ljoy.chatbot.controller.NetController;
 import com.ljoy.chatbot.controller.ElvaServiceController;
 import android.os.Build;
-//import com.google.gson.Gson;
 
 import java.util.Iterator;
 import java.util.Map;
 import java.util.ArrayList;
 import java.util.HashMap;
-// import org.apache.commons.*;
 import org.json.JSONObject;
 
 public class ElvaChatServiceHelper {
@@ -49,7 +47,7 @@ public class ElvaChatServiceHelper {
 	        config.put("hideContactCustomer", false);
 	      }
 	    }
-	    HashMap customMeta = (HashMap) (config.get("hs-custom-metadata"));//这里只针对末日他们自己传进来的东西
+	    HashMap customMeta = (HashMap) (config.get("hs-custom-metadata"));
 	    if(customMeta != null) {
 	      ArrayList<String> tags = (ArrayList<String>) customMeta.get("hs-tags");
 	      if(tags != null && tags.size() > 0) {
@@ -77,21 +75,21 @@ public class ElvaChatServiceHelper {
 	}
 	/*初始化部分，提供给.cpp调用,无Activity(当前运行的action)对象时调用
 		参数说明如下:
-			appSecret:注册后由我方提供
+			appKey:注册后由我方提供
 			domain:使用我方域名im30.cs30.net
 			appId:注册后由我方提供*/
-	public static void init(String appSecret,String domain,String appId) {
+	public static void init(String appKey,String domain,String appId) {
 		// System.out.println("ElvaChatServiceHelper init hostActivity is null");
-		ElvaChatServiceHelper.init(null,appSecret,domain,appId);
+		ElvaChatServiceHelper.init(null,appKey,domain,appId);
 	}
 
 	/*初始化部分,在主AppActivity.java的onCreate中调用
 		参数说明如下:
 			a:当前运行的action
-			appSecret:注册后由我方提供
+			appKey:注册后由我方提供
 			domain:使用我方域名im30.cs30.net
 			appId:注册后由我方提供*/
-	public static void init(Activity a,String appSecret,String domain,String appId) {
+	public static void init(Activity a,String appKey,String domain,String appId) {
 		if(a != null){
 			hostActivity = a;
 		}
@@ -99,7 +97,7 @@ public class ElvaChatServiceHelper {
 			System.out.println("ElvaChatServiceHelper init_appId is null");
 			return;
 		}
-		final String fappSecret = appSecret;
+		final String fappSecret = appKey;
 		final String fdomain = domain;
 		final String fappId = appId;
 		setAppId(fappId);
