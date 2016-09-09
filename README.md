@@ -27,9 +27,9 @@
           ElvaChatServiceHelper.init(Activity activity,String appSecret,String domain,String appId)
           其中：
           activity:当前运行的action，传this即可
-          appSecret:app密钥，从Web管理系统获取。
+          App Key:app密钥，从Web管理系统获取。
           domain:app域名，从Web管理系统获取。
-          appId:app唯一标识，从Web管理系统获取。
+          AppId:app唯一标识，从Web管理系统获取。
           
           注：后面这三个参数，请使用注册时的邮箱地址作为登录名登录https://cs30.net/elva。在Settings菜单Applications页面查看。初次使用，请先登录官网自助注册,地址为www.cs30.net/pricing.html。
         b、如果需要延迟调用，则：
