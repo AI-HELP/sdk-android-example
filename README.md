@@ -24,7 +24,7 @@
 # 四、接口调用说明
       1、进行初始化，创建一个在JNI环境和Activity中传递的应用：（必须在游戏开始阶段调用）
         a、如果是在主Activity的onCreate中调用初始化接口init，则：
-          ElvaChatServiceHelper.init(Activity activity,String appSecret,String domain,String appId)
+          ElvaChatServiceHelper.init(Activity activity,String appKey,String domain,String appId)
           其中：
           activity:当前运行的action，传this即可
           App Key:app密钥，从Web管理系统获取。
