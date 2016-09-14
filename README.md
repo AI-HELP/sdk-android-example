@@ -23,7 +23,7 @@
             android:screenOrientation="portrait">
         </activity>
 # 四、接口调用说明
-      1、 sdk初始化。创建一个在JNI环境和Activity中传递的应用：（必须在游戏开始阶段调用）
+      1、sdk初始化。创建一个在JNI环境和Activity中传递的应用：（必须在游戏开始阶段调用）
         a、如果是在主Activity的onCreate中调用初始化接口init，则：
           ElvaChatServiceHelper.init(Activity activity,String appKey,String domain,String appId)
           其中：
@@ -36,7 +36,7 @@
         b、如果需要延迟调用，则：
           在activity.java中调用：SetActivity(this);
           在Cocos2dx中调用：ECServiceCocos2dx::init(string appKey,string domain,string appId)
-       2、接口调用方法
+      2、接口调用方法
           1) 智能客服主界面启动，调用showElva方法，启动机器人界面
             ECServiceCocos2dx:: showElva (string playerName , string playerUid , int serverId,string playerParseId, string showConversationFlag,cocos2d::ValueMap& config);
             参数说明:
