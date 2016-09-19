@@ -32,7 +32,7 @@
           domain:app域名，从Web管理系统获取。
           AppId:app唯一标识，从Web管理系统获取。
           
-          注：后面这三个参数，请使用注册时的邮箱地址作为登录名登录https://cs30.net/elva。在Settings菜单Applications页面查看。初次使用，请先登录官网自助注册,地址为www.cs30.net/pricing.html。
+          注：后面这三个参数，请使用注册时的邮箱地址作为登录名登录https://cs30.net/elva。在Settings菜单Applications页面查看。初次使用，请先登录官网自助注册,地址为www.cs30.net/cn/pricing.html。
         b、如果需要延迟调用，则：
           在activity.java中调用：SetActivity(this);
           在Cocos2dx中调用：ECServiceCocos2dx::init(string appKey,string domain,string appId)
@@ -60,18 +60,18 @@
             ECServiceCocos2dx:: showSingleFAQ (string faqId,cocos2d::ValueMap& config);
             参数说明：
               faqId：FAQ的PublishID,可以在Web后台https://cs30.net/elva中，从FAQs菜单下找到指定FAQ，查看PublishID。
-              config : 可选，自定义ValueMap信息。参照（2）智能客服主界面启动
+              config : 可选，自定义ValueMap信息。参照 1)智能客服主界面启动
               
             注：如果在web管理后台配置了FAQ的SelfServiceInterface，并且SDK配置了相关参数，将在显示FAQ的同时，右上角提供功能菜单，可以对相关的自助服务进行调用
           3)展示相关部分FAQ，调用showFAQSection方法
             ECServiceCocos2dx:: showFAQSection (string sectionPublishId,cocos2d::ValueMap& config);
             参数说明：
               sectionPublishId：FAQ  Section的PublishID（可以在Web后台https://cs30.net/elva中，从FAQs菜单下[Section]菜单，查看PublishI）
-              config : 可选，自定义ValueMap信息。参照（2）智能客服主界面启动
+              config : 可选，自定义ValueMap信息。参照 1)智能客服主界面启动
           4)展示FAQ列表，调用showFAQs方法
             ECServiceCocos2dx:: showFAQs (cocos2d::ValueMap& config)
             参数说明：
-              config : 可选，自定义ValueMap信息。参照（2）智能客服主界面启动
+              config : 可选，自定义ValueMap信息。参照 1)智能客服主界面启动
           5)设置游戏名称信息，调用setName方法(建议游戏刚进入，调用Init之后就默认调用)
             ECServiceCocos2dx:: setName (string game_name);
             参数说明:
@@ -80,11 +80,11 @@
             ECServiceCocos2dx:: registerDeviceToken(string deviceToken);
             参数说明:
               deviceToken：设备Token
-          7)设置用户id信息，调用setUserId方法(使用自助服务必须调用，参见3）展示单条FAQ)
+          7)设置用户id信息，调用setUserId方法(使用自助服务必须调用，参见 2)展示单条FAQ)
             在showSingleFAQ之前调用：ECServiceCocos2dx:: setUserId(string playerUid);
             参数说明:
               playerUid：玩家唯一ID。
-          8)设置服务器编号信息，调用setServerId方法(使用自助服务必须调用，参见3）展示单条FAQ)
+          8)设置服务器编号信息，调用setServerId方法(使用自助服务必须调用，参见 2)展示单条FAQ)
             在showSingleFAQ之前调用：ECServiceCocos2dx:: setServerId (int serverId);
             参数说明:
               serverId:服务器ID。
@@ -97,4 +97,4 @@
             参数说明:
               playerUid:玩家在游戏里的唯一标示id
               serverId:玩家所在的服务器编号
-              config : 可选，自定义ValueMap信息。参照（2）智能客服主界面启动
+              config : 可选，自定义ValueMap信息。参照 1)智能客服主界面启动
