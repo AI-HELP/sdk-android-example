@@ -167,11 +167,19 @@
                     android:layout_marginLeft="5dp"
                     android:textColor="#ff000000"
                     android:focusable="true"
-                    android:layout_toLeftOf="@+id/ab__input_send_btn"
+                    android:layout_toLeftOf="@+id/ab__chat_word_voice"
                     android:layout_toEndOf="@id/ab__open_album"
-                    android:layout_toStartOf="@id/ab__input_send_btn"
+                    android:layout_toStartOf="@id/ab__chat_word_voice"
                     android:background="@android:drawable/edit_text" />
-
+                <ImageButton
+                    android:layout_width="37dp"
+                    android:layout_height="37dp"
+                    android:layout_marginLeft="2dp"
+                    android:id="@+id/ab__chat_word_voice"
+                    android:background="@drawable/chat_voice"
+                    android:onClick="onChangeWordVoice"
+                    android:layout_toLeftOf="@+id/ab__input_send_btn"
+                    android:visibility="gone"/>
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
