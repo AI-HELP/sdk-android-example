@@ -1,0 +1,25 @@
+<resources>
+  <string name="app_name">聊天客服</string>
+
+  <string name="hello_world">大家好</string>
+  <string name="action_settings">功能</string>
+  <string name="test_send1">測試功能1</string>
+  <string name="test_send2">測試功能2</string>
+  <string name="test_send3">測試功能3</string>
+  <string name="action_link_introduction">下面是壹些妳可能想知道的事情</string>
+  <string name="answer_satisfy">您對這個回答還滿意嗎</string>
+  <string name="net_work_error">請檢查您的網絡</string>
+  <string name="no_more_than_chars">不能超過200個字！</string>
+  <string name="no_png_upload">SD卡不存在或者不可讀寫!</string>
+  <string name="smaller_picture">上傳的圖片太大了！</string>
+  <string name="goto_Elva">聯系客服</string>
+  <string name="self_service_interface">自助服務</string>
+  <string name="break_off_remind">您的鏈接已經斷開,請重新進入!</string>
+  <string name="elva__help_header">幫助</string>
+  <string name="elva__question_header">問題</string>
+  <string name="hs__mark_helpful_toast">妳發現這有幫助</string>
+  <string name="hs__mark_no">否</string>
+  <string name="hs__mark_unhelpful_toast">妳發現這無幫助</string>
+  <string name="hs__mark_yes">是</string>
+  <string name="hs__mark_yes_no_question">這有幫助嗎？</string>
+</resources>

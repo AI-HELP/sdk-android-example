@@ -23,6 +23,29 @@ public class ElvaChatServiceHelper {
 
     private static final String[] DISPLAY_KEY= {"hideSelferviceInterface","hideContactCustomer","showConversationFlag"};
 
+    private static Map<String,Boolean> cleanConfigData(HashMap config){
+        if(config == null || config.size()==0){
+            return null;
+        }
+        Map<String,Boolean> map = new HashMap();
+        for(String key:DISPLAY_KEY){
+            if(config.get(key) != null){
+                map.put(key,true);
+                config.remove(key);
+            }
+        }
+        return map;
+    }
+
+    private static void putData(Map<String,Boolean> config, Intent intent){
+        if(config == null || config.size() ==0 || intent == null){
+            return;
+        }
+        for(Map.Entry<String,Boolean> map:config.entrySet()){
+            intent.putExtra(map.getKey(),map.getValue());
+        }
+    }
+
     /*把hs-tags对应的改为字符串*/
     private static HashMap parseConfigDictionary (HashMap config) {
         if(config == null) {
@@ -172,7 +195,7 @@ public class ElvaChatServiceHelper {
                 public void run() {
                     try {
                         Intent intent = new Intent(hostActivity, ChatMainActivity.class);
-                        intent.putExtra("showType", 0);				////展示聊天主界面 ChatMainActivity
+                        intent.putExtra("showType", 0);             ////展示聊天主界面 ChatMainActivity
                         intent.putExtra("npcName", temNpcName);
                         intent.putExtra("userName", tempName);
                         intent.putExtra("userId", tempUid);
@@ -265,7 +288,7 @@ public class ElvaChatServiceHelper {
             // System.out.println("showFAQ handle customData start");
             showMap = true;
             customData =  parseConfigDictionary(customData);
-            //    		final JSONObject metaJSON = JSONObject.fromObject(customData);
+            //          final JSONObject metaJSON = JSONObject.fromObject(customData);
             // customDataStr = metaJSON.toString();
             // customDataStr = new Gson().toJson(customData);
             JSONObject jsonObject = new JSONObject(customData);
@@ -315,7 +338,7 @@ public class ElvaChatServiceHelper {
             // System.out.println("showFAQList handle customData start");
             showMap = true;
             customData =  parseConfigDictionary(customData);
-            // 		final JSONObject metaJSON = JSONObject.fromObject(customData);
+            //      final JSONObject metaJSON = JSONObject.fromObject(customData);
             // customDataStr = metaJSON.toString();
             // customDataStr = new Gson().toJson(customData);
             JSONObject jsonObject = new JSONObject(customData);
@@ -462,7 +485,7 @@ public class ElvaChatServiceHelper {
             // System.out.println("showFAQSection handle customData start");
             showMap = true;
             customData =  parseConfigDictionary(customData);
-            //    		final JSONObject metaJSON = JSONObject.fromObject(customData);
+            //          final JSONObject metaJSON = JSONObject.fromObject(customData);
             // customDataStr = metaJSON.toString();
             // customDataStr = new Gson().toJson(customData);
             JSONObject jsonObject = new JSONObject(customData);
@@ -497,26 +520,9 @@ public class ElvaChatServiceHelper {
         }
     }
 
-    private static Map<String,Boolean> cleanConfigData(HashMap config){
-        if(config == null || config.size()==0){
-            return null;
-        }
-        Map<String,Boolean> map = new HashMap();
-        for(String key:DISPLAY_KEY){
-            if(config.get(key) != null){
-                map.put(key,true);
-                config.remove(key);
-            }
-        }
-        return map;
+    public static void setSDKLanguage(String language){
+        ElvaServiceController.getInstance().setUserLanguage(language);
     }
 
-    private static void putData(Map<String,Boolean> config, Intent intent){
-        if(config == null || config.size() ==0 || intent == null){
-            return;
-        }
-        for(Map.Entry<String,Boolean> map:config.entrySet()){
-            intent.putExtra(map.getKey(),map.getValue());
-        }
-    }
+
 }
