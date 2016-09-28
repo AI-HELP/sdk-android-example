@@ -17,7 +17,7 @@ jobject parseValueVectorToArrayElva (JNIEnv *env, cocos2d::CCDictionary* metaDat
     jmethodID array_add_method = 0;
     array_add_method = env->GetMethodID(clsArrayList, "add", "(Ljava/lang/Object;)Z");
     
-    cocos2d::CCArray* tags = dynamic_cast<cocos2d::CCArray*> (metaData->objectForKey(HS_TAGS_KEY));
+    cocos2d::CCArray* tags = dynamic_cast<cocos2d::CCArray*> (metaData->objectForKey("hs-tags"));
     int j = 0;
     for (j = 0; j < tags->count(); j++) {
         cocos2d::CCString *valStr = dynamic_cast<cocos2d::CCString*> (tags->objectAtIndex(j));
