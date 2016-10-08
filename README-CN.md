@@ -1,6 +1,6 @@
 # Android SDK 接入说明
 # 一、下载android sdk
-    点击页面右上角的“Clone or download”按钮进行下载，下载完成后解压文件。
+    点击上一个页面右上角的“Clone or download”按钮进行下载，下载完成后解压文件。
 # 二、cocos2dx接口清单
     把interface文件夹下的ECServiceCocos2dx.h、ECServiceCocos2dx.cpp放入您的Classes文件夹
 # 三、elvachatservice导入到项目
