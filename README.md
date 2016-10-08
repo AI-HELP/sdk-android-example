@@ -1,4 +1,5 @@
   Sdk access instructions for English: https://github.com/CS30-NET/android-sdk-stable/blob/master/README.md
+  
   中文版sdk接入说明：https://github.com/CS30-NET/android-sdk-stable/blob/master/README-CN.md
 # Android SDK Access Instructions
 # Ⅰ. cocos2dx Interface List
