@@ -22,7 +22,6 @@
         Android: configChanges = "orientation | screenSize | locale"
         Android: screenOrientation = "portrait">
 </ Activity>
-
 # Ⅳ.The interface call instructions
   1. SDK initialization. Create a JNI environment and the application in the Activity: (must be called at the beginning of the game)
     a. If you call initialization interface in onCreate of the main Activity. then call:
