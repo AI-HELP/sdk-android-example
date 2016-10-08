@@ -66,7 +66,7 @@
           3)展示相关部分FAQ，调用showFAQSection方法
             ECServiceCocos2dx:: showFAQSection (string sectionPublishId,cocos2d::ValueMap& config);
             参数说明：
-              sectionPublishId：FAQ  Section的PublishID（可以在Web后台https://cs30.net/elva中，从FAQs菜单下[Section]菜单，查看PublishI）
+              sectionPublishId：FAQ  Section的PublishID（可以在Web后台https://cs30.net/elva中，从FAQs菜单下[Section]菜单，查看PublishID）
               config : 可选，自定义ValueMap信息。参照 1)智能客服主界面启动
           4)展示FAQ列表，调用showFAQs方法
             ECServiceCocos2dx:: showFAQs (cocos2d::ValueMap& config)
@@ -92,7 +92,7 @@
             ECServiceCocos2dx:: setUserName (string playerName);
             参数说明:
               playerName:玩家名称。
-          10)直接进行vip_chat人工客服聊天，调用showConversation方法(必须确保10）设置玩家名称信息setUserName 已经调用)
+          10)直接进行vip_chat人工客服聊天，调用showConversation方法(必须确保9）设置玩家名称信息setUserName 已经调用)
             ECServiceCocos2dx:: showConversation (string playerUid,int serverId,cocos2d::ValueMap& config);
             参数说明:
               playerUid:玩家在游戏里的唯一标示id
