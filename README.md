@@ -1,100 +1,103 @@
-# Android SDK 接入说明
-# 一、cocos2dx接口清单
-    把ECServiceCocos2dx.h、ECServiceCocos2dx.cpp放入Classes文件夹
-# 二、elvachatservice导入到项目
-    把elvachatservice文件夹拷贝到您的主目录下
-# 三、接入工程配置
-    修改AndroidManifest.xml，增加需要的配置：
-      1、增加需要的权限
-        <uses-permission android:name="android.permission.INTERNET" />
-        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-        <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-     2、增加activity:
-        <activity
-            android:name="com.ljoy.chatbot.ChatMainActivity"
-            android:configChanges="orientation|screenSize|locale"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.ljoy.chatbot.FAQActivity"
-            android:configChanges="orientation|screenSize|locale"
-            android:screenOrientation="portrait">
-        </activity>
-# 四、接口调用说明
-      1、sdk初始化。创建一个在JNI环境和Activity中传递的应用：（必须在游戏开始阶段调用）
-        a、如果是在主Activity的onCreate中调用初始化接口init，则：
-          ElvaChatServiceHelper.init(Activity activity,String appKey,String domain,String appId)
-          其中：
-          activity:当前运行的action，传this即可
-          App Key:app密钥，从Web管理系统获取。
-          domain:app域名，从Web管理系统获取。
-          AppId:app唯一标识，从Web管理系统获取。
-          
-          注：后面这三个参数，请使用注册时的邮箱地址作为登录名登录https://cs30.net/elva。在Settings菜单Applications页面查看。初次使用，请先登录官网自助注册,地址为www.cs30.net/cn/pricing.html。
-        b、如果需要延迟调用，则：
-          在activity.java中调用：SetActivity(this);
-          在Cocos2dx中调用：ECServiceCocos2dx::init(string appKey,string domain,string appId)
-      2、接口调用方法
-          1) 智能客服主界面启动，调用showElva方法，启动机器人界面
-            ECServiceCocos2dx:: showElva (string playerName , string playerUid , int serverId,string playerParseId, string showConversationFlag,cocos2d::ValueMap& config);
-            参数说明:
-              playerName: 游戏中玩家名称。
-              playerUid:玩家在游戏里的唯一标示id。
-              serverId:玩家所在的服务器编号。
-              playerParseId:推送传token。
-              showConversationFlag(0或1):是否为vip, 0:标示非VIP；1:表示：VIP。此处为1时，将在机器人的聊天界面右上角，提供人工聊天的入口功能。
-              config : 可选，自定义ValueMap信息。可以在此处设置特定的Tag信息。
-            		
-            参数示例:
-              ECServiceCocos2dx:: showElva (“elvaTestName”,“12349303258”,1, “es234-3dfs-d42f-342sfe3s3”,”1”,
-              { 
-                hs-custom-metadata＝｛
-                  hs-tags＝’军队，充值’，说明：hs-tags对应的值为vector类型，此处传入自定义的Tag，需要在Web管理配置同名称的Tag才能生效。
-                  VersionCode＝’3’
-            	  ｝
-              }
-            );
-          2)展示单条FAQ，调用showSingleFAQ方法
-            ECServiceCocos2dx:: showSingleFAQ (string faqId,cocos2d::ValueMap& config);
-            参数说明：
-              faqId：FAQ的PublishID,可以在Web后台https://cs30.net/elva中，从FAQs菜单下找到指定FAQ，查看PublishID。
-              config : 可选，自定义ValueMap信息。参照 1)智能客服主界面启动
-              
-            注：如果在web管理后台配置了FAQ的SelfServiceInterface，并且SDK配置了相关参数，将在显示FAQ的同时，右上角提供功能菜单，可以对相关的自助服务进行调用
-          3)展示相关部分FAQ，调用showFAQSection方法
-            ECServiceCocos2dx:: showFAQSection (string sectionPublishId,cocos2d::ValueMap& config);
-            参数说明：
-              sectionPublishId：FAQ  Section的PublishID（可以在Web后台https://cs30.net/elva中，从FAQs菜单下[Section]菜单，查看PublishI）
-              config : 可选，自定义ValueMap信息。参照 1)智能客服主界面启动
-          4)展示FAQ列表，调用showFAQs方法
-            ECServiceCocos2dx:: showFAQs (cocos2d::ValueMap& config)
-            参数说明：
-              config : 可选，自定义ValueMap信息。参照 1)智能客服主界面启动
-          5)设置游戏名称信息，调用setName方法(建议游戏刚进入，调用Init之后就默认调用)
-            ECServiceCocos2dx:: setName (string game_name);
-            参数说明:
-              game_name：游戏名称，设置后将显示在SDK中相关界面标题栏
-          6)设置Token，使用google推送，调用registerDeviceToken方法（暂无）
-            ECServiceCocos2dx:: registerDeviceToken(string deviceToken);
-            参数说明:
-              deviceToken：设备Token
-          7)设置用户id信息，调用setUserId方法(使用自助服务必须调用，参见 2)展示单条FAQ)
-            在showSingleFAQ之前调用：ECServiceCocos2dx:: setUserId(string playerUid);
-            参数说明:
-              playerUid：玩家唯一ID。
-          8)设置服务器编号信息，调用setServerId方法(使用自助服务必须调用，参见 2)展示单条FAQ)
-            在showSingleFAQ之前调用：ECServiceCocos2dx:: setServerId (int serverId);
-            参数说明:
-              serverId:服务器ID。
-          9)设置玩家名称信息，调用setUserName方法(建议游戏刚进入，调用Init之后就默认调用)
-            ECServiceCocos2dx:: setUserName (string playerName);
-            参数说明:
-              playerName:玩家名称。
-          10)直接进行vip_chat人工客服聊天，调用showConversation方法(必须确保10）设置玩家名称信息setUserName 已经调用)
-            ECServiceCocos2dx:: showConversation (string playerUid,int serverId,cocos2d::ValueMap& config);
-            参数说明:
-              playerUid:玩家在游戏里的唯一标示id
-              serverId:玩家所在的服务器编号
-              config : 可选，自定义ValueMap信息。参照 1)智能客服主界面启动
+#Android SDK Access Instructions
+
+#Ⅰ. cocos2dx Interface List
+Put ECServiceCocos2dx.h, ECServiceCocos2dx.cpp in the Classes folder
+
+#Ⅱ. Import elvachatservice into project
+Copy the elvachatservice folder to your main directory
+
+#Ⅲ. The access project configuration
+Modify the AndroidManifest.xml to add the required configuration:
+  1. Add the required permissions
+    <Uses-permission android: name = "android.permission.INTERNET" />
+    <Uses-permission android: name = "android.permission.ACCESS_NETWORK_STATE" />
+    <Uses-permission android: name = "android.permission.WRITE_EXTERNAL_STORAGE" />
+    <Uses-permission android: name = "android.permission.READ_EXTERNAL_STORAGE" />
+    <Uses-permission android: name = "android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+ 2. Add activity:
+    <Activity
+        Android: name = "com.ljoy.chatbot.ChatMainActivity"
+        Android: configChanges = "orientation | screenSize | locale"
+        Android: screenOrientation = "portrait">
+    </ Activity>
+    <Activity
+        Android: name = "com.ljoy.chatbot.FAQActivity"
+        Android: configChanges = "orientation | screenSize | locale"
+        Android: screenOrientation = "portrait">
+</ Activity>
+
+#Ⅳ.The interface call instructions
+  1. SDK initialization. Create a JNI environment and the application in the Activity: (must be called at the beginning of the game)
+    a. If you call initialization interface in onCreate of the main Activity. then call:
+      ElvaChatServiceHelper.init (Activity activity, String appKey, String domain, String appId)
+      Parameter Description:
+activity: the current operation of the action, this can be
+      app Key: The app key, obtained from the Web management system.
+      domain: app Domain name, obtained from the Web management system.
+      appId: app Unique identifier, obtained from the Web management system.
+
+      Note: The latter three parameters, please use the registered email address to login https://cs30.net/elva. View in the Settings—Applications page. Initial use, please register on the official website www.cs30.net/cn/pricing.html.
+    b. If you need to delay the call, then，
+     call SetActivity (this) in activity.java;
+      In Cocos2dx call ECServiceCocos2dx :: init (string appKey, string domain, string appId)
+  2. The interface call method
+      1) Start smart customer service main interface, call showElva method, start the robot interface.
+        ECServiceCocos2dx :: showElva (string playerName, string playerUid, int serverId, string playerParseId, string showConversationFlag, cocos2d :: ValueMap & config);
+        Parameter Description:
+          playerName: The name of the player in the game.
+          playerUid: The player's unique id in the game.
+          serverId: The server ID of the player.
+          playerParseId: Push token.
+          showConversationFlag (0 or 1): whether VIP, 0: marked non-VIP; 1: VIP. 
+Here is 1, will be in the upper right corner of the robot chat interface, to provide artificial chat entry function.
+          config: Optional, custom ValueMap information. You can set specific Tag information here.
+
+        Parameter Example:
+          ECServiceCocos2dx :: showElva ( "elvaTestName", "12349303258", 1, "es234-3dfs-d42f-342sfe3s3", "1"
+          {
+            Hs-custom-metadata = {
+              Hs-tags = 'army, recharge'. //Note: hs-tags value is vector type, where the incoming custom Tag, need to configure the same name in the Web management Tag to take effect.
+              VersionCode = '3'
+              }}
+          }}
+        );
+      2) Show a single FAQ, call showSingleFAQ method
+        ECServiceCocos2dx :: showSingleFAQ (string faqId, cocos2d :: ValueMap & config);
+        Parameter Description:
+          faqId: FAQ's PublishID, in the Web background https://cs30.net/elva, from the FAQs menu to find the specified FAQ, view PublishID.
+          config: Optional, custom ValueMap information. Refer to 1) intelligent customer service main interface starts
+Note: If the SelfServiceInterface is configured in the web administration background, and the SDK is configured with related parameters, the FAQ will be displayed and the function menu will be provided in the upper right corner to call up the related self-service.
+      3) Show the relevant part of the FAQ, call showFAQSection method
+        ECServiceCocos2dx :: showFAQSection (string sectionPublishId, cocos2d :: ValueMap & config);
+        Parameter Description:
+          sectionPublishId: PublishID of the FAQ Section (PublishID can be viewed from the [Section] menu in the FAQs menu at https://cs30.net/elva)
+          config: Optional, custom ValueMap information. Refer to 1) intelligent customer service main interface starts
+      4) Show the FAQ list, call showFAQs method
+        ECServiceCocos2dx :: showFAQs (cocos2d :: ValueMap & config)
+        Parameter Description:
+          config: Optional, custom ValueMap information. Refer to 1) intelligent customer service main interface starts
+      5) set the game name information, call setName method (It is recommended to call this method after calling init)        ECServiceCocos2dx :: setName (string game_name);
+        Parameter Description:
+          game_name: The name of the game, which will be displayed in the title bar of the relevant interface in the SDK
+      6) Set Token, use google push, call registerDeviceToken method (no)
+        ECServiceCocos2dx :: registerDeviceToken (string deviceToken);
+        Parameter Description:
+          deviceToken: The device Token
+      7) Set the user id information, call the setUserId method (using self-service must call, see 2) show a single FAQ)
+        Call ECServiceCocos2dx :: setUserId (string playerUid) before showSingleFAQ;
+        Parameter Description:
+          playerUid: The player unique ID.
+      8) Set the server number information, call setServerId method (using self-service must call, see 2) show a single FAQ)
+        Call ECServiceCocos2dx :: setServerId (int serverId) before showSingleFAQ
+        Parameter Description:
+          serverId: Server ID.
+      9) set the player name information, call setUserName method (It is recommended to call this method after calling init)
+ECServiceCocos2dx :: setUserName (string playerName);
+Parameter Description:
+playerName: The player name.
+      10) Direct vip_chat artificial customer service chat, call showConversation method (must ensure that setUserName in 9) set the player name information has been called)
+        ECServiceCocos2dx :: showConversation (string playerUid, int serverId, cocos2d :: ValueMap & config);
+        Parameter Description:
+          playerUid: The player's unique id in the game
+          serverId: The server ID of the player.
+          config: Optional, custom ValueMap information. Refer to 1) intelligent customer service main interface starts
