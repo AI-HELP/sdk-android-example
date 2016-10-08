@@ -1,4 +1,5 @@
 # Android SDK Access Instructions
+中文版https://github.com/CS30-NET/android-sdk-stable/blob/master/README-CN.md
 # Ⅰ. cocos2dx Interface List
     Put ECServiceCocos2dx.h, ECServiceCocos2dx.cpp in the Classes folder
 # Ⅱ. Import elvachatservice into project
