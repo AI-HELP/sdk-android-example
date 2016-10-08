@@ -1,12 +1,12 @@
-#Android SDK Access Instructions
+# Android SDK Access Instructions
 
-#Ⅰ. cocos2dx Interface List
+# Ⅰ. cocos2dx Interface List
 Put ECServiceCocos2dx.h, ECServiceCocos2dx.cpp in the Classes folder
 
-#Ⅱ. Import elvachatservice into project
+# Ⅱ. Import elvachatservice into project
 Copy the elvachatservice folder to your main directory
 
-#Ⅲ. The access project configuration
+# Ⅲ. The access project configuration
 Modify the AndroidManifest.xml to add the required configuration:
   1. Add the required permissions
     <Uses-permission android: name = "android.permission.INTERNET" />
@@ -26,12 +26,12 @@ Modify the AndroidManifest.xml to add the required configuration:
         Android: screenOrientation = "portrait">
 </ Activity>
 
-#Ⅳ.The interface call instructions
+# Ⅳ.The interface call instructions
   1. SDK initialization. Create a JNI environment and the application in the Activity: (must be called at the beginning of the game)
     a. If you call initialization interface in onCreate of the main Activity. then call:
       ElvaChatServiceHelper.init (Activity activity, String appKey, String domain, String appId)
       Parameter Description:
-activity: the current operation of the action, this can be
+      activity: the current operation of the action, this can be
       app Key: The app key, obtained from the Web management system.
       domain: app Domain name, obtained from the Web management system.
       appId: app Unique identifier, obtained from the Web management system.
