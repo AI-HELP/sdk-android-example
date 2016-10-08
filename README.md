@@ -1,4 +1,4 @@
-                                                         中文版https://github.com/CS30-NET/android-sdk-stable/blob/master/README-CN.md
+  中文版sdk接入说明https://github.com/CS30-NET/android-sdk-stable/blob/master/README-CN.md
 # Android SDK Access Instructions
 # Ⅰ. cocos2dx Interface List
     Put ECServiceCocos2dx.h, ECServiceCocos2dx.cpp in the Classes folder
