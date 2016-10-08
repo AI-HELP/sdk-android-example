@@ -2,7 +2,7 @@
   
   中文版Android SDK接入说明：https://github.com/CS30-NET/android-sdk-stable/blob/master/README-CN.md
 # Android SDK Access Instructions
-# Ⅰ. Ddownload Android SDK.
+# Ⅰ. Download Android SDK.
     Click the button "Clone or download" in the top right corner to download Android SDK and then unzip the file.
 # Ⅱ. cocos2dx Interface List
     Put ECServiceCocos2dx.h, ECServiceCocos2dx.cpp in the interface folder in your Classes folder.
