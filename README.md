@@ -34,8 +34,10 @@
          appId: app Unique identifier, obtained from the Web management system.
         Note: The latter three parameters, please use the registered email address to login https://cs30.net/elva. View in the Settings
         Applications page. Initial use, please register on the official website www.cs30.net/cn/pricing.html.
-      b. If you need to delay the call, then，call SetActivity (this) in activity.java;
+      b. If you need to delay the call, then，
+        In activity.java call SetActivity (this);
         In Cocos2dx call ECServiceCocos2dx :: init (string appKey, string domain, string appId)
+        
     2. The interface call method
       1) Start smart customer service main interface, call showElva method, start the robot interface.
         ECServiceCocos2dx :: showElva (string playerName, string playerUid, int serverId, string playerParseId, string showConversationFlag, cocos2d :: ValueMap & config);
