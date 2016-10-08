@@ -5,7 +5,7 @@
     Copy the elvachatservice folder to your main directory
 # Ⅲ. The access project configuration
     Modify the AndroidManifest.xml to add the required configuration:
-    1. Add the required permissions
+    1. Add the required permissions:
     <Uses-permission android: name = "android.permission.INTERNET" />
     <Uses-permission android: name = "android.permission.ACCESS_NETWORK_STATE" />
     <Uses-permission android: name = "android.permission.WRITE_EXTERNAL_STORAGE" />
