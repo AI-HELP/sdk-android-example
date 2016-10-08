@@ -1,4 +1,4 @@
-# android SDK 接入说明
+# Android SDK 接入说明
 # 一、cocos2dx接口清单
     把ECServiceCocos2dx.h、ECServiceCocos2dx.cpp放入Classes文件夹
 # 二、elvachatservice导入到项目
