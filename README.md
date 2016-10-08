@@ -2,12 +2,14 @@
   
   中文版Android SDK接入说明：https://github.com/CS30-NET/android-sdk-stable/blob/master/README-CN.md
 # Android SDK Access Instructions
-# Ⅰ. cocos2dx Interface List
-    Put ECServiceCocos2dx.h, ECServiceCocos2dx.cpp in the Classes folder
-# Ⅱ. Import elvachatservice into project
+# Ⅰ. Ddownload Android SDK.
+    Click the button "Clone or download" to download Android SDK and then unzip the file.
+# Ⅱ. cocos2dx Interface List
+    Put ECServiceCocos2dx.h, ECServiceCocos2dx.cpp in the interface folder in your Classes folder.
+# Ⅲ. Import elvachatservice into project
     Copy the elvachatservice folder to your main directory
-# Ⅲ. Access Project Configuration
-    Modify the AndroidManifest.xml to add the required configuration:
+# Ⅳ. Access Project Configuration
+    Modify the AndroidManifest.xml in elvachatservice folder to add the required configuration:
     1. Add the required permissions:
     <Uses-permission android: name = "android.permission.INTERNET" />
     <Uses-permission android: name = "android.permission.ACCESS_NETWORK_STATE" />
@@ -25,7 +27,7 @@
         Android: configChanges = "orientation | screenSize | locale"
         Android: screenOrientation = "portrait">
     </ Activity>
-# Ⅳ.Interface Call Instructions
+# Ⅴ.Interface Call Instructions
     1. SDK initialization. 
        Create a JNI environment and the application in the Activity: (must be called at the beginning of the game)
       a. If you call initialization interface in onCreate of the main Activity. then call:
