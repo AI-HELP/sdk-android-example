@@ -1,10 +1,10 @@
 # Android SDK Access Instructions
 # Ⅰ. cocos2dx Interface List
-Put ECServiceCocos2dx.h, ECServiceCocos2dx.cpp in the Classes folder
+  Put ECServiceCocos2dx.h, ECServiceCocos2dx.cpp in the Classes folder
 # Ⅱ. Import elvachatservice into project
-Copy the elvachatservice folder to your main directory
+  Copy the elvachatservice folder to your main directory
 # Ⅲ. The access project configuration
-Modify the AndroidManifest.xml to add the required configuration:
+  Modify the AndroidManifest.xml to add the required configuration:
   1. Add the required permissions
     <Uses-permission android: name = "android.permission.INTERNET" />
     <Uses-permission android: name = "android.permission.ACCESS_NETWORK_STATE" />
