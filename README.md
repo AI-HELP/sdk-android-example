@@ -1,11 +1,8 @@
 # Android SDK Access Instructions
-
 # Ⅰ. cocos2dx Interface List
 Put ECServiceCocos2dx.h, ECServiceCocos2dx.cpp in the Classes folder
-
 # Ⅱ. Import elvachatservice into project
 Copy the elvachatservice folder to your main directory
-
 # Ⅲ. The access project configuration
 Modify the AndroidManifest.xml to add the required configuration:
   1. Add the required permissions
@@ -49,7 +46,7 @@ Modify the AndroidManifest.xml to add the required configuration:
           serverId: The server ID of the player.
           playerParseId: Push token.
           showConversationFlag (0 or 1): whether VIP, 0: marked non-VIP; 1: VIP. 
-Here is 1, will be in the upper right corner of the robot chat interface, to provide artificial chat entry function.
+          Here is 1, will be in the upper right corner of the robot chat interface, to provide artificial chat entry function.
           config: Optional, custom ValueMap information. You can set specific Tag information here.
 
         Parameter Example:
