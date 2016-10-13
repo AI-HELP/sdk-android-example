@@ -72,8 +72,16 @@ jobject parseConfigDictionaryElva (JNIEnv* env, cocos2d::CCDictionary *config) {
     map_put_method = env->GetMethodID(clsHashMap, "put", "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;");
 
     jstring data;
+    
+    
+    jstring key = env->NewStringUTF("showConversationFlag");
+    cocos2d::CCString* showConversationFlag = dynamic_cast<cocos2d::CCString*>(config->objectForKey("showConversationFlag"));
+    if (showConversationFlag != NULL && showConversationFlag->length() > 0) {
+        data = env->NewStringUTF(showConversationFlag->getCString());
+        env->CallObjectMethod(jmapobj, map_put_method, key, data);
+    }
 
-    jstring key = env->NewStringUTF("hs-custom-metadata");
+    key = env->NewStringUTF("hs-custom-metadata");
     cocos2d::CCDictionary* metaData = dynamic_cast<cocos2d::CCDictionary*>(config->objectForKey("hs-custom-metadata"));
     if (metaData!= NULL) {
         jobject metaMap = env->NewObject(clsHashMap, constructorID);
