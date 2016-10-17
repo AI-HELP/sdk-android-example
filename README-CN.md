@@ -6,7 +6,7 @@
 # 三、elvachatservice导入到项目
     把elvachatservice文件夹拷贝到您的主目录下
 # 四、Google App Indexing导入到项目
-    如果项目存在google service 可忽略该步，导入play-services-appindexing到您的项目中
+    如果项目存在google service 可忽略该步，导入play-services-appindexing到您的项目中
 # 五、接入工程配置
     修改elvachatservice文件夹里的AndroidManifest.xml，增加需要的配置：
       1、增加需要的权限
