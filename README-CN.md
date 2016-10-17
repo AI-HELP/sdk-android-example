@@ -47,7 +47,7 @@
           domain:app域名，从Web管理系统获取。
           AppId:app唯一标识，从Web管理系统获取。
           
-          注：后面这三个参数，请使用注册时的邮箱地址作为登录名登录https://cs30.net/elva。在Settings菜单Applications页面查看。初次使用，请先登录官网自助注册,地址为www.cs30.net/cn/pricing.html。
+        注：后面这三个参数，请使用注册时的邮箱地址作为登录名登录https://cs30.net/elva。在Settings菜单Applications页面查看。初次使用，请先登录官网自助注册,地址为www.cs30.net/cn/pricing.html。
         b、如果需要延迟调用，则：
           在activity.java中调用：SetActivity(this);
           在Cocos2dx中调用：ECServiceCocos2dx::init(string appKey,string domain,string appId)
@@ -71,6 +71,8 @@
             	  ｝
               }
             );
+   ![showElva](https://github.com/CS30-NET/Pictures/blob/master/showElva-CN.png "showElva")
+   
           2)展示单条FAQ，调用showSingleFAQ方法
             ECServiceCocos2dx:: showSingleFAQ (string faqId,cocos2d::ValueMap& config);
             参数说明：
