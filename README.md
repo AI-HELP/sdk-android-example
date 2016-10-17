@@ -15,7 +15,6 @@
     <Uses-permission android: name = "android.permission.ACCESS_NETWORK_STATE" />
     <Uses-permission android: name = "android.permission.WRITE_EXTERNAL_STORAGE" />
     <Uses-permission android: name = "android.permission.READ_EXTERNAL_STORAGE" />
-    <Uses-permission android: name = "android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     2. Add activity:
     <Activity
         Android: name = "com.ljoy.chatbot.ChatMainActivity"
