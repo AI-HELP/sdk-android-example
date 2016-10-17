@@ -1,17 +1,19 @@
-div{ 
-  word-wrap: break-word; 
-  word-break: normal; 
-}
-# Android SDK 接入说明
-# 一、下载android sdk
+Android SDK 接入说明
+=====
+ 一、下载android sdk
+------
     点击上一个页面右上角的“Clone or download”按钮下载Android SDK，下载完成后解压文件。
-# 二、cocos2dx接口清单
+#二、cocos2dx接口清单
+------
     把interface文件夹下的ECServiceCocos2dx.h、ECServiceCocos2dx.cpp放入您的Classes文件夹
-# 三、elvachatservice导入到项目
+三、elvachatservice导入到项目
+------
     把elvachatservice文件夹拷贝到您的主目录下
-# 四、Google App Indexing导入到项目
+四、Google App Indexing导入到项目
+------
     如果项目存在google service 可忽略该步，导入play-services-appindexing到您的项目中
-# 五、接入工程配置
+五、接入工程配置
+------
     修改elvachatservice文件夹里的AndroidManifest.xml，增加需要的配置：
       1、增加需要的权限
         <uses-permission android:name="android.permission.INTERNET" />
@@ -41,7 +43,8 @@ div{
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-# 六、接口调用说明
+六、接口调用说明
+------
       1、sdk初始化。创建一个在JNI环境和Activity中传递的应用：（必须在游戏开始阶段调用）
         a、如果是在主Activity的onCreate中调用初始化接口init，则：
           ElvaChatServiceHelper.init(Activity activity,String appKey,String domain,String appId)
