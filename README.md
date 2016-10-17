@@ -35,10 +35,10 @@
                 android:pathPrefix="/elvaFAQ" />
         </intent-filter>
     </activity>
-  3、Add meta
+     3、Add meta
       <meta-data
-        android:name="com.google.android.gms.version"
-        android:value="@integer/google_play_services_version" />
+          android:name="com.google.android.gms.version"
+          android:value="@integer/google_play_services_version" />
 # Ⅴ.Interface Call Instructions
     1. SDK initialization. 
        Create a JNI environment and the application in the Activity: (must be called at the beginning of the game)
