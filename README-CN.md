@@ -2,19 +2,19 @@ Android SDK 接入说明
 =====
  一、下载android sdk
 ------
-    点击上一个页面右上角的“Clone or download”按钮下载Android SDK，下载完成后解压文件。
+  点击上一个页面右上角的“Clone or download”按钮下载Android SDK，下载完成后解压文件。
 #二、cocos2dx接口清单
 ------
-    把interface文件夹下的ECServiceCocos2dx.h、ECServiceCocos2dx.cpp放入您的Classes文件夹
+  把interface文件夹下的ECServiceCocos2dx.h、ECServiceCocos2dx.cpp放入您的Classes文件夹
 三、elvachatservice导入到项目
 ------
-    把elvachatservice文件夹拷贝到您的主目录下
+  把elvachatservice文件夹拷贝到您的主目录下
 四、Google App Indexing导入到项目
 ------
-    导入play-services-appindexing到您的项目中(如果项目存在google service 可忽略该步).
+  导入play-services-appindexing到您的项目中(如果项目存在google service 可忽略该步).
 五、接入工程配置
 ------
-    修改elvachatservice文件夹里的AndroidManifest.xml，增加需要的配置：
+  修改elvachatservice文件夹里的AndroidManifest.xml，增加需要的配置：
       1、增加需要的权限
         <uses-permission android:name="android.permission.INTERNET" />
         <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -45,7 +45,7 @@ Android SDK 接入说明
             android:value="@integer/google_play_services_version" />
 六、接口调用说明
 ------
-      1、sdk初始化。创建一个在JNI环境和Activity中传递的应用：（必须在游戏开始阶段调用）
+  1、sdk初始化。创建一个在JNI环境和Activity中传递的应用：（必须在游戏开始阶段调用）
         a、如果是在主Activity的onCreate中调用初始化接口init，则：
           ElvaChatServiceHelper.init(Activity activity,String appKey,String domain,String appId)
           其中：
@@ -54,12 +54,12 @@ Android SDK 接入说明
           domain:app域名，从Web管理系统获取。
           AppId:app唯一标识，从Web管理系统获取。
           
-        注：后面这三个参数，请使用注册时的邮箱地址作为登录名登录https://cs30.net/elva。 在Settings菜单    
+        注：后面这三个参数，请使用注册时的邮箱地址作为登录名登录 [智能客服后台](https://cs30.net/elva)<br />。   在Settings菜单    
         Applications页面查看。初次使用，请先登录官网自助注册,地址为www.cs30.net/cn/pricing.html。
         b、如果需要延迟调用，则：
           在activity.java中调用：SetActivity(this);
           在Cocos2dx中调用：ECServiceCocos2dx::init(string appKey,string domain,string appId)
-      2、接口调用方法
+  2、接口调用方法
           1) 智能客服主界面启动，调用showElva方法，启动机器人界面
             ECServiceCocos2dx:: showElva (string playerName , string playerUid, int serverId,    
             string playerParseId, string showConversationFlag,cocos2d::ValueMap& config);
@@ -84,8 +84,7 @@ Android SDK 接入说明
               }
             );
    ![showElva](https://github.com/CS30-NET/Pictures/blob/master/showElva-CN.png "showElva")
-   
-          2)展示单条FAQ，调用showSingleFAQ方法
+            2)展示单条FAQ，调用showSingleFAQ方法
             ECServiceCocos2dx:: showSingleFAQ (string faqId,cocos2d::ValueMap& config);
             参数说明：
               faqId：FAQ的PublishID,可以在Web后台https://cs30.net/elva 中，从FAQs菜单下找到指定    
