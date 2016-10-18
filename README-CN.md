@@ -50,17 +50,17 @@ Android SDK 接入说明
 ------
 #### 1、sdk初始化。
    创建一个在JNI环境和Activity中传递的应用：（必须在游戏开始阶段调用）<br />
-        > a、如果是在主Activity的onCreate中调用初始化接口init，则：<br />
-              ElvaChatServiceHelper.init(Activity activity,String appKey,String domain,String appId) <br />
+> a、如果是在主Activity的onCreate中调用初始化接口init，则：<br />
+> > ElvaChatServiceHelper.init(Activity activity,String appKey,String domain,String appId) <br />
               其中：<br />
               activity:当前运行的action，传this即可<br />
               App Key:app密钥，从Web管理系统获取。<br />
               domain:app域名，从Web管理系统获取。<br />
               AppId:app唯一标识，从Web管理系统获取。<br />
-        注：后面这三个参数，请使用注册时的邮箱地址作为登录名登录 [智能客服后台](https://cs30.net/elva)。在Settings菜单Applications页面查看。初次使用，请先登录[智能客服官网](http://cs30.net/index.html) 自助注册。<br /> 
+> 注：后面这三个参数，请使用注册时的邮箱地址作为登录名登录 [智能客服后台](https://cs30.net/elva)。在Settings菜单Applications页面查看。初次使用，请先登录[智能客服官网](http://cs30.net/index.html) 自助注册。<br /> 
         <br />
-        > b、如果需要延迟调用，则：<br />
-            在activity.java中调用：SetActivity(this);<br />
+> b、如果需要延迟调用，则：<br />
+> > 在activity.java中调用：SetActivity(this);<br />
             在Cocos2dx中调用：ECServiceCocos2dx::init(string appKey,string domain,string appId)<br />   
           
 ####2、接口调用方法
