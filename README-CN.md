@@ -60,7 +60,7 @@ AppId:app唯一标识，从Web管理系统获取。<br />
 注：后面这三个参数，请使用注册时的邮箱地址作为登录名登录 [智能客服后台](https://cs30.net/elva)。在Settings菜单Applications页面查看。初次使用，请先登录[智能客服官网](http://cs30.net/index.html) 自助注册。<br /> <br />
 > 
 > b、如果需要延迟调用，则：<br />
-> > 在activity.java中调用：SetActivity(this);<br />
+在activity.java中调用：SetActivity(this);<br />
 在Cocos2dx中调用：ECServiceCocos2dx::init(string appKey,string domain,string appId)<br />   
           
 #### 2、接口调用方法
