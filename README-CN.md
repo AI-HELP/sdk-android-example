@@ -71,7 +71,7 @@ AppId:app唯一标识，从Web管理系统获取。<br />
               playerUid:玩家在游戏里的唯一标示id。<br />
               serverId:玩家所在的服务器编号。<br />
               playerParseId:推送传token。<br />
-              showConversationFlag(0或1):是否为vip, 0:标示非VIP；1:表示：VIP。此处为1时，将在机器人的聊天界面右上角，提供人工聊天的入口。<br />
+              showConversationFlag(0或1):是否为vip, 0:标示非VIP；1:表示：VIP。此处为1时，将在机器人的聊天界面右上角，提供人工聊天的入口,如下图。<br />
               config:可选，自定义ValueMap信息。可以在此处设置特定的Tag信息。<br />
 ![showElva](https://github.com/CS30-NET/Pictures/blob/master/showElva-CN.png "showElva")<br />
 * 参数示例:   
