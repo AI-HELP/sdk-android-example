@@ -16,14 +16,11 @@ Android SDK 接入说明
 ------
   修改elvachatservice文件夹里的AndroidManifest.xml，增加需要的配置：     
 #### 1、增加需要的权限
-```
           <uses-permission android:name="android.permission.INTERNET" />
           <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
           <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
           <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-```
 #### 2、增加activity:
-```
           <activity
             android:name="com.ljoy.chatbot.ChatMainActivity"
             android:configChanges="orientation|screenSize|locale"
@@ -42,13 +39,10 @@ Android SDK 接入说明
                     android:pathPrefix="/elvaFAQ" />
             </intent-filter>
           </activity>
-```
 #### 3、增加meta        
-```
          <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-```
 六、接口调用说明
 ------
 #### 1、sdk初始化
@@ -79,7 +73,6 @@ ECServiceCocos2dx:: showElva (string playerName , string playerUid, int serverId
 ![showElva](https://github.com/CS30-NET/Pictures/blob/master/showElva-CN.png "showElva")<br />
 * 参数示例:   
      
-```
     ECServiceCocos2dx:: showElva (“elvaTestName”,“12349303258”,1, “es234-3dfs-d42f-342sfe3s3”,”1”,
      { 
        hs-custom-metadata＝｛
@@ -88,7 +81,6 @@ ECServiceCocos2dx:: showElva (string playerName , string playerUid, int serverId
        ｝
      }
     );
-```
 > 
 > 2)展示单条FAQ，调用showSingleFAQ方法<br />
     ECServiceCocos2dx:: showSingleFAQ (string faqId,cocos2d::ValueMap& config);<br />
