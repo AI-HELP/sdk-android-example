@@ -1,9 +1,9 @@
 Android SDK 接入说明
 =====
- 一、下载android sdk
+一、下载android sdk
 ------
   点击上一个页面右上角的“Clone or download”按钮下载Android SDK，下载完成后解压文件。
-#二、cocos2dx接口清单
+二、cocos2dx接口清单
 ------
   把interface文件夹下的ECServiceCocos2dx.h、ECServiceCocos2dx.cpp放入您的Classes文件夹
 三、elvachatservice导入到项目
@@ -16,17 +16,17 @@ Android SDK 接入说明
 ------
   修改elvachatservice文件夹里的AndroidManifest.xml，增加需要的配置：
       1、增加需要的权限
-        <uses-permission android:name="android.permission.INTERNET" />
-        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+                      <uses-permission android:name="android.permission.INTERNET" />
+                      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+                      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+                      <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
      2、增加activity:
-        <activity
+          <activity
             android:name="com.ljoy.chatbot.ChatMainActivity"
             android:configChanges="orientation|screenSize|locale"
             android:screenOrientation="portrait">
-        </activity>
-        <activity
+          </activity>
+          <activity
             android:name="com.ljoy.chatbot.FAQActivity"
             android:configChanges="orientation|screenSize|locale"
             android:screenOrientation="portrait">
