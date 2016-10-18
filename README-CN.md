@@ -54,7 +54,7 @@ activity:当前运行的action，传this即可。<br />
 App Key:app密钥，从Web管理系统获取。<br />
 domain:app域名，从Web管理系统获取。<br />
 AppId:app唯一标识，从Web管理系统获取。<br />
-注：后面这三个参数，请使用注册时的邮箱地址作为登录名登录 `[智能客服后台](https://cs30.net/elva)`。在Settings菜单Applications页面查看。初次使用，请先登录`[智能客服官网](http://cs30.net/index.html)` 自助注册。<br />
+注：后面这三个参数，请使用注册时的邮箱地址作为登录名登录 [智能客服后台](https://cs30.net/elva)。在Settings菜单Applications页面查看。初次使用，请先登录[智能客服官网](http://cs30.net/index.html)自助注册。<br />
 > 
 > b.如果需要延迟调用，则：<br />
 在activity.java中调用：SetActivity(this)<br />
@@ -85,7 +85,7 @@ ECServiceCocos2dx:: showElva (string playerName , string playerUid, int serverId
 > 2)展示单条FAQ，调用`showSingleFAQ`方法<br />
     ECServiceCocos2dx:: showSingleFAQ (string faqId,cocos2d::ValueMap& config);<br />
 * 参数说明：<br />
-faqId:FAQ的PublishID,可以在`[智能客服后台](https://cs30.net/elva)`中，从FAQs菜单下找到指定FAQ，查看PublishID。<br />
+faqId:FAQ的PublishID,可以在[智能客服后台](https://cs30.net/elva)中，从FAQs菜单下找到指定FAQ，查看PublishID。<br />
 config:可选，自定义ValueMap信息。参照 1)智能客服主界面启动。<br />
 ![showSingleFAQ](https://github.com/CS30-NET/Pictures/blob/master/showSingleFAQ-CN.png "showSingleFAQ")<br />
 注：如果在web管理后台配置了FAQ的SelfServiceInterface，并且SDK配置了相关参数，将在显示FAQ的同时，右上角提供功能菜单，可以对相关的自助服务进行调用。<br />
@@ -93,7 +93,7 @@ config:可选，自定义ValueMap信息。参照 1)智能客服主界面启动�
 > 3)展示相关部分FAQ，调用`showFAQSection`方法<br />
     ECServiceCocos2dx:: showFAQSection (string sectionPublishId,cocos2d::ValueMap& config);<br />
 * 参数说明：<br />
-sectionPublishId:FAQ Section 的PublishID（可以在`[智能客服后台](https://cs30.net/elva)` 中，从FAQs菜单下[Section]菜单，查看PublishID）<br />
+sectionPublishId:FAQ Section 的PublishID（可以在[智能客服后台](https://cs30.net/elva) 中，从FAQs菜单下[Section]菜单，查看PublishID）<br />
 config:可选，自定义ValueMap信息。参照 1)智能客服主界面启动。<br />
 ![showFAQSection](https://github.com/CS30-NET/Pictures/blob/master/showFAQSection-CN.png "showFAQSection")<br />
 > 
