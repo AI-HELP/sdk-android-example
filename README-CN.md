@@ -134,3 +134,4 @@ playerName:玩家名称。<br />
 playerUid:玩家在游戏里的唯一标示id。<br />
 serverId:玩家所在的服务器编号。<br />
 config:可选，自定义ValueMap信息。参照 1)智能客服主界面启动。<br />
+![showConversation](https://github.com/CS30-NET/Pictures/blob/master/showConversation-CN.png "showConversation")
