@@ -77,7 +77,8 @@ config: Optional, custom ValueMap information. You can set specific Tag informat
     ECServiceCocos2dx :: showElva ( "elvaTestName", "12349303258", 1, "es234-3dfs-d42f-342sfe3s3", "1"
      {
        Hs-custom-metadata = {
-       Hs-tags = 'army, recharge'. //Note: hs-tags value is vector type, where the incoming custom Tag, need to configure the same name in the Web management Tag to take effect.
+       Hs-tags = 'army, recharge'. //Note: hs-tags value is vector type, where the incoming custom Tag,   
+       need to configure the same name in the Web management Tag to take effect.
        VersionCode = '3'
        } 
      }
