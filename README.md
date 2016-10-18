@@ -49,6 +49,7 @@ Modify the AndroidManifest.xml in elvachatservice folder to add the required con
 ------
 1. SDK initialization. <br />
 Create a JNI environment and the application in the Activity: (must be called at the beginning of the game)<br />
+> 
 > a.If you call initialization interface in onCreate of the main Activity. then call:<br />
 ElvaChatServiceHelper.init (Activity activity, String appKey, String domain, String appId)<br />
 * Parameter Description:<br />
