@@ -40,7 +40,7 @@ Modify the AndroidManifest.xml in elvachatservice folder to add the required con
                 android:host="cs30.net"
                 android:pathPrefix="/elvaFAQ" />
         </intent-filter>
-    </activity>
+    </ Activity>
 ### 3、Add meta
       <meta-data
           android:name="com.google.android.gms.version"
