@@ -63,7 +63,7 @@ In activity.java call SetActivity (this);<br />
 In Cocos2dx call ECServiceCocos2dx :: init (string appKey, string domain, string appId);<br />
 
 #### 2. The interface call method<br />
-> 1) Start smart customer service main interface, call showElva method, start the robot interface.<br />
+> 1) Start smart customer service main interface, call `showElva` method, start the robot interface.<br />
 ECServiceCocos2dx :: showElva (string playerName, string playerUid, int serverId, string playerParseId, string showConversationFlag, cocos2d :: ValueMap & config);<br />
 * Parameter Description:<br />
 playerName: The name of the player in the game.<br />
@@ -72,6 +72,7 @@ serverId: The server ID of the player.<br />
 playerParseId: Push token.<br />
 showConversationFlag (0 or 1): whether VIP, 0: marked non-VIP; 1: VIP. Here is 1, will be in the upper right corner of the robot chat interface, to provide artificial chat entry function.<br />
 config: Optional, custom ValueMap information. You can set specific Tag information here.<br />
+![showElva](https://github.com/CS30-NET/Pictures/blob/master/showElva-EN.png "showElva")<br />
 * Parameter Example:    
 
     ECServiceCocos2dx :: showElva ( "elvaTestName", "12349303258", 1, "es234-3dfs-d42f-342sfe3s3", "1"
@@ -84,23 +85,26 @@ config: Optional, custom ValueMap information. You can set specific Tag informat
      }
     );
 > 
-> 2) Show a single FAQ, call showSingleFAQ method<br />
+> 2) Show a single FAQ, call `showSingleFAQ` method<br />
 ECServiceCocos2dx :: showSingleFAQ (string faqId, cocos2d :: ValueMap & config);<br />
 * Parameter Description:<br />
 faqId: FAQ's PublishID, in the Web background https://cs30.net/elva, from the FAQs menu to find the specified FAQ, view PublishID.<br />
 config: Optional, custom ValueMap information. Refer to 1) intelligent customer service main interface starts.<br />
 Note: If the SelfServiceInterface is configured in the web administration background, and the SDK is configured with related parameters, the FAQ will be displayed and the function menu will be provided in the upper right corner to call up the related self-service.<br />
+![showSingleFAQ](https://github.com/CS30-NET/Pictures/blob/master/showSingleFAQ-EN.png "showSingleFAQ")<br />
 > 
-> 3) Show the relevant part of the FAQ, call showFAQSection method<br />
+> 3) Show the relevant part of the FAQ, call `showFAQSection` method<br />
 ECServiceCocos2dx :: showFAQSection (string sectionPublishId, cocos2d :: ValueMap & config);<br />
 * Parameter Description:<br />
 sectionPublishId: PublishID of the FAQ Section (PublishID can be viewed from the [Section] menu in the FAQs menu at https://cs30.net/elva).<br />
 config: Optional, custom ValueMap information. Refer to 1) intelligent customer service main interface starts.
+![showFAQSection](https://github.com/CS30-NET/Pictures/blob/master/showFAQSection-EN.png "showFAQSection")<br />
 > 
-> 4) Show the FAQ list, call showFAQs method<br />
+> 4) Show the FAQ list, call `showFAQs` method<br />
 ECServiceCocos2dx :: showFAQs (cocos2d :: ValueMap & config);<br />
 * Parameter Description:
 config: Optional, custom ValueMap information. Refer to 1) intelligent customer service main interface starts.<br />
+![showFAQs](https://github.com/CS30-NET/Pictures/blob/master/showFAQs-EN.png "showFAQs")<br />
 > 
 > 5) set the game name information, call setName method (It is recommended to call this method after calling init)       
 ECServiceCocos2dx :: setName (string game_name);<br />
