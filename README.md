@@ -1,4 +1,4 @@
-  Android SDK access instructions for English: https://github.com/CS30-NET/android-sdk-stable/blob/master/README.md
+  Android SDK access instructions for English: https://github.com/CS30-NET/android-sdk-stable/blob/master/README.md <br />
   中文版Android SDK接入说明：https://github.com/CS30-NET/android-sdk-stable/blob/master/README-CN.md
 Android SDK Access Instructions
 =====
