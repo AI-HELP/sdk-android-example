@@ -138,3 +138,4 @@ ECServiceCocos2dx :: showConversation (string playerUid, int serverId, cocos2d :
 playerUid: The player's unique id in the game.<br />
 serverId: The server ID of the player.<br />
 config: Optional, custom ValueMap information. Refer to 1) intelligent customer service main interface starts.<br />
+![showConversation](https://github.com/CS30-NET/Pictures/blob/master/showConversation-EN.png "showConversation")
