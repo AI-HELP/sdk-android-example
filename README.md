@@ -106,32 +106,32 @@ ECServiceCocos2dx :: showFAQs (cocos2d :: ValueMap & config);<br />
 config: Optional, custom ValueMap information. Refer to 1) intelligent customer service main interface starts.<br />
 ![showFAQs](https://github.com/CS30-NET/Pictures/blob/master/showFAQs-EN.png "showFAQs")<br />
 > 
-> 5) set the game name information, call setName method (It is recommended to call this method after calling init)       
+> 5) set the game name information, call `setName` method (It is recommended to call this method after calling init)       
 ECServiceCocos2dx :: setName (string game_name);<br />
 Parameter Description:<br />
 game_name: The name of the game, which will be displayed in the title bar of the relevant interface in the SDK.<br />
 > 
-> 6) Set Token, use google push, call registerDeviceToken method (no)<br />
+> 6) Set Token, use google push, call `registerDeviceToken` method (no)<br />
 ECServiceCocos2dx :: registerDeviceToken (string deviceToken);<br />
 * Parameter Description:<br />
 deviceToken: The device Token.<br />
 > 
-> 7) Set the user id information, call the setUserId method (using self-service must call, see 2) show a single FAQ). Call<br />
+> 7) Set the user id information, call the `setUserId` method (using self-service must call, see 2) show a single FAQ). Call<br />
 ECServiceCocos2dx :: setUserId (string playerUid) before showSingleFAQ;<br />
 * Parameter Description:<br />
 playerUid: The player unique ID.<br />
 > 
-> 8) Set the server number information, call setServerId method (using self-service must call, see 2) show a single FAQ). Call<br />
+> 8) Set the server number information, call `setServerId` method (using self-service must call, see 2) show a single FAQ). Call<br />
 ECServiceCocos2dx :: setServerId (int serverId) before showSingleFAQ;<br />
 * Parameter Description:<br />
 serverId: Server ID.<br />
 > 
-> 9) Set the player name information, call setUserName method (It is recommended to call this method after calling init)<br />
+> 9) Set the player name information, call `setUserName` method (It is recommended to call this method after calling init)<br />
 ECServiceCocos2dx :: setUserName (string playerName);<br />
 * Parameter Description:<br />
 playerName: The player name.<br />
 > 
-> 10) Direct vip_chat artificial customer service chat, call showConversation method (must ensure that setUserName in 9) set the
+> 10) Direct vip_chat artificial customer service chat, call `showConversation` method (must ensure that setUserName in 9) set the
       player name information has been called)<br />
 ECServiceCocos2dx :: showConversation (string playerUid, int serverId, cocos2d :: ValueMap & config);<br />
 * Parameter Description:<br />
