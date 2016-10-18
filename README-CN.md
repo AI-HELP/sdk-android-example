@@ -37,12 +37,12 @@ Android SDK 接入说明
           <data android:scheme="https"
                 android:host="cs30.net"
                 android:pathPrefix="/elvaFAQ" />
-        </intent-filter>
-     </activity>
+       </intent-filter>
+    </activity>
 #### 3、增加meta        
-     <meta-data
-         android:name="com.google.android.gms.version"
-         android:value="@integer/google_play_services_version" />
+    <meta-data
+       android:name="com.google.android.gms.version"
+       android:value="@integer/google_play_services_version" />
 六、接口调用说明
 ------
 #### 1、sdk初始化
