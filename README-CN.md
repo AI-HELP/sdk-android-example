@@ -87,18 +87,21 @@ ECServiceCocos2dx:: showElva (string playerName , string playerUid, int serverId
 * 参数说明：<br />
 faqId:FAQ的PublishID,可以在[智能客服后台](https://cs30.net/elva) 中，从FAQs菜单下找到指定FAQ，查看PublishID。<br />
 config:可选，自定义ValueMap信息。参照 1)智能客服主界面启动。<br />
+![showSingleFAQ](https://github.com/CS30-NET/Pictures/blob/master/showSingleFAQ-CN.png "showSingleFAQ")<br />
 注：如果在web管理后台配置了FAQ的SelfServiceInterface，并且SDK配置了相关参数，将在显示FAQ的同时，右上角提供功能菜单，可以对相关的自助服务进行调用。<br />
 > 
 > 3)展示相关部分FAQ，调用showFAQSection方法<br />
     ECServiceCocos2dx:: showFAQSection (string sectionPublishId,cocos2d::ValueMap& config);<br />
 * 参数说明：<br />
 sectionPublishId:FAQ Section 的PublishID（可以在[智能客服后台](https://cs30.net/elva) 中，从FAQs菜单下[Section]菜单，查看PublishID）<br />
-config:可选，自定义ValueMap信息。参照 1)智能客服主界面启动。<br />       
+config:可选，自定义ValueMap信息。参照 1)智能客服主界面启动。<br />
+![showFAQSection](https://github.com/CS30-NET/Pictures/blob/master/showFAQSection-CN.png "showFAQSection")<br />
 > 
 > 4)展示FAQ列表，调用showFAQs方法<br />
     ECServiceCocos2dx:: showFAQs (cocos2d::ValueMap& config)<br />
 * 参数说明：<br />
 config:可选，自定义ValueMap信息。参照 1)智能客服主界面启动。<br />
+![showFAQs](https://github.com/CS30-NET/Pictures/blob/master/showFAQs-CN.png "showFAQs")<br />
 > 
 > 5)设置游戏名称信息，调用setName方法(建议游戏刚进入，调用Init之后就默认调用)<br />
     ECServiceCocos2dx:: setName (string game_name);<br />
