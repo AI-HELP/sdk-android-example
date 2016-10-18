@@ -47,9 +47,8 @@ Modify the AndroidManifest.xml in elvachatservice folder to add the required con
           android:value="@integer/google_play_services_version" />
 Ⅵ.Interface Call Instructions
 ------
-1. SDK initialization. <br />
+#### 1. SDK initialization. <br />
 Create a JNI environment and the application in the Activity: (must be called at the beginning of the game)<br />
-> 
 > a.If you call initialization interface in onCreate of the main Activity. then call:<br />
 ElvaChatServiceHelper.init (Activity activity, String appKey, String domain, String appId)<br />
 * Parameter Description:<br />
@@ -63,7 +62,7 @@ Note: The latter three parameters, please use the registered email address to lo
 In activity.java call SetActivity (this);<br />
 In Cocos2dx call ECServiceCocos2dx :: init (string appKey, string domain, string appId);<br />
 
-2. The interface call method<br />
+#### 2. The interface call method<br />
 > 1) Start smart customer service main interface, call showElva method, start the robot interface.<br />
 ECServiceCocos2dx :: showElva (string playerName, string playerUid, int serverId, string playerParseId, string showConversationFlag, cocos2d :: ValueMap & config);<br />
 * Parameter Description:<br />
