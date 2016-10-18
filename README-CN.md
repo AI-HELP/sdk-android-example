@@ -48,21 +48,22 @@ Android SDK 接入说明
             android:value="@integer/google_play_services_version" />
 六、接口调用说明
 ------
-  1、sdk初始化。创建一个在JNI环境和Activity中传递的应用：（必须在游戏开始阶段调用）
-        a、如果是在主Activity的onCreate中调用初始化接口init，则：
-          ElvaChatServiceHelper.init(Activity activity,String appKey,String domain,String appId)
-          其中：
-          activity:当前运行的action，传this即可
-          App Key:app密钥，从Web管理系统获取。
-          domain:app域名，从Web管理系统获取。
-          AppId:app唯一标识，从Web管理系统获取。
+####1、sdk初始化。
+  创建一个在JNI环境和Activity中传递的应用：（必须在游戏开始阶段调用）<br />
+        a、如果是在主Activity的onCreate中调用初始化接口init，则：<br />
+          ElvaChatServiceHelper.init(Activity activity,String appKey,String domain,String appId) <br />
+          其中：<br />
+          activity:当前运行的action，传this即可<br />
+          App Key:app密钥，从Web管理系统获取。<br />
+          domain:app域名，从Web管理系统获取。<br />
+          AppId:app唯一标识，从Web管理系统获取。<br />
+        注：后面这三个参数，请使用注册时的邮箱地址作为登录名登录 [智能客服后台](https://cs30.net/elva)。<br />
+        在Settings菜单Applications页面查看。初次使用，请先登录[智能客服官网](http://cs30.net/index.html) 自助注册。<br /> 
+        b、如果需要延迟调用，则：<br />
+        在activity.java中调用：SetActivity(this);<br />
+        在Cocos2dx中调用：ECServiceCocos2dx::init(string appKey,string domain,string appId)<br />   
           
-        注：后面这三个参数，请使用注册时的邮箱地址作为登录名登录 [智能客服后台](https://cs30.net/elva)<br />。   在Settings菜单    
-        Applications页面查看。初次使用，请先登录官网自助注册,地址为www.cs30.net/cn/pricing.html。
-        b、如果需要延迟调用，则：
-          在activity.java中调用：SetActivity(this);
-          在Cocos2dx中调用：ECServiceCocos2dx::init(string appKey,string domain,string appId)
-  2、接口调用方法
+####2、接口调用方法
           1) 智能客服主界面启动，调用showElva方法，启动机器人界面
             ECServiceCocos2dx:: showElva (string playerName , string playerUid, int serverId,    
             string playerParseId, string showConversationFlag,cocos2d::ValueMap& config);
