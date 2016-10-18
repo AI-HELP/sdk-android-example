@@ -56,7 +56,7 @@ activity: the current operation of the action, parameter "this" can be. <br />
 app Key: The app key, obtained from the Web management system.<br />
 domain: app Domain name, obtained from the Web management system.<br />
 appId: app Unique identifier, obtained from the Web management system.<br />
-Note: The latter three parameters, please use the registered email address to login https://cs30.net/elva. View in the Settings Applications page. Initial use, please register on the official website http://www.cs30.net/en/index.html.
+Note: The latter three parameters, please use the registered email address to login https://cs30.net/elva. View in the Settings Applications page. Initial use, please register on the official website http://cs30.net/preview/index.html.
 > 
 > b. If you need to delay the call, then，<br />
 In activity.java call SetActivity (this);<br />
