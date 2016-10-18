@@ -16,33 +16,33 @@ Android SDK 接入说明
 ------
   修改elvachatservice文件夹里的AndroidManifest.xml，增加需要的配置：     
 #### 1、增加需要的权限
-          <uses-permission android:name="android.permission.INTERNET" />
-          <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-          <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-          <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 #### 2、增加activity:
-          <activity
-            android:name="com.ljoy.chatbot.ChatMainActivity"
-            android:configChanges="orientation|screenSize|locale"
-            android:screenOrientation="portrait">
-          </activity>
-          <activity
-            android:name="com.ljoy.chatbot.FAQActivity"
-            android:configChanges="orientation|screenSize|locale"
-            android:screenOrientation="portrait">
-            <intent-filter android:label="@string/app_name">
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="https"
-                    android:host="cs30.net"
-                    android:pathPrefix="/elvaFAQ" />
-            </intent-filter>
-          </activity>
+    <activity
+       android:name="com.ljoy.chatbot.ChatMainActivity"
+       android:configChanges="orientation|screenSize|locale"
+       android:screenOrientation="portrait">
+    </activity>
+    <activity
+       android:name="com.ljoy.chatbot.FAQActivity"
+       android:configChanges="orientation|screenSize|locale"
+       android:screenOrientation="portrait">
+       <intent-filter android:label="@string/app_name">
+          <action android:name="android.intent.action.VIEW" />
+          <category android:name="android.intent.category.DEFAULT" />
+          <category android:name="android.intent.category.BROWSABLE" />
+          <data android:scheme="https"
+                android:host="cs30.net"
+                android:pathPrefix="/elvaFAQ" />
+        </intent-filter>
+     </activity>
 #### 3、增加meta        
-         <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
+     <meta-data
+         android:name="com.google.android.gms.version"
+         android:value="@integer/google_play_services_version" />
 六、接口调用说明
 ------
 #### 1、sdk初始化
