@@ -61,7 +61,7 @@ AppId:app唯一标识，从Web管理系统获取。<br />
 在Cocos2dx中调用：ECServiceCocos2dx::init(string appKey,string domain,string appId)<br />   
           
 #### 2、接口调用方法
-> 1) 智能客服主界面启动，调用showElva方法，启动机器人界面<br />
+> 1) 智能客服主界面启动，调用`showElva`方法，启动机器人界面<br />
 ECServiceCocos2dx:: showElva (string playerName , string playerUid, int serverId, string playerParseId, string showConversationFlag,cocos2d::ValueMap& config); <br />
 * 参数说明：<br />
               playerName:游戏中玩家名称。 <br />
