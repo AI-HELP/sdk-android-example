@@ -1,14 +1,22 @@
   Android SDK access instructions for English: https://github.com/CS30-NET/android-sdk-stable/blob/master/README.md
   
   中文版Android SDK接入说明：https://github.com/CS30-NET/android-sdk-stable/blob/master/README-CN.md
-# Android SDK Access Instructions
-# Ⅰ. Download Android SDK.
+Android SDK Access Instructions
+=====
+Ⅰ. Download Android SDK.
+------
     Click the button "Clone or download" in the top right corner to download Android SDK and then unzip the file.
-# Ⅱ. cocos2dx Interface List
+Ⅱ. cocos2dx Interface List
+------
     Put ECServiceCocos2dx.h, ECServiceCocos2dx.cpp in the interface folder in your Classes folder.
-# Ⅲ. Import elvachatservice into project
+Ⅲ. Import elvachatservice into project
+------
     Copy the elvachatservice folder to your main directory
-# Ⅳ. Access Project Configuration
+Ⅳ. Import Google App Indexing into project
+------
+Import play-services-appindexing into your project(IF the item google service exists, this step can be ignored).
+Ⅴ. Access Project Configuration
+------
     Modify the AndroidManifest.xml in elvachatservice folder to add the required configuration:
     1. Add the required permissions:
     <Uses-permission android: name = "android.permission.INTERNET" />
@@ -38,7 +46,8 @@
       <meta-data
           android:name="com.google.android.gms.version"
           android:value="@integer/google_play_services_version" />
-# Ⅴ.Interface Call Instructions
+Ⅵ.Interface Call Instructions
+------
     1. SDK initialization. 
        Create a JNI environment and the application in the Activity: (must be called at the beginning of the game)
       a. If you call initialization interface in onCreate of the main Activity. then call:
