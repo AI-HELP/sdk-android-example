@@ -15,13 +15,14 @@ Android SDK 接入说明
 五、接入工程配置
 ------
   修改elvachatservice文件夹里的AndroidManifest.xml，增加需要的配置：
-      1、增加需要的权限
+   ### 1、增加需要的权限
       
           <uses-permission android:name="android.permission.INTERNET" />
           <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
           <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
           <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-     2、增加activity:
+     
+   ### 2、增加activity:
           
           <activity
             android:name="com.ljoy.chatbot.ChatMainActivity"
@@ -41,7 +42,7 @@ Android SDK 接入说明
                     android:pathPrefix="/elvaFAQ" />
             </intent-filter>
           </activity>
-      3、增加meta
+   ### 3、增加meta
         
           <meta-data
             android:name="com.google.android.gms.version"
