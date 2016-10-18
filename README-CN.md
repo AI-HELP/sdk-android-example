@@ -64,9 +64,9 @@ Android SDK 接入说明
             在Cocos2dx中调用：ECServiceCocos2dx::init(string appKey,string domain,string appId)<br />   
           
 #### 2、接口调用方法
-1) 智能客服主界面启动，调用showElva方法，启动机器人界面<br />
+> 1) 智能客服主界面启动，调用showElva方法，启动机器人界面<br />
             ECServiceCocos2dx:: showElva (string playerName , string playerUid, int serverId, string playerParseId, string showConversationFlag,cocos2d::ValueMap& config); <br />
-> 参数说明:<br />
+> > 参数说明:<br />
               playerName: 游戏中玩家名称。<br />
               playerUid:玩家在游戏里的唯一标示id。<br />
               serverId:玩家所在的服务器编号。<br />
@@ -74,7 +74,7 @@ Android SDK 接入说明
               showConversationFlag(0或1):是否为vip, 0:标示非VIP；1:表示：VIP。此处为1时，将在机器人的聊天界面右上角，提供人工聊天的入口功能。<br />
               config : 可选，自定义ValueMap信息。可以在此处设置特定的Tag信息。<br />
 > 
-> 参数示例: <br />    
+> > 参数示例: <br />    
 
     ECServiceCocos2dx:: showElva (“elvaTestName”,“12349303258”,1, “es234-3dfs-d42f-342sfe3s3”,”1”,
       { 
