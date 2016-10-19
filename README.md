@@ -13,7 +13,7 @@ Put ECServiceCocos2dx.h, ECServiceCocos2dx.cpp in the interface folder in your C
 Copy the elvachatservice folder to your main directory
 Ⅳ. Import Google App Indexing into project
 ------
-Import play-services-appindexing into your project(IF the item google service exists, this step can be ignored).
+Import play-services-appindexing into your project(IF the item google service appindexing exists, this step can be ignored).
 Ⅴ. Access Project Configuration
 ------
 Modify the AndroidManifest.xml in elvachatservice folder to add the required configuration:
