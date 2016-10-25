@@ -74,6 +74,7 @@
                 android:layout_marginLeft="22dp"
                 android:layout_marginRight="15dp"
                 android:text="message content"
+                android:textIsSelectable="true"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#ff000000"
                 android:layout_marginTop="8dp" />
@@ -87,6 +88,7 @@
                 android:layout_marginRight="15dp"
                 android:clickable="true"
                 android:text="url"
+                android:textIsSelectable="true"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#ff0000ff" />
 
@@ -94,6 +96,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="url2"
+                android:textIsSelectable="true"
                 android:id="@+id/ab__msg_left_url2"
                 android:layout_marginLeft="22dp"
                 android:layout_marginRight="15dp"

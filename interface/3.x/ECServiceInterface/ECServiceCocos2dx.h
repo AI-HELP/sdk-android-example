@@ -33,9 +33,8 @@ public:
     static void setUserName(string playerName);//在需要的接口之前调用，建议游戏刚进入就默认调用
     static void showConversation(string playerUid,int serverId);//请优先实现setUserName接口
     static void showConversation(string playerUid,int serverId,cocos2d::ValueMap& config);
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     static bool setSDKLanguage(const char* locale);
-#endif
+    
 };
 
 #endif
