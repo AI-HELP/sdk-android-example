@@ -33,10 +33,10 @@ public class ElvaChatServiceHelper {
 
     /*init 初始化后，从hostActivity跳转到聊天主界面ChatMainActivity.class,并向ChatMainActivity传递参数：不带config*/
     public static void showElvaChatServiceFrom2dx(String npcName,String userName,String uid,String parseId,int serverId,String showConversationFlag) {
-        ELvaChatServiceSdk.showElvaChatService(npcName,userName,uid,parseId,serverId,showConversationFlag);
+        ELvaChatServiceSdk.showElvaChatService(npcName,userName,uid,parseId,String.valueOf(serverId),showConversationFlag);
     }
     public static void showElvaChatServiceFrom2dx(String npcName,String userName,String uid,String parseId,int serverId,String showConversationFlag,HashMap customData) {
-        ELvaChatServiceSdk.showElvaChatService(npcName,userName,uid,parseId,serverId,showConversationFlag,customData);
+        ELvaChatServiceSdk.showElvaChatService(npcName,userName,uid,parseId,String.valueOf(serverId),showConversationFlag,customData);
     }
 
     /*init 初始化后，从hostActivity跳转到FAQ主界面FAQActivity.class,并向FAQActivity传递参数：不带config*/
@@ -74,7 +74,7 @@ public class ElvaChatServiceHelper {
     }
 
     public static void setServerId(int serverId) {
-        ELvaChatServiceSdk.setServerId(serverId);
+        ELvaChatServiceSdk.setServerId(String.valueOf(serverId));
     }
 
     public static void setAppId(String appid) {
@@ -83,10 +83,10 @@ public class ElvaChatServiceHelper {
 
     /*manul*/
     public static void showConversation(String uid,int serverId){
-        ELvaChatServiceSdk.showConversation(uid,serverId);
+        ELvaChatServiceSdk.showConversation(uid,String.valueOf(serverId));
     }
     public static void showConversation(String uid,int serverId,HashMap customData) {
-        ELvaChatServiceSdk.showConversation(uid,serverId,customData);
+        ELvaChatServiceSdk.showConversation(uid,String.valueOf(serverId),customData);
     }
 
     /*init 初始化后，从hostActivity跳转到FAQ主界面FAQActivity.class,并向showFAQSection传递参数：不带config*/
