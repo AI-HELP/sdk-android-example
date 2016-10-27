@@ -9,7 +9,7 @@
   <string name="action_link_introduction">下面是壹些妳可能想知道的事情</string>
   <string name="answer_satisfy">您對這個回答還滿意嗎</string>
   <string name="net_work_error">請檢查您的網絡</string>
-  <string name="no_more_than_chars">不能超過200個字！</string>
+  <string name="no_more_than_chars">不能超過%s個字！</string>
   <string name="no_png_upload">SD卡不存在或者不可讀寫!</string>
   <string name="smaller_picture">上傳的圖片太大了！</string>
   <string name="goto_Elva">聯系客服</string>

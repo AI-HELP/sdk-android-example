@@ -8,7 +8,7 @@
     <string name="test_send3">test_send3</string>
     <string name="action_link_introduction">Some useful tips below</string>
     <string name="answer_satisfy">Are you saticfied with this answer?</string>
-    <string name="no_more_than_chars">No more than 200 chars!</string>
+    <string name="no_more_than_chars">No more than %s chars!</string>
     <string name="no_png_upload">SD card does not exist or can not be written!</string>
     <string name="smaller_picture"> Picture uploaded is too big!</string>
     <string name="net_work_error">check your network</string>
