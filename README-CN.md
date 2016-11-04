@@ -3,6 +3,7 @@
 2.<div>
     <table border="0">
       <tr>
+        <th>方法</th>
         <th>showElva</th>
         <th>showConversation</th>
         <th>showFAQs</th>
@@ -10,6 +11,7 @@
         <th>showSingleFAQ</th>
       </tr>
       <tr>
+        <td>作用</td>
         <td>启动机器人界面</td>
         <td>调用人工客服入口</td>
         <td>展示FAQ列表</td>
