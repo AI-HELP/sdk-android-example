@@ -22,7 +22,7 @@
 </div>
 
 
-Android SDK 接入说明
+Android SDK 接入具体说明
 =====
 一、下载android sdk
 ------
