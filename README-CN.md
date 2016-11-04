@@ -1,11 +1,23 @@
 重点提醒：<br />
 1.	一定要进行初始化init操作，不然会无法进入Elva智能客服系统。<br />
-2.	showElva方法				启动机器人界面<br />
-    showConversation方法		调用人工客服入口<br />
-    showFAQs	方法			展示FAQ列表<br />
-    showFAQSection方法		展示Section<br />
-    showSingleFAQ方法	 	展示单条FAQ<br />
-
+2.<div>
+    <table border="0">
+      <tr>
+        <th>showElva</th>
+        <th>showConversation</th>
+        <th>showFAQs</th>
+        <th>showFAQSection</th>
+        <th>showSingleFAQ</th>
+      </tr>
+      <tr>
+        <td>启动机器人界面</td>
+        <td>调用人工客服入口</td>
+        <td>展示FAQ列表</td>
+        <td>展示FAQ列表</td>
+        <td>展示Section</td>
+      </tr>
+    </table>
+</div>
 
 
 Android SDK 接入说明
