@@ -15,8 +15,8 @@
         <td>启动机器人界面</td>
         <td>调用人工客服入口</td>
         <td>展示FAQ列表</td>
-        <td>展示FAQ列表</td>
         <td>展示Section</td>
+        <td>展示单条FAQ</td>
       </tr>
     </table>
 </div>
