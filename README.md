@@ -1,5 +1,9 @@
-  Android SDK access instructions for English: https://github.com/CS30-NET/android-sdk-stable/blob/master/README.md <br />
-  中文版Android SDK接入说明：https://github.com/CS30-NET/android-sdk-stable/blob/master/README-CN.md
+Android SDK access instructions for English: https://github.com/CS30-NET/android-sdk-stable/blob/master/README.md <br />
+中文版Android SDK接入说明：https://github.com/CS30-NET/android-sdk-stable/blob/master/README-CN.md
+1.Remember to initialize, otherwise the user can not enter Elva intelligent customer service system.
+2.  
+  
+  
 Android SDK Access Instructions
 =====
 Ⅰ. Download Android SDK.
