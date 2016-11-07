@@ -1,7 +1,27 @@
 Android SDK access instructions for English: https://github.com/CS30-NET/android-sdk-stable/blob/master/README.md <br />
-中文版Android SDK接入说明：https://github.com/CS30-NET/android-sdk-stable/blob/master/README-CN.md
-1.Remember to initialize, otherwise the user can not enter Elva intelligent customer service system.
-2.  
+中文版Android SDK接入说明：https://github.com/CS30-NET/android-sdk-stable/blob/master/README-CN.md<br />
+Highlights<br />
+1.Remember to initialize, otherwise the user can not enter Elva intelligent customer service system.<br />
+2.<div>
+    <table border="0">
+      <tr>
+        <th>Method</th>
+        <th>showElva</th>
+        <th>showConversation</th>
+        <th>showFAQs</th>
+        <th>showFAQSection</th>
+        <th>showSingleFAQ</th>
+      </tr>
+      <tr>
+        <td>Purpose</td>
+        <td>Start the main robot interface</td>
+        <td>Open the manual CS interface</td>
+        <td>Show FAQ list</td>
+        <td>Show Section</td>
+        <td>Show a single FAQ</td>
+      </tr>
+    </table>
+</div>
   
   
 Android SDK Access Instructions
