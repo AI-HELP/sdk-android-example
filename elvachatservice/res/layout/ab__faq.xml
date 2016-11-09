@@ -73,7 +73,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
                     android:gravity="start"
-                    android:text="@string/hs__mark_yes_no_question"
+                    android:text="@string/mark_yes_no_question"
                     android:textColor="#aa000000"
                     android:textSize="17sp"/>
 
@@ -85,7 +85,7 @@
                     android:gravity="center"
                     android:textColor="#FF0000"
                     android:textSize="17sp"
-                    android:text="@string/hs__mark_no"/>
+                    android:text="@string/mark_no"/>
 
                 <TextView
                     android:id="@+id/ab__faq_helpful_button"
@@ -95,7 +95,7 @@
                     android:gravity="center"
                     android:textColor="#FF0000"
                     android:textSize="17sp"
-                    android:text="@string/hs__mark_yes"/>
+                    android:text="@string/mark_yes"/>
                 <TextView
                     android:id="@+id/ab__faq_contact_us_button"
                     android:layout_width="120dp"
