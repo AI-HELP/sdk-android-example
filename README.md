@@ -11,9 +11,9 @@
   6、显示的优化
 ## 1.1.11
   1、对中文繁体语言支持<br />
-  2、增加语音识别输入<br />
+  2、增加语音识别输入功能<br />
   3、增加接口FAQ进入机器人后显示人工入口<br />
-  4、faq支持点赞
+  4、增加Web端FAQ点赞功能
 # SDK接入说明
 
 中文版Android SDK接入说明：https://github.com/CS30-NET/android-sdk-stable/blob/master/README-CN.md<br />
