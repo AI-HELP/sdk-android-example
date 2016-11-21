@@ -79,6 +79,29 @@
                 android:textColor="#ff000000"
                 android:layout_marginTop="8dp" />
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/upload_image_prog"
+                    android:visibility="gone"
+                    android:src="@drawable/amin_pgbar" />
+
+
+                <com.ljoy.chatbot.view.ProcessImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ab__upload_img"
+                    android:visibility="gone"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="0dp" />
+            </RelativeLayout>
+
             <TextView
                 android:id="@+id/ab__msg_left_url"
                 android:layout_width="wrap_content"

@@ -1,7 +1,4 @@
 <resources>
-  <string name="app_name">聊天客服</string>
-
-  <string name="hello_world">大家好</string>
   <string name="action_settings">功能</string>
   <string name="test_send1">測試功能1</string>
   <string name="test_send2">測試功能2</string>

@@ -15,11 +15,11 @@
     <string name="break_off_remind">Your network is disconnected,please try again later</string>
     <string name="elva__help_header">help</string>
     <string name="elva__question_header">question</string>
-    <string name="mark_helpful_toast">Вопрос был обозначен как Полезный</string>
-    <string name="mark_no">НЕТ</string>
-    <string name="mark_unhelpful_toast">Вопрос был обозначен как Бесполезный</string>
-    <string name="mark_yes">ДА</string>
-    <string name="mark_yes_no_question">Это было полезно?</string>
+    <string name="mark_helpful_toast">질문이 도움이 되었다고 표시되었습니다</string>
+    <string name="mark_no">아니요</string>
+    <string name="mark_unhelpful_toast">질문이 도움이 되지 않았다고 표시되었습니다</string>
+    <string name="mark_yes">예</string>
+    <string name="mark_yes_no_question">이 내용이 유용했나요?</string>
     <string name="permission_denied_message">Storage permission is required to upload picture</string>
     <string name="setting">Settings</string>
 </resources>
