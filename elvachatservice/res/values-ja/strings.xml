@@ -10,16 +10,16 @@
     <string name="smaller_picture"> Picture uploaded is too big!</string>
     <string name="net_work_error">check your network</string>
     <string name="main_title">Elva</string>
-    <string name="goto_Elva">Contact Us</string>
+    <string name="goto_Elva">お問い合わせ</string>
     <string name="self_service_interface">Self-Service</string>
     <string name="break_off_remind">Your network is disconnected,please try again later</string>
     <string name="elva__help_header">help</string>
     <string name="elva__question_header">question</string>
-    <string name="mark_helpful_toast">You found this helpful</string>
-    <string name="mark_no">NO</string>
-    <string name="mark_unhelpful_toast">You didn\'t find this helpful</string>
-    <string name="mark_yes">YES</string>
-    <string name="mark_yes_no_question">Was this helpful?</string>
+    <string name="mark_helpful_toast">疑問が役に立ったと評価されました</string>
+    <string name="mark_no">いいえ</string>
+    <string name="mark_unhelpful_toast">疑問が役に立たなかったと評価されました</string>
+    <string name="mark_yes">はい</string>
+    <string name="mark_yes_no_question">お役に立ちましたか?</string>
     <string name="permission_denied_message">Storage permission is required to upload picture</string>
     <string name="setting">Settings</string>
 </resources>

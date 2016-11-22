@@ -10,7 +10,7 @@
     <string name="smaller_picture"> Picture uploaded is too big!</string>
     <string name="net_work_error">check your network</string>
     <string name="main_title">Elva</string>
-    <string name="goto_Elva">Contact Us</string>
+    <string name="goto_Elva">ติดต่อเรา</string>
     <string name="self_service_interface">Self-Service</string>
     <string name="break_off_remind">Your network is disconnected,please try again later</string>
     <string name="elva__help_header">help</string>
