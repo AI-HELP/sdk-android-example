@@ -508,5 +508,18 @@ bool ECServiceCocos2dx::setSDKLanguage(const char *locale) {
     return true;
 }
 
+void ECServiceCocos2dx::useDevice(){
+    cocos2d::JniMethodInfo minfo;
+    bool hasMethod = cocos2d::JniHelper::getStaticMethodInfo(minfo,
+                                                             "net/cs30/elva/chatservice/ElvaChatServiceHelper",
+                                                             "useDevice",
+                                                             "()V");
+    if(hasMethod) {
+        jstring idStr = minfo.env->NewStringUTF(locale);
+        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, idStr);
+    }
+}
+
+
 
 #endif

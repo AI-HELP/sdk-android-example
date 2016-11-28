@@ -34,6 +34,7 @@ public:
     static void showConversation(string playerUid,int serverId);//请优先实现setUserName接口
     static void showConversation(string playerUid,int serverId,cocos2d::ValueMap& config);
     static bool setSDKLanguage(const char* locale);
+    static void useDevice();
     
 };
 

@@ -102,5 +102,9 @@ public class ElvaChatServiceHelper {
         ELvaChatServiceSdk.setSDKLanguage(language);
     }
 
+    public static void useDevice(){
+        ELvaChatServiceSdk.setUseDevice();
+    }
+
 
 }
