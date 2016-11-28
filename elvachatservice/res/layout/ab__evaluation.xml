@@ -120,7 +120,7 @@
         android:id="@+id/ab__msg_critic_result2"
         android:layout_below="@+id/rl_evaluation"
         android:visibility="gone"
-        android:layout_alignParentStart="false"
+        android:layout_alignParentLeft="false"
         android:background="@drawable/ecs_text_bg_1"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="5dp"

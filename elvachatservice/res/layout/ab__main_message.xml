@@ -45,7 +45,7 @@
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true">
+                android:layout_alignParentRight="true">
 
                 <ImageButton
                     android:layout_width="wrap_content"
@@ -146,7 +146,7 @@
                 android:layout_height="45dp"
                 android:gravity="center_vertical"
                 android:id="@+id/ab__func_bar"
-                android:layout_alignParentStart="false"
+                android:layout_alignParentLeft="false"
                 android:layout_below="@+id/ab__action_bar_top_bg"
                 android:layout_marginTop="11dp"
                 >
@@ -164,12 +164,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/ab__input_edit"
-                    android:layout_alignParentStart="false"
+                    android:layout_alignParentLeft="false"
                     android:layout_marginLeft="5dp"
                     android:textColor="#ff000000"
                     android:focusable="true"
                     android:layout_toLeftOf="@+id/ab__chat_word_voice"
-                    android:layout_toEndOf="@id/ab__open_album"
+                    android:layout_toRightOf="@id/ab__open_album"
                     android:layout_toStartOf="@id/ab__chat_word_voice"
                     android:background="@android:drawable/edit_text" />
                 <ImageButton
@@ -185,7 +185,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:id="@+id/ab__input_send_btn"
-                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
                     android:layout_alignParentTop="false"
                     android:background="@drawable/chat_bot_send"
                     android:onClick="onSendMsgClick"
@@ -199,7 +199,7 @@
             android:layout_height="match_parent"
             android:id="@+id/ab__webview_container"
             android:visibility="gone"
-            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:layout_below="@+id/ab__title"
             android:background="@drawable/ecs_text_bg_1">
 

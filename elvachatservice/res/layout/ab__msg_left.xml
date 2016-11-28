@@ -50,7 +50,7 @@
             android:id="@+id/msg_ll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/imageView1"
+            android:layout_toRightOf="@id/imageView1"
             android:orientation="vertical"
             android:layout_marginRight="40dp">
 
@@ -245,12 +245,12 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/ab__msg_critic_result"
         android:layout_below="@+id/ab__msg_critic_main"
         android:visibility="gone"
-        android:layout_alignParentStart="false"
+        android:layout_alignParentLeft="false"
         android:background="@drawable/ecs_text_bg_1"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="5dp"

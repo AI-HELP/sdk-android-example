@@ -38,7 +38,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toStartOf="@id/imageView1"
+            android:layout_toLeftOf="@id/imageView1"
             android:background="@drawable/chat_bot_msg_bg_right"
             android:orientation="vertical"
             android:layout_marginLeft="40dp">
