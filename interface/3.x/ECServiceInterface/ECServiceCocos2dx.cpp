@@ -504,6 +504,8 @@ bool ECServiceCocos2dx::setSDKLanguage(const char *locale) {
     if(hasMethod) {
         jstring idStr = minfo.env->NewStringUTF(locale);
         minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, idStr);
+        minfo.env->DeleteLocalRef(idStr);
+        minfo.env->DeleteLocalRef(minfo.classID);
     }
     return true;
 }
@@ -515,8 +517,8 @@ void ECServiceCocos2dx::useDevice(){
                                                              "useDevice",
                                                              "()V");
     if(hasMethod) {
-        jstring idStr = minfo.env->NewStringUTF(locale);
-        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID, idStr);
+        minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
+        minfo.env->DeleteLocalRef(minfo.classID);
     }
 }
 
