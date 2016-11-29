@@ -1,5 +1,9 @@
-#Elva Android SDK version update
-## 1.1.4 (latest)
+# Elva Android SDK version update
+## 1.1.6 (latest)
+1, in accordance with the device id to support customer complaints
+## 1.1.5
+1, players have read the message tag
+## 1.1.4
 1, FAQ like, support Russian, Korean, Spanish, Japanese, Arabic, Thai<br />
 2, customer service reply picture direct display<br />
 3, click on the picture to enlarge to full screen
