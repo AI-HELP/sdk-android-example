@@ -29,7 +29,7 @@ jobject parseValueVectorToArrayElva (JNIEnv *env, cocos2d::CCDictionary* metaDat
     return jarrayobj;
 }
 
-jobject parseCCArrayToArrayList (JNIEnv *env, cocos2d::CCArray *data) {
+jobject parseCCArrayToArrayListElva (JNIEnv *env, cocos2d::CCArray *data) {
     if(data == NULL) {
         return NULL;
     }
@@ -51,11 +51,11 @@ jobject parseCCArrayToArrayList (JNIEnv *env, cocos2d::CCArray *data) {
     return jarrayobj;
 }
 
-jobject parseTagsArray (JNIEnv *env, cocos2d::CCDictionary* metaData) {
+jobject parseTagsArrayElva (JNIEnv *env, cocos2d::CCDictionary* metaData) {
     if(metaData == NULL) {
         return NULL;
     }
-    return parseCCArrayToArrayList(env, dynamic_cast<cocos2d::CCArray*> (metaData->objectForKey("hs-tags")));
+    return parseCCArrayToArrayListElva(env, dynamic_cast<cocos2d::CCArray*> (metaData->objectForKey("hs-tags")));
 }
 
 jobject parseConfigDictionaryElva (JNIEnv* env, cocos2d::CCDictionary *config) {
@@ -96,7 +96,7 @@ jobject parseConfigDictionaryElva (JNIEnv* env, cocos2d::CCDictionary *config) {
                     jstring value = env->NewStringUTF(valStr->getCString());
                     env->CallObjectMethod(metaMap, map_put_method, key, value);
                 } else if (valStr == NULL) {
-                    env->CallObjectMethod(metaMap, map_put_method, key, parseTagsArray(env, metaData));
+                    env->CallObjectMethod(metaMap, map_put_method, key, parseTagsArrayElva(env, metaData));
                 }
             }
         }
