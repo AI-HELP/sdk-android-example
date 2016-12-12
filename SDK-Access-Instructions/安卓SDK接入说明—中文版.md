@@ -54,7 +54,7 @@ Android SDK 接入具体说明
        android:name="com.ljoy.chatbot.FAQActivity"
        android:configChanges="orientation|screenSize|locale"
        android:screenOrientation="portrait"
-       android:theme="android:Theme.Holo.Light.DarkActionBar">
+       android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
        <intent-filter android:label="@string/app_name">
           <action android:name="android.intent.action.VIEW" />
           <category android:name="android.intent.category.DEFAULT" />
