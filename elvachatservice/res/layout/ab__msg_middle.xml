@@ -4,18 +4,16 @@
     android:focusable="false"
     android:focusableInTouchMode="false"
     android:paddingTop="10dp"
-    android:paddingBottom="10dp">
+    android:paddingBottom="0dp">
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:id="@+id/ab__msg_middle_main"
-        android:background="@drawable/ecs_text_bg_1"
+        android:background="#ededed"
         android:layout_centerHorizontal="true"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
 
         <TextView
             android:id="@+id/ab__msg_middle_text"
@@ -23,6 +21,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Thank you for comment"
+	        android:textColor="#333333"
             android:layout_centerInParent="true" />
     </RelativeLayout>
 

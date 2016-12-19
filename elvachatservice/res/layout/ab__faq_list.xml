@@ -1,23 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ab__faq_list_ll"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/ab__faq_list_ll"
     android:orientation="vertical">
 
-    <TextView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:id="@+id/ab__faq_list_rl"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
         android:minHeight="48dp"
-        android:padding="16dp"
-        android:textColor="#aa000000"
-        android:textSize="17sp"
-        android:id="@+id/ab__faq_list_tv"/>
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        >
+
+        <TextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/ab__faq_list_tv"
+            android:paddingRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="#333333"
+            android:textSize="17sp"/>
+
+        <ImageView
+            android:id="@+id/type16"
+            android:layout_width="7dp"
+            android:layout_height="13dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/more"
+            />
+    </RelativeLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="#C0C0C0"
-        android:layout_below="@+id/ab__faq_list_tv"/>
+        android:layout_below="@+id/ab__faq_list_tv"
+        android:background="#d1d1d1"/>
 </LinearLayout>

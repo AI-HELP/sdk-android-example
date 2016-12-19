@@ -1,10 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <style name="AppTheme" parent="android:Theme.Material.Light">
     </style>
-
+    <declare-styleable name="LineEditeText">
+        <attr name="lineColorEt" format="color"/>
+    </declare-styleable>
     <style name="textview_allgrade_content">
         <item name="android:layout_height">30dp</item>
         <item name="android:gravity">center</item>
@@ -14,6 +14,4 @@
         <item name="android:textSize">20sp</item>
         <item name="android:clickable">true</item>
     </style>
-
-
 </resources>
