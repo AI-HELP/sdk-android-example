@@ -246,7 +246,6 @@
         android:text="url"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#2960d9"
-        android:textIsSelectable="true"
         android:textSize="14sp"/>
 
       <TextView
