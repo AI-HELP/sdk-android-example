@@ -1,8 +1,8 @@
 # Elva Android SDK版本更新
 ## 1.1.8 (最新)
-1、url用https协议
-2、表单短连接显示title
-3、支持faq直接进入人工
+1、url用https协议<br />
+2、表单短连接显示title<br />
+3、支持faq直接进入人工<br />
 4、客服系统的新界面
 ## 1.1.6 
 1、支持按照设备id提交客诉<br />
