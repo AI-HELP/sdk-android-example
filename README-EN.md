@@ -1,5 +1,10 @@
 # Elva Android SDK version update
-## 1.1.6 (latest)
+## 1.1.8 (latest)
+1, url with https protocol<br />
+2, the form short connection display title<br />
+3, support from the FAQ directly into the manual<br />
+4, the new interface of customer service system
+## 1.1.6
 1, in accordance with the device id to support customer complaints
 ## 1.1.5
 1, players have read the message tag
