@@ -257,7 +257,6 @@
         android:layout_marginRight="15dp"
         android:text="url2"
         android:textColor="#2960d9"
-        android:textIsSelectable="true"
         android:textSize="14sp"/>
 
       <LinearLayout
