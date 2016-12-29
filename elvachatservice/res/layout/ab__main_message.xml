@@ -195,7 +195,7 @@
             android:background="@color/transparent"
             android:ems="10"
             android:focusable="true"
-            android:hint="输入问题"
+            android:hint="your question"
             android:paddingBottom="10dp"
             android:paddingTop="10dp"
             android:text=""
