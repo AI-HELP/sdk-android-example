@@ -38,7 +38,7 @@ Android SDK 接入具体说明
   导入play-services-appindexing到您的项目中(如果项目包含google service appindexing可忽略该步)。
 五、接入工程配置
 ------
-  修改elvachatservice文件夹里的AndroidManifest.xml，增加需要的配置：     
+  在AndroidManifest.xml，增加需要的配置：     
 #### 1、增加需要的权限
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -82,7 +82,7 @@ AppId:app唯一标识，从Web管理系统获取。<br />
 注：后面这三个参数，请使用注册时的邮箱地址作为登录名登录 [智能客服后台](https://cs30.net/elva)。在Settings菜单Applications页面查看。初次使用，请先登录[智能客服官网](http://cs30.net/index.html)自助注册。<br />
 > 
 > b.如果需要延迟调用，则：<br />
-在activity.java中调用：SetActivity(this)<br />
+在activity.java中调用：ElvaChatServiceHelper.setHostActivity(this)<br />
 在Cocos2dx中调用：ECServiceCocos2dx::init(string appKey,string domain,string appId)<br />   
           
 #### 2、接口调用方法
