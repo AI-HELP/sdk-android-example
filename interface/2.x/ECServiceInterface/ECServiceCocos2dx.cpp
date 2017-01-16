@@ -542,4 +542,23 @@ void ECServiceCocos2dx::useDevice(){
     }
 }
 
+void ECServiceCocos2dx::setEvaluateStar(int star){
+    cocos2d::JniMethodInfo minfo;
+    if(!cocos2d::JniHelper::getStaticMethodInfo(minfo,"net/cs30/elva/chatservice/ElvaChatServiceHelper"
+                                                ,"setEvaluateStar"
+                                                ,"(I)V")
+       )
+    {
+        return;
+    }
+    else
+    {
+        minfo.env->CallStaticVoidMethod(minfo.classID
+                                        ,minfo.methodID
+                                        ,(jint)star
+                                        );
+        minfo.env->DeleteLocalRef(minfo.classID);
+    } 
+}
+
 #endif

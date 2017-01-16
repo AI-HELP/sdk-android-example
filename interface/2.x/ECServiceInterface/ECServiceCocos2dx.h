@@ -35,6 +35,7 @@ public:
     static void showConversation(string playerUid,int serverId,cocos2d::CCDictionary *config);
     static bool setSDKLanguage(const char* locale);
     static void useDevice();
+    static void setEvaluateStar(int star);//评价默认星星数量
     
 };
 

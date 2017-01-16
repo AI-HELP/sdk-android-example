@@ -106,5 +106,9 @@ public class ElvaChatServiceHelper {
         ELvaChatServiceSdk.setUseDevice();
     }
 
+    public static void setEvaluateStar(int star) {
+        ELvaChatServiceSdk.setEvaluateStar(star);
+    }
+
 
 }
