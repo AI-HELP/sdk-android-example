@@ -91,7 +91,7 @@ ECServiceCocos2dx :: showElva (string playerName, string playerUid, int serverId
 playerName: The name of the player in the game.<br />
 playerUid: The player's unique id in the game.<br />
 serverId: The server ID of the player.<br />
-playerParseId: Push token.<br />
+playerParseId: Null.<br />
 showConversationFlag (0 or 1): whether VIP, 0: marked non-VIP; 1: VIP. Here is 1, will be in the upper right corner of the robot chat interface, to provide artificial chat entry function.<br />
 config: Optional, custom ValueMap information. You can set specific Tag information here.<br />
 ![showElva](https://github.com/CS30-NET/Pictures/blob/master/showElva-EN-Android.png "showElva")<br />
