@@ -3,6 +3,7 @@ using UnityEngine;
 public class ElvaChatServiceSDKAndroid
 {
     private AndroidJavaClass sdk;
+    private AndroidJavaObject currentActivity;
 
     private static ElvaChatServiceSDKAndroid instance;
 
@@ -13,16 +14,14 @@ public class ElvaChatServiceSDKAndroid
         }
         return instance;
     }
-    public ElvaChatServiceSDKAndroid()
-    {
+    public ElvaChatServiceSDKAndroid(){
+        AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+        currentActivity = jc.GetStatic<AndroidJavaObject>("currentActivity");
         sdk = new AndroidJavaClass("com.ljoy.chatbot.sdk.ELvaChatServiceSdk");
-        sdk.CallStatic("init",activity,"","im30.cs30.net","slots_platform_2803a29c-e53c-435b-a527-56eab1adfa93");
     }
 
     public void init(string appKey,string domain,string appId){
-        AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
-        AndroidJavaObject activity = jc.GetStatic<AndroidJavaObject>("currentActivity");
-        sdk.CallStatic("init",activity,appKey,domain,appId);
+        sdk.CallStatic("init",currentActivity,appKey,domain,appId);
     }
 
     public void showElva(string playerName,string playerUid,string serverId,string playerParseId,string showConversationFlag){
