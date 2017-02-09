@@ -91,14 +91,14 @@ ELvaChatServiceSdk.showElvaChatService(String npcName,String userName,String uid
 ![showElva](https://github.com/CS30-NET/Pictures/blob/master/showElva-CN-Android.png "showElva")<br />
 * 参数示例:   
     
-        ArrayList\<String> tags = new ArrayList();
+        ArrayList<String> tags = new ArrayList();
         说明：hs-tags对应的值为ArrayList类型，此处传入自定义的Tag，需要在Web管理配置同名称的Tag才能生效
         tags.add("pay1");
         tags.add("s1");
         tags.add("elvaTestTag");
-        HashMap\<String,Object> map = new HashMap();
+        HashMap<String,Object> map = new HashMap();
         map.put("hs-tags",tags);
-        HashMap\<String,Object> config = new HashMap();
+        HashMap<String,Object> config = new HashMap();
         config.put("hs-custom-metadata",map);
         ELvaChatServiceSdk.showElvaChatService(“elvaTestName”,“12349303258”,1, “”,”1”,config);
 > 
