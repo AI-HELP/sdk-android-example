@@ -28,17 +28,45 @@ public class ElvaChatServiceSDKAndroid
         sdk.CallStatic("showElvaChatService","elva",playerName,playerUid,serverId,playerParseId,showConversationFlag);
     }
 
-    public void ShowFAQList()
-    {
+    public void showElva(string playerName,string playerUid,string serverId,string playerParseId,string showConversationFlag,Dictionary<string,object> config){
+        AndroidJavaObject javaMap = customMap(config);
+        sdk.CallStatic("showElvaChatService","elva",playerName,playerUid,serverId,playerParseId,showConversationFlag,javaMap);
+    }
+
+    public void ShowFAQList(){
         sdk.CallStatic("showFAQList");
+    }
+
+    public void ShowFAQList(Dictionary<string,object> config){
+        AndroidJavaObject javaMap = customMap(config);
+        sdk.CallStatic("showFAQList",javaMap);
     }
 
     public void showFAQSection(string sectionPublishId){
         sdk.CallStatic("showFAQSection",sectionPublishId);
     }
 
+    public void showFAQSection(string sectionPublishId,Dictionary<string,object> config){
+        AndroidJavaObject javaMap = customMap(config);
+        sdk.CallStatic("showFAQSection",sectionPublishId,javaMap);
+    }
+
     public void showSingleFAQ(string faqId){
         sdk.CallStatic("showSingleFAQ",faqId);
+    }
+
+    public void showSingleFAQ(string faqId,Dictionary<string,object> config){
+        AndroidJavaObject javaMap = customMap(config);
+        sdk.CallStatic("showSingleFAQ",faqId,javaMap);
+    }
+
+    public void showConversation(string uid,string serverId){
+        sdk.CallStatic("showConversation",uid,serverId);
+    }
+
+    public void showConversation(string uid,string serverId,Dictionary<string,object> config){
+        AndroidJavaObject javaMap = customMap(config);
+        sdk.CallStatic("showConversation",uid,serverId,javaMap);
     }
 
 
@@ -61,9 +89,41 @@ public class ElvaChatServiceSDKAndroid
     {
         sdk.CallStatic("setServerId",serverId);
     }
-    public void ShowConversation(string uid,string serverId)
-    {
-        sdk.CallStatic("showConversation",uid,serverId);
+
+    public void setSDKLanguage(string sdkLanguage){
+        sdk.CallStatic("setSDKLanguage",sdkLanguage);
+    }
+
+    public void setUseDevice(){
+        sdk.CallStatic("setUseDevice");
+    }
+
+    public void setEvaluateStar(int star){
+        sdk.CallStatic("setEvaluateStar",star);
+    }
+
+    private AndroidJavaObject customMap(Dictionary<string,object> dic){
+        AndroidJavaObject map = dicToMap(dic);
+        map.Call("put","hs-custom-metadata",map);
+        return map;
+    }
+    private AndroidJavaObject dicToMap(Dictionary<string,object> dic){
+        AndroidJavaObject map = new AndroidJavaClass("java.util.HashMap");
+        foreach(KeyValuePair<string,object> pair in dic){
+            if(pair.Value is string){
+                map.Call("put",pair.Key,pair.Value);
+            }else if(pair.Value is List<string>){
+                AndroidJavaObject list = new AndroidJavaClass("java.util.ArrayList");
+                List<string> l = pair.Value as List<string>;
+                foreach(string s in l){
+                    list.Call("add",s);
+                }
+                list.Call("add",);
+            }else if(pair.Value is Dictionary<string, object>){
+                map.Call("put",pair.Key,dicToMap(pair.Value as Dictionary<string, object>));
+            }
+        }
+        return map;
     }
 }
 #endif
