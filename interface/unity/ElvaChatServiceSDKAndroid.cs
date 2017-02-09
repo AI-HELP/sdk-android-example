@@ -33,11 +33,11 @@ public class ElvaChatServiceSDKAndroid
         sdk.CallStatic("showElvaChatService","elva",playerName,playerUid,serverId,playerParseId,showConversationFlag,javaMap);
     }
 
-    public void ShowFAQList(){
+    public void showFAQList(){
         sdk.CallStatic("showFAQList");
     }
 
-    public void ShowFAQList(Dictionary<string,object> config){
+    public void showFAQList(Dictionary<string,object> config){
         AndroidJavaObject javaMap = customMap(config);
         sdk.CallStatic("showFAQList",javaMap);
     }
@@ -118,7 +118,7 @@ public class ElvaChatServiceSDKAndroid
                 foreach(string s in l){
                     list.Call("add",s);
                 }
-                list.Call("add",);
+                map.Call("put",pair.Key,list);
             }else if(pair.Value is Dictionary<string, object>){
                 map.Call("put",pair.Key,dicToMap(pair.Value as Dictionary<string, object>));
             }
