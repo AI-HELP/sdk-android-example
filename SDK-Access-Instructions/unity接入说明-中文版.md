@@ -99,7 +99,7 @@ ElvaChatServiceSDKAndroid.getInstance().showElva(string playerName,string player
     Dictionary<string, object> dic = new Dictionary<string, object>();
     dic.Add("dic1", "aaa");
     dic.Add("dic2", "bbb");
-    List<string> tags = new List<string>();
+    List<string> tags = new List<string>();说明：hs-tags对应的值为List类型，此处传入自定义的Tag，需要在Web管理配置同名称的Tag才能生效。
     tag.Add("paid");
     tag.Add("server1");
     dic.Add("hs-tags", tags);
