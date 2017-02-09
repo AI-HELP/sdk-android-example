@@ -86,7 +86,7 @@ AppId:app唯一标识，从Web管理系统获取。<br />
           
 #### 2、接口调用方法
 > 1) 智能客服主界面启动，调用`showElva`方法，启动机器人界面<br />
-ElvaChatServiceSDKAndroid.getInstance().showElva(string playerName,string playerUid,string serverId,string playerParseId,string showConversationFlag,Dictionary<string,object> config); <br />
+ElvaChatServiceSDKAndroid.getInstance().showElva(string playerName,string playerUid,string serverId,string playerParseId,string showConversationFlag,Dictionary\<string,object> config); <br />
 * 参数说明：<br />
               playerName:游戏中玩家名称。 <br />
               playerUid:玩家在游戏里的唯一标示id。 <br />
@@ -96,17 +96,17 @@ ElvaChatServiceSDKAndroid.getInstance().showElva(string playerName,string player
               config:可选，自定义ValueMap信息。可以在此处设置特定的Tag信息。<br />
 ![showElva](https://github.com/CS30-NET/Pictures/blob/master/showElva-CN-Android.png "showElva")<br />
 * 参数示例:   
-    Dictionary<string, object> dic = new Dictionary<string, object>();
+    Dictionary\<string, object> dic = new Dictionary\<string, object>();
     dic.Add("dic1", "aaa");
     dic.Add("dic2", "bbb");
-    List<string> tags = new List<string>();说明：hs-tags对应的值为List类型，此处传入自定义的Tag，需要在Web管理配置同名称的Tag才能生效。
+    List\<string> tags = new List\<string>();说明：hs-tags对应的值为List类型，此处传入自定义的Tag，需要在Web管理配置同名称的Tag才能生效。
     tag.Add("paid");
     tag.Add("server1");
     dic.Add("hs-tags", tags);
     ElvaChatServiceSDKAndroid.getInstance().showElva(“elvaTestName”,“12349303258”,1, “es234-3dfs-d42f-342sfe3s3”,”1”,dic);
 > 
 > 2)展示单条FAQ，调用`showSingleFAQ`方法<br />
-    showSingleFAQ(string faqId,Dictionary<string,object> config);<br />
+    showSingleFAQ(string faqId,Dictionary\<string,object> config);<br />
 * 参数说明：<br />
 faqId:FAQ的PublishID,可以在[智能客服后台](https://cs30.net/elva)中，从FAQs菜单下找到指定FAQ，查看PublishID。<br />
 config:可选，自定义ValueMap信息。参照 1)智能客服主界面启动。<br />
@@ -114,7 +114,7 @@ config:可选，自定义ValueMap信息。参照 1)智能客服主界面启动�
 注：如果在web管理后台配置了FAQ的SelfServiceInterface，并且SDK配置了相关参数，将在显示FAQ的同时，右上角提供功能菜单，可以对相关的自助服务进行调用。<br />
 > 
 > 3)展示相关部分FAQ，调用`showFAQSection`方法<br />
-    showFAQSection(string sectionPublishId,Dictionary<string,object> config);<br />
+    showFAQSection(string sectionPublishId,Dictionary\<string,object> config);<br />
 * 参数说明：<br />
 sectionPublishId:FAQ Section 的PublishID（可以在[智能客服后台](https://cs30.net/elva) 中，从FAQs菜单下[Section]菜单，查看PublishID）<br />
 config:可选，自定义ValueMap信息。参照 1)智能客服主界面启动。<br />
@@ -152,7 +152,7 @@ serverId:服务器ID。<br />
 userName:玩家名称。<br />
 > 
 > 10)直接进行vip_chat人工客服聊天，调用`showConversation`方法(必须确保9）设置玩家名称信息setUserName 已经调用)<br />
-    showConversation(string uid,string serverId,Dictionary<string,object> config);<br />
+    showConversation(string uid,string serverId,Dictionary\<string,object> config);<br />
 * 参数说明:<br />
 playerUid:玩家在游戏里的唯一标示id。<br />
 serverId:玩家所在的服务器编号。<br />
