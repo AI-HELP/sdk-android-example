@@ -91,17 +91,17 @@ ELvaChatServiceSdk.showElvaChatService(String npcName,String userName,String uid
 ![showElva](https://github.com/CS30-NET/Pictures/blob/master/showElva-CN-Android.png "showElva")<br />
 * 参数示例:   
     
-    ArrayList\<String> tags = new ArrayList();说明：hs-tags对应的值为ArrayList类型，此处传入自定义的Tag，需要在Web管理配置同名称的Tag才能生效
-    tags.add("pay1");
-    tags.add("s1");
-    tags.add("elvaTestTag");
-    HashMap\<String,Object> map = new HashMap();
-    map.put("hs-tags",tags);
-    map.put("sdk_version", Constants.SDK_VERSION);
-    //其它数据
-    HashMap\<String,Object> config = new HashMap();
-    config.put("hs-custom-metadata",map);
-    ELvaChatServiceSdk.showElvaChatService(“elvaTestName”,“12349303258”,1, “es234-3dfs-d42f-342sfe3s3”,”1”,config);
+        ArrayList\<String> tags = new ArrayList();说明：hs-tags对应的值为ArrayList类型，此处传入自定义的Tag，需要在Web管理配置同名称的Tag才能生效
+        tags.add("pay1");
+        tags.add("s1");
+        tags.add("elvaTestTag");
+        HashMap\<String,Object> map = new HashMap();
+        map.put("hs-tags",tags);
+        map.put("sdk_version", Constants.SDK_VERSION);
+        //其它数据
+        HashMap\<String,Object> config = new HashMap();
+        config.put("hs-custom-metadata",map);
+        ELvaChatServiceSdk.showElvaChatService(“elvaTestName”,“12349303258”,1, “es234-3dfs-d42f-342sfe3s3”,”1”,config);
 > 
 > 2)展示单条FAQ，调用`showSingleFAQ`方法<br />
     showSingleFAQ(String faqId,HashMap\<String,Object> config);<br />
@@ -150,7 +150,7 @@ serverId:服务器ID。<br />
 userName:玩家名称。<br />
 > 
 > 10)直接进行vip_chat人工客服聊天，调用`showConversation`方法(必须确保9）设置玩家名称信息setUserName 已经调用)<br />
-    showConversation(String uid,String serverId,HashMap<String,Object> config);<br />
+    showConversation(String uid,String serverId,HashMap\<String,Object> config);<br />
 * 参数说明:<br />
 playerUid:玩家在游戏里的唯一标示id。<br />
 serverId:玩家所在的服务器编号。<br />
