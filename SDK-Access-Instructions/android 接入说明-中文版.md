@@ -98,7 +98,6 @@ ELvaChatServiceSdk.showElvaChatService(String npcName,String userName,String uid
         tags.add("elvaTestTag");
         HashMap\<String,Object> map = new HashMap();
         map.put("hs-tags",tags);
-        map.put("version", "1.2.1");
         HashMap\<String,Object> config = new HashMap();
         config.put("hs-custom-metadata",map);
         ELvaChatServiceSdk.showElvaChatService(“elvaTestName”,“12349303258”,1, “”,”1”,config);
