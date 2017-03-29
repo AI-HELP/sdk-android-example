@@ -3,7 +3,7 @@
 1, disable auto check reason while vote stars less than 4.<br />
 ## 1.1.9 
 1, new interface to set the default EvaluateStar.<br />
-## 1.1.8 (latest)
+## 1.1.8
 1, url with https protocol<br />
 2, the form short connection display title<br />
 3, support from the FAQ directly into the manual<br />
