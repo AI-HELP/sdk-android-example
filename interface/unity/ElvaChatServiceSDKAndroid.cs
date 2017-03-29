@@ -103,24 +103,25 @@ public class ElvaChatServiceSDKAndroid
     }
 
     private AndroidJavaObject customMap(Dictionary<string,object> dic){
+		AndroidJavaObject map1 = new AndroidJavaObject("java.util.HashMap");
         AndroidJavaObject map = dicToMap(dic);
-        map.Call("put","hs-custom-metadata",map);
-        return map;
+        map1.Call<string>("put","hs-custom-metadata",map);
+        return map1;
     }
     private AndroidJavaObject dicToMap(Dictionary<string,object> dic){
-        AndroidJavaObject map = new AndroidJavaClass("java.util.HashMap");
+        AndroidJavaObject map = new AndroidJavaObject("java.util.HashMap");
         foreach(KeyValuePair<string,object> pair in dic){
             if(pair.Value is string){
-                map.Call("put",pair.Key,pair.Value);
+                map.Call<string>("put",pair.Key,pair.Value);
             }else if(pair.Value is List<string>){
-                AndroidJavaObject list = new AndroidJavaClass("java.util.ArrayList");
+                AndroidJavaObject list = new AndroidJavaObject("java.util.ArrayList");
                 List<string> l = pair.Value as List<string>;
                 foreach(string s in l){
-                    list.Call("add",s);
+                    list.Call<bool>("add",s);
                 }
-                map.Call("put",pair.Key,list);
+                map.Call<string>("put",pair.Key,list);
             }else if(pair.Value is Dictionary<string, object>){
-                map.Call("put",pair.Key,dicToMap(pair.Value as Dictionary<string, object>));
+                map.Call<string>("put",pair.Key,dicToMap(pair.Value as Dictionary<string, object>));
             }
         }
         return map;
