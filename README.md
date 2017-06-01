@@ -1,7 +1,7 @@
 # Elva Android SDK version update
 ## 1.3.0 (latest)
-1¡¢Adding new interface to show the Customer Service UI that contains the operation functions<br/>
-2¡¢UI Optimize <br/>
+1, Adding new interface to show the Customer Service UI that contains the operation functions<br/>
+2, UI Optimize <br/>
 ## 1.2.0 (latest)
 1, disable auto check reason while vote stars less than 4.<br />
 ## 1.1.9 
