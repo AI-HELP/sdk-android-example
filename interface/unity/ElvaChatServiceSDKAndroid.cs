@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 #if UNITY_ANDROID
 public class ElvaChatServiceSDKAndroid
@@ -100,6 +101,21 @@ public class ElvaChatServiceSDKAndroid
 
     public void setEvaluateStar(int star){
         sdk.CallStatic("setEvaluateStar",star);
+    }
+	
+		    public void showElvaOP(string playerName,string playerUid,string serverId,string playerParseId,string showConversationFlag){
+        AndroidJavaObject javaMap = customMap(config);
+        sdk.CallStatic("showOPList","elva",playerName,playerUid,serverId,playerParseId,showConversationFlag);
+    }
+	
+	    public void showElvaOP(string playerName,string playerUid,string serverId,string playerParseId,string showConversationFlag,Dictionary<string,object> config){
+        AndroidJavaObject javaMap = customMap(config);
+        sdk.CallStatic("showOPList","elva",playerName,playerUid,serverId,playerParseId,showConversationFlag,javaMap);
+    }
+	
+		    public void showElvaOP(string playerName,string playerUid,string serverId,string playerParseId,string showConversationFlag,Dictionary<string,object> config,int defaultTabIndex){
+        AndroidJavaObject javaMap = customMap(config);
+        sdk.CallStatic("showOPList","elva",playerName,playerUid,serverId,playerParseId,showConversationFlag,javaMap,defaultTabIndex);
     }
 
     private AndroidJavaObject customMap(Dictionary<string,object> dic){

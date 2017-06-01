@@ -38,6 +38,16 @@ public class ElvaChatServiceHelper {
     public static void showElvaChatServiceFrom2dx(String npcName,String userName,String uid,String parseId,int serverId,String showConversationFlag,HashMap customData) {
         ELvaChatServiceSdk.showElvaChatService(npcName,userName,uid,parseId,String.valueOf(serverId),showConversationFlag,customData);
     }
+	
+	 /*init 初始化后，从hostActivity跳转到运营聊天主界面并传递参数：带*/
+	public static void showElvaChatServiceOPFrom2dx(String npcName,String userName,String uid,String parseId,int serverId,String showConversationFlag,HashMap customData) {
+        ELvaChatServiceSdk.showOPList(npcName,userName,uid,parseId,String.valueOf(serverId),showConversationFlag,customData);
+    }
+	
+	public static void showElvaChatServiceOPFrom2dx(String npcName,String userName,String uid,String parseId,int serverId,String showConversationFlag,HashMap customData,int defaultTabIndex) {
+        ELvaChatServiceSdk.showOPList(npcName,userName,uid,parseId,String.valueOf(serverId),showConversationFlag,customData,defaultTabIndex);
+    }
+	    
 
     /*init 初始化后，从hostActivity跳转到FAQ主界面FAQActivity.class,并向FAQActivity传递参数：不带config*/
     public static void showFAQ(String faqId) {

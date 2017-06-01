@@ -541,6 +541,79 @@ void ECServiceCocos2dx::setEvaluateStar(int star){
     } 
 }
 
+void ECServiceCocos2dx::showElvaOP(string playerName,string playerUid,int serverId,string playerParseId,string playershowConversationFlag,cocos2d::ValueMap& config){
+    cocos2d::JniMethodInfo minfo;
+    if(!cocos2d::JniHelper::getStaticMethodInfo(minfo,"net/cs30/elva/chatservice/ElvaChatServiceHelper"
+                                                ,"showElvaChatServiceOPFrom2dx"
+                                                , "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/util/HashMap;)V")
+       )
+    {
+        return;
+    }
+    else
+    {
+        jstring npcName = minfo.env->NewStringUTF("Elva");
+        jstring userName = minfo.env->NewStringUTF(playerName.c_str());
+        jstring uid = minfo.env->NewStringUTF(playerUid.c_str());
+        jstring parseId = minfo.env->NewStringUTF(playerParseId.c_str());
+        jstring showConversationFlag = minfo.env->NewStringUTF(playershowConversationFlag.c_str());
+        jobject hashMap = parseConfigDictionaryElva(minfo.env, config);
+        minfo.env->CallStaticVoidMethod(minfo.classID
+                                        ,minfo.methodID
+                                        ,npcName
+                                        ,userName
+                                        ,uid
+                                        ,parseId
+                                        ,(jint)serverId
+                                        ,showConversationFlag
+                                        ,hashMap
+                                        );
+        minfo.env->DeleteLocalRef(npcName);
+        minfo.env->DeleteLocalRef(userName);
+        minfo.env->DeleteLocalRef(uid);
+        minfo.env->DeleteLocalRef(parseId);
+        minfo.env->DeleteLocalRef(showConversationFlag);
+        minfo.env->DeleteLocalRef(hashMap);
+        minfo.env->DeleteLocalRef(minfo.classID);
+    }
+}
 
+void ECServiceCocos2dx::showElvaOP(string playerName,string playerUid,int serverId,string playerParseId,string playershowConversationFlag,cocos2d::ValueMap& config,int defaultTabIndex){
+    cocos2d::JniMethodInfo minfo;
+    if(!cocos2d::JniHelper::getStaticMethodInfo(minfo,"net/cs30/elva/chatservice/ElvaChatServiceHelper"
+                                                ,"showElvaChatServiceOPFrom2dx"
+                                                , "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/util/HashMap;I)V")
+       )
+    {
+        return;
+    }
+    else
+    {
+        jstring npcName = minfo.env->NewStringUTF("Elva");
+        jstring userName = minfo.env->NewStringUTF(playerName.c_str());
+        jstring uid = minfo.env->NewStringUTF(playerUid.c_str());
+        jstring parseId = minfo.env->NewStringUTF(playerParseId.c_str());
+        jstring showConversationFlag = minfo.env->NewStringUTF(playershowConversationFlag.c_str());
+        jobject hashMap = parseConfigDictionaryElva(minfo.env, config);
+        minfo.env->CallStaticVoidMethod(minfo.classID
+                                        ,minfo.methodID
+                                        ,npcName
+                                        ,userName
+                                        ,uid
+                                        ,parseId
+                                        ,(jint)serverId
+                                        ,showConversationFlag
+                                        ,hashMap
+										,defaultTabIndex
+                                        );
+        minfo.env->DeleteLocalRef(npcName);
+        minfo.env->DeleteLocalRef(userName);
+        minfo.env->DeleteLocalRef(uid);
+        minfo.env->DeleteLocalRef(parseId);
+        minfo.env->DeleteLocalRef(showConversationFlag);
+        minfo.env->DeleteLocalRef(hashMap);
+        minfo.env->DeleteLocalRef(minfo.classID);
+    }
+}
 
 #endif

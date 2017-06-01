@@ -21,4 +21,8 @@
     <string name="mark_yes_no_question">这有帮助吗？</string>
     <string name="permission_denied_message">需要存储权限来上传图片</string>
     <string name="setting">设置</string>
+    <string name="question">输入问题</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="main_title">Elva</string>
+    <string name="app_name">botchatone</string>
 </resources>

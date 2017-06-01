@@ -36,6 +36,8 @@ public:
     static bool setSDKLanguage(const char* locale);
     static void useDevice();
     static void setEvaluateStar(int star);//评价默认星星数量
+	static void showElvaOP(string playerName,string playerUid,int serverId,string playerParseId,string playershowConversationFlag,cocos2d::ValueMap& config);
+    static void showElvaOP(string playerName,string playerUid,int serverId,string playerParseId,string playershowConversationFlag,cocos2d::ValueMap& config,int defaultTabIndex);
     
 };
 

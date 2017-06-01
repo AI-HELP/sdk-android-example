@@ -25,4 +25,5 @@
     <string name="mark_yes_no_question">Was this helpful?</string>
     <string name="permission_denied_message">Storage permission is required to upload picture</string>
     <string name="setting">Settings</string>
+    <string name="question">your question</string>
 </resources>

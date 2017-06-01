@@ -22,4 +22,7 @@
     <string name="mark_yes_no_question">이 내용이 유용했나요?</string>
     <string name="permission_denied_message">Storage permission is required to upload picture</string>
     <string name="setting">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="question">your question</string>
+    <string name="app_name">botchatone</string>
 </resources>

@@ -33,6 +33,7 @@ Android SDK 接入具体说明
 三、elvachatservice导入到项目
 ------
   把elvachatservice文件夹拷贝到plugins/Android下导入。
+  将aarforunity文件夹拷贝到plugins/Android下导入。
 四、Google App Indexing导入到项目
 ------
   导入play-services-appindexing到您的项目中(如果项目包含google service appindexing可忽略该步)。
@@ -63,6 +64,13 @@ Android SDK 接入具体说明
                 android:host="cs30.net"
                 android:pathPrefix="/elvaFAQ" />
        </intent-filter>
+    </activity>
+     <activity
+    android:name="com.ljoy.chatbot.OPActivity"
+    android:configChanges="orientation|screenSize|locale"
+    android:screenOrientation="portrait"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            >
     </activity>
 #### 3、增加meta        
     <meta-data
@@ -160,3 +168,26 @@ playerUid:玩家在游戏里的唯一标示id。<br />
 serverId:玩家所在的服务器编号。<br />
 config:可选，自定义ValueMap信息。参照 1)智能客服主界面启动。<br />
 ![showConversation](https://github.com/CS30-NET/Pictures/blob/master/showConversation-CN-Android.png "showConversation")
+> 11) 智能客服运营模块主界面启动，调用`showElvaOP`方法，启动运营模块界面<br />
+showElvaOP(string playerName, string playerUid, string serverId, string playerParseId, string showConversationFlag, Dictionary\<string,object> config, int defaultTabIndex);
+<br />
+* 参数说明：<br />
+              playerName:游戏中玩家名称。 <br />
+              playerUid:玩家在游戏里的唯一标示id。 <br />
+              serverId:玩家所在的服务器编号。 <br />
+              playerParseId:空。 <br />
+              showConversationFlag(0或1):是否开启人工入口。此处为1时，将在机器人的聊天界面右上角，提供人工聊天的入口。如下图。<br />
+              config:自定义ValueMap信息。可以在此处设置特定的Tag信息。<br />
+              defaultTabIndex:可选，设置默认打开的Tab页index（从0开始，如需默认打开Elva，可设置为999）。<br />	
+* 参数示例:   
+
+        Dictionary<string, object> dic = new Dictionary<string, object>();
+        dic.Add("dic1", "aaa");
+        dic.Add("dic2", "bbb");
+        List<string> tags = new List<string>();
+        说明：hs-tags对应的值为List类型，此处传入自定义的Tag，需要在Web管理配置同名称的Tag才能生效。
+        tag.Add("paid");
+        tag.Add("server1");
+        dic.Add("hs-tags", tags);
+        ElvaChatServiceSDKAndroid.getInstance().showElvaOP(“elvaTestName”,“12349303258”,1, “es234-3dfs-d42f-342sfe3s3”,”1”,dic);
+> 
