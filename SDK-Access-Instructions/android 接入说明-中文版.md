@@ -195,3 +195,9 @@ ELvaChatServiceSdk.showElvaOP(String npcName,String userName,String uid,String p
         HashMap<String,Object> config = new HashMap();
         config.put("hs-custom-metadata",map);
         ELvaChatServiceSdk.showElvaChatService(“elvaTestName”,“12349303258”,1, “”,”1”,config);
+> 
+> 12)设置语言，调用`setSDKLanguage`方法(Elva默认使用手机语言适配，如需修改，可在初始化之后调用，并在切换App语言后再次调用。)<br />
+    setSDKLanguage(String language);<br />
+* 参数说明:<br />
+language:语言名称。如英语为en,简体中文为zh_CN。更多语言简称参见Elva后台，"设置"-->"语言"的Alias列。<br />
+> 

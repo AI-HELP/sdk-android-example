@@ -161,3 +161,32 @@ playerUid: The player's unique id in the game.<br />
 serverId: The server ID of the player.<br />
 config: Optional, custom ValueMap information. Refer to 1) intelligent customer service main interface starts.<br />
 ![showConversation](https://github.com/CS30-NET/Pictures/blob/master/showConversation-EN-Android.png "showConversation")
+> 11) Operation Module UI. call `showElvaOP` method to start the operation module ui.<br />
+showElvaOP(string playerName, string playerUid, string serverId, string playerParseId, string showConversationFlag, Dictionary\<string,object> config, int defaultTabIndex);
+<br />
+* Parameter Description:<br />
+              playerName:The player name. <br />
+              playerUid:The player's unique id in the game. <br />
+              serverId:The server ID of the player. <br />
+              playerParseId:Null. <br />
+              showConversationFlag (0 or 1): whether VIP, 0: marked non-VIP; 1: VIP. Here is 1, will be in the upper right corner of the robot chat interface, to provide artificial chat entry function.<br />
+config: Optional, custom ValueMap information. You can set specific Tag information here.<br />
+              defaultTabIndex:Optional，Set the default tab index.（start with 0，if you want to set Elva tab as default，just set it to 999）。<br />	
+* Parameter Example:     
+
+        ArrayList<String> tags = new ArrayList();
+        说明：hs-tags对应的值为ArrayList类型，此处传入自定义的Tag，需要在Web管理配置同名称的Tag才能生效
+        tags.add("pay1");
+        tags.add("s1");
+        tags.add("elvaTestTag");
+        HashMap<String,Object> map = new HashMap();
+        map.put("hs-tags",tags);
+        HashMap<String,Object> config = new HashMap();
+        config.put("hs-custom-metadata",map);
+        ELvaChatServiceSdk.showElvaOP(“elvaTestName”,“12349303258”,1, “”,”1”,config,0);
+> 
+12)Set the SDK language，call `setSDKLanguage` method(Elva use the language of the phone by default.Call this method if after init ,and after the language of App has changed if nessary.)<br />
+setSDKLanguage (String language);<br />
+* Parameter Description:<br />
+language:language alias,eg:en for english,zh_CN for simplified Chinese。For more alias ,see alias in Elva page "settings"-->"language"。<br />
+> 

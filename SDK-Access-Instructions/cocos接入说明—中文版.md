@@ -197,3 +197,8 @@ ECServiceCocos2dx:: showElvaOP (string playerName,string playerUid,int serverId,
      }
     );
 > 
+12)设置语言，调用`setSDKLanguage`方法(Elva默认使用手机语言适配，如需修改，可在初始化之后调用，并在切换App语言后再次调用。)<br />
+ECServiceCocos2dx:: setSDKLanguage (String language);<br />
+* 参数说明:<br />
+language:语言名称。如英语为en,简体中文为zh_CN。更多语言简称参见Elva后台，"设置"-->"语言"的Alias列。<br />
+> 
