@@ -124,7 +124,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Powered by CS30.NET"
+                    android:text="Powered by AIhelp.NET"
                     android:id="@+id/ab__faq_textView"
                     android:textColor="#ffffff"
                     android:layout_centerInParent="true"

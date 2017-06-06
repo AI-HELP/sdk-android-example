@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:autoText="false"
-            android:text="Powered by CS30.NET"
+            android:text="Powered by AIhelp.NET"
             android:layout_marginTop="5dp"
             android:textColor="#000000"
             android:textSize="8dp"/>
