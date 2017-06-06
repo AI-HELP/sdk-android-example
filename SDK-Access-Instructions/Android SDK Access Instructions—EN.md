@@ -185,7 +185,7 @@ config: Optional, custom ValueMap information. You can set specific Tag informat
         config.put("hs-custom-metadata",map);
         ELvaChatServiceSdk.showElvaOP(“elvaTestName”,“12349303258”,1, “”,”1”,config,0);
 > 
-12)Set the SDK language，call `setSDKLanguage` method(Elva use the language of the phone by default.Call this method if after init ,and after the language of App has changed if nessary.)<br />
+> 12)Set the SDK language，call `setSDKLanguage` method(Elva use the language of the phone by default.Call this method if after init ,and after the language of App has changed if nessary.)<br />
 setSDKLanguage (String language);<br />
 * Parameter Description:<br />
 language:language alias,eg:en for english,zh_CN for simplified Chinese。For more alias ,see alias in Elva page "settings"-->"language"。<br />

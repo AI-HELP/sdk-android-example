@@ -191,7 +191,7 @@ showElvaOP(string playerName, string playerUid, string serverId, string playerPa
         dic.Add("hs-tags", tags);
         ElvaChatServiceSDKAndroid.getInstance().showElvaOP(“elvaTestName”,“12349303258”,1, “es234-3dfs-d42f-342sfe3s3”,”1”,dic);
 > 
-12)设置语言，调用`setSDKLanguage`方法(Elva默认使用手机语言适配，如需修改，可在初始化之后调用，并在切换App语言后再次调用。)<br />
+>12)设置语言，调用`setSDKLanguage`方法(Elva默认使用手机语言适配，如需修改，可在初始化之后调用，并在切换App语言后再次调用。)<br />
 setSDKLanguage (String language);<br />
 * 参数说明:<br />
 language:语言名称。如英语为en,简体中文为zh_CN。更多语言简称参见Elva后台，"设置"-->"语言"的Alias列。<br />

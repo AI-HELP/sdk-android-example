@@ -173,8 +173,7 @@ config:可选，自定义ValueMap信息。参照 1)智能客服主界面启动�
 ![showConversation](https://github.com/CS30-NET/Pictures/blob/master/showConversation-CN-Android.png "showConversation")
  > 
  > 11) 智能客服运营模块主界面启动，调用`showElvaOP`方法，启动运营模块界面<br />
-ECServiceCocos2dx:: showElvaOP (string playerName,string playerUid,int serverId,string playerParseId,string playershowConversationFlag,cocos2d::ValueMap& config,int defaultTabIndex); <br />
-ELvaChatServiceSdk.showElvaOP(String npcName,String userName,String uid,String parseId,String serverId,String showConversationFlag,HashMap\<String,Object> customData,int defaultTabIndex); <br />
+showElvaOP(String npcName,String userName,String uid,String parseId,String serverId,String showConversationFlag,HashMap\<String,Object> customData,int defaultTabIndex); <br />
 * 参数说明：<br />
               playerName:游戏中玩家名称。 <br />
               playerUid:玩家在游戏里的唯一标示id。 <br />
@@ -194,9 +193,9 @@ ELvaChatServiceSdk.showElvaOP(String npcName,String userName,String uid,String p
         map.put("hs-tags",tags);
         HashMap<String,Object> config = new HashMap();
         config.put("hs-custom-metadata",map);
-        ELvaChatServiceSdk.showElvaChatService(“elvaTestName”,“12349303258”,1, “”,”1”,config);
+        ELvaChatServiceSdk.showElvaOP(“elvaTestName”,“12349303258”,1, “”,”1”,config,0);
 > 
-> 12)设置语言，调用`setSDKLanguage`方法(Elva默认使用手机语言适配，如需修改，可在初始化之后调用，并在切换App语言后再次调用。)<br />
+>12)设置语言，调用`setSDKLanguage`方法(Elva默认使用手机语言适配，如需修改，可在初始化之后调用，并在切换App语言后再次调用。)<br />
     setSDKLanguage(String language);<br />
 * 参数说明:<br />
 language:语言名称。如英语为en,简体中文为zh_CN。更多语言简称参见Elva后台，"设置"-->"语言"的Alias列。<br />
