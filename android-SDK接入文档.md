@@ -71,10 +71,11 @@
             >
     </activity>
 #### 3、增加meta    
+
    <pre>
-<meta-data
-        android:name="com.google.android.gms.version"
-        android:value="@integer/google_play_services_version" />
+<meta-data  
+android:name="com.google.android.gms.version"
+android:value="@integer/google_play_services_version" />
    </pre>
 
 ## 六、接口调用说明
