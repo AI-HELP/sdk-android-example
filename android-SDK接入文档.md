@@ -70,8 +70,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             >
     </activity>
-#### 3、增加meta    
-
+#### 3、增加meta    <br />
    <pre>
 <meta-data  
 android:name="com.google.android.gms.version"
