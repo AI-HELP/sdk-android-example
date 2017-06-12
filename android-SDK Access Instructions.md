@@ -175,19 +175,19 @@ showElvaOP(string playerName, string playerUid, string serverId, string playerPa
 config: Optional, custom ValueMap information. You can set specific Tag information here.<br />
               defaultTabIndex:Optional，Set the default tab index.（start with 0，if you want to set Elva tab as default，just set it to 999）.<br />	
 <br />
-> * Parameter Example:      
 
-        ArrayList<String> tags = new ArrayList();
-        Description: the hs - tags corresponding value is an ArrayList, incoming custom Tag here, need in the Web management configuration with the name of the Tag.
-        tags.add("pay1");
-        tags.add("s1");
-        tags.add("elvaTestTag");
-        HashMap<String,Object> map = new HashMap();
-        map.put("hs-tags",tags);
-        HashMap<String,Object> config = new HashMap();
-        config.put("hs-custom-metadata",map);
-        ELvaChatServiceSdk.showElvaOP("elvaTestName","12349303258",1, "","1",config,0);
-> 
+> * Parameter Example:      
+   <pre>ArrayList<String> tags = new ArrayList();<br />
+//Description: the hs - tags corresponding value is an ArrayList, incoming custom Tag here, need in the Web management configuration with the name of the Tag.<br />
+tags.add("pay1");<br />
+        tags.add("s1");<br />
+        tags.add("elvaTestTag");<br />
+        HashMap<String,Object> map = new HashMap();<br />
+        map.put("hs-tags",tags);<br />
+        HashMap<String,Object> config = new HashMap();<br />
+        config.put("hs-custom-metadata",map);<br />
+ELvaChatServiceSdk.showElvaOP("elvaTestName","12349303258",1, "","1",config,0);<br /><pre />
+ 
 12) Set the SDK language，call `setSDKLanguage` method(Elva use the language of the phone by default.Call this method if after init ,and after the language of App has changed if nessary.)<br />
 setSDKLanguage (String language);<br />
 > * Parameter Description:<br />
