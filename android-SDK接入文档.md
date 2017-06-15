@@ -23,7 +23,7 @@
 
 # Android SDK 接入具体说明
 ## 一、接入Elva SDK有两种方式，第一种是下载后导入，第二种是从jcenter引入。
-### 第一种方式：
+## 第一种方式：
 ### 1、 下载android sdk
   点击上一个页面右上角的“Clone or download”按钮下载Android SDK，下载完成后解压文件。
 ### 2、elvachatservice导入到项目
@@ -39,7 +39,7 @@
     compile 'com.android.support:recyclerview-v7:23.4.0' <br />
     compile 'com.android.support:cardview-v7:23.4.0' <br />
 
-### 第二种方式：
+## 第二种方式：
 注：只适用基于Android Studio或其他Gradle based projects 的用户，可以无需下载Elva，直接修改配置增加Elva的引入。
  
  ### 1.在Project级别build.gradle中加入：
