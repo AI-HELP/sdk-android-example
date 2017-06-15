@@ -108,11 +108,11 @@ dependencies {  <br />
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             >
     </activity>
-#### 3、增加meta    
+#### 3、增加meta:    
    <pre>
-	<meta-data
-        android:name="com.google.android.gms.version"
-        android:value="@integer/google_play_services_version" />
+< meta-data 
+	android:name="com.google.android.gms.version" 
+	android:value="@integer/google_play_services_version" />
    </pre>
 
 ## 三、接口调用说明
