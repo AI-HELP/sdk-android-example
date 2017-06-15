@@ -22,21 +22,59 @@
 </div>
 
 # Android SDK 接入具体说明
-## 一、下载android sdk
+## 一、接入Elva SDK有两种方式，第一种是下载后导入，第二种是从jcenter引入。
+### 第一种方式：
+### 1、 下载android sdk
   点击上一个页面右上角的“Clone or download”按钮下载Android SDK，下载完成后解压文件。
-## 二、elvachatservice导入到项目
+### 2、elvachatservice导入到项目
   把elvachatservice文件夹拷贝到项目下导入。
-## 三、Google App Indexing导入到项目
+### 3、Google App Indexing导入到项目
   导入play-services-appindexing到您的项目中(如果项目包含google service appindexing可忽略该步)。
-## 四、Android Appcompact相关包导入到项目	
+### 4、Android Appcompact相关包导入到项目	
 导入android_libs下Android Appcompact到您的项目中(如果项目已经包含该包，全部包含或者部分包含，请不要重复导入，只需要导入项目中未包含的)。
 如果您使用Gradle：<br />
-  修改build.gradle,增加以下部分。根据需要，可以修改相关版本：<br />
+> 修改build.gradle,增加以下部分。根据需要，可以修改相关版本：<br />
     compile 'com.android.support:appcompat-v7:23.4.0' <br />
     compile 'com.android.support:design:23.4.0' <br />
     compile 'com.android.support:recyclerview-v7:23.4.0' <br />
     compile 'com.android.support:cardview-v7:23.4.0' <br />
-## 五、接入工程配置
+
+### 第二种方式：
+注：只适用基于Android Studio或其他Gradle based projects 的用户，可以无需下载Elva，直接修改配置增加Elva的引入。
+ 
+ ### 1.在Project级别build.gradle中加入：
+allprojects {
+        repositories {
+            jcenter()
+        }
+
+### 2.在使用Elva的Module级别build.gradle中加入：
+> dependencies {  <br />
+    compile 'net.aihelp:elva:1.0.0'  <br />
+    compile 'org.fusesource.mqtt-client:mqtt-client:1.12'  <br />
+    compile 'com.android.support:appcompat-v7:23.4.0'  <br />
+    compile 'com.android.support:design:23.4.0'  <br />
+    compile 'com.android.support:recyclerview-v7:23.4.0'  <br />
+    compile 'com.android.support:cardview-v7:23.4.0'  <br />
+}  <br />
+
+ > * 参数说明：  <br />
+dependencies {  <br />
+  //Elva主包,必需  <br />
+    compile 'net.aihelp:elva:1.0.0'  <br />
+  //Elva通信包,必需  <br />
+    compile 'org.fusesource.mqtt-client:mqtt-client:1.12'  <br />
+  //使用Google AppIndexing 时需要加上  <br />
+    compile 'com.google.android.gms:play-services-appindexing:8.1.0'  <br />
+  //以下为使用运营模块 时需要加上  <br />
+    compile 'com.android.support:appcompat-v7:23.4.0'  <br />
+    compile 'com.android.support:design:23.4.0'  <br />
+    compile 'com.android.support:recyclerview-v7:23.4.0'  <br />
+    compile 'com.android.support:cardview-v7:23.4.0'  <br />
+
+ 
+ 
+## 二、接入工程配置
   在AndroidManifest.xml，增加需要的配置：     
 #### 1、增加需要的权限
     <uses-permission android:name="android.permission.INTERNET" />
@@ -70,14 +108,13 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             >
     </activity>
-#### 3、增加meta    <br />
-   <pre>
-<meta-data  
-android:name="com.google.android.gms.version"
-android:value="@integer/google_play_services_version" />
+#### 3、增加meta    
+   <pre><meta-data
+        android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version" />
    </pre>
 
-## 六、接口调用说明
+## 三、接口调用说明
 #### 1、sdk初始化
    创建Activity中传递的应用：（必须在游戏开始阶段调用）<br />
 > 在主Activity的onCreate中调用初始化接口init，则：<br />
@@ -112,7 +149,7 @@ HashMap<String,Object> map = new HashMap();
 map.put("hs-tags",tags);
 HashMap<String,Object> config = new HashMap();
 config.put("hs-custom-metadata",map);
-ELvaChatServiceSdk.showElvaChatService(“elvaTestName”,“12349303258”,1, “”,”1”,config);
+ELvaChatServiceSdk.showElvaChatService("elvaTestName","12349303258",1, "","1",config);
    
 	
 2) 展示单条FAQ，调用`showSingleFAQ`方法<br />
@@ -194,7 +231,27 @@ ArrayList<String> tags = new ArrayList();
 ELvaChatServiceSdk.showElvaOP("elvaTestName","12349303258",1, "","1",config,0);
 
 
-12) 设置语言，调用`setSDKLanguage`方法(Elva默认使用手机语言适配，如需修改，可在初始化之后调用，并在切换App语言后再次调用。)<br />
+12）从不同入口进入不同故事线功能。<br />
+通过map.put("anotherWelcomeText","heroText");来启用不同入口进入不同故事线功能。
+> * 参数示例: 
+        <pre>
+  ArrayList<String> tags = new ArrayList();
+        tags.add("pay1");
+        tags.add("s1");
+        tags.add("elvaTestTag");
+	HashMap<String,Object> map = new HashMap();
+        map.put("hs-tags",tags);
+//调用不同故事线功能，使用指定的提示语句，调出相应的机器人欢迎语。
+//注：heroText提示语句，需要和故事线中的User Say相对应。
+map.put("anotherWelcomeText","heroText");
+HashMap config = new HashMap();
+config.put("hs-custom-metadata",map);
+//如果是在智能客服主界面中
+ELvaChatServiceSdk.showElvaChatService("elvaTestName","12349303258",1, "","1",config);
+//如果是在智能客服运营主界面中
+ELvaChatServiceSdk.showElvaOP("elvaTestName","12349303258",1, "","1",config,0);
+
+13) 设置语言，调用`setSDKLanguage`方法(Elva默认使用手机语言适配，如需修改，可在初始化之后调用，并在切换App语言后再次调用。)<br />
     setSDKLanguage(String language);<br />
 > * 参数说明:<br />
 language:语言名称。如英语为en,简体中文为zh_CN。更多语言简称参见Elva后台，"设置"-->"语言"的Alias列。<br />
