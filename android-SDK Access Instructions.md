@@ -47,8 +47,8 @@ Modify the build. Gradle, and add the following section.
 Note: only available on Android Studio or other Gradle -based projects, can be directly modify configuration to increase the introduction of Elva SDK.
  ### Ⅰ. Add the following allprojects to your build.gradle file inside the project section.
  >  <pre> allprojects   {   <br />
- repositories   {   <br />
- jcenter  (  )  }   <br />
+    repositories   {   <br />
+    jcenter  (  )  }   <br />
         } 
 
 ### Ⅱ.Add the following dependencies to your build.gradle file inside the depencencies section.
