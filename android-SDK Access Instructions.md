@@ -23,27 +23,53 @@
   
   
 # Android SDK Access Instructions
-
-## Ⅰ. Download Android SDK.
+## 1，There are two ways to access a budget SDK, one way is imported after download, another way is from jcenter is introduced.
+## One way :
+### Ⅰ. Download Android SDK.
 Click the button "Clone or download" in the top right corner to download Android SDK and then unzip the file.
 
-## Ⅱ. cocos2dx Interface List
-Put ECServiceCocos2dx.h, ECServiceCocos2dx.cpp in the interface folder in your Classes folder.
-## Ⅲ. Import elvachatservice into project
+### Ⅱ. Import elvachatservice into project
 Copy the elvachatservice folder to your main directory
 
-## Ⅳ. Import Google App Indexing into project
+### Ⅲ. Import Google App Indexing into project
 Import play-services-appindexing into your project(IF the item google service appindexing exists, this step can be ignored).
 
-## Ⅴ. Access Project Configuration
-Modify the AndroidManifest.xml in elvachatservice folder to add the required configuration:
+### Ⅳ.Import Android appcompact into project
+Import Android appcompact from Android_libs into your project(If the item exsit,this step can be ignored). <br />
+If you use Gradle: <br />
+Modify the build. Gradle, and add the following section.
+> compile 'com.android.support:appcompat-v7:23.4.0' <br />
+    compile 'com.android.support:design:23.4.0' <br />
+    compile 'com.android.support:recyclerview-v7:23.4.0' <br />
+    compile 'com.android.support:cardview-v7:23.4.0' <br />
 
-### 1. Add the required permissions:
+## Another way
+Note: only available on Android Studio or other Gradle -based projects, can be directly modify configuration to increase the introduction of Elva SDK.
+ ### Ⅰ. Add the following allprojects to your build.gradle file inside the project section.
+ >  <pre> allprojects   {   <br />
+ repositories   {   <br />
+ jcenter  (  )  }   <br />
+        } 
+
+### Ⅱ.Add the following dependencies to your build.gradle file inside the depencencies section.
+> dependencies {  <br />
+    compile 'net.aihelp:elva:1.0.0'  <br />
+    compile 'org.fusesource.mqtt-client:mqtt-client:1.12'  <br />
+    compile 'com.android.support:appcompat-v7:23.4.0'  <br />
+    compile 'com.android.support:design:23.4.0'  <br />
+    compile 'com.android.support:recyclerview-v7:23.4.0'  <br />
+    compile 'com.android.support:cardview-v7:23.4.0'  <br />
+}  <br />
+
+
+## 2. Access Project Configuration
+Modify the AndroidManifest.xml in elvachatservice folder to add the required configuration:
+### Ⅰ. Add the required permissions:
     <Uses-permission android: name = "android.permission.INTERNET" />
     <Uses-permission android: name = "android.permission.ACCESS_NETWORK_STATE" />
     <Uses-permission android: name = "android.permission.WRITE_EXTERNAL_STORAGE" />
     <Uses-permission android: name = "android.permission.READ_EXTERNAL_STORAGE" />
-### 2. Add activity:
+### Ⅱ. Add activity:
     <Activity
         Android: name = "com.ljoy.chatbot.ChatMainActivity"
         Android: configChanges = "orientation | screenSize | locale"
@@ -62,12 +88,12 @@ Modify the AndroidManifest.xml in elvachatservice folder to add the required con
                 android:pathPrefix="/elvaFAQ" />
         </intent-filter>
     </ Activity>
-### 3、Add meta
+### Ⅲ、Add meta
       <meta-data
           android:name="com.google.android.gms.version"
           android:value="@integer/google_play_services_version" />
 
-## Ⅵ.Interface Call Instructions
+## 3.Interface Call Instructions
 ### 1. SDK initialization. <br />
 Create a JNI environment and the application in the Activity: (must be called at the beginning of the game)<br />
 <br />
@@ -188,7 +214,23 @@ tags.add("pay1");<br />
         config.put("hs-custom-metadata",map);<br />
 ELvaChatServiceSdk.showElvaOP("elvaTestName","12349303258",1, "","1",config,0);<br /><pre />
  
-12) Set the SDK language，call `setSDKLanguage` method(Elva use the language of the phone by default.Call this method if after init ,and after the language of App has changed if nessary.)<br />
+12） different entrance into the different stories. <br />
+Use map.put("anotherWelcomeText","heroText");to enable different entrance into the different stories.
+> * Parameter Example:      
+        <pre>
+  ArrayList<String> tags = new ArrayList();
+        tags.add("pay1");
+        tags.add("s1");
+        tags.add("elvaTestTag");
+	HashMap<String,Object> map = new HashMap();
+        map.put("hs-tags",tags);
+//note："heroText" must be the same with "User Say" in the stories。
+map.put("anotherWelcomeText","heroText");
+HashMap config = new HashMap();
+config.put("hs-custom-metadata",map);
+
+ 
+13)  Set the SDK language，call `setSDKLanguage` method(Elva use the language of the phone by default.Call this method if after init ,and after the language of App has changed if nessary.)<br />
 setSDKLanguage (String language);<br />
 > * Parameter Description:<br />
 language:language alias,eg:en for english,zh_CN for simplified Chinese.For more alias ,see alias in Elva page "settings"-->"language".<br />
