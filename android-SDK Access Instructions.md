@@ -21,7 +21,7 @@
     </table>
 </div>
   
-  
+  
 # Android SDK Access Instructions
 ## 1，Here are two ways to access a budget SDK, one way is imported after download, another way is from jcenter is introduced.
 ## One way :
@@ -46,13 +46,13 @@ Modify the build. Gradle, and add the following section.
 ## Another way
 Note: only available on Android Studio or other Gradle -based projects, can be directly modify configuration to increase the introduction of Elva SDK.
  ### Ⅰ. Add the following allprojects to your build.gradle file inside the project section.
- >  <pre> allprojects   {   <br />
- repositories   {   <br />
- jcenter  (  )  }   <br />
-        } 
+ >  <pre> allprojects   {   <br />
+ repositories   {   <br />
+ jcenter  (  )  }   <br />
+        } 
 
 ### Ⅱ.Add the following dependencies to your build.gradle file inside the depencencies section.
-> dependencies {  <br />
+> dependencies {  <br />
     compile 'net.aihelp:elva:1.0.0'  <br />
     compile 'org.fusesource.mqtt-client:mqtt-client:1.12'  <br />
     compile 'com.android.support:appcompat-v7:23.4.0'  <br />
@@ -119,17 +119,17 @@ showConversationFlag (0 or 1): whether VIP, 0: marked non-VIP; 1: VIP. Here is 1
 config: Optional, custom ValueMap information. You can set specific Tag information here.<br />
 ![showElva](https://github.com/CS30-NET/Pictures/blob/master/showElva-EN-Android.png "showElva")<br />
 
-> * Parameter Example:    <br />
-ArrayList tags = new ArrayList();    <br />
-// Description: the hs - tags corresponding value is an ArrayList, incoming custom Tag here, need in the Web management configuration with the same name of the Tag    <br />
-tags.add("pay1");    <br />
-tags.add("s1");    <br />
-tags.add("elvaTestTag");    <br />
-HashMap<String,Object> map = new HashMap();    <br />
-map.put("hs-tags",tags);    <br />
-HashMap<String,Object> config = new HashMap();    <br />
-config.put("hs-custom-metadata",map);    <br />
-ELvaChatServiceSdk.showElvaChatService("elvaTestName","12349303258",1, "","1",config);    <br />
+> * Parameter Example:    <br />
+ArrayList tags = new ArrayList();    <br />
+// Description: the hs - tags corresponding value is an ArrayList, incoming custom Tag here, need in the Web management configuration with the same name of the Tag    <br />
+tags.add("pay1");    <br />
+tags.add("s1");    <br />
+tags.add("elvaTestTag");    <br />
+HashMap<String,Object> map = new HashMap();    <br />
+map.put("hs-tags",tags);    <br />
+HashMap<String,Object> config = new HashMap();    <br />
+config.put("hs-custom-metadata",map);    <br />
+ELvaChatServiceSdk.showElvaChatService("elvaTestName","12349303258",1, "","1",config);    <br />
 > 
 2) Show a single FAQ, call `showSingleFAQ` method<br />
 showSingleFAQ(String faqId,HashMap<String,Object> config);<br />
@@ -186,7 +186,6 @@ playerUid: The player's unique id in the game.<br />
 serverId: The server ID of the player.<br />
 config: Optional, custom ValueMap information. Refer to 1) intelligent customer service main interface starts.<br />
 ![showConversation](https://github.com/CS30-NET/Pictures/blob/master/showConversation-EN-Android.png "showConversation")
-
 11) Operation Module UI. call `showElvaOP` method to start the operation module ui.<br />
 showElvaOP(string playerName, string playerUid, string serverId, string playerParseId, string showConversationFlag, Dictionary\<string,object> config, int defaultTabIndex);
 <br />
@@ -198,12 +197,11 @@ showElvaOP(string playerName, string playerUid, string serverId, string playerPa
               playerParseId:Null. <br />
               showConversationFlag (0 or 1): whether VIP, 0: marked non-VIP; 1: VIP. Here is 1, will be in the upper right corner of the robot chat interface, to provide artificial chat entry function.<br />
 config: Optional, custom ValueMap information. You can set specific Tag information here.<br />
-              defaultTabIndex:Optional，Set the default tab index.（start with 0，if you want to set Elva tab as default，just set it to 999）.<br />	
+              defaultTabIndex:Optional，Set the default tab index.（start with 0，if you want to set Elva tab as default，just set it to 999）.<br />	
 <br />
 
-> * Parameter Example:      
->  <pre>
-  ArrayList<String> tags = new ArrayList();<br />
+> * Parameter Example:      
+   <pre>ArrayList<String> tags = new ArrayList();<br />
 //Description: the hs - tags corresponding value is an ArrayList, incoming custom Tag here, need in the Web management configuration with the name of the Tag.<br />
 tags.add("pay1");<br />
         tags.add("s1");<br />
@@ -212,12 +210,11 @@ tags.add("pay1");<br />
         map.put("hs-tags",tags);<br />
         HashMap<String,Object> config = new HashMap();<br />
         config.put("hs-custom-metadata",map);<br />
-ELvaChatServiceSdk.showElvaOP("elvaTestName","12349303258",1, "","1",config,0);   <br />   
-   <pre />
+ELvaChatServiceSdk.showElvaOP("elvaTestName","12349303258",1, "","1",config,0);<br /><pre />
  
 12） different entrance into the different stories. <br />
 Use map.put("anotherWelcomeText","heroText");to enable different entrance into the different stories.
-> * Parameter Example:      
+> * Parameter Example:      
         <pre>
   ArrayList<String> tags = new ArrayList();
         tags.add("pay1");
