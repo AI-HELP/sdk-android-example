@@ -186,6 +186,7 @@ playerUid: The player's unique id in the game.<br />
 serverId: The server ID of the player.<br />
 config: Optional, custom ValueMap information. Refer to 1) intelligent customer service main interface starts.<br />
 ![showConversation](https://github.com/CS30-NET/Pictures/blob/master/showConversation-EN-Android.png "showConversation")
+
 11) Operation Module UI. call `showElvaOP` method to start the operation module ui.<br />
 showElvaOP(string playerName, string playerUid, string serverId, string playerParseId, string showConversationFlag, Dictionary\<string,object> config, int defaultTabIndex);
 <br />
@@ -201,7 +202,8 @@ config: Optional, custom ValueMap information. You can set specific Tag informat
 <br />
 
 > * Parameter Example:      
-   <pre>ArrayList<String> tags = new ArrayList();<br />
+>  <pre>
+  ArrayList<String> tags = new ArrayList();<br />
 //Description: the hs - tags corresponding value is an ArrayList, incoming custom Tag here, need in the Web management configuration with the name of the Tag.<br />
 tags.add("pay1");<br />
         tags.add("s1");<br />
@@ -210,7 +212,8 @@ tags.add("pay1");<br />
         map.put("hs-tags",tags);<br />
         HashMap<String,Object> config = new HashMap();<br />
         config.put("hs-custom-metadata",map);<br />
-ELvaChatServiceSdk.showElvaOP("elvaTestName","12349303258",1, "","1",config,0);<br /><pre />
+ELvaChatServiceSdk.showElvaOP("elvaTestName","12349303258",1, "","1",config,0);   <br />   
+   <pre />
  
 12） different entrance into the different stories. <br />
 Use map.put("anotherWelcomeText","heroText");to enable different entrance into the different stories.
