@@ -4,11 +4,11 @@
     <string name="test_send2">test_send2</string>
     <string name="test_send3">test_send3</string>
     <string name="action_link_introduction">Some useful tips below</string>
-    <string name="answer_satisfy">Are you saticfied with this answer?</string>
-    <string name="no_more_than_chars">No more than %s chars!</string>
-    <string name="no_png_upload">SD card does not exist or can not be written!</string>
-    <string name="smaller_picture"> Picture uploaded is too big!</string>
-    <string name="net_work_error">check your network</string>
+    <string name="answer_satisfy">Вы удовлетворены ответом?</string>
+    <string name="no_more_than_chars">Не более %s букв!!</string>
+    <string name="no_png_upload">SD карта отсутствует или сломана!</string>
+    <string name="smaller_picture">Изображение слишком большое!</string>
+    <string name="net_work_error">Проверьте соединение с интернетом</string>
     <string name="main_title">Elva</string>
     <string name="goto_Elva">НАПИШИТЕ НАМ</string>
     <string name="self_service_interface">Self-Service</string>
@@ -20,9 +20,9 @@
     <string name="mark_unhelpful_toast">Вопрос был обозначен как Бесполезный</string>
     <string name="mark_yes">ДА</string>
     <string name="mark_yes_no_question">Это было полезно?</string>
-    <string name="permission_denied_message">Storage permission is required to upload picture</string>
-    <string name="setting">Settings</string>
+    <string name="permission_denied_message">Для загрузки изображений нужно специальное разрешение в настройках телефона</string>
+    <string name="setting">Настройки</string>
     <string name="hello_world">Hello world!</string>
-    <string name="question">your question</string>
+    <string name="question">Ваш вопрос</string>
     <string name="app_name">botchatone</string>
 </resources>
