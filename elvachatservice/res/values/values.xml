@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="start_button_color">#2960d9</color>
+    <color name="transparent">#00000000</color>
+    <color name="urlColor">#2960d9</color>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <string name="action_link_introduction">Some useful tips below</string>
+    <string name="action_settings">Settings</string>
+    <string name="answer_satisfy">Are you satisfied with this answer?</string>
+    <string name="break_off_remind">Your network is disconnected,please try again later</string>
+    <string name="elva__help_header">help</string>
+    <string name="elva__question_header">question</string>
+    <string name="goto_Elva">Contact Us</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="main_title">Elva</string>
+    <string name="mark_helpful_toast">You found this helpful</string>
+    <string name="mark_no">NO</string>
+    <string name="mark_unhelpful_toast">You didn\'t find this helpful</string>
+    <string name="mark_yes">YES</string>
+    <string name="mark_yes_no_question">Was this helpful?</string>
+    <string name="net_work_error">check your network</string>
+    <string name="no_more_than_chars">No more than %s chars!</string>
+    <string name="no_png_upload">SD card does not exist or can not be written!</string>
+    <string name="permission_denied_message">Storage permission is required to upload picture</string>
+    <string name="question">your question</string>
+    <string name="self_service_interface">Self-Service</string>
+    <string name="setting">Settings</string>
+    <string name="smaller_picture"> Picture uploaded is too big!</string>
+    <string name="test_send1">test_send1</string>
+    <string name="test_send2">test_send2</string>
+    <string name="test_send3">test_send3</string>
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="textview_allgrade_content">
+        <item name="android:layout_height">30dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_margin">1dip</item>
+        <item name="android:background">#0000ff</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:clickable">true</item>
+    </style>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="start_button_color">#2960d9</color>
+    <color name="transparent">#00000000</color>
+    <color name="urlColor">#2960d9</color>
+    <declare-styleable name="LineEditeText">
+        <attr format="color" name="lineColorEt"/>
+    </declare-styleable>
+    <style name="textview_allgrade_content">
+        <item name="android:layout_height">30dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_margin">1dip</item>
+        <item name="android:background">#0000ff</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:clickable">true</item>
+    </style>
+</resources>

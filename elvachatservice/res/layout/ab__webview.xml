@@ -30,7 +30,7 @@
             android:layout_above="@+id/ab__faq_question_footer"
             android:background="@drawable/ecs_text_bg_1">
 
-            <WebView
+            <com.tencent.smtt.sdk.WebView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/ab__faq_web_main"
@@ -49,7 +49,7 @@
             android:layout_height="46dp"
             android:background="#f7f7f7"
             android:orientation="vertical"
-            android:layout_above="@+id/ab__faq_bottom_area"
+            android:layout_above="@+id/ab__msg_bottom_area"
             android:visibility="visible">
 
             <View
@@ -111,7 +111,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="16dp"
-            android:id="@+id/ab__faq_bottom_area"
+            android:id="@+id/ab__msg_bottom_area"
             android:layout_alignParentBottom="true"
             android:focusable="true"
             android:background="#000000">
