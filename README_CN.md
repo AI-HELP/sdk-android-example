@@ -148,9 +148,6 @@ ELvaChatServiceSdk.showElvaChatService(String npcName,String playerName,String p
 
 
 * 参数示例:
-
-`
-
 ArrayList<String> tags = new ArrayList();
 tags.add("军队");
 tags.add("充值");
@@ -161,8 +158,6 @@ map.put("versionCode", "3");
 HashMap<String, Object> config = new HashMap();
 config.put("hs-custom-metadata", map);
 ELvaChatServiceSdk.showElvaChatService("Elva", "elvaTestPlayer",“12349303258”,“”,"server123","1", config);
-
-`
 
 
 2) 展示单条FAQ，调用`showSingleFAQ`方法<br />
@@ -221,7 +216,6 @@ serverId:玩家所在的服务器编号。<br />
 config:可选，自定义ValueMap信息。参照 1)智能客服主界面启动。<br />
 ![showConversation](https://github.com/CS30-NET/Pictures/blob/master/showConversation-CN-Android.png "showConversation")
 11) 智能客服运营模块主界面启动，调用`showOPList`方法，启动运营模块界面<br />
-ELvaChatServiceSdk:: showElvaOP (string playerName,string playerUid,int serverId,string playerParseId,string playershowConversationFlag,cocos2d::ValueMap& config,int defaultTabIndex)
 ELvaChatService.showOPList(String npcName,String userName,String uid,String parseId,String serverId,String showConversationFlag,HashMap<String,Object> customData,int defaultTabIndex) {; <br />
 > * 参数说明：<br />
               npcName:设置成Elva。 <br />
@@ -234,10 +228,7 @@ ELvaChatService.showOPList(String npcName,String userName,String uid,String pars
 	      defaultTabIndex:可选，设置默认打开的Tab页index（从0开始，如需默认打开Elva，可设置为999）。<br />	
 
 
-参数示例:  
-
-`
-
+> * 参数示例：<br />
 ArrayList<String> tags = new ArrayList();
 tags.add("军队");
 tags.add("充值");
@@ -249,7 +240,6 @@ HashMap<String, Object> config = new HashMap();
 config.put("hs-custom-metadata", map);
 ELvaChatServiceSdk.showOPList("Elva", "elvaTestPlayer",“12349303258”,“”,"server123","1", config, 0);
 
-`
 
 
 12）从不同入口进入不同故事线功能。<br />
