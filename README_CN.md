@@ -135,7 +135,7 @@ appId:app唯一标识，从Web管理系统获取。<br />
 
 ELvaChatServiceSdk.showElvaChatService(String npcName,String playerName,String playerUid,String parseId,String serverId,String showConversationFlag,HashMap<String,Object> customData); 
 
-> * 参数说明：
+* 参数说明：
 - npcName:请设置为"Elva"。
 - playerName:游戏中玩家名称。 
 - playerUid:玩家在游戏里的唯一标示id。 
@@ -147,9 +147,10 @@ ELvaChatServiceSdk.showElvaChatService(String npcName,String playerName,String p
 ![showElvaChatService](https://github.com/CS30-NET/Pictures/blob/master/showElva-CN-Android.png)
 
 
-> * 参数示例:
+* 参数示例:
 
 `
+
 ArrayList<String> tags = new ArrayList();
 tags.add("军队");
 tags.add("充值");
@@ -160,6 +161,7 @@ map.put("versionCode", "3");
 HashMap<String, Object> config = new HashMap();
 config.put("hs-custom-metadata", map);
 ELvaChatServiceSdk.showElvaChatService("Elva", "elvaTestPlayer",“12349303258”,“”,"server123","1", config);
+
 `
 
 
@@ -232,8 +234,10 @@ ELvaChatService.showOPList(String npcName,String userName,String uid,String pars
 	      defaultTabIndex:可选，设置默认打开的Tab页index（从0开始，如需默认打开Elva，可设置为999）。<br />	
 
 
-> * 参数示例:  
+参数示例:  
+
 `
+
 ArrayList<String> tags = new ArrayList();
 tags.add("军队");
 tags.add("充值");
@@ -244,6 +248,7 @@ map.put("versionCode", "3");
 HashMap<String, Object> config = new HashMap();
 config.put("hs-custom-metadata", map);
 ELvaChatServiceSdk.showOPList("Elva", "elvaTestPlayer",“12349303258”,“”,"server123","1", config, 0);
+
 `
 
 

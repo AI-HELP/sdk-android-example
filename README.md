@@ -1,5 +1,5 @@
 # HIGHLIGHTS<br />
-[进入中文版接入指南](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README_CN.md)
+[中文版接入指南](https://github.com/AI-HELP/native-android-platform-SDK/blob/master/README_CN.md)
 
 1.Remember to initialize, otherwise the user can not enter Elva intelligent customer service system.<br />
 2.<div>
