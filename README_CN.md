@@ -1,24 +1,26 @@
-# 重点提醒：<br />
-1.一定要在游戏启动时进行初始化init操作，不然会无法进入Elva智能客服系统。<br />
-2.<div>
-    <table border="0">
-      <tr>
-        <th>方法</th>
-        <th>showElva</th>
-        <th>showConversation</th>
-        <th>showFAQs</th>
-        <th>showFAQSection</th>
-        <th>showSingleFAQ</th>
-      </tr>
-      <tr>
-        <td>作用</td>
-        <td>启动机器人界面</td>
-        <td>调用人工客服入口</td>
-        <td>展示FAQ列表</td>
-        <td>展示Section</td>
-        <td>展示单条FAQ</td>
-      </tr>
-    </table>
+# 重点提醒:
+
+1. 一定要在游戏启动时进行初始化init操作，不然会无法进入Elva智能客服系统。
+
+2. 接口说明：<div>
+<table border="0">
+<tr>
+<th>方法</th>
+<th>showElvaChatService</th>
+<th>showConversation</th>
+<th>showFAQList</th>
+<th>showSingleFAQ</th>
+<th>showOPList</th>
+</tr>
+<tr>
+<td>作用</td>
+<td>启动机器人界面</td>
+<td>调用人工客服入口</td>
+<td>展示FAQ列表</td>
+<td>展示单条FAQ</td>
+<td>进入运营模块</td>
+</tr>
+</table>
 </div>
 
 # Android SDK 接入具体说明
@@ -26,14 +28,12 @@
 ## 第一种方式：
 ### 1、 下载android sdk
   点击上一个页面右上角的“Clone or download”按钮下载Android SDK，下载完成后解压文件。
-### 2、cocos2dx接口清单
-  把interface文件夹下的ECServiceCocos2dx.h、ECServiceCocos2dx.cpp放入您的Classes文件夹。
-### 3、elvachatservice导入到项目
+### 2、elvachatservice导入到项目
   把elvachatservice文件夹拷贝到项目下导入。
-### 4、Google App Indexing导入到项目
+### 3、Google App Indexing导入到项目
   导入play-services-appindexing到您的项目中(如果项目包含google service appindexing可忽略该步)。
-### 5、Android Appcompact相关包导入到项目	
-导入android_libs下Android Appcompact到您的项目中(如果项目已经包含该包，全部包含或者部分包含，请不要重复导入，只需要导入项目中未包含的)。
+### 4、Android Appcompact相关包导入到项目	
+导入aar下面的支持包到您的项目中(如果项目已经包含该包，全部包含或者部分包含，请不要重复导入，只需要导入项目中未包含的)。
 如果您使用Gradle：<br />
 > 修改build.gradle,增加以下部分。根据需要，可以修改相关版本：<br />
     compile 'com.android.support:appcompat-v7:23.4.0' <br />
@@ -75,9 +75,6 @@ dependencies {  <br />
     compile 'com.android.support:recyclerview-v7:23.4.0'  <br />
     compile 'com.android.support:cardview-v7:23.4.0'  <br />
     
-### 3.cocos2dx接口清单
-  把interface文件夹下的ECServiceCocos2dx.h、ECServiceCocos2dx.cpp放入您的Classes文件夹。
- 
  
 ## 二、接入工程配置
   在AndroidManifest.xml，增加需要的配置：     
@@ -107,6 +104,7 @@ dependencies {  <br />
                 android:pathPrefix="/elvaFAQ" />
        </intent-filter>
     </activity>
+    <!--若使用运营模块-->
     <activity
             android:name="com.ljoy.chatbot.OPActivity"
             android:configChanges="orientation|screenSize|locale"
@@ -114,7 +112,7 @@ dependencies {  <br />
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             >
     </activity>
-#### 3、增加meta        
+#### 3、增加meta
     <meta-data
        android:name="com.google.android.gms.version"
        android:value="@integer/google_play_services_version" />
@@ -123,37 +121,47 @@ dependencies {  <br />
 #### 1、sdk初始化
    创建一个在JNI环境和Activity中传递的应用：（必须在游戏开始阶段调用）<br />
 在主Activity的onCreate中调用初始化接口init，则：<br />
-    ElvaChatServiceHelper.init(Activity activity,String appKey,String domain,String appId); <br />
-> * 其中：<br />
+    ELvaChatServiceSdk.init(Activity activity,String appSecret,String domain,String appId); <br />
+> * 其中：
 activity:当前运行的action，传this即可。<br />
-App Key:app密钥，从Web管理系统获取。<br />
+appSecret:app密钥，从Web管理系统获取。<br />
 domain:app域名，从Web管理系统获取。<br />
-AppId:app唯一标识，从Web管理系统获取。<br />
-注：后面这三个参数，请使用注册邮箱登录 [Elva AI 后台](https://aihelp.net/elva)。在Settings菜单Applications页面查看。初次使用，请先登录[Elva AI 官网](http://aihelp.net/index.html)自助注册。<br />
-
+appId:app唯一标识，从Web管理系统获取。<br />
+注：后面这三个参数，请使用注册邮箱登录 [Elva AI 后台](https://aihelp.net/elva)。在Settings菜单Applications页面查看。初次使用，请先登录[Elva AI 官网](http://aihelp.net/index.html)自助注册。
 
 
 #### 2、接口调用方法
-1) 智能客服主界面启动，调用`showElva`方法，启动机器人界面<br />
-ECServiceCocos2dx:: showElva (string playerName , string playerUid, int serverId, string playerParseId, string showConversationFlag,cocos2d::ValueMap& config); <br />
-> * 参数说明：<br />
-              playerName:游戏中玩家名称。 <br />
-              playerUid:玩家在游戏里的唯一标示id。 <br />
-              serverId:玩家所在的服务器编号。 <br />
-              playerParseId:空。 <br />
-              showConversationFlag(0或1):是否开启人工入口。此处为1时，将在机器人的聊天界面右上角，提供人工聊天的入口。如下图。<br />
-              config:可选，自定义ValueMap信息。可以在此处设置特定的Tag信息。<br />
-![showElva](https://github.com/CS30-NET/Pictures/blob/master/showElva-CN-Android.png "showElva")<br />
+1) 智能客服主界面启动，调用showElvaChatService方法，启动机器人界面
 
-> * 参数示例:        
-    ECServiceCocos2dx:: showElva (“elvaTestName”,“12349303258”,1, “es234-3dfs-d42f-342sfe3s3”,”1”,
-     { 
-       hs-custom-metadata＝｛
-       hs-tags＝’军队，充值’，说明：hs-tags对应的值为vector类型，此处传入自定义的Tag，需要在Web管理配置同名称的Tag才能生效。
-       VersionCode＝’3’
-       ｝
-     }
-    );
+ELvaChatServiceSdk.showElvaChatService(String npcName,String playerName,String playerUid,String parseId,String serverId,String showConversationFlag,HashMap<String,Object> customData); 
+
+> * 参数说明：
+- npcName:请设置为"Elva"。
+- playerName:游戏中玩家名称。 
+- playerUid:玩家在游戏里的唯一标示id。 
+- playerParseId:可为空。 
+- serverId:玩家所在的服务器编号。 
+- showConversationFlag(0或1):是否开启人工入口。此处为1时，将在机器人的聊天界面右上角，提供人工聊天的入口。如下图。
+- customData:可选，自定义ValueMap信息。可以在此处设置特定的Tag信息。
+
+![showElvaChatService](https://github.com/CS30-NET/Pictures/blob/master/showElva-CN-Android.png)
+
+
+> * 参数示例:
+
+`
+ArrayList<String> tags = new ArrayList();
+tags.add("军队");
+tags.add("充值");
+tags.add("elvaTestTag");
+HashMap<String, Object> map = new HashMap();  
+map.put("hs-tags", tags);
+map.put("versionCode", "3");
+HashMap<String, Object> config = new HashMap();
+config.put("hs-custom-metadata", map);
+ELvaChatServiceSdk.showElvaChatService("Elva", "elvaTestPlayer",“12349303258”,“”,"server123","1", config);
+`
+
 
 2) 展示单条FAQ，调用`showSingleFAQ`方法<br />
     ECServiceCocos2dx:: showSingleFAQ (string faqId,cocos2d::ValueMap& config);<br />
@@ -168,7 +176,8 @@ config:可选，自定义ValueMap信息。参照 1)智能客服主界面启动�
 > * 参数说明：<br />
 sectionPublishId:FAQ Section 的PublishID（可以在[Elva AI后台](https://aihelp.net/elva) 中，从FAQs菜单下[Section]菜单，查看PublishID）<br />
 config:可选，自定义ValueMap信息。参照 1)智能客服主界面启动。<br />
-![showFAQSection](https://github.com/CS30-NET/Pictures/blob/master/showFAQSection-CN-Android.png "showFAQSection")<br />
+![showFAQSection](https://github.com/CS30-NET/Pictures/blob/master/showFAQSection-CN-Android.png)
+
 > 
 4) 展示FAQ列表，调用`showFAQs`方法<br />
     ECServiceCocos2dx:: showFAQs (cocos2d::ValueMap& config)<br />
@@ -209,27 +218,34 @@ playerUid:玩家在游戏里的唯一标示id。<br />
 serverId:玩家所在的服务器编号。<br />
 config:可选，自定义ValueMap信息。参照 1)智能客服主界面启动。<br />
 ![showConversation](https://github.com/CS30-NET/Pictures/blob/master/showConversation-CN-Android.png "showConversation")
-11) 智能客服运营模块主界面启动，调用`showElvaOP`方法，启动运营模块界面<br />
-ECServiceCocos2dx:: showElvaOP (string playerName,string playerUid,int serverId,string playerParseId,string playershowConversationFlag,cocos2d::ValueMap& config,int defaultTabIndex); <br />
+11) 智能客服运营模块主界面启动，调用`showOPList`方法，启动运营模块界面<br />
+ELvaChatServiceSdk:: showElvaOP (string playerName,string playerUid,int serverId,string playerParseId,string playershowConversationFlag,cocos2d::ValueMap& config,int defaultTabIndex)
+ELvaChatService.showOPList(String npcName,String userName,String uid,String parseId,String serverId,String showConversationFlag,HashMap<String,Object> customData,int defaultTabIndex) {; <br />
 > * 参数说明：<br />
+              npcName:设置成Elva。 <br />
               playerName:游戏中玩家名称。 <br />
               playerUid:玩家在游戏里的唯一标示id。 <br />
-              serverId:玩家所在的服务器编号。 <br />
               playerParseId:空。 <br />
+              serverId:玩家所在的服务器编号。 <br />
               showConversationFlag(0或1):是否开启人工入口。此处为1时，将在机器人的聊天界面右上角，提供人工聊天的入口。如下图。<br />
               config:自定义ValueMap信息。可以在此处设置特定的Tag信息。<br />
 	      defaultTabIndex:可选，设置默认打开的Tab页index（从0开始，如需默认打开Elva，可设置为999）。<br />	
 
-> * 参数示例:  <br /> 
-    ECServiceCocos2dx:: showElvaOP ("elvaTestName","12349303258",1, "","1",<br /> 
-     { <br /> 
-       hs-custom-metadata＝｛<br /> 
-     hs-tags＝'军队，充值'<br /> 
-     // 说明：hs-tags对应的值为vector类型，此处传入自定义的Tag，需要在Web管理配置同名称的Tag才能生效。<br /> 
-       VersionCode＝'3'<br /> 
-       ｝<br /> 
-     }<br /> 
-    );<br /> 
+
+> * 参数示例:  
+`
+ArrayList<String> tags = new ArrayList();
+tags.add("军队");
+tags.add("充值");
+tags.add("elvaTestTag");
+HashMap<String, Object> map = new HashMap();  
+map.put("hs-tags", tags);
+map.put("versionCode", "3");
+HashMap<String, Object> config = new HashMap();
+config.put("hs-custom-metadata", map);
+ELvaChatServiceSdk.showOPList("Elva", "elvaTestPlayer",“12349303258”,“”,"server123","1", config, 0);
+`
+
 
 12）从不同入口进入不同故事线功能。<br />
 通过map.put("anotherWelcomeText","heroText");来启用不同入口进入不同故事线功能。
@@ -247,9 +263,9 @@ map.put("anotherWelcomeText","heroText");
 HashMap config = new HashMap();
 config.put("hs-custom-metadata",map);
 //如果是在智能客服主界面中
-ELvaChatServiceSdk.showElvaChatService("elvaTestName","12349303258",1, "","1",config);
+ELvaChatServiceSdk.showElvaChatService("Elva", "elvaTestPlayer",“12349303258”,“”,"server123","1", config);
 //如果是在智能客服运营主界面中
-ELvaChatServiceSdk.showElvaOP("elvaTestName","12349303258",1, "","1",config,0);
+ELvaChatServiceSdk.showOPList("Elva", "elvaTestPlayer",“12349303258”,“”,"server123","1", config, 0);
 
 
 
