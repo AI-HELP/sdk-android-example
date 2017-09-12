@@ -148,7 +148,6 @@ ELvaChatServiceSdk.showElvaChatService(String npcName,String playerName,String p
 
 
 > * 参数示例:
-<pre>
 ArrayList<String> tags = new ArrayList();
 tags.add("军队");
 tags.add("充值");
@@ -158,7 +157,7 @@ map.put("hs-tags",tags);
 map.put("versionCode", "3");
 HashMap config = new HashMap();
 config.put("hs-custom-metadata",map);
-ELvaChatServiceSdk.showElvaChatService("Elva", "elvaTestPlayer",“12349303258”,“”,"server123","1", config);<br />
+ELvaChatServiceSdk.showElvaChatService("Elva", "elvaTestPlayer",“12349303258”,“”,"server123","1", config);
 
 
 2) 展示单条FAQ，调用`showSingleFAQ`方法<br />
