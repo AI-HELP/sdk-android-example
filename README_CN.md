@@ -158,7 +158,7 @@ map.put("hs-tags",tags);
 map.put("versionCode", "3");
 HashMap config = new HashMap();
 config.put("hs-custom-metadata",map);
-ELvaChatServiceSdk.showElvaChatService("Elva", "elvaTestPlayer",“12349303258”,“”,"server123","1", config);
+ELvaChatServiceSdk.showElvaChatService("Elva", "elvaTestPlayer",“12349303258”,“”,"server123","1", config);<br />
 
 
 2) 展示单条FAQ，调用`showSingleFAQ`方法<br />
