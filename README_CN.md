@@ -155,7 +155,7 @@ tags.add("elvaTestTag");
 HashMap<String,Object> map = new HashMap();
 map.put("hs-tags",tags);
 map.put("versionCode", "3");
-HashMap config = new HashMap();
+HashMap<String,Object> config = new HashMap();
 config.put("hs-custom-metadata",map);
 ELvaChatServiceSdk.showElvaChatService("Elva", "elvaTestPlayer",“12349303258”,“”,"server123","1", config);
 
@@ -239,7 +239,7 @@ map.put("hs-tags",tags);
 //调用不同故事线功能，使用指定的提示语句，调出相应的机器人欢迎语。
 //注：heroText提示语句，需要和故事线中的User Say相对应。
 map.put("anotherWelcomeText","heroText");
-HashMap config = new HashMap();
+HashMap<String,Object> config = new HashMap();
 config.put("hs-custom-metadata",map);
 ELvaChatServiceSdk.showOPList("Elva", "elvaTestPlayer",“12349303258”,“”,"server123","1", config, 0);
 
@@ -257,7 +257,7 @@ ELvaChatServiceSdk.showOPList("Elva", "elvaTestPlayer",“12349303258”,“”,
 //调用不同故事线功能，使用指定的提示语句，调出相应的机器人欢迎语。
 //注：heroText提示语句，需要和故事线中的User Say相对应。
 map.put("anotherWelcomeText","heroText");
-HashMap config = new HashMap();
+HashMap<String,Object> config = new HashMap();
 config.put("hs-custom-metadata",map);
 //如果是在智能客服主界面中
 ELvaChatServiceSdk.showElvaChatService("Elva", "elvaTestPlayer",“12349303258”,“”,"server123","1", config);
