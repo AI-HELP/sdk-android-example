@@ -147,16 +147,17 @@ ELvaChatServiceSdk.showElvaChatService(String npcName,String playerName,String p
 ![showElvaChatService](https://github.com/CS30-NET/Pictures/blob/master/showElva-CN-Android.png)
 
 
-* 参数示例:
+> * 参数示例:
+<pre>
 ArrayList<String> tags = new ArrayList();
 tags.add("军队");
 tags.add("充值");
 tags.add("elvaTestTag");
-HashMap<String, Object> map = new HashMap();  
-map.put("hs-tags", tags);
+HashMap<String,Object> map = new HashMap();
+map.put("hs-tags",tags);
 map.put("versionCode", "3");
-HashMap<String, Object> config = new HashMap();
-config.put("hs-custom-metadata", map);
+HashMap config = new HashMap();
+config.put("hs-custom-metadata",map);
 ELvaChatServiceSdk.showElvaChatService("Elva", "elvaTestPlayer",“12349303258”,“”,"server123","1", config);
 
 
@@ -228,18 +229,20 @@ ELvaChatService.showOPList(String npcName,String userName,String uid,String pars
 	      defaultTabIndex:可选，设置默认打开的Tab页index（从0开始，如需默认打开Elva，可设置为999）。<br />	
 
 
-> * 参数示例：<br />
+> * 参数示例:
+        <pre>
 ArrayList<String> tags = new ArrayList();
-tags.add("军队");
-tags.add("充值");
+tags.add("pay1");
+tags.add("s1");
 tags.add("elvaTestTag");
-HashMap<String, Object> map = new HashMap();  
-map.put("hs-tags", tags);
-map.put("versionCode", "3");
-HashMap<String, Object> config = new HashMap();
-config.put("hs-custom-metadata", map);
+HashMap<String,Object> map = new HashMap();
+map.put("hs-tags",tags);
+//调用不同故事线功能，使用指定的提示语句，调出相应的机器人欢迎语。
+//注：heroText提示语句，需要和故事线中的User Say相对应。
+map.put("anotherWelcomeText","heroText");
+HashMap config = new HashMap();
+config.put("hs-custom-metadata",map);
 ELvaChatServiceSdk.showOPList("Elva", "elvaTestPlayer",“12349303258”,“”,"server123","1", config, 0);
-
 
 
 12）从不同入口进入不同故事线功能。<br />
