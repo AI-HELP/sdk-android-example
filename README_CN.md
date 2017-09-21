@@ -53,7 +53,7 @@
 
 ### 2.在使用Elva的Module级别build.gradle中加入：
 > dependencies {  <br />
-    compile 'net.aihelp:elva:1.0.0'  <br />
+    compile 'net.aihelp:elva:1.3.4'  <br />
     compile 'org.fusesource.mqtt-client:mqtt-client:1.12'  <br />
     compile 'com.android.support:appcompat-v7:23.4.0'  <br />
     compile 'com.android.support:design:23.4.0'  <br />
@@ -64,7 +64,7 @@
  > * 参数说明：  <br />
 dependencies {  <br />
   //Elva主包,必需  <br />
-    compile 'net.aihelp:elva:1.0.0'  <br />
+    compile 'net.aihelp:elva:1.3.4'  <br />
   //Elva通信包,必需  <br />
     compile 'org.fusesource.mqtt-client:mqtt-client:1.12'  <br />
   //使用Google AppIndexing 时需要加上  <br />
