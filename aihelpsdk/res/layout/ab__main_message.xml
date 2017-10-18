@@ -14,6 +14,81 @@
       android:focusableInTouchMode="true">
 
     <RelativeLayout
+        android:id="@+id/ab__title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentTop="true"
+        android:background="#000000"
+        android:focusable="true">
+
+      <RelativeLayout
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:layout_alignParentLeft="true"
+          android:layout_centerInParent="true"
+          android:clickable="true"
+          android:onClick="onBackArrowClick">
+
+        <ImageButton
+            android:id="@+id/ab__btn_back"
+            android:layout_width="12dp"
+            android:layout_height="22dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/ecs_backarrow"
+            android:clickable="false"
+            />
+      </RelativeLayout>
+
+      <TextView
+          android:id="@+id/ab__main_title"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerInParent="true"
+          android:paddingLeft="0dp"
+          android:text="@string/main_title"
+          android:textColor="#FFFFFF"
+          android:textSize="17sp"/>
+
+      <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/ab__btn_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/chat_bot_title_manu"
+            android:onClick="onMsgShowClick"/>
+
+        <ImageButton
+            android:id="@+id/ab__btn_conversation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/chat_bot_conversation"
+            android:onClick="onConversationShowClick"
+            />
+
+        <ImageButton
+            android:id="@+id/ab__btn_manu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/chat_bot_fake_option"
+            android:onClick="onManuClick"
+            android:visibility="gone"/>
+
+      </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/ab_line_shadow"
         android:layout_width="match_parent"
         android:layout_height="3dp"
@@ -102,22 +177,18 @@
               android:layout_marginTop="5dp"
               android:layout_marginLeft="5dp"
               android:background="@drawable/chat_bot_addpic"
-
+              android:onClick="onOpenAlbum"
               android:visibility="visible"/>
-          <!--android:onClick="onOpenAlbum"-->
         </LinearLayout>
 
         <com.ljoy.chatbot.view.view.LineEditText
             android:id="@+id/ab__input_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="false"
             android:layout_marginBottom="5dp"
-            android:layout_marginLeft="15dp"
             android:layout_marginTop="5dp"
             android:layout_toLeftOf="@+id/ab__chat_word_voice"
-            android:layout_toRightOf="@id/ab__open_albumParent"
-            android:layout_toStartOf="@id/ab__chat_word_voice"
+            android:layout_marginLeft="8dp"
             android:background="@color/transparent"
             android:ems="10"
             android:focusable="true"
@@ -127,7 +198,9 @@
             android:text=""
             android:textColor="#ff000000"
             android:textSize="14sp"
-            line:lineColorEt="@color/start_button_color"/>
+            line:lineColorEt="@color/start_button_color"
+            android:layout_toRightOf="@+id/ab__open_albumParent"
+            android:layout_toEndOf="@+id/ab__open_albumParent" />
 
         <ImageButton
             android:id="@+id/ab__chat_word_voice"
@@ -137,17 +210,15 @@
             android:layout_marginTop="5dp"
             android:layout_toLeftOf="@+id/ab__input_send_btnParent"
             android:background="@drawable/chat_voice"
-
+            android:onClick="onChangeWordVoice"
             android:visibility="gone"/>
-        <!--android:onClick="onChangeWordVoice"-->
 
         <RelativeLayout
             android:id="@+id/ab__input_send_btnParent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            >
-          <!--android:onClick="onSendMsgClick"-->
+            android:onClick="onSendMsgClick">
 
           <ImageButton
               android:id="@+id/ab__input_send_btn"
@@ -194,19 +265,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-
+            android:onClick="onGoodClick"
             android:text="good"/>
-
-        <!--android:onClick="onGoodClick"-->
 
         <Button
             android:id="@+id/ab__reply_bad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-
+            android:onClick="onBadClick"
             android:text="bad"/>
-        <!--android:onClick="onBadClick"-->
       </LinearLayout>
 
       <ProgressBar

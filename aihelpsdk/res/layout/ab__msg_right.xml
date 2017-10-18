@@ -35,12 +35,13 @@
           android:layout_alignParentRight="true"
           android:layout_marginLeft="4dp"
           >
+
             <ImageView
-              android:layout_width="30dp"
-              android:layout_height="30dp"
-              android:id="@+id/imageView1"
-              android:layout_centerInParent="true"
-              android:src="@drawable/default_player_elva"/>
+                android:id="@+id/imageView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:src="@drawable/default_player_elva" />
         </RelativeLayout>
 
         <LinearLayout
