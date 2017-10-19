@@ -33,7 +33,7 @@ AIhelp-Android-SDK文件夹包含：
 |:------------- |:---------------|
 | **android-libs**    | AIHelp Android SDK 所需的依赖包|
 | **aihelpsdk**    | AIHelp Android SDK文件|
-### 2. 把AIHelp SDK 放入你的Android 工程：
+#### 把AIHelp SDK 放入你的Android 工程：
 **a. 把aihelpsdk中libs子文件夹中全部包拷贝到你的工程app中的libs文件夹下**
 
 **b. 把aihelpsdk中的res子文件夹中全部包拷贝到你的工程app中的的res文件夹下**
