@@ -115,8 +115,6 @@ AIhelp SDK 要求android sdk最低版本为14，目标最低版本为23：
 
 	android:screenOrientation="portrait"
 
-横屏：**android:screenOrientation=""**
-
 
 **d. 增加meta (若使用appindexing)**      
 

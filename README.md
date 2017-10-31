@@ -1,245 +1,559 @@
-# HIGHLIGHTS<br />
-[中文版接入指南](https://github.com/AI-HELP/native-android-platform-SDK/blob/master/README_CN.md)
+[查看中文接入文档](https://github.com/AI-HELP/AIhelp-Android-SDK/blob/master/README_CN.md)
 
-1.Remember to initialize, otherwise the user can not enter Elva intelligent customer service system.<br />
-2.<div>
-    <table border="0">
-      <tr>
-        <th>Method</th>
-        <th>showElva</th>
-        <th>showConversation</th>
-        <th>showFAQs</th>
-        <th>showFAQSection</th>
-        <th>showSingleFAQ</th>
-      </tr>
-      <tr>
-        <td>Purpose</td>
-        <td>Start the main robot interface</td>
-        <td>Open the manual CS interface</td>
-        <td>Show FAQ list</td>
-        <td>Show Section</td>
-        <td>Show a single FAQ</td>
-      </tr>
-    </table>
-</div>
-  
-  
-# Android SDK Access Instructions
-## 1，There are two ways to access a budget SDK, one way is imported after download, another way is from jcenter is introduced.
-## One way :
-### Ⅰ. Download Android SDK.
-Click the button "Clone or download" in the top right corner to download Android SDK and then unzip the file.
-## Ⅱ. cocos2dx Interface List
-Put ECServiceCocos2dx.h, ECServiceCocos2dx.cpp in the interface folder in your Classes folder.
+## AIhelp SDK Integration Guide
+There are two methods to integrate AIhelp Android SDK to your APP's project. If you use Android Studio or other development platform which supports Gradle. We recommand you use method #1: 
+### Method #1. Use Gradle to integrate AIhelp SDK online: 
 
-### Ⅲ. Import elvachatservice into project
-Copy the elvachatservice folder to your main directory
+#### 1. Add below lines in your Project's build.gradle:
 
-### Ⅳ. Import Google App Indexing into project
-Import play-services-appindexing into your project(IF the item google service appindexing exists, this step can be ignored).
+	allprojects {
+		repositories {
+			jcenter()
+	}
+	
+#### 2. Add below dependencies in the build.gradle of your APP or Module which intracts with AIhelp sdk:
 
-### Ⅴ.Import Android appcompact into project
-Import Android appcompact from Android_libs into your project(If the item exsit,this step can be ignored). <br />
-If you use Gradle: <br />
-Modify the build. Gradle, and add the following section.
-> compile 'com.android.support:appcompat-v7:23.4.0' <br />
-    compile 'com.android.support:design:23.4.0' <br />
-    compile 'com.android.support:recyclerview-v7:23.4.0' <br />
-    compile 'com.android.support:cardview-v7:23.4.0' <br />
+	dependencies {
+	 ...
+	    compile 'net.aihelp:elva:1.3.5.3'
+	    compile 'com.android.support:appcompat-v7:23.4.0'
+	    compile 'com.android.support:design:23.4.0'
+	    compile 'com.android.support:recyclerview-v7:23.4.0'
+	    compile 'com.android.support:cardview-v7:23.4.0'
+	    // add this if using appindexing:
+	    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
+    ...
+    }
 
-## Another way
-Note: only available on Android Studio or other Gradle -based projects, can be directly modify configuration to increase the introduction of Elva SDK.
- ### Ⅰ. Add the following allprojects to your build.gradle file inside the project section.
- >  <pre> allprojects   {   <br />
- repositories   {   <br />
- jcenter  (  )  }   <br />
-        } 
+Wait until build.gradle sync completion and make sure there is no error during sync: Under the "External Libraries" folder of Android Studio Project sturcture view you should be able to find folder "elva-1.3.5.3" and other dependencies specified above. If there is error during sync or you can't find elva folder. Use the Method #2 below:
 
-### Ⅱ.Add the following dependencies to your build.gradle file inside the depencencies section.
-> dependencies {  <br />
-    compile 'net.aihelp:elva:1.0.0'  <br />
-    compile 'org.fusesource.mqtt-client:mqtt-client:1.12'  <br />
-    compile 'com.android.support:appcompat-v7:23.4.0'  <br />
-    compile 'com.android.support:design:23.4.0'  <br />
-    compile 'com.android.support:recyclerview-v7:23.4.0'  <br />
-    compile 'com.android.support:cardview-v7:23.4.0'  <br />
-}  <br />
+### Method #2. Download The AIhelp-x Android SDK：
+Click "Clone or download" to download Android SDK in github page, unzip the downloaded file.
 
-### Ⅲ. cocos2dx Interface List
-Put ECServiceCocos2dx.h, ECServiceCocos2dx.cpp in the interface folder in your Classes folder.
+**AIhelp-Android-SDK** contains:
 
-## 2. Access Project Configuration
-Modify the AndroidManifest.xml in elvachatservice folder to add the required configuration:
-### Ⅰ. Add the required permissions:
-    <Uses-permission android: name = "android.permission.INTERNET" />
-    <Uses-permission android: name = "android.permission.ACCESS_NETWORK_STATE" />
-    <Uses-permission android: name = "android.permission.WRITE_EXTERNAL_STORAGE" />
-    <Uses-permission android: name = "android.permission.READ_EXTERNAL_STORAGE" />
-### Ⅱ. Add activity:
-    <Activity
-        Android: name = "com.ljoy.chatbot.ChatMainActivity"
-        Android: configChanges = "orientation | screenSize | locale"
-        Android: screenOrientation = "portrait">
-    </ Activity>
-    <Activity
-        Android: name = "com.ljoy.chatbot.FAQActivity"
-        Android: configChanges = "orientation | screenSize | locale"
-        Android: screenOrientation = "portrait"> 
-        <intent-filter android:label="@string/app_name">
-            <action android:name="android.intent.action.VIEW" />
-            <category android:name="android.intent.category.DEFAULT" />
-            <category android:name="android.intent.category.BROWSABLE" />
-            <data android:scheme="https"
+| subfolder name | description |
+|:------------- |:---------------|
+| **android-libs**    | AIHelp Android SDK dependencies|
+| **aihelpsdk**    | AIHelp Android SDK core files|
+ 
+
+#### Add AIHelp to your Android project:
+**a.** copy files under folder *aihelpsdk/libs* to the the libs folder of your APP's project.
+
+**b.** copy files under folder *aihelpsdk/res* to the res folder of your APP's project.
+
+**c.** Import dependencies under *android-libs* to your Project：
+
+If your project has already imported some of the dependencies, just import those you don't have. If you use Gradle，all you need to do is add below dependencies in your _build.gradle_:
+
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'
+    compile 'com.android.support:recyclerview-v7:23.4.0'
+    compile 'com.android.support:cardview-v7:23.4.0'
+    # add this if using appindexing:
+    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
+
+If you use __Eclipse__ that doesn't use Gradle, you need to import each of the dependencies into your project as a library. You also need to explicitly add dependency relationship between AIHelp SDK and the libraries:  
+__elvachatservice__ depends __appcompat__, which depends __design__, __recyclerview__ and __cardview__.
+ 
+### 3. Configure your Android Manifest
+  In the AndroidManifest.xml of your project, add below information：     
+**a. Add Required Permissions**
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+**b. Add AIHelp Activities:**
+
+    <activity
+       android:name="com.ljoy.chatbot.ChatMainActivity"
+       android:configChanges="orientation|screenSize|locale"
+       android:screenOrientation="sensor">
+    </activity>
+    <activity
+       android:name="com.ljoy.chatbot.FAQActivity"
+       android:configChanges="orientation|screenSize|locale"
+       android:screenOrientation="sensor"
+       android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
+       <intent-filter android:label="@string/app_name">
+          <action android:name="android.intent.action.VIEW" />
+          <category android:name="android.intent.category.DEFAULT" />
+          <category android:name="android.intent.category.BROWSABLE" />
+          <data android:scheme="https"
                 android:host="cs30.net"
                 android:pathPrefix="/elvaFAQ" />
-        </intent-filter>
-    </ Activity>
-### Ⅲ、Add meta
-      <meta-data
-          android:name="com.google.android.gms.version"
-          android:value="@integer/google_play_services_version" />
+       </intent-filter>
+    </activity>
+    <activity
+       android:name="com.ljoy.chatbot.OPActivity"
+       android:configChanges="orientation|screenSize|locale"
+       android:screenOrientation="sensor"
+       android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+    </activity>
+    <activity 
+       android:name="com.ljoy.chatbot.WebViewActivity"
+       android:screenOrientation="sensor"
+       android:configChanges="orientation|screenSize|locale"
+       android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
+       <intent-filter android:label="@string/app_name">
+          <action android:name="android.intent.action.VIEW" />
+          <category android:name="android.intent.category.DEFAULT" />
+          <category android:name="android.intent.category.BROWSABLE" />
+       </intent-filter>
+    </activity>
+    
+About the screen orientations: 
+**android:screenOrientation="sensor"** means AIhelp User Interface will adjust display orientation according to the mobile's screen orientation, if you intend to fixate AIhelp UI display, use below setting:
 
-## 3.Interface Call Instructions
-### 1. SDK initialization. <br />
-Create a JNI environment and the application in the Activity: (must be called at the beginning of the game)<br />
-<br />
-call initialization interface in onCreate of the main Activity. then call:<br />
-ElvaChatServiceHelper.init (Activity activity, String appKey, String domain, String appId)<br />
-> * Parameter Description:<br />
-activity: the current operation of the action, parameter "this" can be. <br />
-app Key: The app key, obtained from the Web management system.<br />
-domain: app Domain name, obtained from the Web management system.<br />
-appId: app Unique identifier, obtained from the Web management system.<br />
-Note: The latter three parameters, please use the registered email address to login https://aihelp.net/elva. View in the Settings Applications page. Initial use, please register on the official website http://aihelp.net/preview/index.html.
-> 
+landscape display:
 
+	android:screenOrientation="landscape"
+portrait display:
 
-
-### 2. The interface call method<br />
-1) Start smart customer service main interface, call `showElva` method, start the robot interface.<br />
-ECServiceCocos2dx :: showElva (string playerName, string playerUid, int serverId, string playerParseId, string showConversationFlag, cocos2d :: ValueMap & config);<br />
-> * Parameter Description:<br />
-playerName: The name of the player in the game.<br />
-playerUid: The player's unique id in the game.<br />
-serverId: The server ID of the player.<br />
-playerParseId: Null.<br />
-showConversationFlag (0 or 1): whether VIP, 0: marked non-VIP; 1: VIP. Here is 1, will be in the upper right corner of the robot chat interface, to provide artificial chat entry function.<br />
-config: Optional, custom ValueMap information. You can set specific Tag information here.<br />
-![showElva](https://github.com/CS30-NET/Pictures/blob/master/showElva-EN-Android.png "showElva")<br />
-
-> * Parameter Example:    <br />
-    ECServiceCocos2dx :: showElva ( "elvaTestName", "12349303258", 1, "es234-3dfs-d42f-342sfe3s3", "1"<br />
-     {<br />
-       Hs-custom-metadata = {<br />
-       Hs-tags = 'army, recharge'. //Note: hs-tags value is vector type, where the incoming custom Tag,   <br />
-       need to configure the same name in the Web management Tag to take effect.<br />
-       VersionCode = '3'<br />
-       } <br />
-     }<br />
-    );<br />
-> 
-2) Show a single FAQ, call `showSingleFAQ` method<br />
-ECServiceCocos2dx :: showSingleFAQ (string faqId, cocos2d :: ValueMap & config);<br />
-> * Parameter Description:<br />
-faqId: FAQ's PublishID, in the Web background https://aihelp.net/elva, from the FAQs menu to find the specified FAQ, view PublishID.<br />
-config: Optional, custom ValueMap information. Refer to 1) intelligent customer service main interface starts.<br />
-Note: If the SelfServiceInterface is configured in the web administration background, and the SDK is configured with related parameters, the FAQ will be displayed and the function menu will be provided in the upper right corner to call up the related self-service.<br />
-![showSingleFAQ](https://github.com/CS30-NET/Pictures/blob/master/showSingleFAQ-EN-Android.png "showSingleFAQ")<br />
-> 
-3) Show the relevant part of the FAQ, call `showFAQSection` method<br />
-ECServiceCocos2dx :: showFAQSection (string sectionPublishId, cocos2d :: ValueMap & config);<br />
-> * Parameter Description:<br />
-sectionPublishId: PublishID of the FAQ Section (PublishID can be viewed from the [Section] menu in the FAQs menu at https://aihelp.net/elva).<br />
-config: Optional, custom ValueMap information. Refer to 1) intelligent customer service main interface starts.
-![showFAQSection](https://github.com/CS30-NET/Pictures/blob/master/showFAQSection-EN-Android.png "showFAQSection")<br />
-> 
-4) Show the FAQ list, call `showFAQs` method<br />
-ECServiceCocos2dx :: showFAQs (cocos2d :: ValueMap & config);<br />
-> * Parameter Description:
-config: Optional, custom ValueMap information. Refer to 1) intelligent customer service main interface starts.<br />
-![showFAQs](https://github.com/CS30-NET/Pictures/blob/master/showFAQs-EN-Android.png "showFAQs")<br />
-> 
-5) set the game name information, call `setName` method (It is recommended to call this method after calling init)       
-ECServiceCocos2dx :: setName (string game_name);<br />
-Parameter Description:<br />
-game_name: The name of the game, which will be displayed in the title bar of the relevant interface in the SDK.<br />
-> 
-6) Set Token, use google push, call `registerDeviceToken` method (no)<br />
-ECServiceCocos2dx :: registerDeviceToken (string deviceToken);<br />
-> * Parameter Description:<br />
-deviceToken: The device Token.<br />
-> 
-7) Set the user id information, call the `setUserId` method (using self-service must call, see 2) show a single FAQ). Call<br />
-ECServiceCocos2dx :: setUserId (string playerUid) before showSingleFAQ;<br />
-> * Parameter Description:<br />
-playerUid: The player unique ID.<br />
-> 
-8) Set the server number information, call `setServerId` method (using self-service must call, see 2) show a single FAQ). Call<br />
-ECServiceCocos2dx :: setServerId (int serverId) before showSingleFAQ;<br />
-> * Parameter Description:<br />
-serverId: Server ID.<br />
-> 
-9) Set the player name information, call `setUserName` method (It is recommended to call this method after calling init)<br />
-ECServiceCocos2dx :: setUserName (string playerName);<br />
-> * Parameter Description:<br />
-playerName: The player name.<br />
-> 
-10) Direct vip_chat artificial customer service chat, call `showConversation` method (must ensure that setUserName in 9) set the
-      player name information has been called)<br />
-ECServiceCocos2dx :: showConversation (string playerUid, int serverId, cocos2d :: ValueMap & config);<br />
-
-> * Parameter Description:<br />
-playerUid: The player's unique id in the game.<br />
-serverId: The server ID of the player.<br />
-config: Optional, custom ValueMap information. Refer to 1) intelligent customer service main interface starts.<br />
-![showConversation](https://github.com/CS30-NET/Pictures/blob/master/showConversation-EN-Android.png "showConversation")
-11) Operation Module UI. call `showElvaOP` method to start the operation module ui.<br />
-showElvaOP(string playerName, string playerUid, string serverId, string playerParseId, string showConversationFlag, Dictionary\<string,object> config, int defaultTabIndex);
-<br />
-
-> * Parameter Description:<br />
-              playerName:The player name. <br />
-              playerUid:The player's unique id in the game. <br />
-              serverId:The server ID of the player. <br />
-              playerParseId:Null. <br />
-              showConversationFlag (0 or 1): whether VIP, 0: marked non-VIP; 1: VIP. Here is 1, will be in the upper right corner of the robot chat interface, to provide artificial chat entry function.<br />
-config: Optional, custom ValueMap information. You can set specific Tag information here.<br />
-              defaultTabIndex:Optional，Set the default tab index.（start with 0，if you want to set Elva tab as default，just set it to 999）.<br />	
-<br />
-
-> * Parameter Example:      
->   <pre>ArrayList<String> tags = new ArrayList();<br />
-> //Description: the hs - tags corresponding value is an ArrayList, incoming custom Tag here, need in the Web management configuration with the name of the Tag.<br />
-> tags.add("pay1");<br />
-        tags.add("s1");<br />
-        tags.add("elvaTestTag");<br />
-        HashMap<String,Object> map = new HashMap();<br />
-        map.put("hs-tags",tags);<br />
-        HashMap<String,Object> config = new HashMap();<br />
-        config.put("hs-custom-metadata",map);<br />
-> ELvaChatServiceSdk.showElvaOP("elvaTestName","12349303258",1, "","1",config,0);<br /><pre />
+	android:screenOrientation="portrait"
  
-12） different entrance into the different stories. <br />
-Use map.put("anotherWelcomeText","heroText");to enable different entrance into the different stories.
-> * Parameter Example:      
-        <pre>
-  ArrayList<String> tags = new ArrayList();
-        tags.add("pay1");
-        tags.add("s1");
-        tags.add("elvaTestTag");
+
+**c. Add meta data (if usig appindexing)**      
+
+    <meta-data
+       android:name="com.google.android.gms.version"
+       android:value="@integer/google_play_services_version" />
+
+### 4. Initialize AIHelp SDK in your Project
+
+```
+Note：
+You must use ELvaChatServiceSdk.init(...) in your APP's Initialization Code, otherwise you can't use AIHelp service properly. 
+
+```
+
+```
+ELvaChatServiceSdk.init(
+				Activity a,
+				String appKey,
+				String domain,
+				String appId
+				)
+```
+	
+
+
+**About Parameters：**
+
+| Parameters | Description |
+|:------------- |:---------------|
+| appKey    | Your unique developer API Key|
+| domain     | Your AIHelp domain name. For example: foo.AIHELP.NET|
+| appId     | A unique ID assigned to your app.| 
+
+Note: Please log in [AIHelp Web Console](https://aihelp.net/elva) with your registration email account to find __appKey__, __domain__ and __appId__ In the _Application_ page of the _Settings_ Menu. 
+If your company doesn't have an account, you need to register an account in [AIHelp Website](http://aihelp.net/index.html)
+
+
+**Coding Example：**
+
+```
+// Must be called during application/game initialization, otherwise you can't use AIHelp properly
+
+import com.ljoy.chatbot.sdk.ELvaChatServiceSdk;
+
+public class MyActivity extends Activity {
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        try {
+          ELvaChatServiceSdk.init(this,
+                                  "YOUR_API_KEY",
+                                  "YOUR_DOMAIN_NAME",
+                                  "YOUR_APP_ID");
+        } catch (InstallException e) {
+          Log.e(TAG, "invalid init params : ", e);
+        }
+    }
+}
+```
+
+---
+
+### 5. Start using AIHelp
+
+#### 1. API summary
+
+| Method Name| Purpose |Prerequisites|
+|:------------- |:---------------|:---------------|
+| **[showElva](#showElva)**      | Launch AI Conversation Interface| 
+| **[showElvaOP](#showElvaOP)** | Launch Operation Interface| Need to configure Operation sections|
+| **[showFAQs](#showFAQs)** | Show all FAQs by sections|Need to configure FAQs|
+|**[showConversation](#showConversation)**|Launch VIP conversation interface| Need to setUserName and setUserId |
+| **[showSingleFAQ](#showSingleFAQ)** | Show single FAQ|Need to configure FAQ|
+| **[setName](#setName)** | Set APP/Game Name|Use it after initialization|
+| **[setUserName](#UserName)** | Set User in-app name|
+| **[setUserId](#UserId)** | Set unique user ID|
+| **[setSDKLanguage](#setSDKLanguage)** | Set SDK language|
+
+
+**Note：It's not necessary for you to use all the APIs, especially when you only have one user interface for the customer service in your application. Some APIs already contains entry to other APIs, see below in detail：**
+
+#### <h4 id="showElva">2. Launch the AI Conversation Interface，Use`showElva`</h4>
+
+
+	ELvaChatServiceSdk.showElva(
+				String playerName,
+				String playerUid,
+				String serverId,
+				String showConversationFlag);
+			
+or
+
+	ELvaChatServiceSdk.showElva(
+				String playerName,
+				String playerUid,
+				String serverId,
+				String showConversationFlag,
+				HashMap<String,Object> customData);
+
+**Coding Example：**
+
+	// Presenting AI Help Converation with your customers
+
 	HashMap<String,Object> map = new HashMap();
-        map.put("hs-tags",tags);
-//note："heroText" must be the same with "User Say" in the stories。
-map.put("anotherWelcomeText","heroText");
-HashMap config = new HashMap();
-config.put("hs-custom-metadata",map);
-//If show Elva Chat
-ELvaChatServiceSdk.showElvaChatService("elvaTestName","12349303258",1, "","1",config);
-//If show Elva Chat Operation Module
-ELvaChatServiceSdk.showElvaOP("elvaTestName","12349303258",1, "","1",config,0);
- 
-13)  Set the SDK language，call `setSDKLanguage` method(Elva use the language of the phone by default.Call this method if after init ,and after the language of App has changed if nessary.)<br />
-setSDKLanguage (String language);<br />
-> * Parameter Description:<br />
-language:language alias,eg:en for english,zh_CN for simplified Chinese.For more alias ,see alias in Elva page "settings"-->"language".<br />
-> 
+	ArrayList<String> tags = new ArrayList();
+	tags.add("pay1");
+	tags.add("s1");
+	tags.add("elvaTestTag");
+	map.put("elva-tags",tags);
+	// other data
+	HashMap<String,Object> config = new HashMap();
+	config.put("elva-custom-metadata",map);
+	
+	ELvaChatServiceSdk.setName("APP_NAME"); // set APP name
+	ELvaChatServiceSdk.showElva(
+				"USER_NAME",
+				"USER_ID",
+				"Server_ID",
+				"1", // show conversation entry
+				config);
+
+**About Parameters：**
+
+- __playerName__: In-app User Name
+- __playerUid__: In-app Unique User ID
+- __serverId__: The Server ID
+- __playerParseId__: Can be empty string, can NOT be NULL
+- __showConversationFlag__: Should be "0" or "1". If set "1", the VIP conversation entry will be displayed in the upper right of the AI conversation interface.
+- __config__: Optional param for custom HashMap information. You can pass specific Tag information using ArrayList elva-tags, see above coding example. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
+	
+![showElva](https://github.com/AIHELP-NET/Pictures/blob/master/showElva-EN-Android.png "showElva")
+	
+**Best Practice：**
+
+> 1. Use this method to launch your APP's customer service. Configure specific welcome text and AI story line in the AIHelp Web Console to better customer support experiences.
+> 2. Enable VIP Conversation Entry to allow user to chat with your human support with parameter "__showConversationFlag__" setting to "__1__", you may use this method for any user or as a privilege for some users only.
+
+#### <h4 id="showElvaOP">3. Launch The Operation Interface, use`showElvaOP`</h4>
+
+The operation module is useful when you want to present update, news, articles or any background information about your APP/Game to users. The AI Help
+
+	ELvaChatServiceSdk.showElvaOP(
+				String playerName,
+				String playerUid,
+				String serverId,
+				String showConversationFlag);
+
+
+	ELvaChatServiceSdk.showElvaOP(
+				String playerName,
+				String playerUid,
+				String serverId,
+				String showConversationFlag,
+				HashMap<String,Object> config);
+
+
+
+	ELvaChatServiceSdk.showElvaOP(
+				String playerName,
+				String playerUid,
+				String serverId,
+				String showConversationFlag,
+				HashMap<String,Object> config,
+				int defaultTabIndex);
+
+**Coding Example：**
+
+	// Presenting Operation Info to your customers
+	HashMap<String,Object> map = new HashMap();
+	ArrayList<String> tags = new ArrayList();
+	tags.add("pay1");
+	tags.add("s1");
+	tags.add("elvaTestTag");
+	map.put("elva-tags",tags);
+	// other data
+	HashMap<String,Object> config = new HashMap();
+	config.put("elva-custom-metadata",map);
+	
+	ELvaChatServiceSdk.setName("APP_NAME"); // set APP name
+	ELvaChatServiceSdk.showElvaOP(
+				"USER_NAME",
+				"USER_ID",
+				"Server_ID",
+				"1", // show conversation entry
+				config);
+
+**About Parameters：**
+
+- __playerName__: User Name in Game/APP
+- __playerUid__: Unique User ID
+- __serverId__: The Server ID
+- __playerParseId__: Can be empty string, can NOT be NULL
+- __showConversationFlag__: Should be "0" or "1". If set "1", the VIP conversation entry will be shown in the top right corner of the AI conversation interface.
+- __config__: Optional param for custom HashMap information. You can pass specific Tag information using ArrayList elva-tags, see above coding example. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
+- __defaultTabIndex__: Optional. The index of the first tab to be shown when entering the operation interface. Default value is the left-most tab，if you would like to show the AI conversation interface(the right-most，set it to 999.
+	
+![showElva](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElvaOP_Android.png "showElvaOP")
+
+**Best Practice：**
+> 1. Use this API to present news, announcements, articles or any useful information to users/players. Configure and publish the information in AIHelp web console. 
+
+#### <h4 id="showFAQs">4. Display FAQs, use`showFAQs `</h4>
+
+	ELvaChatServiceSdk.showFAQs();
+
+	ELvaChatServiceSdk.showFAQs (HashMap config)
+
+**Coding Example：**
+
+	// Presenting FAQs to your customers
+	HashMap<String,Object> map = new HashMap();
+	config.put("showConversationFlag","1");//show conversation entry in the top right corner	
+	
+	ELvaChatServiceSdk.setUserName("USER_NAME"); // set User Name
+	ELvaChatServiceSdk.setUserId("USER_ID"); // set User Id
+	ELvaChatServiceSdk.setServerId("SERVER_ID"); // set Serve Id
+	
+	ELvaChatServiceSdk.showFAQs(config);
+
+**About Parameters：**
+
+- __config__: Optional param for custom HashMap information. You can pass specific Tag information using ArrayList elva-tags, see above coding example. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
+	
+![showElva](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showFAQs-EN-Android.png "showFAQs")
+
+**Best Practice：**
+> 1. Use this method to show FQAs about your APP/Game properly. Configure FAQs in AIHelp Web Console. Each FAQ can be categroized into a section. If the FAQs are many, you can also add Parent Sections to categorize sections to make things clear and organized. 
+
+#### <h4 id="showSingleFAQ">5. Show A Specific FAQ，use`showSingleFAQ`
+</h4>
+
+	ELvaChatServiceSdk.showSingleFAQ(String faqId);
+
+	ELvaChatServiceSdk.showSingleFAQ(String faqId,HashMap config);
+
+**Coding Example：**
+
+	// Presenting Single FAQ to your customers
+	
+	ELvaChatServiceSdk.setUserName("USER_NAME"); // set User Name
+	ELvaChatServiceSdk.setUserId("USER_ID"); // set User Id
+	ELvaChatServiceSdk.setServerId("SERVER_ID"); // set Server Id
+	
+	HashMap<String,Object> map = new HashMap();
+	ArrayList<String> tags = new ArrayList();
+	tags.add("pay1");
+	tags.add("s1");
+	tags.add("elvaTestTag");
+	map.put("elva-tags",tags);
+	// other data
+	HashMap<String,Object> config = new HashMap();
+	config.put("elva-custom-metadata",map);
+	config.put("showConversationFlag","1");// show conversation entry in the top right corner.
+	
+	ELvaChatServiceSdk.showSingleFAQ("23",config);
+
+**About Parameters：**
+
+- __faqId__: The PublishID of the FAQ item, you can check it in [AIHelp Web Console](https://aihelp.net/elva): Find the FAQ in the FQA menu and copy its PublishID.
+- __config__: Optional param for custom HashMap information. You can pass specific Tag information using ArrayList elva-tags, see above coding example. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
+	
+![showSingleFAQ](https://github.com/AIHELP-NET/Pictures/blob/master/showSingleFAQ-EN-Android.png "showSingleFAQ")
+
+<h4 id="selfservice"></h4>
+
+**Self-Service：**
+
+If you configure the "self-service" link in FAQ's configuration, and set [UserId](#UserId), [UserName](#UserName), [ServerId](#ServerId) in SDK，then the FAQ shows with functional menu in the right-top cornor.
+
+
+**Best Practice：**
+> 1. Use this method when you want to show a specific FAQ in a proper location of your APP/Game.
+
+#### <h4 id="setName">6. Set Your APP's name for AIHelp SDK to display，use`setName`</h4>
+
+	ELvaChatServiceSdk.setName(String game_name);
+
+**Coding Example：**
+
+	ELvaChatServiceSdk.setName("Your Game");
+
+**About Parameters：**
+
+- __game_name__: APP/Game name
+
+**Best Practice：**
+> 1. Use this method after SDK initialization.The App's name will display in the title bar of the customer service interface.
+
+#### <h4 id="UserId">7. Set the Unique User ID, use `setUserId`</h4>
+
+
+	ELvaChatServiceSdk.setUserId(String playerUid);
+
+**Coding Example：**
+
+	ELvaChatServiceSdk.setUserId("123ABC567DEF");
+
+**About Parameters：**
+
+- __playerUid__:Unique user ID
+
+**Best Practice：**
+> 1. Normally you don't need to use this method if you have passed user ID in other method. However, if you want to use FAQ's [Self-Service](#selfservice), then you must set the User Id first.
+
+#### <h4 id="UserName">8. Set User Name，use`setUserName`</h4>
+
+	ELvaChatServiceSdk.setUserName (String playerName);
+
+**Coding Example：**
+
+	ELvaChatServiceSdk.setUserName ("PLAYER_NAME");
+
+**About Parameters：**
+
+- __playerName:__ User/Player Name
+
+**Best Practice：**
+> 1. Use this method to set the user name, which will be shown in the web console's conversation page for the user. You can address the user with this name during the chat.
+> 2. Normally you don't need to use this method if you have passed user name in other method. However, if you want to use FAQ's [Self-Service](#selfservice), then you must set the User Id first.
+
+#### <h4 id="ServerId">9. Set Unique Server ID，use`setServerId`
+</h4>
+
+	ELvaChatServiceSdk.setServerId(String serverId);
+
+**Coding Example：**
+
+	ELvaChatServiceSdk.setServerId("SERVER_ID");
+
+**About Parameters：**
+
+- __serverId:__ The unique server ID
+
+**Best Practice：**
+> 1. Normally you don't need to use this method if you have passed server ID in other method. However, if you want to use FAQ's [Self-Service](#selfservice), then you must set the User Id first.
+
+#### <h4 id="showConversation">10. Launch VIP chat console, use`showConversation`(need to set [UserName](#UserName))</h4>
+
+	ELvaChatServiceSdk.showConversation(
+					String playerUid,
+					String serverId);
+
+or
+
+	ELvaChatServiceSdk.showConversation(
+					String playerUid,
+					String serverId,
+					HashMap config);
+	
+**Coding Example：**
+
+	HashMap<String,Object> map = new HashMap();
+	ArrayList<String> tags = new ArrayList();
+	tags.add("pay1");
+	tags.add("s1");
+	tags.add("elvaTestTag");
+	map.put("elva-tags",tags);
+	//other data
+	HashMap<String,Object> config = new HashMap();
+	config.put("elva-custom-metadata",map);
+	
+	ELvaChatServiceSdk.setUserName("USER_NAME");
+	ELvaChatServiceSdk.showConversation("USER_ID","SERVER_ID",config);
+
+**About Parameters：**
+
+- __playerUid__:Unique user ID
+- __serverId:__ The unique server ID
+- __config__: Optional param for custom HashMap information. You can pass specific Tag information using ArrayList elva-tags, see above coding example. Please note you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
+
+**Best Practice：**
+> 1. Normally you don't need to use this method unless you intend to allow users to enter VIP conversation without engaging with the AI chat. You may use this method as a privilege for some users.
+
+![showConversation](https://github.com/AIHELP-NET/Pictures/blob/master/showConversation-EN-Android.png "showConversation")
+
+
+#### <h4 id="setSDKLanguage">11. Set SDK Lanague，use`setSDKLanguage`
+</h4>
+Set SDK Language will change the FAQs, Operational information, AI Chat and SDK display language. 
+
+	ELvaChatServiceSdk.setSDKLanguage(string language);
+	
+**Coding Example：**
+
+	ELvaChatServiceSdk.setSDKLanguage("en");
+
+**About Parameters：**
+
+- __language:__ Standard Language Alias. For example: en is for English, zh_CN is for Simplified Chinese。More language label to check the AIHelp Web Console:"Settings"-->"Language"->Alias.
+
+![language](https://github.com/AI-HELP/Docs-Screenshots/blob/master/Language-alias.png "Language Alias")
+
+**Best Practice：**
+> 1. Normally AIHelp will use the mobile's lanaguge configuration by default. If you intend to make a different language setting, you need to use this method right after SDK initialization.
+> 2. If your allow users to change APP language, then you need to call this method to make AIHelp the same lanague with your APP.
+
+#### 12. Set a different greeting story line.
+
+If your APP provides multiple entries to AIHelp, and you intend to introduce different AI welcome text and story line to users from different entries, you can set config parameter in [showElva](#showElva) or [showElvaOP](#showElvaOP)： 
+
+	map.put("anotherWelcomeText","usersay");
+
+**Coding Example：**
+
+
+	HashMap<String,Object> map = new HashMap();
+	ArrayList<String> tags = new ArrayList();
+	tags.add("pay1");
+	tags.add("s1");
+	tags.add("elvaTestTag");
+	map.put("elva-tags",tags);
+	// note：anotherWelcomeText is key，should be unchanged.
+	// you need to change usersay according to the "User Say" in your new 
+	// story line
+	map.put("anotherWelcomeText","usersay");
+	HashMap<String,Object> config = new HashMap();
+	config.put("elva-custom-metadata",map);
+	
+	ELvaChatServiceSdk.setName("APP_NAME"); // 设置应用名字
+	
+	// Enter show AI support
+	ELvaChatServiceSdk.showElva(
+				"USER_NAME",
+				"USER_ID",
+				"Server_ID",
+				"1", // show conversation entry
+				config);
+Or
+
+	// Enter operational module
+	ELvaChatServiceSdk.showElvaOP(
+				"USER_NAME",
+				"USER_ID",
+				"Server_ID",
+				"1", // show conversation entry
+				config);
+
+
+**Best Practice：**
+> 1. Introduce different story lines to users from different source.
+
