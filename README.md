@@ -534,7 +534,7 @@ If your APP provides multiple entries to AIHelp, and you intend to introduce dif
 	HashMap<String,Object> config = new HashMap();
 	config.put("elva-custom-metadata",map);
 	
-	ELvaChatServiceSdk.setName("APP_NAME"); // 设置应用名字
+	ELvaChatServiceSdk.setName("APP_NAME"); // set APP Name
 	
 	// Enter show AI support
 	ELvaChatServiceSdk.showElva(
