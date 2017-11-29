@@ -23,7 +23,7 @@
     ...
     }
 
-确保build.gradle __同步成功__: 在Android Studio的External Libraries下面能够看到加载成功elva-1.3.5.3文件夹以及上述依赖包。如果无法自动加载，采用了第二种导入方式：
+确保build.gradle __同步成功__: 在Android Studio的External Libraries下面能够看到加载成功elva-1.3.6文件夹以及上述依赖包。如果无法自动加载，采用了第二种导入方式：
 
 ### 导入方式二： 下载AIHelp Android SDK：
 点击页面右上角的“Clone or download”按钮下载Android SDK，下载完成后解压文件。
