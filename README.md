@@ -55,7 +55,7 @@ If your project has already imported some of the dependencies, just import those
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
 
 If you use __Eclipse__ that doesn't use Gradle, you need to import each of the dependencies into your project as a library. You also need to explicitly add dependency relationship between AIHelp SDK and the libraries:  
-__elvachatservice__ depends __appcompat__, which depends __design__, __recyclerview__ and __cardview__.
+__elvachatservice__ depends __design__, which depends __appcompat__, __recyclerview__ and __cardview__.
  
 ### 3. Configure your Android Manifest
   In the AndroidManifest.xml of your project, add below information：     

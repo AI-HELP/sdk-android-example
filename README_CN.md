@@ -49,7 +49,7 @@ AIhelp-Android-SDK文件夹包含：
     //若使用appindexing，增加如下：
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
 
-如果你使用了Eclipse, 并没有用Gradle，你需要把依赖包导入到你的工程中作为library，并且增加依赖关系给AIHelp SDK。具体依赖关系: aihelpsdk依赖于appcompat, 后者依赖于design, recyclerview 和cardview。
+如果你使用了Eclipse, 并没有用Gradle，你需要把依赖包导入到你的工程中作为library，并且增加依赖关系给AIHelp SDK。具体依赖关系: aihelpsdk依赖于design, 后者依赖于appcompat, recyclerview 和cardview。
  
 ### 3. 接入工程配置
 在你的Android工程的AndroidManifest.xml，增加需要的配置：  
