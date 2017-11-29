@@ -125,8 +125,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:layout_marginTop="10dp"
-        android:paddingTop="10dp"
+        android:layout_marginTop="5dp"
+        android:paddingTop="5dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="10dp" >
@@ -139,4 +139,43 @@
             android:id="@+id/ab__critic_result2"
             android:layout_centerInParent="true" />
     </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ab__msg_store_review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="false"
+        android:layout_below="@+id/ab__msg_critic_result2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/ab__store_review"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Thank you for rating this App."
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/ab__store_review"
+            android:gravity="right"
+            android:layout_marginTop="10dp">
+            <ImageButton
+                android:id="@+id/rl_btn_store_review"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/ok_button"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+
 </RelativeLayout>
