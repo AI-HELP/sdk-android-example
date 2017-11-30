@@ -25,7 +25,7 @@ There are two methods to integrate AIhelp Android SDK to your APP's project. If 
     ...
     }
 
-Wait until build.gradle sync completion and make sure there is no error during sync: Under the "External Libraries" folder of Android Studio Project sturcture view you should be able to find folder "elva-1.3.5.3" and other dependencies specified above. If there is error during sync or you can't find elva folder. Use the Method #2 below:
+Wait until build.gradle sync completion and make sure there is no error during sync: Under the "External Libraries" folder of Android Studio Project sturcture view you should be able to find folder "elva-1.3.6" and other dependencies specified above. If there is error during sync or you can't find elva folder. Use the Method #2 below:
 
 ### Method #2. Download The AIhelp-x Android SDK：
 Click "Clone or download" to download Android SDK in github page, unzip the downloaded file.
