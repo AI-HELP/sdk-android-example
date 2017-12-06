@@ -46,8 +46,6 @@ AIhelp-Android-SDK文件夹包含：
     compile 'com.android.support:design:23.4.0'
     compile 'com.android.support:recyclerview-v7:23.4.0'
     compile 'com.android.support:cardview-v7:23.4.0'
-    //若使用appindexing，增加如下：
-    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
 
 如果你使用了Eclipse, 并没有用Gradle，你需要把依赖包导入到你的工程中作为library，并且增加依赖关系给AIHelp SDK。具体依赖关系: aihelpsdk依赖于design, 后者依赖于appcompat, recyclerview 和cardview。
  
@@ -115,12 +113,6 @@ AIhelp SDK 要求android sdk最低版本为14，目标最低版本为23：
 
 	android:screenOrientation="portrait"
 
-
-**d. 增加meta (若使用appindexing)**      
-
-    <meta-data
-       android:name="com.google.android.gms.version"
-       android:value="@integer/google_play_services_version" />
 
 ### 4. 在你的工程中初始化AIHelp SDK
 

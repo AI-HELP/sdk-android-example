@@ -20,8 +20,6 @@ There are two methods to integrate AIhelp Android SDK to your APP's project. If 
 	    compile 'com.android.support:design:23.4.0'
 	    compile 'com.android.support:recyclerview-v7:23.4.0'
 	    compile 'com.android.support:cardview-v7:23.4.0'
-	    // add this if using appindexing:
-	    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
     ...
     }
 
@@ -114,12 +112,6 @@ portrait display:
 
 	android:screenOrientation="portrait"
  
-
-**c. Add meta data (if usig appindexing)**      
-
-    <meta-data
-       android:name="com.google.android.gms.version"
-       android:value="@integer/google_play_services_version" />
 
 ### 4. Initialize AIHelp SDK in your Project
 
