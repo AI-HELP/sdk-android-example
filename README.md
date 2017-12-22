@@ -136,6 +136,7 @@ ELvaChatServiceSdk.init(
 
 | Parameters | Description |
 |:------------- |:---------------|
+| activity    | Your App's Activty|
 | appKey    | Your unique developer API Key|
 | domain     | Your AIHelp domain name. For example: foo.AIHELP.NET|
 | appId     | A unique ID assigned to your app.| 

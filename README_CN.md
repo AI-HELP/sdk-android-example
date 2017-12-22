@@ -121,7 +121,7 @@ AIhelp SDK 要求android sdk最低版本为14，目标最低版本为23：
 在你的APP初始化时调用 ELvaChatServiceSdk.init(...)，传入必要的参数。
 
 ELvaChatServiceSdk.init(
-				Activity a,
+				Activity activity,
 				String appKey,
 				String domain,
 				String appId
@@ -133,6 +133,7 @@ ELvaChatServiceSdk.init(
 
 | 参数 | 说明 |
 |:------------- |:---------------|
+| activity    | 应用的Activty|
 | appKey    | app唯一密钥，从AIHelp Web管理系统获取|
 | domain     | 您的AIHelp域名，从Web管理系统获取,例如foo.AIHELP.NET|
 | appId     | app唯一标识，从Web管理系统获取| 
