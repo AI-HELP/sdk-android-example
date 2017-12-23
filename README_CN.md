@@ -13,13 +13,11 @@
 
 	dependencies {
 	 ...
-	    compile 'net.aihelp:elva:1.3.6'
+	    compile 'net.aihelp:elva:1.3.6.2'
 	    compile 'com.android.support:appcompat-v7:23.4.0'
 	    compile 'com.android.support:design:23.4.0'
 	    compile 'com.android.support:recyclerview-v7:23.4.0'
 	    compile 'com.android.support:cardview-v7:23.4.0'
-	    //若使用appindexing，增加如下：
-	    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
     ...
     }
 
