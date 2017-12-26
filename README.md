@@ -141,7 +141,7 @@ ELvaChatServiceSdk.init(
 | domain     | Your AIHelp domain name. For example: foo.AIHELP.NET|
 | appId     | A unique ID assigned to your app.| 
 
-Note: Please log in [AIHelp Web Console](https://aihelp.net/elva) with your registration email account to find __appKey__, __domain__ and __appId__ In the _Application_ page of the _Settings_ Menu. 
+Note: Please log in [AIHelp Web Console](https://console.aihelp.net/elva) with your registration email account to find __appKey__, __domain__ and __appId__ In the _Application_ page of the _Settings_ Menu. 
 If your company doesn't have an account, you need to register an account in [AIHelp Website](http://aihelp.net/index.html)
 
 

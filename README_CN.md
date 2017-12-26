@@ -136,7 +136,7 @@ ELvaChatServiceSdk.init(
 | domain     | 您的AIHelp域名，从Web管理系统获取,例如foo.AIHELP.NET|
 | appId     | app唯一标识，从Web管理系统获取| 
 
-注：请使用注册邮箱登录 [AIHelp 后台](https://aihelp.net/elva)。在Settings菜单Applications页面查看。初次使用，需登录[AIHelp 官网](http://aihelp.net/index.html)自助注册。
+注：请使用注册邮箱登录 [AIHelp 后台](https://console.aihelp.net/elva)。在Settings菜单Applications页面查看。初次使用，需登录[AIHelp 官网](http://aihelp.net/index.html)自助注册。
 
 
 **初始化代码示例：**
