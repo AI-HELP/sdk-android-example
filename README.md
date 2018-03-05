@@ -1,4 +1,4 @@
-[查看中文接入文档](https://github.com/AI-HELP/AIHelp-Android-SDK/blob/master/README_CN.md)
+[查看中文接入文档](https://github.com/AI-HELP/AIhelp-Android-SDK/blob/master/README_CN.md)
 
 ## AIHelp SDK Integration Guide
 There are two methods to integrate AIHelp Android SDK to your APP's project. If you use Android Studio or another development platform which supports Gradle. We recommand you use method #1: 
@@ -138,11 +138,11 @@ ELvaChatServiceSdk.init(
 |:------------- |:---------------|
 | activity    | Your App's Activty|
 | appKey    | Your Unique Developer API Key|
-| domain     | Your AIHelp Domain Name. For Example: foo.AIHelp.NET|
+| domain     | Your AIHelp Domain Name. For Example: foo.AIHELP.NET|
 | appId     | A Unique ID Assigned to your App.| 
 
-Note: Please log in [AIHelp Web Console](https://console.AIHelp.net/elva) with your registration email account to find the __appKey__, __domain__ and __appId__ In the _Application_ page of the _Settings_ Menu. 
-If your company does not have an account, you need to register an account at [AIHelp Website](http://AIHelp.net/index.html)
+Note: Please log in [AIHelp Web Console](https://console.aihelp.net/elva) with your registration email account to find the __appKey__, __domain__ and __appId__ In the _Application_ page of the _Settings_ Menu. 
+If your company does not have an account, you need to register an account at [AIHelp Website](http://aihelp.net/index.html)
 
 
 **Coding Example：**
@@ -239,7 +239,7 @@ or
 - __showConversationFlag__: Should be "0" or "1". If set at "1", the VIP conversation entry will be displayed in the upper right of the AI conversation interface.
 - __config__: Optional parameterseters for custom HashMap information. You can pass specific Tag information using ArrayList elva-tags, see the above coding example. Please note that you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
 	
-![showElva](https://github.com/AIHelp-NET/Pictures/blob/master/showElva-EN-Android.png "showElva")
+![showElva](https://github.com/AIHELP-NET/Pictures/blob/master/showElva-EN-Android.png "showElva")
 	
 **Best Practice：**
 
@@ -367,10 +367,10 @@ The operation module is useful when you want to present updates, news, articles 
 
 **About Parameters：**
 
-- __faqId__: The PublishID of the FAQ item, you can check it at [AIHelp Web Console](https://AIHelp.net/elva): Find the FAQ in the FAQ menu and copy its PublishID.
+- __faqId__: The PublishID of the FAQ item, you can check it at [AIHelp Web Console](https://aihelp.net/elva): Find the FAQ in the FAQ menu and copy its PublishID.
 - __config__: Optional parameters for custom HashMap information. You can pass specific Tag information using ArrayList elva-tags, see the above coding example. Please note that you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
 	
-![showSingleFAQ](https://github.com/AIHelp-NET/Pictures/blob/master/showSingleFAQ-EN-Android.png "showSingleFAQ")
+![showSingleFAQ](https://github.com/AIHELP-NET/Pictures/blob/master/showSingleFAQ-EN-Android.png "showSingleFAQ")
 
 <h4 id="selfservice"></h4>
 
@@ -482,7 +482,7 @@ or
 **Best Practice：**
 > 1. Normally you do not need to use this method unless you intend to allow users to enter VIP conversations without engaging with the AI chat. You may use this method as a privilege for some users.
 
-![showConversation](https://github.com/AIHelp-NET/Pictures/blob/master/showConversation-EN-Android.png "showConversation")
+![showConversation](https://github.com/AIHELP-NET/Pictures/blob/master/showConversation-EN-Android.png "showConversation")
 
 
 #### <h4 id="setSDKLanguage">11. Set SDK Lanague，use `setSDKLanguage`
