@@ -12,7 +12,8 @@
         android:minHeight="48dp"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        >
+        android:paddingEnd="15dp"
+        android:paddingStart="15dp">
 
         <TextView
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -22,7 +23,8 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:textColor="#333333"
-            android:textSize="17sp"/>
+            android:textSize="17sp"
+            android:paddingEnd="15dp" />
 
         <ImageView
             android:id="@+id/type16"
@@ -30,8 +32,8 @@
             android:layout_height="13dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/more"
-            />
+            android:src="@drawable/list_more_auto_mirror"
+            android:layout_alignParentEnd="true" />
     </RelativeLayout>
 
     <View

@@ -7,7 +7,9 @@
     <string name="elva__help_header">help</string>
     <string name="elva__question_header">question</string>
     <string name="goto_Elva">НАПИШИТЕ НАМ</string>
+    <string name="hate_it">не нравился!</string>
     <string name="hello_world">Hello world!</string>
+    <string name="like_it">любил его!</string>
     <string name="main_title">Elva</string>
     <string name="mark_helpful_toast">Вопрос был обозначен как Полезный</string>
     <string name="mark_no">НЕТ</string>

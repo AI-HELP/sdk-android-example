@@ -18,7 +18,7 @@
     <string name="no_more_than_chars">No more than %s chars!</string>
     <string name="no_png_upload">SD card does not exist or can not be written!</string>
     <string name="permission_denied_message">Storage permission is required to upload picture</string>
-    <string name="question">your question</string>
+    <string name="question">คำถามของคุณ</string>
     <string name="self_service_interface">Self-Service</string>
     <string name="setting">Settings</string>
     <string name="smaller_picture"> Picture uploaded is too big!</string>

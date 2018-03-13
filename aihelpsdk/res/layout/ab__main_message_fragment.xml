@@ -88,7 +88,7 @@
           android:layout_alignParentLeft="false"
           android:layout_below="@+id/ab__action_bar_top_bg"
           android:gravity="center_vertical"
-          >
+          android:layout_alignParentStart="false">
 
         <LinearLayout
             android:id="@+id/ab__open_albumParent"
@@ -103,7 +103,8 @@
               android:layout_marginLeft="5dp"
               android:background="@drawable/chat_bot_addpic"
 
-              android:visibility="visible"/>
+              android:visibility="visible"
+              android:layout_marginStart="5dp" />
           <!--android:onClick="onOpenAlbum"-->
         </LinearLayout>
 
@@ -125,8 +126,11 @@
             android:textColor="#ff000000"
             android:textSize="14sp"
             line:lineColorEt="@color/start_button_color"
+            android:textDirection="locale"
             android:layout_toRightOf="@+id/ab__open_albumParent"
-            android:layout_toEndOf="@+id/ab__open_albumParent" />
+            android:layout_toEndOf="@+id/ab__open_albumParent"
+            android:layout_marginStart="8dp"
+            android:layout_toStartOf="@+id/ab__chat_word_voice" />
 
         <ImageButton
             android:id="@+id/ab__chat_word_voice"
@@ -137,7 +141,9 @@
             android:layout_toLeftOf="@+id/ab__input_send_btnParent"
             android:background="@drawable/chat_voice"
 
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:layout_marginStart="2dp"
+            android:layout_toStartOf="@+id/ab__input_send_btnParent" />
         <!--android:onClick="onChangeWordVoice"-->
 
         <RelativeLayout
@@ -145,7 +151,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            >
+            android:layout_alignParentEnd="true">
           <!--android:onClick="onSendMsgClick"-->
 
           <ImageButton
@@ -154,6 +160,8 @@
               android:layout_height="36dp"
               android:layout_marginTop="10dp"
               android:layout_alignParentTop="false"
+              android:layout_alignParentLeft="true"
+              android:layout_alignParentStart="true"
               android:layout_centerInParent="true"
               android:background="@drawable/chat_bot_send"
               android:clickable="false"
@@ -172,7 +180,8 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/ab__title"
         android:background="@drawable/ecs_text_bg_1"
-        android:visibility="gone">
+        android:visibility="gone"
+        android:layout_alignParentEnd="true">
 
       <WebView
           android:id="@+id/ab__webview_main"

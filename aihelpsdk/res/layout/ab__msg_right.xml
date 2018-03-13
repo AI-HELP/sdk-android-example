@@ -34,7 +34,9 @@
           android:layout_marginRight="8dp"
           android:layout_alignParentRight="true"
           android:layout_marginLeft="4dp"
-          >
+            android:layout_marginEnd="8dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="4dp">
 
             <ImageView
                 android:id="@+id/imageView1"
@@ -50,7 +52,9 @@
             android:layout_toLeftOf="@id/imageView1Parent"
             android:background="@drawable/chat_bot_msg_bg_right"
             android:orientation="vertical"
-            android:layout_marginLeft="24dp">
+            android:layout_marginLeft="24dp"
+            android:layout_toStartOf="@id/imageView1Parent"
+            android:layout_marginStart="24dp">
 
             <TextView
                 android:id="@+id/ab__msg_right_name"
@@ -60,7 +64,9 @@
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="5dp"
                 android:textColor="#ff000000"
-                android:visibility="gone" />
+                android:visibility="gone"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="15dp" />
 
             <TextView
                 android:id="@+id/ab__msg_right_content"
@@ -94,7 +100,9 @@
                     android:layout_marginLeft="0dp"
                     android:layout_marginTop="0dp"
                     android:layout_marginRight="0dp"
-                    android:layout_marginBottom="0dp" />
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="0dp" />
             </RelativeLayout>
 
         </LinearLayout>

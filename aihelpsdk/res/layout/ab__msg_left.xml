@@ -2,11 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:focusable="false"
-                android:focusableInTouchMode="false"
-                android:paddingBottom="12.5dp"
-                android:paddingTop="12.5dp">
+    android:layout_height="wrap_content"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:paddingBottom="12.5dp"
+    android:paddingTop="12.5dp">
 
   <FrameLayout
     android:id="@+id/ab__msg_left_time_layout"
@@ -22,7 +22,8 @@
       android:layout_marginBottom="30dp"
       android:layout_marginLeft="8dp"
       android:text="111"
-      android:textAppearance="?android:attr/textAppearanceMedium"/>
+      android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginStart="8dp" />
 
   </FrameLayout>
 
@@ -59,7 +60,8 @@
           android:layout_height="match_parent"
           android:layout_alignParentLeft="true"
           android:layout_marginLeft="78dp"
-          >
+            android:layout_marginStart="78dp"
+            android:layout_alignParentStart="true">
 
           <RelativeLayout
             android:layout_width="match_parent"
@@ -89,7 +91,8 @@
           android:layout_height="match_parent"
           android:layout_alignParentRight="true"
           android:layout_marginRight="78dp"
-          >
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="78dp">
 
           <RelativeLayout
             android:layout_width="match_parent"
@@ -128,7 +131,10 @@
     android:background="#ededed"
     android:paddingLeft="15dp"
     android:paddingRight="15dp"
-    android:visibility="gone">
+    android:visibility="gone"
+      android:paddingStart="15dp"
+      android:layout_alignParentStart="false"
+      android:paddingEnd="15dp">
 
     <TextView
       android:id="@+id/ab__critic_result"
@@ -155,7 +161,8 @@
       android:layout_height="40dp"
       android:layout_marginLeft="8dp"
       android:layout_marginRight="4dp"
-      >
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="4dp">
 
       <ImageView
           android:id="@+id/imageView1"
@@ -180,7 +187,9 @@
       android:layout_alignRight="@+id/msg_ll"
       android:layout_alignTop="@+id/msg_ll"
       android:layout_marginTop="3dp"
-      android:background="@drawable/chat_bot_msg_bg_left">
+      android:background="@drawable/chat_bot_msg_bg_left"
+        android:layout_alignStart="@+id/msg_ll"
+        android:layout_alignEnd="@+id/msg_ll">
     </RelativeLayout>
 
 
@@ -193,7 +202,8 @@
       android:orientation="vertical"
       android:paddingBottom="6dp"
       android:paddingTop="10dp"
-      >
+        android:layout_toEndOf="@id/imageView1Parent"
+        android:layout_marginEnd="48dp">
 
       <TextView
         android:id="@+id/ab__msg_left_name"
@@ -205,7 +215,9 @@
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#ff000000"
-        android:visibility="gone"/>
+        android:visibility="gone"
+          android:layout_marginStart="22dp"
+          android:layout_marginEnd="15dp" />
 
       <TextView
         android:id="@+id/ab__msg_left_content"
@@ -219,7 +231,9 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#333333"
         android:textIsSelectable="true"
-        android:textSize="14sp"/>
+        android:textSize="14sp"
+          android:layout_marginEnd="10dp"
+          android:layout_marginStart="16dp" />
 
       <RelativeLayout
         android:layout_width="match_parent"
@@ -241,7 +255,9 @@
             android:layout_marginLeft="0dp"
             android:layout_marginRight="0dp"
             android:layout_marginTop="0dp"
-            android:visibility="gone" />
+            android:visibility="gone"
+            android:layout_marginEnd="0dp"
+            android:layout_marginStart="0dp" />
       </RelativeLayout>
 
       <TextView
@@ -254,7 +270,8 @@
         android:text="url"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#2960d9"
-        android:textSize="14sp"/>
+        android:textSize="14sp"
+          android:layout_marginStart="22dp" />
 
       <TextView
         android:id="@+id/ab__msg_left_url2"
@@ -265,7 +282,9 @@
         android:layout_marginRight="15dp"
         android:text="url2"
         android:textColor="#2960d9"
-        android:textSize="14sp"/>
+        android:textSize="14sp"
+          android:layout_marginEnd="15dp"
+          android:layout_marginStart="22dp" />
 
       <LinearLayout
         android:id="@+id/xzspfw_parent"
@@ -280,7 +299,9 @@
           android:layout_marginBottom="5dp"
           android:layout_marginLeft="16dp"
           android:layout_marginRight="10dp"
-          android:visibility="visible">
+          android:visibility="visible"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="10dp">
 
           <TextView
             android:id="@+id/xzspfw_title"
@@ -301,7 +322,7 @@
             android:layout_below="@+id/xzspfw_title"
             android:layout_centerInParent="true"
             android:background="@drawable/zfcg"
-            />
+              android:layout_alignParentStart="true" />
 
           <TextView
             android:id="@+id/xzspfw_content"
@@ -314,7 +335,9 @@
             android:text="xzsp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#999999"
-            android:textSize="14sp"/>
+            android:textSize="14sp"
+              android:layout_marginStart="10dp"
+              android:layout_toEndOf="@+id/xzspfw_img" />
         </RelativeLayout>
       </LinearLayout>
 
@@ -329,7 +352,9 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#ff000000"
         android:textStyle="bold"
-        android:visibility="gone"/>
+        android:visibility="gone"
+          android:layout_marginEnd="15dp"
+          android:layout_marginStart="22dp" />
 
       <LinearLayout
         android:id="@+id/ab__msg_action_area"
@@ -339,7 +364,11 @@
         android:layout_marginLeft="22dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="5dp"
-        android:orientation="vertical"></LinearLayout>
+        android:orientation="vertical"
+          android:layout_marginEnd="15dp"
+          android:layout_marginStart="22dp">
+
+      </LinearLayout>
 
     </LinearLayout>
 

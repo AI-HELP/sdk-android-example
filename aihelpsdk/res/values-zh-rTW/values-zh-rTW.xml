@@ -7,7 +7,9 @@
     <string name="elva__help_header">幫助</string>
     <string name="elva__question_header">問題</string>
     <string name="goto_Elva">聯系客服</string>
+    <string name="hate_it">不喜歡！</string>
     <string name="hello_world">Hello world!</string>
+    <string name="like_it">喜歡！</string>
     <string name="main_title">Elva</string>
     <string name="mark_helpful_toast">妳發現這有幫助</string>
     <string name="mark_no">否</string>

@@ -7,7 +7,9 @@
     <string name="elva__help_header">help</string>
     <string name="elva__question_header">question</string>
     <string name="goto_Elva">お問い合わせ</string>
+    <string name="hate_it">それを嫌う!</string>
     <string name="hello_world">Hello world!</string>
+    <string name="like_it">楽しかった!</string>
     <string name="main_title">Elva</string>
     <string name="mark_helpful_toast">疑問が役に立ったと評価されました</string>
     <string name="mark_no">いいえ</string>
@@ -18,7 +20,7 @@
     <string name="no_more_than_chars">No more than %s chars!</string>
     <string name="no_png_upload">SD card does not exist or can not be written!</string>
     <string name="permission_denied_message">Storage permission is required to upload picture</string>
-    <string name="question">your question</string>
+    <string name="question">あなたの質問</string>
     <string name="self_service_interface">Self-Service</string>
     <string name="setting">Settings</string>
     <string name="smaller_picture"> Picture uploaded is too big!</string>

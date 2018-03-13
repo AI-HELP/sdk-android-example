@@ -19,7 +19,8 @@
     android:layout_alignParentRight="true"
     android:layout_below="@+id/ab__title"
     android:background="@drawable/ecs_text_bg_1"
-    android:visibility="gone">
+    android:visibility="gone"
+    android:layout_alignParentEnd="true">
 
 <WebView
 android:id="@+id/ab__webview_main"

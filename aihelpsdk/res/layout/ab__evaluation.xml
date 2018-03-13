@@ -64,26 +64,28 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="left"
+                android:gravity="start"
                 >
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/tv_evaluation_hated"
-                    android:text="Hated it!"
-                    android:layout_marginLeft="50dp"/>
+                    android:text="@string/like_it"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginStart="50dp" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="right"
+                android:gravity="end"
                 >
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/tv_evaluation_loved"
-                    android:text="Loved it!"
-                    android:layout_marginRight="50dp"/>
+                    android:text="@string/hate_it"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginEnd="50dp" />
             </LinearLayout>
 
         </RelativeLayout>
@@ -99,7 +101,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:id="@+id/rg_evaluation"
-                android:layout_marginLeft="50dp"/>
+                android:layout_marginLeft="50dp"
+                android:layout_marginStart="50dp" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -129,7 +132,12 @@
         android:paddingTop="5dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:paddingBottom="10dp" >
+        android:paddingBottom="10dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:paddingStart="10dp"
+        android:layout_alignParentStart="false"
+        android:paddingEnd="10dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -154,7 +162,12 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingTop="5dp"
-        android:visibility="gone">
+        android:visibility="gone"
+        android:paddingStart="10dp"
+        android:layout_marginEnd="5dp"
+        android:paddingEnd="10dp"
+        android:layout_marginStart="5dp"
+        android:layout_alignParentStart="false">
 
         <TextView
             android:id="@+id/ab__store_review"
@@ -167,8 +180,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/ab__store_review"
-            android:gravity="right"
-            android:layout_marginTop="10dp">
+            android:gravity="end"
+            android:layout_marginTop="10dp"
+            android:layout_alignStart="@+id/ab__store_review">
             <ImageButton
                 android:id="@+id/rl_btn_store_review"
                 android:layout_width="40dp"
