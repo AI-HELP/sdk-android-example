@@ -174,9 +174,9 @@ public class MyActivity extends Activity {
 |:------------- |:---------------|:---------------|
 | **[showElva](#showElva)**      | 启动机器人客服聊天界面| 
 | **[showElvaOP](#showElvaOP)** | 启动运营界面| 需配置运营模块|
-| **[showFAQs](#showFAQs)** | 展示全部FAQ菜单|需配置FAQ|
-|**[showConversation](#showConversation)**|启动人工客服聊天界面| 需调用setUserName 和setUserId|
-| **[showSingleFAQ](#showSingleFAQ)** | 展示单条FAQ|需配置FAQ|
+| **[showFAQs](#showFAQs)** | 展示全部FAQ菜单|需配置FAQ,需调用[setUserName](#UserName) 和 [setUserId](#UserId)|
+|**[showConversation](#showConversation)**|启动人工客服聊天界面| 需调用[setUserName](#UserName)|
+| **[showSingleFAQ](#showSingleFAQ)** | 展示单条FAQ|需配置FAQ,需调用[setUserName](#UserName) 和 [setUserId](#UserId)|
 | **[setName](#setName)** | 设置游戏名称|在初始化之后调用|
 | **[setUserName](#UserName)** | 设置玩家(用户)名称|
 | **[setUserId](#UserId)** | 设置玩家(用户)ID|
@@ -297,7 +297,7 @@ public class MyActivity extends Activity {
 - serverId:用户所在的服务器编号。 
 - showConversationFlag(0或1):是否开启人工入口。此处为1时，将在机器人的聊天界面右上角，提供人工聊天的入口。如下图。
 - config:可选，自定义HashMap信息。可以在此处设置特定的Tag信息。说明：elva-tags对应的值为ArrayList类型，此处传入自定义的Tag，需要在Web管理配置同名称的Tag才能生效。
-- defaultTabIndex: 可选，首次进入运营界面时候展示的tab的编号，默认为第一个tab，若需默认展示客服界面tab，设置值为999
+- defaultTabIndex: 可选，首次进入运营界面时候展示的tab的编号。默认值为0，默认为第一个tab，若需默认展示客服界面tab，设置值为999。
 	
 ![showElva](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElvaOP_Android.png "showElvaOP")
 
@@ -306,7 +306,7 @@ public class MyActivity extends Activity {
 在AIHelp 后台配置运营分页（tab)并且发布跟应用相关的运营公告内容。就通过AIHelp展示这些内容给用户。运营界面的最后一个分页总是机器人客服聊天界面。
 > 2. 在tab页面，用户可以在页面右上角进入FAQ页面查看；在机器人客服页面（Help页面），用户可以在页面右上角进入人工客服，此人工客服入口可以通过参数设置条件，根据条件打开或关闭，只让一部分用户看到这个入口
 
-#### <h4 id="showFAQs">4. 展示FAQ列表, 调用`showFAQs `方法</h4>
+#### <h4 id="showFAQs">4. 展示FAQ列表, 调用`showFAQs `方法(必须确保设置玩家名称信息 [setUserName](#UserName) 和设置玩家唯一id信息 [setUserId](#UserId) 已经调用)</h4>
 
 	ELvaChatServiceSdk.showFAQs();
 
@@ -335,8 +335,7 @@ public class MyActivity extends Activity {
 **最佳实践：**
 > 1. 在您应用的FAQ主入口触发这个接口的调用。在AIHelp 后台页面配置并分类FAQ，如果您的FAQ较多，可以增加一个父级分类。
 
-#### <h4 id="showSingleFAQ">5. 展示单条FAQ，调用`showSingleFAQ`方法
-</h4>
+#### <h4 id="showSingleFAQ">5. 展示单条FAQ，调用`showSingleFAQ`方法(必须确保设置玩家名称信息 [setUserName](#UserName) 和设置玩家唯一id信息 [setUserId](#UserId) 已经调用)</h4>
 
 	ELvaChatServiceSdk.showSingleFAQ(String faqId);
 

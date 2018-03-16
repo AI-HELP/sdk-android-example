@@ -43,7 +43,7 @@ Select "Clone or download" to download Android SDK in the github page, unzip the
 
 **c.** Import dependencies under *android-libs* to your Project：
 
-If your project has already imported some of the dependencies, just import those you do not have. If you use Gradle，all you need to do is add the below dependencies in your _build.gradle_:
+If your project has already imported some of the dependencies, just import those you do not have. If you use Gradle, all you need to do is add the below dependencies in your _build.gradle_:
 
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.android.support:design:23.4.0'
@@ -179,9 +179,9 @@ public class MyActivity extends Activity {
 |:------------- |:---------------|:---------------|
 | **[showElva](#showElva)**      | Launch AI Conversation Interface| 
 | **[showElvaOP](#showElvaOP)** | Launch Operation Interface| Need to configure Operation Sections|
-| **[showFAQs](#showFAQs)** | Show all FAQs by Sections|Need to configure FAQs|
-|**[showConversation](#showConversation)**|Launch VIP Conversation Interface| Need to setUserName and setUserId |
-| **[showSingleFAQ](#showSingleFAQ)** | Show Single FAQ|Need to Configure FAQ|
+| **[showFAQs](#showFAQs)** | Show all FAQs by Sections|Need to configure FAQs,Need to [setUserName](#UserName) and [setUserId](#UserId)|
+|**[showConversation](#showConversation)**|Launch VIP Conversation Interface| Need to [setUserName](#UserName) and [setUserId](#UserId) |
+| **[showSingleFAQ](#showSingleFAQ)** | Show Single FAQ|Need to Configure FAQ,Need to [setUserName](#UserName) and [setUserId](#UserId)|
 | **[setName](#setName)** | Set APP/Game Name|Use it after Initialization|
 | **[setUserName](#UserName)** | Set User In-App name|
 | **[setUserId](#UserId)** | Set Unique User ID|
@@ -190,7 +190,7 @@ public class MyActivity extends Activity {
 
 **Note：It is not necessary for you to use all the APIs, especially when you only have one user interface for the customer service in your application. Some APIs already contains entry to other APIs, see below for details：**
 
-#### <h4 id="showElva">2. Launch the AI Conversation Interface，use `showElva`</h4>
+#### <h4 id="showElva">2. Launch the AI Conversation Interface, use `showElva`</h4>
 
 
 	ELvaChatServiceSdk.showElva(
@@ -303,14 +303,14 @@ The operation module is useful when you want to present updates, news, articles 
 - __playerParseId__: Can be empty string, can NOT be NULL
 - __showConversationFlag__: Should be "0" or "1". If set at "1", the VIP conversation entry will be shown in the top right corner of the AI conversation interface.
 - __config__: Optional parameters for custom HashMap information. You can pass specific Tag information using ArrayList elva-tags, see the above coding example. Please note that you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
-- __defaultTabIndex__: Optional. The index of the first tab to be shown when entering the operation interface. Default value is the left-most tab，if you would like to show the AI conversation interface(the right-most) set it to 999.
+- __defaultTabIndex__: Optional. The index of the first tab to be shown when entering the operation interface. Default value is 0, default value is the left-most tab, if you would like to show the AI conversation interface(the right-most) set it to 999.
 	
 ![showElva](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElvaOP_Android.png "showElvaOP")
 
 **Best Practice：**
 > 1. Use this API to present news, announcements, articles or any useful information to users/players. Configure and publish the information in the AIHelp web console. 
 
-#### <h4 id="showFAQs">4. Display FAQs, use `showFAQs `</h4>
+#### <h4 id="showFAQs">4. Display FAQs, use `showFAQs ` (need to set [`setUserName`](#UserName) and [`setUserId`](#UserId))</h4>
 
 	ELvaChatServiceSdk.showFAQs();
 
@@ -337,8 +337,7 @@ The operation module is useful when you want to present updates, news, articles 
 **Best Practice：**
 > 1. Use this method to show FAQs about your APP/Game properly. Configure FAQs in AIHelp Web Console. Each FAQ can be categroized into a section. If the FAQs are many, you can also add Parent Sections to categorize sections to make things clear and organized. 
 
-#### <h4 id="showSingleFAQ">5. Show A Specific FAQ，use `showSingleFAQ`
-</h4>
+#### <h4 id="showSingleFAQ">5. Show A Specific FAQ, use `showSingleFAQ` (need to set [`setUserName`](#UserName) and [`setUserId`](#UserId))</h4>
 
 	ELvaChatServiceSdk.showSingleFAQ(String faqId);
 
@@ -376,13 +375,13 @@ The operation module is useful when you want to present updates, news, articles 
 
 **Self-Service：**
 
-If you configure the "self-service" link in the FAQ's configuration, and set [UserId](#UserId), [UserName](#UserName), [ServerId](#ServerId) in the SDK，then the FAQ shows a functional menu in the right-top cornor.
+If you configure the "self-service" link in the FAQ's configuration, and set [UserId](#UserId), [UserName](#UserName), [ServerId](#ServerId) in the SDK, then the FAQ shows a functional menu in the right-top cornor.
 
 
 **Best Practice：**
 > 1. Use this method when you want to show a specific FAQ in a proper location of your APP/Game.
 
-#### <h4 id="setName">6. Set Your APP's name for AIHelp SDK to display，use `setName`</h4>
+#### <h4 id="setName">6. Set Your APP's name for AIHelp SDK to display, use `setName`</h4>
 
 	ELvaChatServiceSdk.setName(String game_name);
 
@@ -413,7 +412,7 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 **Best Practice：**
 > 1. Normally you do not need to use this method if you have passed the user ID in another method. However, if you want to use the FAQ's [Self-Service](#selfservice), then you must set the User Id first.
 
-#### <h4 id="UserName">8. Set User Name，use `setUserName`</h4>
+#### <h4 id="UserName">8. Set User Name, use `setUserName`</h4>
 
 	ELvaChatServiceSdk.setUserName (String playerName);
 
@@ -429,7 +428,7 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 > 1. Use this method to set the user name, which will be shown in the web console's conversation page for the user. You can address the user with this name during the chat.
 > 2. Normally you do not need to use this method if you have passed the user name in another method. However, if you want to use FAQ's [Self-Service](#selfservice), then you must set the User Id first.
 
-#### <h4 id="ServerId">9. Set Unique Server ID，use `setServerId`
+#### <h4 id="ServerId">9. Set Unique Server ID, use `setServerId`
 </h4>
 
 	ELvaChatServiceSdk.setServerId(String serverId);
@@ -445,7 +444,7 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 **Best Practice：**
 > 1. Normally you do not need to use this method if you have passed the server ID in other method. However, if you want to use the FAQ's [Self-Service](#selfservice), then you must set the User Id first.
 
-#### <h4 id="showConversation">10. Launch VIP Chat Console, use `showConversation`(need to set [UserName](#UserName))</h4>
+#### <h4 id="showConversation">10. Launch VIP Chat Console, use `showConversation`(need to set [`setUserName`](#UserName))</h4>
 
 	ELvaChatServiceSdk.showConversation(
 					String playerUid,
@@ -485,7 +484,7 @@ or
 ![showConversation](https://github.com/AIHELP-NET/Pictures/blob/master/showConversation-EN-Android.png "showConversation")
 
 
-#### <h4 id="setSDKLanguage">11. Set SDK Lanague，use `setSDKLanguage`
+#### <h4 id="setSDKLanguage">11. Set SDK Lanague, use `setSDKLanguage`
 </h4>
 Setting the SDK Language will change the FAQs, Operational information, AI Chat and SDK display language. 
 
@@ -520,7 +519,7 @@ If your APP provides multiple entries to AIHelp, and you intend to introduce dif
 	tags.add("s1");
 	tags.add("elvaTestTag");
 	map.put("elva-tags",tags);
-	// note：anotherWelcomeText is key，should be unchanged.
+	// note：anotherWelcomeText is key, should be unchanged.
 	// you need to change usersay according to the "User Say" in your new 
 	// story line
 	map.put("anotherWelcomeText","usersay");
