@@ -25,7 +25,7 @@
 确保build.gradle __同步成功__: 在Android Studio的External Libraries下面能够看到加载成功elva-1.3.6文件夹以及上述依赖包。如果无法自动加载，采用了第二种导入方式：
 
 ### 导入方式二： 下载AIHelp Android SDK：
-点击页面右上角的“Clone or download”按钮下载Android SDK，下载完成后解压文件。
+点击页面右上角的“Clone or Download”按钮下载Android SDK，下载完成后解压文件。
 AIhelp-Android-SDK文件夹包含：
 
 | 文件夹 | 说明 |
@@ -230,20 +230,25 @@ public class MyActivity extends Activity {
 
 	HashMap<String,Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
+	// the tag names are variables
 	tags.add("pay1");
 	tags.add("s1");
-	tags.add("elvaTestTag");
-	map.put("elva-tags",tags);
-	//其它数据
+	tags.add("vip2");
+	
+	// “elva-tags" is the key name, not a variable. 
+	map.put("elva-tags",tags); 
+	
 	HashMap<String,Object> config = new HashMap();
+	
+	// “elva-custom-metadata" is the key name, not a variable. 
 	config.put("elva-custom-metadata",map);
 	
-	ELvaChatServiceSdk.setName("APP_NAME"); // 设置应用名字
+	ELvaChatServiceSdk.setName("app_name"); // set APP name
 	ELvaChatServiceSdk.showElva(
-				"USER_NAME",
-				"USER_ID",
-				"Server_ID",
-				"1", // 显示人工客服聊天
+				"user_name",
+				"user_id",
+				"server_id",
+				"1", // show conversation entry
 				config);
 
 **参数说明：**
@@ -295,20 +300,25 @@ public class MyActivity extends Activity {
 	// Presenting Operation Info to your customers
 	HashMap<String,Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
+	// the tag names are variables
 	tags.add("pay1");
 	tags.add("s1");
-	tags.add("elvaTestTag");
-	map.put("elva-tags",tags);
-	//其它数据
+	tags.add("vip2");
+	
+	// “elva-tags" is the key name, not a variable. 
+	map.put("elva-tags",tags); 
+	
 	HashMap<String,Object> config = new HashMap();
+	
+	// “elva-custom-metadata" is the key name, not a variable. 
 	config.put("elva-custom-metadata",map);
 	
-	ELvaChatServiceSdk.setName("APP_NAME"); // 设置应用名字
+	ELvaChatServiceSdk.setName("app_id"); // set APP name
 	ELvaChatServiceSdk.showElvaOP(
-				"USER_NAME",
-				"USER_ID",
-				"Server_ID",
-				"1", // 显示人工客服聊天
+				"user_name",
+				"user_id",
+				"server_id",
+				"1", // show conversation entry
 				config);
 
 **参数说明：**
@@ -339,11 +349,12 @@ public class MyActivity extends Activity {
 
 	// Presenting FAQs to your customers
 	HashMap<String,Object> map = new HashMap();
-	config.put("showConversationFlag","1");//进入AI客服入口在右上角显示人工聊天入口
+	// "showConversationFlag" is the key name, not a variable
+	config.put("showConversationFlag","1");//show conversation entry in the top right corner	
 	
-	ELvaChatServiceSdk.setUserName("USER_NAME"); // 设置用户名
-	ELvaChatServiceSdk.setUserId("USER_ID"); //设置用户ID
-	ELvaChatServiceSdk.setServerId("SERVER_ID"); //设置服务器ID
+	ELvaChatServiceSdk.setUserName("user_name"); // set User Name
+	ELvaChatServiceSdk.setUserId("user_id"); // set User Id
+	ELvaChatServiceSdk.setServerId("server_id"); // set Serve Id
 	
 	ELvaChatServiceSdk.showFAQs(config);
 
@@ -368,22 +379,28 @@ public class MyActivity extends Activity {
 
 	// Presenting Single FAQ to your customers
 	
-	ELvaChatServiceSdk.setUserName("USER_NAME"); // 设置用户名
-	ELvaChatServiceSdk.setUserId("USER_ID"); //设置用户ID
-	ELvaChatServiceSdk.setServerId("SERVER_ID"); //设置服务器ID
+	ELvaChatServiceSdk.setUserName("user_name"); // set User Name
+	ELvaChatServiceSdk.setUserId("user_id"); // set User Id
+	ELvaChatServiceSdk.setServerId("server_id"); // set Server Id
 	
 	HashMap<String,Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
+	// the tag names are variables
 	tags.add("pay1");
 	tags.add("s1");
-	tags.add("elvaTestTag");
-	map.put("elva-tags",tags);
-	//其它数据
-	HashMap<String,Object> config = new HashMap();
-	config.put("elva-custom-metadata",map);
-	config.put("showConversationFlag","1");//进入AI客服入口在右上角显示人工聊天入口
+	tags.add("vip2");
 	
-	ELvaChatServiceSdk.showSingleFAQ("23",config);
+	// “elva-tags" is the key name, not a variable. 
+	map.put("elva-tags",tags); 
+	
+	HashMap<String,Object> config = new HashMap();
+	
+	// “elva-custom-metadata" is the key name, not a variable. 
+	config.put("elva-custom-metadata",map);
+	// “showConversationFlag" is the key name, not a variable. 
+	config.put("showConversationFlag","1");// show conversation entry in the top right corner.
+	
+	ELvaChatServiceSdk.showSingleFAQ("2345",config);
         
 
 **参数说明：**
@@ -440,7 +457,7 @@ public class MyActivity extends Activity {
 
 **代码示例：**
 
-	ELvaChatServiceSdk.setUserName ("PLAYER_NAME");
+	ELvaChatServiceSdk.setUserName ("player_name");
 
 **参数说明：**
 
@@ -457,7 +474,7 @@ public class MyActivity extends Activity {
 
 **代码示例：**
 
-	ELvaChatServiceSdk.setServerId("SERVER_ID");
+	ELvaChatServiceSdk.setServerId("server_id");
 
 **参数说明：**
 
@@ -481,19 +498,24 @@ public class MyActivity extends Activity {
 	
 **代码示例：**
 	
+	// Presenting Single FAQ to your customers
 	HashMap<String,Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
+	// the tag names are variables
 	tags.add("pay1");
 	tags.add("s1");
-	tags.add("elvaTestTag");
-	map.put("elva-tags",tags);
-	//其它数据
+	tags.add("vip2");
+	
+	// “elva-tags" is the key name, not a variable. 
+	map.put("elva-tags",tags); 
+	
 	HashMap<String,Object> config = new HashMap();
+	
+	// “elva-custom-metadata" is the key name, not a variable. 
 	config.put("elva-custom-metadata",map);
 	
-	ELvaChatServiceSdk.setUserName("USER_NAME");
-	//直接进入人工
-	ELvaChatServiceSdk.showConversation("USER_ID","SERVER_ID",config);
+	ELvaChatServiceSdk.setUserName("user_name");
+	ELvaChatServiceSdk.showConversation("user_id","server_id",config);
 
 **参数说明：**
 
@@ -514,7 +536,8 @@ public class MyActivity extends Activity {
 	
 **代码示例：**
 
-	ELvaChatServiceSdk.setSDKLanguage("en");
+	string languageAlias = "zh_CN"
+	ELvaChatServiceSdk.setSDKLanguage(languageAlias);
 
 **参数说明：**
 
@@ -531,41 +554,49 @@ public class MyActivity extends Activity {
 
 如果你设置了进入AI客服的不同入口，希望用户从不同的入口进入AI客服时显示不同的欢迎语，进入不同故事线，可以通过设置config参数来实现： 
 
+	// "anotherWelcomeText" is the key name, it's value is the usersay variable
 	map.put("anotherWelcomeText","usersay");
 
 	
 **代码示例：**
 
 
+	// Presenting Single FAQ to your customers
 	HashMap<String,Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
+	// the tag names are variables
 	tags.add("pay1");
 	tags.add("s1");
-	tags.add("elvaTestTag");
-	map.put("elva-tags",tags);
-	//调用不同故事线功能，使用指定的提示语句，调出相应的机器人欢迎语
-	//注：anotherWelcomeText是key，不能改变。
-	//需要改变的是usersay，保持和故事线中配置的User Say内容一样
+	tags.add("vip2");
+	
+	// “elva-tags" is the key name, not a variable. 
+	map.put("elva-tags",tags); 
+	
+	// "anotherWelcomeText" is the key name, it's value is the usersay variable
 	map.put("anotherWelcomeText","usersay");
+	
 	HashMap<String,Object> config = new HashMap();
+	
+	// “elva-custom-metadata" is the key name, not a variable. 
 	config.put("elva-custom-metadata",map);
 	
-	ELvaChatServiceSdk.setName("APP_NAME"); // 设置应用名字
-	//如果是在智能客服主界面中	
+	ELvaChatServiceSdk.setName("app_name"); // set APP Name
+	
+	// Enter show AI support
 	ELvaChatServiceSdk.showElva(
-				"USER_NAME",
-				"USER_ID",
-				"Server_ID",
-				"1", // 显示人工客服聊天
+				"user_name",
+				"user_id",
+				"server_id",
+				"1", // show conversation entry
 				config);
 或
 
-	//如果是在智能客服运营主界面中
+	// Enter operational module
 	ELvaChatServiceSdk.showElvaOP(
-				"USER_NAME",
-				"USER_ID",
-				"Server_ID",
-				"1", // 显示人工客服聊天
+				"user_name",
+				"user_id",
+				"server_id",
+				"1", // show conversation entry
 				config);
 
 

@@ -179,9 +179,9 @@ public class MyActivity extends Activity {
           setInitCallback();
           // Init AIHelp SDK
           ELvaChatServiceSdk.init(this,
-                                  "YOUR_API_KEY",
-                                  "YOUR_DOMAIN_NAME",
-                                  "YOUR_APP_ID");
+                                  "your_app_key",
+                                  "your_domain_name",
+                                  "your_app_id");
         } catch (InstallException e) {
           Log.e(TAG, "invalid init params : ", e);
         }
@@ -234,19 +234,24 @@ or
 
 	HashMap<String,Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
+	// the tag names are variables
 	tags.add("pay1");
 	tags.add("s1");
-	tags.add("elvaTestTag");
-	map.put("elva-tags",tags);
-	// other data
+	tags.add("vip2");
+	
+	// “elva-tags" is the key name, not a variable. 
+	map.put("elva-tags",tags); 
+	
 	HashMap<String,Object> config = new HashMap();
+	
+	// “elva-custom-metadata" is the key name, not a variable. 
 	config.put("elva-custom-metadata",map);
 	
-	ELvaChatServiceSdk.setName("APP_NAME"); // set APP name
+	ELvaChatServiceSdk.setName("app_name"); // set APP name
 	ELvaChatServiceSdk.showElva(
-				"USER_NAME",
-				"USER_ID",
-				"Server_ID",
+				"user_name",
+				"user_id",
+				"server_id",
 				"1", // show conversation entry
 				config);
 
@@ -299,19 +304,24 @@ The operation module is useful when you want to present updates, news, articles 
 	// Presenting Operation Info to your customers
 	HashMap<String,Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
+	// the tag names are variables
 	tags.add("pay1");
 	tags.add("s1");
-	tags.add("elvaTestTag");
-	map.put("elva-tags",tags);
-	// other data
+	tags.add("vip2");
+	
+	// “elva-tags" is the key name, not a variable. 
+	map.put("elva-tags",tags); 
+	
 	HashMap<String,Object> config = new HashMap();
+	
+	// “elva-custom-metadata" is the key name, not a variable. 
 	config.put("elva-custom-metadata",map);
 	
-	ELvaChatServiceSdk.setName("APP_NAME"); // set APP name
+	ELvaChatServiceSdk.setName("app_id"); // set APP name
 	ELvaChatServiceSdk.showElvaOP(
-				"USER_NAME",
-				"USER_ID",
-				"Server_ID",
+				"user_name",
+				"user_id",
+				"server_id",
 				"1", // show conversation entry
 				config);
 
@@ -340,11 +350,12 @@ The operation module is useful when you want to present updates, news, articles 
 
 	// Presenting FAQs to your customers
 	HashMap<String,Object> map = new HashMap();
+	// "showConversationFlag" is the key name, not a variable
 	config.put("showConversationFlag","1");//show conversation entry in the top right corner	
 	
-	ELvaChatServiceSdk.setUserName("USER_NAME"); // set User Name
-	ELvaChatServiceSdk.setUserId("USER_ID"); // set User Id
-	ELvaChatServiceSdk.setServerId("SERVER_ID"); // set Serve Id
+	ELvaChatServiceSdk.setUserName("user_name"); // set User Name
+	ELvaChatServiceSdk.setUserId("user_id"); // set User Id
+	ELvaChatServiceSdk.setServerId("server_id"); // set Serve Id
 	
 	ELvaChatServiceSdk.showFAQs(config);
 
@@ -367,22 +378,28 @@ The operation module is useful when you want to present updates, news, articles 
 
 	// Presenting Single FAQ to your customers
 	
-	ELvaChatServiceSdk.setUserName("USER_NAME"); // set User Name
-	ELvaChatServiceSdk.setUserId("USER_ID"); // set User Id
-	ELvaChatServiceSdk.setServerId("SERVER_ID"); // set Server Id
+	ELvaChatServiceSdk.setUserName("user_name"); // set User Name
+	ELvaChatServiceSdk.setUserId("user_id"); // set User Id
+	ELvaChatServiceSdk.setServerId("server_id"); // set Server Id
 	
 	HashMap<String,Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
+	// the tag names are variables
 	tags.add("pay1");
 	tags.add("s1");
-	tags.add("elvaTestTag");
-	map.put("elva-tags",tags);
-	// other data
+	tags.add("vip2");
+	
+	// “elva-tags" is the key name, not a variable. 
+	map.put("elva-tags",tags); 
+	
 	HashMap<String,Object> config = new HashMap();
+	
+	// “elva-custom-metadata" is the key name, not a variable. 
 	config.put("elva-custom-metadata",map);
+	// “showConversationFlag" is the key name, not a variable. 
 	config.put("showConversationFlag","1");// show conversation entry in the top right corner.
 	
-	ELvaChatServiceSdk.showSingleFAQ("23",config);
+	ELvaChatServiceSdk.showSingleFAQ("2345",config);
 
 **About Parameters：**
 
@@ -423,7 +440,7 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 
 **Coding Example：**
 
-	ELvaChatServiceSdk.setUserId("123ABC567DEF");
+	ELvaChatServiceSdk.setUserId("123Abc567DEF");
 
 **About Parameters：**
 
@@ -438,7 +455,7 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 
 **Coding Example：**
 
-	ELvaChatServiceSdk.setUserName ("PLAYER_NAME");
+	ELvaChatServiceSdk.setUserName ("player_name");
 
 **About Parameters：**
 
@@ -455,7 +472,7 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 
 **Coding Example：**
 
-	ELvaChatServiceSdk.setServerId("SERVER_ID");
+	ELvaChatServiceSdk.setServerId("server_id");
 
 **About Parameters：**
 
@@ -479,18 +496,24 @@ or
 	
 **Coding Example：**
 
+	// Presenting Single FAQ to your customers
 	HashMap<String,Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
+	// the tag names are variables
 	tags.add("pay1");
 	tags.add("s1");
-	tags.add("elvaTestTag");
-	map.put("elva-tags",tags);
-	//other data
+	tags.add("vip2");
+	
+	// “elva-tags" is the key name, not a variable. 
+	map.put("elva-tags",tags); 
+	
 	HashMap<String,Object> config = new HashMap();
+	
+	// “elva-custom-metadata" is the key name, not a variable. 
 	config.put("elva-custom-metadata",map);
 	
-	ELvaChatServiceSdk.setUserName("USER_NAME");
-	ELvaChatServiceSdk.showConversation("USER_ID","SERVER_ID",config);
+	ELvaChatServiceSdk.setUserName("user_name");
+	ELvaChatServiceSdk.showConversation("user_id","server_id",config);
 
 **About Parameters：**
 
@@ -512,7 +535,8 @@ Setting the SDK Language will change the FAQs, Operational information, AI Chat 
 	
 **Coding Example：**
 
-	ELvaChatServiceSdk.setSDKLanguage("en");
+	string languageAlias = "zh_CN"
+	ELvaChatServiceSdk.setSDKLanguage(languageAlias);
 
 **About Parameters：**
 
@@ -528,40 +552,47 @@ Setting the SDK Language will change the FAQs, Operational information, AI Chat 
 
 If your APP provides multiple entries to AIHelp, and you intend to introduce different AI welcome texts and story lines to users from different entries, you can set the config parameters in [showElva](#showElva) or [showElvaOP](#showElvaOP)： 
 
+	// "anotherWelcomeText" is the key name, it's value is the usersay variable
 	map.put("anotherWelcomeText","usersay");
 
 **Coding Example：**
 
 
+	// Presenting Single FAQ to your customers
 	HashMap<String,Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
+	// the tag names are variables
 	tags.add("pay1");
 	tags.add("s1");
-	tags.add("elvaTestTag");
-	map.put("elva-tags",tags);
-	// note：anotherWelcomeText is key, should be unchanged.
-	// you need to change usersay according to the "User Say" in your new 
-	// story line
+	tags.add("vip2");
+	
+	// “elva-tags" is the key name, not a variable. 
+	map.put("elva-tags",tags); 
+	
+	// "anotherWelcomeText" is the key name, it's value is the usersay variable
 	map.put("anotherWelcomeText","usersay");
+	
 	HashMap<String,Object> config = new HashMap();
+	
+	// “elva-custom-metadata" is the key name, not a variable. 
 	config.put("elva-custom-metadata",map);
 	
-	ELvaChatServiceSdk.setName("APP_NAME"); // set APP Name
+	ELvaChatServiceSdk.setName("app_name"); // set APP Name
 	
 	// Enter show AI support
 	ELvaChatServiceSdk.showElva(
-				"USER_NAME",
-				"USER_ID",
-				"Server_ID",
+				"user_name",
+				"user_id",
+				"server_id",
 				"1", // show conversation entry
 				config);
 Or
 
 	// Enter operational module
 	ELvaChatServiceSdk.showElvaOP(
-				"USER_NAME",
-				"USER_ID",
-				"Server_ID",
+				"user_name",
+				"user_id",
+				"server_id",
 				"1", // show conversation entry
 				config);
 
