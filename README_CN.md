@@ -143,9 +143,25 @@ ELvaChatServiceSdk.init(
 
 **初始化代码示例：**
 
-```
-// 一定要在应用启动时进行初始化init操作，不然会无法进入AIHelp智能客服系统。
 
+注意： 一定要在应用启动时进行初始化init操作，不然可能无法进入AIHelp智能客服系统。
+
+可以采用设置初始化回调函数来确认初始化是否成功, 只有初始化成功之后才调用其他接口
+
+```
+// 在调用初始化init方法之前，设置初始化回调函数
+    public void setInitCallback() {
+        ELvaChatServiceSdk.setOnInitializedCallback(new ELvaChatServiceSdk.OnInitializationCallback() {
+            @Override
+            public void onInitialized() {
+                System.out.println("AIHelp elva Initialization Done!");
+            }
+        });
+    }
+
+```
+
+```
 import com.ljoy.chatbot.sdk.ELvaChatServiceSdk;
 
 public class MyActivity extends Activity {
@@ -154,6 +170,9 @@ public class MyActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
+          // 设置初始化回调函数
+          setInitCallback();
+          // 初始化AIHelpSDK
           ELvaChatServiceSdk.init(this,
                                   "YOUR_API_KEY",
                                   "YOUR_DOMAIN_NAME",

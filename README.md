@@ -150,7 +150,22 @@ If your company does not have an account, you need to register an account at [AI
 **Coding Example：**
 
 ```
-// Must be called during application/game initialization, otherwise you can't use AIHelp properly
+// Must be called during application/game initialization, otherwise you can't use AIHelp APIs properly.
+// You can set initialiation callback to track if AIHelp SDK initialization is completed.
+
+// Before Init, set initializaiton callback method
+    public void setInitCallback() {
+        ELvaChatServiceSdk.setOnInitializedCallback(new ELvaChatServiceSdk.OnInitializationCallback() {
+            @Override
+            public void onInitialized() {
+                System.out.println("AIHelp elva Initialization Done!");
+            }
+        });
+    }
+
+```
+
+```
 
 import com.ljoy.chatbot.sdk.ELvaChatServiceSdk;
 
@@ -160,6 +175,9 @@ public class MyActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
+          // Set Init Callback
+          setInitCallback();
+          // Init AIHelp SDK
           ELvaChatServiceSdk.init(this,
                                   "YOUR_API_KEY",
                                   "YOUR_DOMAIN_NAME",
