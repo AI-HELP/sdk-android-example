@@ -13,11 +13,12 @@
 
 	dependencies {
 	 ...
-	    compile 'net.aihelp:elva:1.3.8.1'
+	    compile 'net.aihelp:elva:1.3.8.5'
 	    compile 'com.android.support:appcompat-v7:23.4.0'
 	    compile 'com.android.support:design:23.4.0'
 	    compile 'com.android.support:recyclerview-v7:23.4.0'
 	    compile 'com.android.support:cardview-v7:23.4.0'
+	    compile 'com.bm.photoview:library:1.4.1'
     ...
     }
 
@@ -44,6 +45,7 @@ AIhelp-Android-SDK文件夹包含：
     compile 'com.android.support:design:23.4.0'
     compile 'com.android.support:recyclerview-v7:23.4.0'
     compile 'com.android.support:cardview-v7:23.4.0'
+    compile 'com.bm.photoview:library:1.4.1'
 
 如果你使用了Eclipse, 并没有用Gradle，你需要把依赖包导入到你的工程中作为library，并且增加依赖关系给AIHelp SDK。具体依赖关系: aihelpsdk依赖于design, 后者依赖于appcompat, recyclerview 和cardview。
  
