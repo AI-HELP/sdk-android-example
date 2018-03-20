@@ -405,7 +405,7 @@ public class MyActivity extends Activity {
 
 **参数说明：**
 
-- faqId:FAQ的编号,可以打开[AIHelp 后台](https://aihelp.net/elva)，在**机器人→常见问题**页面下找到指定FAQ的FAQ编号，注意：此FAQID不能填写在后台未存在的FAQ编号。
+- faqId:FAQ的编号，打开[AIHelp 后台](https://aihelp.net/elva)，在**机器人→常见问题**页面下找到指定FAQ的FAQ编号，注意：此FAQID不能填写在客服后台未存在的FAQ编号。
 - config:可选，自定义HashMap信息。可以在此处设置特定的Tag信息。说明：elva-tags对应的值为ArrayList类型，此处传入自定义的Tag，需要在Web管理配置同名称的Tag才能生效。
 	
 ![showSingleFAQ](https://github.com/CS30-NET/Pictures/blob/master/showSingleFAQ-CN-Android.png "showSingleFAQ")
