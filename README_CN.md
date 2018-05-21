@@ -1,19 +1,20 @@
 ## 接入说明
-有两种方式可以导入Android SDK。如果您使用了Android Studio等可以支持Gradle的环境，推荐使用第一种方式导入：
-### 导入方式一： 无需手动下载AIhelp Android SDK，通过gradle自动导入：
+**有两种方式可以接入AIHelp智能客服系统的Android版SDK。如果您使用了Android Studio等可以支持Gradle的环境，推荐使用第一种方式导入：**
+### 导入方式一： 无需手动下载AIHelp Android SDK，通过gradle自动导入：
 
 #### 1. 在Project级别的build.gradle中加入:
 
 	allprojects {
 		repositories {
 			jcenter()
+		}
 	}
 	
-#### 2. 在使用AIhelp 的app或module级别的build.gradle中加入依赖：
+#### 2. 在使用AIHelp SDK的app或module级别的build.gradle中加入依赖：
 
 	dependencies {
 	 ...
-	    compile 'net.aihelp:elva:1.3.8.5'
+	    compile 'net.AIHelp:elva:1.3.8.5'
 	    compile 'com.android.support:appcompat-v7:23.4.0'
 	    compile 'com.android.support:design:23.4.0'
 	    compile 'com.android.support:recyclerview-v7:23.4.0'
@@ -22,22 +23,22 @@
     ...
     }
 
-确保build.gradle同步成功: 在Android Studio的External Libraries下面能够看到加载成功elva-1.3.6文件夹以及上述依赖包。如果无法自动加载，采用了第二种导入方式：
+确保build.gradle同步成功: 在Android Studio的External Libraries下面能够看到加载成功elva-1.3.8.5文件夹以及上述依赖包。如果无法自动加载，请采用第二种导入方式：
 
 ### 导入方式二： 下载AIHelp Android SDK：
 点击页面右上角的"Clone or Download”按钮下载Android SDK，下载完成后解压文件。
-AIhelp-Android-SDK文件夹包含：
+AIHelp-Android-SDK文件夹包含：
 
 | 文件夹 | 说明 |
 |:------------- |:---------------|
-| **android-libs**    | AIHelp Android SDK 所需的依赖包|
+| **aars**    | AIHelp Android SDK 所需的依赖包|
 | **aihelpsdk**    | AIHelp Android SDK文件|
 #### 把AIHelp SDK 放入您的Android 工程：
 **a. 把aihelpsdk中libs子文件夹中全部包拷贝到您的工程app中的libs文件夹下**
 
 **b. 把aihelpsdk中的res子文件夹中全部包拷贝到您的工程app中的的res文件夹下**
 
-**c. 把android-libs所需要的依赖包导入您工程：**
+**c. 把aars所需要的依赖包导入您工程：**
 
 如果您的项目已经包含了某些依赖包，只需导入其他的。如果您使用了Gradle，那么只需要修改build.gradle，增加如下依赖(如果您的build.gradle没有类似的依赖关系)
 
@@ -47,24 +48,24 @@ AIhelp-Android-SDK文件夹包含：
     compile 'com.android.support:cardview-v7:23.4.0'
     compile 'com.bm.photoview:library:1.4.1'
 
-如果您使用了Eclipse，并没有用Gradle，您需要把依赖包导入到您的工程中作为library，并且增加依赖关系给AIHelp SDK。具体依赖关系: aihelpsdk依赖于design，后者依赖于appcompat，recyclerview 和cardview。
+如果您使用了Eclipse，并没有用Gradle，您需要把依赖包导入到您的工程中作为library，并且增加依赖关系给AIHelp SDK。具体依赖关系: AIHelpsdk依赖于design，后者依赖于appcompat，recyclerview 和cardview。
  
-### 3. 接入工程配置
+## 接入工程配置
 在您的Android工程的AndroidManifest.xml，增加需要的配置：  
   
-**a. 打包版本要求**
+**1. 打包版本要求**
 
-AIhelp SDK 要求android sdk最低版本为14，目标最低版本为23：
+AIHelp SDK 要求android sdk最低版本为14，目标最低版本为23：
 
 	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23"/>
      
-**b. 增加需要的权限**
+**2. 增加需要的权限**
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-**c. 增加activity:**
+**3. 增加activity:**
 
     <activity
        android:name="com.ljoy.chatbot.ChatMainActivity"
@@ -104,7 +105,7 @@ AIhelp SDK 要求android sdk最低版本为14，目标最低版本为23：
     </activity>
     
 关于横竖屏显示：上述配置中
-**android:screenOrientation="sensor"** 代表AIhelp的UI会根据手机屏幕方向自动调整横竖屏。如果您要固定AIhelp屏幕展示，请做如下修改：
+**android:screenOrientation="sensor"** 代表AIHelp的UI会根据手机屏幕方向自动调整横竖屏。如果您要固定AIHelp屏幕展示，请做如下修改：
 
 横屏展示：
 
@@ -114,19 +115,17 @@ AIhelp SDK 要求android sdk最低版本为14，目标最低版本为23：
 	android:screenOrientation="portrait"
 
 
-### 4. 在您的工程中初始化AIHelp SDK
+## 在您的工程中初始化AIHelp SDK
 
-```
-注意：
-在您的APP初始化时调用 ELvaChatServiceSdk.init(...)，传入必要的参数。
-
-ELvaChatServiceSdk.init(
-				Activity activity,
-				String appKey,
-				String domain,
-				String appId
-				)
-```
+	注意：
+	在您的APP初始化时调用 ELvaChatServiceSdk.init(...)，传入必要的参数。
+	
+	ELvaChatServiceSdk.init(
+					Activity activity,
+					String appKey,
+					String domain,
+					String appId
+					)
 	
 
 * 参数说明：
@@ -135,7 +134,7 @@ ELvaChatServiceSdk.init(
 |:------------- |:---------------|
 | activity    | 应用的Activty|
 | appKey    | app唯一密钥，从[AIHelp 客服后台][1]获取|
-| domain     | 您的AIHelp域名，从[AIHelp 客服后台][1]获取，例如foo.AIHELP.NET|
+| domain     | 您的AIHelp域名，从[AIHelp 客服后台][1]获取，例如foo.AIHelp.NET|
 | appId     | app唯一标识，从[AIHelp 客服后台][1]获取| 
 
 注：请使用注册邮箱登录 [AIHelp 客服后台][1]。在设置菜单应用页面查看。初次使用，需登录[AIHelp 官网注册][2]自助注册。
@@ -667,8 +666,8 @@ FAQ界面示例图:<br>
 **最佳实践：**
 > 1. 引导玩家从不同入口看到不同的故事线欢迎语以提供不同的服务。
 
-[1]:https://aihelp.net/elva "AIHelp 客服后台"
-[2]:https://aihelp.net/register "AIHelp 官网注册"
+[1]:https://AIHelp.net/elva "AIHelp 客服后台"
+[2]:https://AIHelp.net/register "AIHelp 官网注册"
 [showElva-CN-Android]:https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElva-CN-Android.png "机器人客服界面"
 [showConversation-CN-Android]:https://github.com/AI-HELP/Docs-Screenshots/blob/master/showConversation-CN-Android.png "人工客服界面"
 [showElvaOP-CN-Android]:https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElvaOP-CN-Android.png "运营模块界面"
