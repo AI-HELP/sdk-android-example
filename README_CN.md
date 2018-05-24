@@ -14,7 +14,7 @@
 
 	dependencies {
 	 ...
-	    compile 'net.AIHelp:elva:1.3.8.5'
+	    compile 'net.aihelp:elva:1.3.8.5'
 	    compile 'com.android.support:appcompat-v7:23.4.0'
 	    compile 'com.android.support:design:23.4.0'
 	    compile 'com.android.support:recyclerview-v7:23.4.0'
