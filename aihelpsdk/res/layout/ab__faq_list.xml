@@ -10,35 +10,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:minHeight="48dp"
+        android:paddingEnd="15dp"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:paddingEnd="15dp"
         android:paddingStart="15dp">
 
-        <TextView
-            xmlns:android="http://schemas.android.com/apk/res/android"
+        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/ab__faq_list_tv"
-            android:paddingRight="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:paddingEnd="15dp"
+            android:paddingRight="15dp"
             android:textColor="#333333"
-            android:textSize="17sp"
-            android:paddingEnd="15dp" />
+            android:textSize="17sp" />
 
         <ImageView
             android:id="@+id/type16"
             android:layout_width="7dp"
             android:layout_height="13dp"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/list_more_auto_mirror"
-            android:layout_alignParentEnd="true" />
+            android:src="@drawable/list_more_auto_mirror" />
     </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:layout_below="@+id/ab__faq_list_tv"
-        android:background="#d1d1d1"/>
+        android:background="#d1d1d1" />
 </LinearLayout>

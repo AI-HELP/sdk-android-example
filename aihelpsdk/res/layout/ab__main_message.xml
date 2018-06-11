@@ -23,14 +23,8 @@
             android:focusable="true">
 
             <RelativeLayout
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentStart="true"
-                android:layout_centerInParent="true"
-                android:autoMirrored="true"
                 android:clickable="true"
                 android:onClick="onBackArrowClick">
 
@@ -59,10 +53,13 @@
                 android:textSize="17sp" />
 
             <LinearLayout
+                android:id="@+id/layout_btn_conversation"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
                 android:orientation="horizontal">
 
                 <ImageButton
@@ -70,17 +67,37 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/chat_bot_title_manu"
-                    android:onClick="onMsgShowClick" />
+                    android:onClick="onMsgShowClick"
+                    android:visibility="gone" />
 
-                <ImageButton
-                    android:id="@+id/ab__btn_conversation"
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/chat_bot_head_conversation"
-                    android:onClick="onConversationShowClick" />
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center">
+
+                    <TextView
+                        android:id="@+id/ab__btn_conversation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:onClick="onConversationShowClick"
+                        android:text="@string/goto_Elva"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/iv_reddot_alert"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/aihelp_reddot_alert"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
 
                 <ImageButton
                     android:id="@+id/ab__btn_manu"
@@ -203,10 +220,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginRight="8dp"
                     android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="5dp"
                     android:layout_toEndOf="@+id/ab__open_albumParent"
                     android:layout_toLeftOf="@+id/ab__chat_word_voice"
@@ -219,8 +236,8 @@
                     android:paddingBottom="10dp"
                     android:paddingTop="10dp"
                     android:text=""
-                    android:textDirection="locale"
                     android:textColor="#ff000000"
+                    android:textDirection="locale"
                     android:textSize="14sp"
                     line:lineColorEt="@color/start_button_color" />
 
@@ -249,9 +266,9 @@
                         android:id="@+id/ab__input_send_btn"
                         android:layout_width="36dp"
                         android:layout_height="36dp"
-                        android:layout_alignParentTop="false"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="false"
                         android:layout_centerInParent="true"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/chat_bot_send"
@@ -259,9 +276,7 @@
                         android:visibility="visible" />
                 </RelativeLayout>
             </RelativeLayout>
-
         </RelativeLayout>
-
 
         <RelativeLayout
             android:id="@+id/ab__webview_container"
@@ -326,16 +341,22 @@
 
     <RelativeLayout
         android:id="@+id/rl_id2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="visible">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:visibility="gone">
 
-        <ImageView
+        <com.ljoy.chatbot.PhotoView.PhotoView
             android:id="@+id/imageViewFull"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="false"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="false"
+            android:background="@android:color/black"
+            android:scaleType="centerInside"
+            android:src="@drawable/amin_pgbar"
             android:visibility="gone" />
-
     </RelativeLayout>
 </LinearLayout>

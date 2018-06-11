@@ -6,35 +6,35 @@
     android:focusable="true"
     android:focusableInTouchMode="true">
 
-    <android.support.v7.widget.RecyclerView
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"/>
 
-<RelativeLayout
-    android:id="@+id/ab__webview_container"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_alignParentRight="true"
-    android:layout_below="@+id/ab__title"
-    android:background="@drawable/ecs_text_bg_1"
-    android:visibility="gone"
-    android:layout_alignParentEnd="true">
+    <RelativeLayout
+        android:id="@+id/ab__webview_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/ab__title"
+        android:background="@drawable/ecs_text_bg_1"
+        android:visibility="gone">
 
-<WebView
-android:id="@+id/ab__webview_main"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:layout_above="@+id/ab__reply_layout"/>
+        <WebView
+            android:id="@+id/ab__webview_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/ab__reply_layout" />
 
-    <ProgressBar
-        android:id="@+id/ab__msg_web_progress"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="visible"/>
+        <ProgressBar
+            android:id="@+id/ab__msg_web_progress"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="visible" />
     </RelativeLayout>
 
     <RelativeLayout

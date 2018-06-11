@@ -14,16 +14,15 @@
 
 	dependencies {
 	 ...
-	    compile 'net.aihelp:elva:1.3.8.5'
+	    compile 'net.aihelp:elva:1.4.0'
 	    compile 'com.android.support:appcompat-v7:23.4.0'
 	    compile 'com.android.support:design:23.4.0'
 	    compile 'com.android.support:recyclerview-v7:23.4.0'
 	    compile 'com.android.support:cardview-v7:23.4.0'
-	    compile 'com.bm.photoview:library:1.4.1'
     ...
     }
 
-确保build.gradle同步成功: 在Android Studio的External Libraries下面能够看到加载成功elva-1.3.8.5文件夹以及上述依赖包。如果无法自动加载，请采用第二种导入方式：
+确保build.gradle同步成功: 在Android Studio的External Libraries下面能够看到加载成功elva-1.4.0文件夹以及上述依赖包。如果无法自动加载，请采用第二种导入方式：
 
 ### 导入方式二： 下载AIHelp Android SDK：
 点击页面右上角的"Clone or Download”按钮下载Android SDK，下载完成后解压文件。
@@ -46,7 +45,6 @@ AIHelp-Android-SDK文件夹包含：
     compile 'com.android.support:design:23.4.0'
     compile 'com.android.support:recyclerview-v7:23.4.0'
     compile 'com.android.support:cardview-v7:23.4.0'
-    compile 'com.bm.photoview:library:1.4.1'
 
 如果您使用了Eclipse，并没有用Gradle，您需要把依赖包导入到您的工程中作为library，并且增加依赖关系给AIHelp SDK。具体依赖关系: AIHelpsdk依赖于design，后者依赖于appcompat，recyclerview 和cardview。
  
@@ -103,6 +101,11 @@ AIHelp SDK 要求android sdk最低版本为14，目标最低版本为23：
           <category android:name="android.intent.category.BROWSABLE" />
        </intent-filter>
     </activity>
+    <activity
+            android:name="com.ljoy.chatbot.QAWebActivity"
+            android:configChanges="orientation|screenSize|locale" >
+    </activity>
+    
     
 关于横竖屏显示：上述配置中
 **android:screenOrientation="sensor"** 代表AIHelp的UI会根据手机屏幕方向自动调整横竖屏。如果您要固定AIHelp屏幕展示，请做如下修改：

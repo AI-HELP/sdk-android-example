@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="match_parent"
-    android:layout_height="wrap_content" xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:focusable="false"
     android:focusableInTouchMode="false"
-    android:paddingTop="10dp"
-    android:paddingBottom="0dp">
+    android:paddingBottom="0dp"
+    android:paddingTop="10dp">
 
     <RelativeLayout
+        android:id="@+id/ab__msg_middle_main"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:id="@+id/ab__msg_middle_main"
-        android:background="#ededed"
         android:layout_centerHorizontal="true"
+        android:background="#ededed"
+        android:paddingEnd="15dp"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:paddingEnd="15dp"
         android:paddingStart="15dp">
 
         <TextView
             android:id="@+id/ab__msg_middle_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_centerInParent="true"
             android:text="Thank you for comment"
-	        android:textColor="#333333"
-            android:layout_centerInParent="true" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#333333" />
     </RelativeLayout>
 
 </RelativeLayout>
