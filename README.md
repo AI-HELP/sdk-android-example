@@ -49,7 +49,6 @@ If your project has already imported some of the dependencies, just import those
     compile 'com.android.support:design:23.4.0'
     compile 'com.android.support:recyclerview-v7:23.4.0'
     compile 'com.android.support:cardview-v7:23.4.0'
-    compile 'com.bm.photoview:library:1.4.1'
     # add this if using appindexing:
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
 
