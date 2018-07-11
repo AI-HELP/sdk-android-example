@@ -7,12 +7,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#000000"
         android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:background="#000000"
             android:autoMirrored="true"
             android:clickable="true">
 
