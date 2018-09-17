@@ -1,6 +1,12 @@
 # AIHELP Android SDK版本更新
 [进入中文版接入指南](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README_CN.md)
 
+## 1.4.2.2
+1.增加faq搜索功能
+2.增加输入联想功能
+3.旋转屏幕人工按钮显示问题
+4.主页面和运营页面标题调整到偏左位置
+
 ## 1.3.4
 1. FAQ增加两级菜单的功能。
 2. 修复bug。

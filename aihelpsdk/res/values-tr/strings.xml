@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">Settings</string>
+    <string name="no_more_than_chars">Maks %s karakter kullanılabilir!</string>
+    <string name="no_png_upload">SD kartınız yok ya da üzerine yazılamıyor!</string>
+    <string name="goto_Elva">İletişim</string>
+    <string name="self_service_interface">Self-Service</string>
+    <string name="break_off_remind">Bağlantı hatası,lütfen tekrar deneyin!</string>
+    <string name="mark_helpful_toast">Bunu faydalı buldum!</string>
+    <string name="mark_no">Hayır</string>
+    <string name="mark_unhelpful_toast">Bunu faydalı bulmadım!</string>
+    <string name="mark_yes">Evet</string>
+    <string name="mark_yes_no_question">Bunu faydalı buldunuz mu?</string>
+    <string name="permission_denied_message">Fotoğraf yüklenmesi için depolamaya erişim izni gerekiyor!</string>
+    <string name="setting">Settings</string>
+    <string name="question">Sorunuz</string>
+    <string name="main_title">Elva</string>
+    <string name="like_it">Sevdim!</string>
+    <string name="hate_it">Sevmedim!</string>
+
+    <string name="ab_reward_your_points">Your tokens:</string>
+    <string name="ab_reward_points"> </string>
+    <string name="ab_reward_go_to_the">Go to the</string>
+    <string name="ab_reward_qa_community">QA community~</string>
+    <string name="ab_reward_earn_points">Earn tokens~</string>
+    <string name="ab_reward_not_this_time">Not this time</string>
+    <string name="ab_reward_success">Success</string>
+    <string name="ab_reward_failed">Failed</string>
+    <string name="ab_reward_your_points_is_insufficient">Your tokens is insufficient</string>
+    <string name="ab_faq_need_more_help">Need more help?</string>
+</resources>

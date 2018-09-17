@@ -1,6 +1,13 @@
 # AIHELP Android SDK version update
 [SDK Integration Guide](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README.md)
 
+
+## 1.4.2.2
+1.Increase FAQ search function
+2.Increase input association function
+3.Rotating screen manual button display problem
+4.The main page and the operation page title are adjusted to the left side.
+
 ## 1.3.4
 1. Support FAQ Parent Sections. 
 2. UI optimize and bug fixes. 

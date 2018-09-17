@@ -32,12 +32,38 @@
                 android:id="@+id/ab__msg_list"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:divider="@null"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true" />
+                android:layout_alignParentTop="true"
+                android:divider="@null" />
 
         </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ab__bottom_area"
+            android:background="#ffffff">
+
+            <ListView
+                android:id="@+id/lv_alert_faq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></ListView>
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ab__bottom_area">
+
+            <ImageView
+                android:id="@+id/iv_conversation_reward"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/ab_reward"
+                android:visibility="gone" />
+        </FrameLayout>
 
         <RelativeLayout
             android:id="@+id/ab__bottom_area"
@@ -217,14 +243,6 @@
                 android:visibility="visible" />
 
         </RelativeLayout>
-
-        <ProgressBar
-            android:id="@+id/ab__progress_main"
-            style="?android:attr/progressBarStyleLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_gravity="center" />
 
     </RelativeLayout>
 

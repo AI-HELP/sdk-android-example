@@ -14,7 +14,7 @@
 
 	dependencies {
 	 ...
-	    compile 'net.aihelp:elva:1.4.1.1'
+	    compile 'net.aihelp:elva:1.4.2.2'
 	    compile 'com.android.support:appcompat-v7:23.4.0'
 	    compile 'com.android.support:design:23.4.0'
 	    compile 'com.android.support:recyclerview-v7:23.4.0'
@@ -22,7 +22,7 @@
     ...
     }
 
-确保build.gradle同步成功: 在Android Studio的External Libraries下面能够看到加载成功elva-1.4.0.1文件夹以及上述依赖包。如果无法自动加载，请采用第二种导入方式：
+确保build.gradle同步成功: 在Android Studio的External Libraries下面能够看到加载成功elva-1.4.2.2文件夹以及上述依赖包。如果无法自动加载，请采用第二种导入方式：
 
 ### 导入方式二： 下载AIHelp Android SDK：
 点击页面右上角的"Clone or Download”按钮下载Android SDK，下载完成后解压文件。
@@ -239,12 +239,12 @@ public class MyActivity extends Activity {
 	tags.add("s1");
 	tags.add("vip2");
 	
-	// "elva-tags" is the key name, not a variable. 
+	// "elva-tags" 是key值 不可以变 
 	map.put("elva-tags",tags); 
 	
 	HashMap<String,Object> config = new HashMap();
 	
-	// "elva-custom-metadata" is the key name, not a variable. 
+	// "elva-custom-metadata" 是key值 不可以变 
 	config.put("elva-custom-metadata",map);
 	
 	ELvaChatServiceSdk.showElva(
@@ -297,12 +297,12 @@ public class MyActivity extends Activity {
 	tags.add("s1");
 	tags.add("vip2");
 	
-	// "elva-tags" is the key name, not a variable. 
+	// "elva-tags" 是key值 不可以变 
 	map.put("elva-tags",tags); 
 	
 	HashMap<String,Object> config = new HashMap();
 	
-	// "elva-custom-metadata" is the key name, not a variable. 
+	// "elva-custom-metadata" 是key值 不可以变 
 	config.put("elva-custom-metadata",map);
 	
 	ELvaChatServiceSdk.showConversation(
@@ -363,12 +363,12 @@ public class MyActivity extends Activity {
 	tags.add("s1");
 	tags.add("vip2");
 	
-	// "elva-tags" is the key name, not a variable. 
+	// "elva-tags" 是key值 不可以变 
 	map.put("elva-tags",tags); 
 	
 	HashMap<String,Object> config = new HashMap();
 	
-	// "elva-custom-metadata" is the key name, not a variable. 
+	// "elva-custom-metadata" 是key值 不可以变  
 	config.put("elva-custom-metadata",map);
 	
 	ELvaChatServiceSdk.showElvaOP(
@@ -416,12 +416,12 @@ public class MyActivity extends Activity {
 	tags.add("s1");
 	tags.add("vip2");
 	
-	// "elva-tags" is the key name, not a variable. 
+	// "elva-tags" 是key值 不可以变 
 	map.put("elva-tags",tags); 
 	
 	HashMap<String,Object> config = new HashMap();
 	
-	// "elva-custom-metadata" is the key name, not a variable. 
+	// "elva-custom-metadata" 是key值 不可以变 
 	config.put("elva-custom-metadata",map);
 	
 	ELvaChatServiceSdk.showFAQs(config);
@@ -457,12 +457,12 @@ FAQ界面示例图:<br>
 	tags.add("s1");
 	tags.add("vip2");
 	
-	// "elva-tags" is the key name, not a variable. 
+	// "elva-tags" 是key值 不可以变 
 	map.put("elva-tags",tags); 
 	
 	HashMap<String,Object> config = new HashMap();
 	
-	// "elva-custom-metadata" is the key name, not a variable. 
+	// "elva-custom-metadata" 是key值 不可以变 
 	config.put("elva-custom-metadata",map);
 	
 	ELvaChatServiceSdk.showFAQSection("1234",config);
@@ -499,12 +499,12 @@ FAQ界面示例图:<br>
 	tags.add("s1");
 	tags.add("vip2");
 	
-	// "elva-tags" is the key name, not a variable. 
+	// "elva-tags" 是key值 不可以变 
 	map.put("elva-tags",tags); 
 	
 	HashMap<String,Object> config = new HashMap();
 	
-	// "elva-custom-metadata" is the key name, not a variable. 
+	// "elva-custom-metadata" 是key值 不可以变 
 	config.put("elva-custom-metadata",map);
 	
 	ELvaChatServiceSdk.showSingleFAQ("2345",config);
@@ -635,7 +635,7 @@ FAQ界面示例图:<br>
 	tags.add("s1");
 	tags.add("vip2");
 	
-	// "elva-tags" is the key name, not a variable. 
+	// "elva-tags" 是key值 不可以变 
 	map.put("elva-tags",tags); 
 	
 	// "anotherWelcomeText" is the key name, it's value is the usersay variable
@@ -643,7 +643,7 @@ FAQ界面示例图:<br>
 	
 	HashMap<String,Object> config = new HashMap();
 	
-	// "elva-custom-metadata" is the key name, not a variable. 
+	// "elva-custom-metadata" 是key值 不可以变 
 	config.put("elva-custom-metadata",map);
 	
 	// 调用showElva接口进入机器人客服界面

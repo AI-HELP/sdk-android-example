@@ -1,0 +1,30 @@
+<resources>
+    <string name="action_settings">Settings</string>
+    <string name="no_more_than_chars">No more than %s chars!</string>
+    <string name="no_png_upload">SD card does not exist or can not be written!</string>
+    <string name="goto_Elva">CONTÁCTANOS</string>
+    <string name="self_service_interface">Self-Service</string>
+    <string name="break_off_remind">Your network is disconnected,please try again later</string>
+    <string name="mark_helpful_toast">Le resultó útil</string>
+    <string name="mark_no">NO</string>
+    <string name="mark_unhelpful_toast">No le resultó útil</string>
+    <string name="mark_yes">Sí</string>
+    <string name="mark_yes_no_question">¿Sirvió de ayuda</string>
+    <string name="permission_denied_message">Storage permission is required to upload picture</string>
+    <string name="setting">Settings</string>
+    <string name="question">Tu pregunta</string>
+    <string name="main_title">Elva</string>
+    <string name="like_it">¡Me encantó!</string>
+    <string name="hate_it">no me gusta!</string>
+
+    <string name="ab_reward_your_points">Your tokens:</string>
+    <string name="ab_reward_points"> </string>
+    <string name="ab_reward_go_to_the">Go to the</string>
+    <string name="ab_reward_qa_community">QA community~</string>
+    <string name="ab_reward_earn_points">Earn tokens~</string>
+    <string name="ab_reward_not_this_time">Not this time</string>
+    <string name="ab_reward_success">Success</string>
+    <string name="ab_reward_failed">Failed</string>
+    <string name="ab_reward_your_points_is_insufficient">Your tokens is insufficient</string>
+    <string name="ab_faq_need_more_help">Need more help?</string>
+</resources>

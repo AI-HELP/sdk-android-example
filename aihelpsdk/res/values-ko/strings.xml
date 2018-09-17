@@ -1,0 +1,30 @@
+<resources>
+    <string name="action_settings">Settings</string>
+    <string name="no_more_than_chars">No more than %s chars!</string>
+    <string name="no_png_upload">SD card does not exist or can not be written!</string>
+    <string name="goto_Elva">연락하기</string>
+    <string name="self_service_interface">Self-Service</string>
+    <string name="break_off_remind">Your network is disconnected,please try again later</string>
+    <string name="mark_helpful_toast">질문이 도움이 되었다고 표시되었습니다</string>
+    <string name="mark_no">아니요</string>
+    <string name="mark_unhelpful_toast">질문이 도움이 되지 않았다고 표시되었습니다</string>
+    <string name="mark_yes">예</string>
+    <string name="mark_yes_no_question">이 내용이 유용했나요?</string>
+    <string name="permission_denied_message">Storage permission is required to upload picture</string>
+    <string name="setting">Settings</string>
+    <string name="question">귀하의 질문</string>
+    <string name="main_title">Elva</string>
+    <string name="like_it">좋아요!</string>
+    <string name="hate_it">싫다!</string>
+
+    <string name="ab_reward_your_points">Your tokens:</string>
+    <string name="ab_reward_points"> </string>
+    <string name="ab_reward_go_to_the">Go to the</string>
+    <string name="ab_reward_qa_community">QA community~</string>
+    <string name="ab_reward_earn_points">Earn tokens~</string>
+    <string name="ab_reward_not_this_time">Not this time</string>
+    <string name="ab_reward_success">Success</string>
+    <string name="ab_reward_failed">Failed</string>
+    <string name="ab_reward_your_points_is_insufficient">Your tokens is insufficient</string>
+    <string name="ab_faq_need_more_help">Need more help?</string>
+</resources>
