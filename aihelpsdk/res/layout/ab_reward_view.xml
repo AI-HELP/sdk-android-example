@@ -14,8 +14,22 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:gravity="center_horizontal">
+            android:layout_marginTop="15dp"
+            android:gravity="right">
+
+            <ImageView
+                android:id="@+id/iv_reward_close"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/aihelp_clear"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="15dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -43,16 +57,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/ab_reward_go_to_the"
                 android:layout_marginRight="5dp"
+                android:text="@string/ab_reward_go_to_the"
                 android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/tv_reward_qa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/ab_reward_qa_community"
                 android:layout_marginRight="5dp"
+                android:text="@string/ab_reward_qa_community"
                 android:textColor="#FF0000" />
 
             <TextView
@@ -122,27 +136,6 @@
                 android:gravity="center"
                 android:text="0"
                 android:textColor="#BFBFBF" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="5dp">
-
-            <CheckBox
-                android:id="@+id/cb_reward_refuse"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginRight="10dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="@string/ab_reward_not_this_time"
-                android:textColor="#000000" />
 
         </LinearLayout>
 

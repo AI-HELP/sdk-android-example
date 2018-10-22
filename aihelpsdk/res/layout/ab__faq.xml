@@ -21,13 +21,13 @@
 
             <ImageButton
                 android:id="@+id/ab__btn_back"
-                android:layout_width="12dp"
-                android:layout_height="22dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="50dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="5dp"
                 android:layout_marginRight="50dp"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="5dp"
                 android:background="@drawable/backrow_auto_mirrored"
                 android:clickable="false" />
         </RelativeLayout>
@@ -35,9 +35,10 @@
         <TextView
             android:id="@+id/tv_faq_title"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/rl_ab_qa_back"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
             android:text="AIHELP"
             android:textColor="@android:color/white"
             android:textSize="16sp" />
@@ -45,7 +46,9 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="5dp"
             android:gravity="center">
 
@@ -67,13 +70,15 @@
             android:id="@+id/ll_ab_faq_webview_close"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:gravity="center"
             android:visibility="gone">
 
             <ImageView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 android:layout_centerVertical="true"
                 android:background="@drawable/aihelp_close" />
         </LinearLayout>
@@ -84,17 +89,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#ffffff"
-        android:visibility="gone"
         android:focusableInTouchMode="true"
-        android:minHeight="50dp">
+        android:minHeight="50dp"
+        android:visibility="gone">
 
         <LinearLayout
             android:id="@+id/ll_faq_search_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:onClick="onSearchClick"
-            android:layout_centerVertical="true">
+            android:onClick="onSearchClick">
 
             <ImageView
                 android:layout_width="20dp"
@@ -106,14 +111,14 @@
             android:id="@+id/et_faq_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/ll_faq_search_icon"
-            android:layout_toLeftOf="@+id/iv_faq_search_clear"
-            android:layout_toStartOf="@+id/iv_faq_search_clear"
-            android:layout_toRightOf="@+id/ll_faq_search_icon"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/ll_faq_search_icon"
+            android:layout_toLeftOf="@+id/iv_faq_search_clear"
+            android:layout_toRightOf="@+id/ll_faq_search_icon"
+            android:layout_toStartOf="@+id/iv_faq_search_clear"
             android:background="@color/transparent"
             android:hint="@string/question"
             android:paddingBottom="10dp"
@@ -126,12 +131,12 @@
             android:id="@+id/iv_faq_search_clear"
             android:layout_width="12dp"
             android:layout_height="12dp"
-            android:layout_marginRight="10dp"
-            android:layout_centerInParent="true"
             android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/aihelp_clear"
             android:onClick="onSearchClearClick"
-            android:visibility="gone"
-            android:background="@drawable/aihelp_clear"/>
+            android:visibility="gone" />
     </RelativeLayout>
 
     <RelativeLayout

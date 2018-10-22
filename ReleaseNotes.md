@@ -1,6 +1,9 @@
 # AIHELP Android SDK version update
 [SDK Integration Guide](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README.md)
 
+## 1.4.2.6
+1.increase robot complaints
+2.UI optimize and bug fixes
 
 ## 1.4.2.2
 1.Increase FAQ search function

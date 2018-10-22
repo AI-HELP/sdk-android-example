@@ -15,7 +15,7 @@ There are two methods to integrate AIHelp Android SDK to your APP's project. If 
 
 	dependencies {
 	 ...
-	    compile 'net.aihelp:elva:1.4.2.2'
+	    compile 'net.aihelp:elva:1.4.2.6'
 	    compile 'com.android.support:appcompat-v7:23.4.0'
 	    compile 'com.android.support:design:23.4.0'
 	    compile 'com.android.support:recyclerview-v7:23.4.0'
@@ -23,7 +23,7 @@ There are two methods to integrate AIHelp Android SDK to your APP's project. If 
     ...
     }
 
-Wait until the build.gradle sync completion and make sure there is no error during sync: Under the "External Libraries" folder of Android Studio Project sturcture view you should be able to find the folder "elva-1.4.2.2" and other dependencies specified above. If there is an error during sync or you can not find elva folder. Use the Method #2 below:
+Wait until the build.gradle sync completion and make sure there is no error during sync: Under the "External Libraries" folder of Android Studio Project sturcture view you should be able to find the folder "elva-1.4.2.6" and other dependencies specified above. If there is an error during sync or you can not find elva folder. Use the Method #2 below:
 
 ### Method #2. Download The AIHelp Android SDK：
 Select "Clone or download" to download Android SDK in the github page, unzip the downloaded file.
@@ -592,6 +592,28 @@ Or
 				"user_id",
 				"server_id",
 				"1", // show conversation entry
+				config);
+				
+## 13. Want to customize the welcome message of manual customer service
+###If you want to customize the welcome message of the manual customer service, 
+you need to pass a new pair of keys in the configuration parameters of the corresponding interface.
+The key is: "private_welcome_str", valued for the customized content you want
+###code example:
+	HashMap <String,Object> map = new HashMap();
+
+	//"private_welcome_str" is the key, the value is the custom content you want, the type is a string
+	Map.put( "private_welcome_str", "usersay");
+	HashMap <String,Object> config = new HashMap();
+
+	//"elva-custom-metadata" is a key value that cannot be changed
+	Config.put ("Xiao Yaxuan Custom Metadata", map);
+
+	//Call showElva interface to enter the robot customer service interface
+	ElvaChatServiceSdk.showElva(
+				"user_name",
+				"user_id",
+				"server_id",
+				"1",
 				config);
 
 

@@ -24,11 +24,11 @@
 
             <ImageButton
                 android:id="@+id/ab__btn_back"
-                android:layout_width="12dp"
-                android:layout_height="22dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="15dp"
-                android:layout_marginStart="15dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
                 android:background="@drawable/backrow_auto_mirrored"
                 android:clickable="false" />
         </RelativeLayout>
@@ -37,11 +37,12 @@
             android:id="@+id/ab__main_title_op"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
             android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:gravity="center_vertical"
             android:text="@string/main_title"
             android:textColor="#FFFFFF"
-            android:textSize="17sp" />
+            android:textSize="16sp" />
 
         <LinearLayout
             android:layout_width="wrap_content"

@@ -15,24 +15,28 @@
 
         <LinearLayout
             android:id="@+id/ll_ab_qa_back"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="center_vertical">
 
             <ImageView
-                android:layout_width="11dp"
-                android:layout_height="22dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="15dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginStart="5dp"
                 android:background="@drawable/backrow_auto_mirrored" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/tv_ab_qa_title"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/ll_ab_qa_back"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:gravity="center_vertical"
             android:text="AIHELP"
             android:textColor="@android:color/white"
             android:textSize="16sp" />
@@ -41,12 +45,14 @@
             android:id="@+id/ll_ab_qa_close"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:gravity="center">
 
             <ImageView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 android:layout_centerVertical="true"
                 android:background="@drawable/aihelp_close" />
         </LinearLayout>

@@ -14,7 +14,7 @@
 
 	dependencies {
 	 ...
-	    compile 'net.aihelp:elva:1.4.2.2'
+	    compile 'net.aihelp:elva:1.4.2.6'
 	    compile 'com.android.support:appcompat-v7:23.4.0'
 	    compile 'com.android.support:design:23.4.0'
 	    compile 'com.android.support:recyclerview-v7:23.4.0'
@@ -22,7 +22,7 @@
     ...
     }
 
-确保build.gradle同步成功: 在Android Studio的External Libraries下面能够看到加载成功elva-1.4.2.2文件夹以及上述依赖包。如果无法自动加载，请采用第二种导入方式：
+确保build.gradle同步成功: 在Android Studio的External Libraries下面能够看到加载成功elva-1.4.2.6文件夹以及上述依赖包。如果无法自动加载，请采用第二种导入方式：
 
 ### 导入方式二： 下载AIHelp Android SDK：
 点击页面右上角的"Clone or Download”按钮下载Android SDK，下载完成后解压文件。
@@ -667,6 +667,30 @@ FAQ界面示例图:<br>
 **参数说明：**
 
 `("anotherWelcomeText","usersay")`是一对键值对，key是:"anotherWelcomeText"，不可变，value是对应故事线的**User Say**属性，在[AIHelp 客服后台][1]**机器人→发布→故事线→查看**中点击查看某一条故事线，故事线页面中每一个标签（Story）都有一个**User Say**的属性。如果您想在机器人界面显示其他故事线，键值对的value的值就应该是对应的**User Say**属性的值。
+
+
+
+##14.想定制人工客服的欢迎语
+###如果您想定制人工客服的欢迎语,您需要在调用对应接口的config参数里传入一对新的key,value
+key是:"private_welcome_str",value为您想要的定制的内容
+###代码示例:
+	HashMap<String,Object> map = new HashMap();
+  
+	//"private_welcome_str" 是key,value是您想要的定制的内容,类型是String
+	map.put("private_welcome_str","usersay");
+	HashMap<String,Object> config = new HashMap();
+  
+	//"elva-custom-metadata" 是key值 不可以变
+	config.put("elva-custom-metadata",map);
+  
+	//调用showElva接口进入机器人客服界面
+	ElvaChatServiceSdk.showElva(
+				"user_name",
+				"user_id",
+				"server_id",
+				"1",
+				config);
+
 
 **最佳实践：**
 > 1. 引导玩家从不同入口看到不同的故事线欢迎语以提供不同的服务。

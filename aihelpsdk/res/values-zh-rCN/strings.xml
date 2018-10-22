@@ -22,7 +22,6 @@
     <string name="ab_reward_go_to_the">前往</string>
     <string name="ab_reward_qa_community">问答社区</string>
     <string name="ab_reward_earn_points">赚点积分~</string>
-    <string name="ab_reward_not_this_time">残忍拒绝,暂不打赏</string>
     <string name="ab_reward_success">打赏成功</string>
     <string name="ab_reward_failed">打赏失败</string>
     <string name="ab_reward_your_points_is_insufficient">余额不足</string>
