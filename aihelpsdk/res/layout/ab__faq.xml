@@ -14,7 +14,7 @@
 
         <RelativeLayout
             android:id="@+id/rl_ab_qa_back"
-            android:layout_width="50dp"
+            android:layout_width="40dp"
             android:layout_height="match_parent"
             android:clickable="true"
             android:onClick="onBackArrowClick">
@@ -32,13 +32,29 @@
                 android:clickable="false" />
         </RelativeLayout>
 
+        <LinearLayout
+            android:id="@+id/ll_ab_faq_webview_close"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_centerVertical="true"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/aihelp_close" />
+        </LinearLayout>
+
         <TextView
             android:id="@+id/tv_faq_title"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
             android:layout_marginLeft="60dp"
             android:layout_marginRight="60dp"
+            android:gravity="center_vertical"
             android:text="AIHELP"
             android:textColor="@android:color/white"
             android:textSize="16sp" />
@@ -66,22 +82,6 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/ll_ab_faq_webview_close"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:gravity="center"
-            android:visibility="gone">
-
-            <ImageView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:layout_centerVertical="true"
-                android:background="@drawable/aihelp_close" />
-        </LinearLayout>
     </RelativeLayout>
 
     <RelativeLayout
@@ -119,7 +119,7 @@
             android:layout_toLeftOf="@+id/iv_faq_search_clear"
             android:layout_toRightOf="@+id/ll_faq_search_icon"
             android:layout_toStartOf="@+id/iv_faq_search_clear"
-            android:background="@color/transparent"
+            android:background="#00000000"
             android:hint="@string/question"
             android:paddingBottom="10dp"
             android:paddingTop="10dp"

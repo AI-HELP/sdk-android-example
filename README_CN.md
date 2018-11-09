@@ -14,7 +14,7 @@
 
 	dependencies {
 	 ...
-	    compile 'net.aihelp:elva:1.4.2.6'
+	    compile 'net.aihelp:elva:1.4.3'
 	    compile 'com.android.support:appcompat-v7:23.4.0'
 	    compile 'com.android.support:design:23.4.0'
 	    compile 'com.android.support:recyclerview-v7:23.4.0'
@@ -22,7 +22,7 @@
     ...
     }
 
-确保build.gradle同步成功: 在Android Studio的External Libraries下面能够看到加载成功elva-1.4.2.6文件夹以及上述依赖包。如果无法自动加载，请采用第二种导入方式：
+确保build.gradle同步成功: 在Android Studio的External Libraries下面能够看到加载成功elva-1.4.3文件夹以及上述依赖包。如果无法自动加载，请采用第二种导入方式：
 
 ### 导入方式二： 下载AIHelp Android SDK：
 点击页面右上角的"Clone or Download”按钮下载Android SDK，下载完成后解压文件。
@@ -61,8 +61,8 @@ AIHelp SDK 要求android sdk最低版本为14，目标最低版本为23：
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />//上传表单图片的时候需要此权限
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />//上传表单图片的时候需要此权限
 **3. 增加activity:**
 
     <activity
@@ -118,7 +118,7 @@ AIHelp SDK 要求android sdk最低版本为14，目标最低版本为23：
 	android:screenOrientation="portrait"
 
 
-## 在您的工程中初始化AIHelp SDK
+### 4.在您的工程中初始化AIHelp SDK
 
 	注意：
 	在您的APP初始化时调用 ELvaChatServiceSdk.init(...)，传入必要的参数。
@@ -190,7 +190,7 @@ public class MyActivity extends Activity {
 
 ---
 
-## 使用AIHelp智能客服接口
+###5. 使用AIHelp智能客服接口
 
 
 ### 1. 接口说明
@@ -314,7 +314,7 @@ public class MyActivity extends Activity {
 
 | 参数名 | 类型 | 说明 |
 |:------------- |:---------------|:---------------|
-| uid | String | 用户在游戏/应用里的唯一标识 |
+| user_id | String | 用户在游戏/应用里的唯一标识 |
 | serverId | String | 用户所在的服务器编号 |
 | customData | HashMap | 可选参数，自定义HashMap信息。可以在此处设置特定的Tag信息。说明：elva-tags对应的值为ArrayList类型，此处传入自定义的Tag，需要在[AIHelp 客服后台][1]配置同名称的Tag才能生效。 |
 
@@ -422,7 +422,9 @@ public class MyActivity extends Activity {
 	HashMap<String,Object> config = new HashMap();
 	
 	// "elva-custom-metadata" 是key值 不可以变 
-	config.put("elva-custom-metadata",map);
+	config.put("elva-custom-metadata",map);	
+	config.Add ("showContactButtonFlag", "1"); // 显示可以从FAQ列表右上角进入机器人客服
+	config.Add("showConversationFlag", "1"); // 显示可以从FAQ进入人工客服
 	
 	ELvaChatServiceSdk.showFAQs(config);
 
@@ -440,7 +442,7 @@ FAQ界面示例图:<br>
 
 ---
 
-### <h4 id="showFAQSection">6. 展示某一分类里的所有FAQ，调用`showFAQSection`方法(必须确保设置玩家名称信息 [setUserName](#UserName) 和设置玩家唯一id信息 [setUserId](#UserId) 已经调用)</h4>
+#### <h4 id="showFAQSection">6. 展示某一分类里的所有FAQ，调用`showFAQSection`方法(必须确保设置玩家名称信息 [setUserName](#UserName) 和设置玩家唯一id信息 [setUserId](#UserId) 已经调用)</h4>
 
 	ELvaChatServiceSdk.showFAQSection(String sectionPublishId); 
 
@@ -464,6 +466,8 @@ FAQ界面示例图:<br>
 	
 	// "elva-custom-metadata" 是key值 不可以变 
 	config.put("elva-custom-metadata",map);
+	config.Add ("showContactButtonFlag", "1"); // 显示可以从FAQ列表右上角进入机器人客服
+	config.Add("showConversationFlag", "1"); // 显示可以从FAQ进入人工客服
 	
 	ELvaChatServiceSdk.showFAQSection("1234",config);
 
@@ -506,6 +510,8 @@ FAQ界面示例图:<br>
 	
 	// "elva-custom-metadata" 是key值 不可以变 
 	config.put("elva-custom-metadata",map);
+	config.Add ("showContactButtonFlag", "1"); // 显示可以从FAQ列表右上角进入机器人客服
+	config.Add("showConversationFlag", "1"); // 显示可以从FAQ进入人工客服
 	
 	ELvaChatServiceSdk.showSingleFAQ("2345",config);
         
@@ -618,7 +624,7 @@ FAQ界面示例图:<br>
 > 1. 通常AIHelp智能客服系统的语言会使用手机的系统语言设置，如果您的应用使用跟手机设置不一样的语言，那么您需要在AIHelp智能客服系统初始化之后调用此接口修改默认语言。
 > 2. 如果您的应用允许用户更改语言，那么每次更改语言之后，也需要调用此接口重新设置AIHelp智能客服系统的语言。
 
-### 13. 设置机器人客服界面的另一个欢迎语。
+#### 12. 设置机器人客服界面的另一个欢迎语。
 
 如果您设置了进入机器人客服界面的不同入口，希望用户从不同的入口进入机器人客服界面时显示不同的欢迎语，进入不同故事线，可以通过设置config参数来实现： 
 
@@ -670,7 +676,7 @@ FAQ界面示例图:<br>
 
 
 
-##14.想定制人工客服的欢迎语
+### 13.想定制人工客服的欢迎语
 ###如果您想定制人工客服的欢迎语,您需要在调用对应接口的config参数里传入一对新的key,value
 key是:"private_welcome_str",value为您想要的定制的内容
 ###代码示例:

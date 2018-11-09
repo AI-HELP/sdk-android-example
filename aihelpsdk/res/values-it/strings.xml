@@ -1,0 +1,27 @@
+<resources>
+    <string name="main_title">Elva</string>
+    <string name="no_more_than_chars">Non più di %s caratteri!</string>
+    <string name="no_png_upload">SD non presente o non leggibile!</string>
+    <string name="goto_Elva">Contattaci</string>
+    <string name="self_service_interface">Self Service</string>
+    <string name="break_off_remind">Il tuo collegamento si è interrotto, si prega di effettuare nuovamente l\'accesso!</string>
+	<string name="ab_op_help">HELP</string>
+    <string name="mark_helpful_toast">Lo hai trovato utile</string>
+    <string name="mark_no">No</string>
+    <string name="mark_unhelpful_toast">Lo hai trovato inutile</string>
+    <string name="mark_yes">Si</string>
+    <string name="mark_yes_no_question">Questo è utile?</string>
+    <string name="permission_denied_message">Per caricare immagini è necessaria l\'autorizzazione di archiviazione</string>
+    <string name="question">Inserire problema</string>
+    <string name="like_it">Mi Piace!</string>
+    <string name="hate_it">Non mi piace!</string>
+    <string name="ab_reward_your_points">Il tuo bilancio punti:</string>
+    <string name="ab_reward_points"> </string>
+    <string name="ab_reward_go_to_the">Fino a</string>
+    <string name="ab_reward_qa_community">Spazio domande</string>
+    <string name="ab_reward_earn_points">Guadagna punti~</string>
+    <string name="ab_reward_success">Premiazione riuscita</string>
+    <string name="ab_reward_failed">Premiazione fallita</string>
+    <string name="ab_reward_your_points_is_insufficient">Bilancio insufficiente</string>
+    <string name="ab_faq_need_more_help">Serve ancora aiuto?</string>
+</resources>

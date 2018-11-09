@@ -1,0 +1,27 @@
+<resources>
+    <string name="main_title">Elva</string>
+    <string name="no_more_than_chars">Δεν μπορείτε να ξεπεράσετε τους %s χαρακτήρες!</string>
+    <string name="no_png_upload">Δεν υπάρχει SD κάρτα ή δεν μπορεί να διαβαστεί!</string>
+    <string name="goto_Elva">Επικοινωνήστε μας</string>
+    <string name="self_service_interface">Σελφ σέρβις</string>
+    <string name="break_off_remind">Το δίκτυό σας αποσυνδέθηκε, παρακαλώ προσπαθήστε αργότερα!</string>
+	<string name="ab_op_help">HELP</string>
+    <string name="mark_helpful_toast">Σας βοήθησε</string>
+    <string name="mark_no">Όχι</string>
+    <string name="mark_unhelpful_toast">Δεν σας βοήθησε</string>
+    <string name="mark_yes">Ναι</string>
+    <string name="mark_yes_no_question">Σας βοήθησε?</string>
+    <string name="permission_denied_message">Απαιτείται άδεια αποθήκευσης για να ανεβάσετε εικόνα</string>
+    <string name="question">Εισάγετε ερώτηση</string>
+    <string name="like_it">Μου αρέσει!</string>
+    <string name="hate_it">Δεν μου αρέσει!</string>
+    <string name="ab_reward_your_points">Το υπόλοιπο των πόντων σας:</string>
+    <string name="ab_reward_points"> </string>
+    <string name="ab_reward_go_to_the">Μέχρι</string>
+    <string name="ab_reward_qa_community">Φόρουμ ερωτήσεων και απαντήσεων</string>
+    <string name="ab_reward_earn_points">Πόντοι κερδών~</string>
+    <string name="ab_reward_success">Επιτυχής ανταμοιβή</string>
+    <string name="ab_reward_failed">Αποτυχής ανταμοιβή</string>
+    <string name="ab_reward_your_points_is_insufficient">Το υπόλοιπό σας δεν επαρκεί</string>
+    <string name="ab_faq_need_more_help">Χρειάζεστε βοήθεια?</string>
+</resources>

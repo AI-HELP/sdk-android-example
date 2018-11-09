@@ -1,6 +1,11 @@
 # AIHELP Android SDK版本更新
 [进入中文版接入指南](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README_CN.md)
 
+## 1.4.3
+1.初始化逻辑优化
+2.机器人客诉
+3.多语言适配
+
 ## 1.4.2.6
 1.增加机器人客诉
 2.优化部分UI和修复bug。

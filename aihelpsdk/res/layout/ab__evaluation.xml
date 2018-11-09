@@ -197,5 +197,4 @@
                 android:background="@drawable/ok_button" />
         </LinearLayout>
     </RelativeLayout>
-
 </RelativeLayout>

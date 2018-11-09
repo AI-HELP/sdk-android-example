@@ -254,7 +254,7 @@
                     android:layout_toLeftOf="@+id/ab__chat_word_voice"
                     android:layout_toRightOf="@+id/ab__open_albumParent"
                     android:layout_toStartOf="@+id/ab__chat_word_voice"
-                    android:background="@color/transparent"
+                    android:background="#00000000"
                     android:ems="10"
                     android:focusable="true"
                     android:hint="@string/question"
@@ -264,7 +264,7 @@
                     android:textColor="#ff000000"
                     android:textDirection="locale"
                     android:textSize="14sp"
-                    line:lineColorEt="@color/start_button_color" />
+                    line:lineColorEt="#2960d9" />
 
                 <ImageButton
                     android:id="@+id/ab__chat_word_voice"

@@ -15,7 +15,7 @@ There are two methods to integrate AIHelp Android SDK to your APP's project. If 
 
 	dependencies {
 	 ...
-	    compile 'net.aihelp:elva:1.4.2.6'
+	    compile 'net.aihelp:elva:1.4.3'
 	    compile 'com.android.support:appcompat-v7:23.4.0'
 	    compile 'com.android.support:design:23.4.0'
 	    compile 'com.android.support:recyclerview-v7:23.4.0'
@@ -23,7 +23,7 @@ There are two methods to integrate AIHelp Android SDK to your APP's project. If 
     ...
     }
 
-Wait until the build.gradle sync completion and make sure there is no error during sync: Under the "External Libraries" folder of Android Studio Project sturcture view you should be able to find the folder "elva-1.4.2.6" and other dependencies specified above. If there is an error during sync or you can not find elva folder. Use the Method #2 below:
+Wait until the build.gradle sync completion and make sure there is no error during sync: Under the "External Libraries" folder of Android Studio Project sturcture view you should be able to find the folder "elva-1.4.3" and other dependencies specified above. If there is an error during sync or you can not find elva folder. Use the Method #2 below:
 
 ### Method #2. Download The AIHelp Android SDK：
 Select "Clone or download" to download Android SDK in the github page, unzip the downloaded file.
@@ -57,12 +57,13 @@ __elvachatservice__ depends on __design__, which depends on __appcompat__, __rec
  
 ### 3. Configure your Android Manifest
   In the AndroidManifest.xml of your project, add the below information：     
+  <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23"/>
 **a. Add Required Permissions**
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />//This permission is required when uploading a form image
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />//This permission is required when uploading a form image
 **b. Add AIHelp Activities:**
 
     <activity
@@ -100,6 +101,10 @@ __elvachatservice__ depends on __design__, which depends on __appcompat__, __rec
           <category android:name="android.intent.category.DEFAULT" />
           <category android:name="android.intent.category.BROWSABLE" />
        </intent-filter>
+    </activity>	
+    <activity
+            android:name="com.ljoy.chatbot.QAWebActivity"
+            android:configChanges="orientation|screenSize|locale" >
     </activity>
     
 About the screen orientations: 
@@ -269,7 +274,59 @@ or
 > 1. Use this method to launch your APP's customer service. Configure specific welcome texts and AI story lines in the AIHelp Web Console to better the customer support experiences.
 > 2. Enable VIP Conversation Entry to allow user to chat with your human support team with parameters "__showConversationFlag__" setting to "__1__", you may use this method for any user or as a privilege for some users only.
 
-#### <h4 id="showElvaOP">3. Launch The Operation Interface, use `showElvaOP`</h4>
+#### <h4 id="showConversation">3. Call the `showConversation` method to start the manual customer service interface.</h4>
+
+	ELvaChatServiceSdk.showConversation(
+					String uid,
+					String serverId);
+
+or
+
+	ELvaChatServiceSdk.showConversation(
+						String uid,
+						String serverId,
+						HashMap customData);
+						
+**Coding Example：**
+
+	HashMap<String,Object> map = new HashMap();
+	ArrayList<String> tags = new ArrayList();
+	// the tag names are variables
+	tags.add("pay1");
+	tags.add("s1");
+	tags.add("vip2");
+	
+	// “elva-tags" is the key name, not a variable. 
+	map.put("elva-tags",tags); 
+	
+	HashMap<String,Object> config = new HashMap();
+	
+	// "elva-custom-metadata" is the key name, not a variable. 
+	config.put("elva-custom-metadata",map);
+	
+	ELvaChatServiceSdk.showConversation(
+				"user_id",
+				"server_id",
+				config);
+
+**About Parameters：**
+
+
+- __user_id__: Unique User ID
+- __serverId__: The Server ID
+- __config__: Optional parameters for custom HashMap information. You can pass specific Tag information using ArrayList elva-tags, see the above coding example. Please note that you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
+
+
+Manual customer service interface example diagram:<br>
+![Manual customer service interface][showConversation-CN-Android]
+
+**Best Practices：**
+> 1. Usually you don't need to call this interface unless you want to set a trigger point in the app, giving the user a chance to go directly to the manual chat interface.
+
+---
+
+
+#### <h4 id="showElvaOP">4. Launch The Operation Interface, use `showElvaOP`</h4>
 
 The operation module is useful when you want to present updates, news, articles or any background information about your APP/Game to users. The AI Help
 
@@ -338,7 +395,7 @@ The operation module is useful when you want to present updates, news, articles 
 **Best Practice：**
 > 1. Use this API to present news, announcements, articles or any useful information to users/players. Configure and publish the information in the AIHelp web console. 
 
-#### <h4 id="showFAQs">4. Display FAQs, use `showFAQs ` (need to set [`setUserName`](#UserName) and [`setUserId`](#UserId))</h4>
+#### <h4 id="showFAQs">5. Display FAQs, use `showFAQs ` (need to set [`setUserName`](#UserName) and [`setUserId`](#UserId))</h4>
 
 	ELvaChatServiceSdk.showFAQs();
 
@@ -354,6 +411,8 @@ The operation module is useful when you want to present updates, news, articles 
 	ELvaChatServiceSdk.setUserName("user_name"); // set User Name
 	ELvaChatServiceSdk.setUserId("user_id"); // set User Id
 	ELvaChatServiceSdk.setServerId("server_id"); // set Serve Id
+	config.Add ("showContactButtonFlag", "1"); //The display can be accessed from the upper right corner of the FAQ list.
+	config.Add("showConversationFlag", "1"); //The display can enter manual customer service from FAQ
 	
 	ELvaChatServiceSdk.showFAQs(config);
 
@@ -366,7 +425,50 @@ The operation module is useful when you want to present updates, news, articles 
 **Best Practice：**
 > 1. Use this method to show FAQs about your APP/Game properly. Configure FAQs in AIHelp Web Console. Each FAQ can be categroized into a section. If the FAQs are many, you can also add Parent Sections to categorize sections to make things clear and organized. 
 
-#### <h4 id="showSingleFAQ">5. Show A Specific FAQ, use `showSingleFAQ` (need to set [`setUserName`](#UserName) and [`setUserId`](#UserId))</h4>
+#### <h4 id="showFAQSection">6. Show all the FAQs in a category, call the `showFAQSection` method (must make sure to set the player name information [setUserName](#UserName) And setting the player's unique id information [setUserId](#UserId) Already called)</h4>
+
+	ELvaChatServiceSdk.showFAQSection(String sectionPublishId); 
+
+or
+
+	ELvaChatServiceSdk.showFAQSection(String sectionPublishId,HashMap customData);
+
+**Coding Example：**
+
+	HashMap<String,Object> map = new HashMap();
+	ArrayList<String> tags = new ArrayList();
+	// the tag names are variables
+	tags.add("pay1");
+	tags.add("s1");
+	tags.add("vip2");
+	
+	// "elva-tags" is the key name, not a variable
+	map.put("elva-tags",tags); 
+	
+	HashMap<String,Object> config = new HashMap();
+	
+	// "elva-custom-metadata" is the key name, not a variable
+	config.put("elva-custom-metadata",map);
+	config.Add ("showContactButtonFlag", "1"); //The display can be accessed from the upper right corner of the FAQ list.
+	config.Add("showConversationFlag", "1"); //The display can enter manual customer service from FAQ
+	
+	ELvaChatServiceSdk.showFAQSection("1234",config);
+
+**About Parameters：**
+
+| sectionPublishId | String | The classification number of the FAQ classification. Open [AIHelp Customer Service Background][1] and find the category number of the specified FAQ category under **Robot→Frequently Asked Questions→[Classification]**. Note: This sectionPublishId cannot fill in the category number that does not exist in the customer service background.
+
+- __config__: Optional parameters for custom HashMap information. You can pass specific Tag information using the ArrayList elva-tags, see the above coding example. Please note that you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
+	
+Example map of all FAQ interfaces under the classification:<br>
+![All FAQ screens under category][showFAQSection-CN-Android]
+
+**Best Practices:**
+> 1. In the FAQ entry of your application, trigger the call of this interface. For example, you have configured the category FAQ about the mall or recharge in the [AIHelp Customer Support] [1] page. After you call this interface in your store interface or recharge interface, all the FAQs in this category will be displayed.
+
+---
+
+#### <h4 id="showSingleFAQ">7. Show A Specific FAQ, use `showSingleFAQ` (need to set [`setUserName`](#UserName) and [`setUserId`](#UserId))</h4>
 
 	ELvaChatServiceSdk.showSingleFAQ(String faqId);
 
@@ -396,6 +498,8 @@ The operation module is useful when you want to present updates, news, articles 
 	config.put("elva-custom-metadata",map);
 	// “showConversationFlag" is the key name, not a variable. 
 	config.put("showConversationFlag","1");// show conversation entry in the top right corner.
+	config.Add ("showContactButtonFlag", "1"); //The display can be accessed from the upper right corner of the FAQ list.
+	config.Add("showConversationFlag", "1"); //The display can enter manual customer service from FAQ
 	
 	ELvaChatServiceSdk.showSingleFAQ("2345",config);
 
@@ -594,7 +698,7 @@ Or
 				"1", // show conversation entry
 				config);
 				
-## 13. Want to customize the welcome message of manual customer service
+#### 13. Want to customize the welcome message of manual customer service
 ###If you want to customize the welcome message of the manual customer service, 
 you need to pass a new pair of keys in the configuration parameters of the corresponding interface.
 The key is: "private_welcome_str", valued for the customized content you want
@@ -619,4 +723,14 @@ The key is: "private_welcome_str", valued for the customized content you want
 
 **Best Practice：**
 > 1. Introduce different story lines to users from different sources.
+
+[1]: https://AIHelp.net/elva "AIHelp Customer Service Backstage"
+[2]: https://AIHelp.net/register "AIHelp official website registration"
+[showElva-CN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElva-CN-Android.png "Robot Customer Service Interface"
+[showConversation-CN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showConversation-CN-Android.png "Manual Customer Service Interface"
+[showElvaOP-CN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElvaOP-CN-Android.png "Operation Module Interface"
+[showFAQs-CN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showFAQs-CN-Android.png "FAQ Interface"
+[showFAQSection-CN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showFAQSection-CN-Android.png "All FAQ Interfaces under Category"
+[showSingleFAQ-CN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showSingleFAQ-CN-Android.png "Single FAQ Interface"
+[language]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/Language-alias.png "Partial Language Short Name"
 

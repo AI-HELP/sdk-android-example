@@ -27,5 +27,4 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#333333" />
     </RelativeLayout>
-
 </RelativeLayout>
