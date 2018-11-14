@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <string name="main_title">Elva</string>
+    <string name="setting">اعدادات</string>
     <string name="no_more_than_chars">لا تستخدم أكثر من %s رمزا</string>
     <string name="no_png_upload">بطاقة الذاكرة SD غير موجودة او لا تعمل</string>
     <string name="goto_Elva">اِتصل بنا</string>

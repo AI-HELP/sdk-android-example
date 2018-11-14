@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="main_title">Elva</string>
+    <string name="setting">Ayarlar</string>
     <string name="no_more_than_chars">En fazla %s karakter kullanılabilir!</string>
     <string name="no_png_upload">SD kartınız yok ya da üzerine yazılamıyor!</string>
     <string name="goto_Elva">İletişim</string>

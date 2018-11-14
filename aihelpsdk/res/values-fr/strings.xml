@@ -1,5 +1,6 @@
 <resources>
     <string name="main_title">Elva</string>
+    <string name="setting">Paramètre</string>
     <string name="no_more_than_chars">Pas plus de %s de caractères!</string>
     <string name="no_png_upload">La carte est absente ou ne peut pas être lue!</string>
     <string name="goto_Elva">Contactez-nous</string>

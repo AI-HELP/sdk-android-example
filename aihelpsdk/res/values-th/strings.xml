@@ -1,5 +1,6 @@
 <resources>
     <string name="main_title">Elva</string>
+    <string name="setting">ตั้งค่า</string>
     <string name="no_more_than_chars">ไม่เกิน %s ตัวอักษร!</string>
     <string name="no_png_upload">ไม่มีSDการ์ดอยู่หรือไม่สามารถเขียนได้!</string>
     <string name="goto_Elva">ติดต่อเรา</string>

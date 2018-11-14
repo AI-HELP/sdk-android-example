@@ -1,6 +1,9 @@
 # AIHELP Android SDK version update
 [SDK Integration Guide](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README.md)
 
+## 1.4.3.1
+1. Fix dynamic camera permission exception
+
 ## 1.4.3
 1. Initialization logic optimization
 2. Robotic complaints

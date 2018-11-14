@@ -1,5 +1,6 @@
 <resources>
     <string name="main_title">Elva</string>
+    <string name="setting">Cài đặt</string>
     <string name="no_more_than_chars">Không vượt quá %s ký tự!</string>
     <string name="no_png_upload">Thẻ SD không tồn tại hoặc không thể đọc viết!</string>
     <string name="goto_Elva">Liên hệ CSKH</string>

@@ -1,6 +1,9 @@
 # AIHELP Android SDK版本更新
 [进入中文版接入指南](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README_CN.md)
 
+## 1.4.3.1
+1.修复动态获取相机权限异常
+
 ## 1.4.3
 1.初始化逻辑优化
 2.机器人客诉

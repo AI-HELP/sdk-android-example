@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="main_title">Elva</string>
+    <string name="setting">設定</string>
     <string name="no_more_than_chars">不能超過%s個字!</string>
     <string name="no_png_upload">SD卡不存在或者不可讀寫!</string>
     <string name="goto_Elva">聯系客服</string>

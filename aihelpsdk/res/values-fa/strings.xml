@@ -1,5 +1,6 @@
 <resources>
     <string name="main_title">Elva</string>
+    <string name="setting">تنظیمات</string>
     <string name="no_more_than_chars">نباید از %s حروف بیشتر باشد.</string>
     <string name="no_png_upload">SD وجود ندارد یا خوانده نمی شود .</string>
     <string name="goto_Elva">با ما تماس بگیرید</string>

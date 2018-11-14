@@ -1,5 +1,6 @@
 <resources>
     <string name="main_title">Elva</string>
+    <string name="setting">설정</string>
     <string name="no_more_than_chars">%s 단어를 초과 할 수 없습니다!</string>
     <string name="no_png_upload">SD 카드가 없거나 쓸 수 없습니다!</string>
     <string name="goto_Elva">연락하기</string>
