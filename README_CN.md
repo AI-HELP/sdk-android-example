@@ -14,7 +14,7 @@
 
 	dependencies {
 	 ...
-	    compile 'net.aihelp:elva:1.4.3.1'
+	    compile 'net.aihelp:elva:1.4.3.2'
 	    compile 'com.android.support:appcompat-v7:23.4.0'
 	    compile 'com.android.support:design:23.4.0'
 	    compile 'com.android.support:recyclerview-v7:23.4.0'
@@ -22,7 +22,7 @@
     ...
     }
 
-确保build.gradle同步成功: 在Android Studio的External Libraries下面能够看到加载成功elva-1.4.3.1文件夹以及上述依赖包。如果无法自动加载，请采用第二种导入方式：
+确保build.gradle同步成功: 在Android Studio的External Libraries下面能够看到加载成功elva-1.4.3.2文件夹以及上述依赖包。如果无法自动加载，请采用第二种导入方式：
 
 ### 导入方式二： 下载AIHelp Android SDK：
 点击页面右上角的"Clone or Download”按钮下载Android SDK，下载完成后解压文件。
