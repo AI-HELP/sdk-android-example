@@ -423,9 +423,14 @@ public class MyActivity extends Activity {
 	
 	// "elva-custom-metadata" 是key值 不可以变 
 	config.put("elva-custom-metadata",map);	
-	config.Add ("showContactButtonFlag", "1"); // 显示可以从FAQ列表右上角进入机器人客服
-	config.Add("showConversationFlag", "1"); // 显示可以从FAQ进入人工客服
+	config.put("showContactButtonFlag", "1"); // 显示可以从FAQ列表右上角进入机器人客服(如果不想显示 需要删除此参数)
+	config.put("showConversationFlag", "1"); // 点击FAQ右上角后 进入机器人界面右上角是否显示 (如果不想显示 需要删除此参数)
+	config.put("directConversation", "1");// 点击FAQ右上角后 直接会进入到人工客服页面(不加默认进入机器人界面 如果不需要则删除此参数)
 	
+	ELvaChatServiceSdk.setUserName("user_name"); // 设置用户名
+    ELvaChatServiceSdk.setUserId("user_id"); // 设置用户ID
+    ELvaChatServiceSdk.setServerId("server_id"); // 设置服务ID
+
 	ELvaChatServiceSdk.showFAQs(config);
 
 **参数说明：**
@@ -465,10 +470,15 @@ FAQ界面示例图:<br>
 	HashMap<String,Object> config = new HashMap();
 	
 	// "elva-custom-metadata" 是key值 不可以变 
-	config.put("elva-custom-metadata",map);
-	config.Add ("showContactButtonFlag", "1"); // 显示可以从FAQ列表右上角进入机器人客服
-	config.Add("showConversationFlag", "1"); // 显示可以从FAQ进入人工客服
+	config.put("elva-custom-metadata",map);	
+	config.put("showContactButtonFlag", "1"); // 显示可以从FAQ列表右上角进入机器人客服(如果不想显示 需要删除此参数)
+	config.put("showConversationFlag", "1"); // 点击FAQ右上角后 进入机器人界面右上角是否显示 (如果不想显示 需要删除此参数)
+	config.put("directConversation", "1");// 点击FAQ右上角后 直接会进入到人工客服页面(不加默认进入机器人界面 如果不需要则删除此参数)
 	
+	ELvaChatServiceSdk.setUserName("user_name"); // 设置用户名
+    ELvaChatServiceSdk.setUserId("user_id"); // 设置用户ID
+    ELvaChatServiceSdk.setServerId("server_id"); // 设置服务ID
+
 	ELvaChatServiceSdk.showFAQSection("1234",config);
 
 **参数说明：**
@@ -509,10 +519,15 @@ FAQ界面示例图:<br>
 	HashMap<String,Object> config = new HashMap();
 	
 	// "elva-custom-metadata" 是key值 不可以变 
-	config.put("elva-custom-metadata",map);
-	config.Add ("showContactButtonFlag", "1"); // 显示可以从FAQ列表右上角进入机器人客服
-	config.Add("showConversationFlag", "1"); // 显示可以从FAQ进入人工客服
+	config.put("elva-custom-metadata",map);	
+	config.put("showContactButtonFlag", "1"); // 显示可以从FAQ列表右上角进入机器人客服(如果不想显示 需要删除此参数)
+	config.put("showConversationFlag", "1"); // 点击FAQ右上角后 进入机器人界面右上角是否显示 (如果不想显示 需要删除此参数)
+	config.put("directConversation", "1");// 点击FAQ右上角后 直接会进入到人工客服页面(不加默认进入机器人界面 如果不需要则删除此参数)
 	
+	ELvaChatServiceSdk.setUserName("user_name"); // 设置用户名
+    ELvaChatServiceSdk.setUserId("user_id"); // 设置用户ID
+    ELvaChatServiceSdk.setServerId("server_id"); // 设置服务ID
+
 	ELvaChatServiceSdk.showSingleFAQ("2345",config);
         
 

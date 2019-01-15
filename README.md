@@ -403,17 +403,28 @@ The operation module is useful when you want to present updates, news, articles 
 
 **Coding Example：**
 
-	// Presenting FAQs to your customers
 	HashMap<String,Object> map = new HashMap();
-	// "showConversationFlag" is the key name, not a variable
-	config.put("showConversationFlag","1");//show conversation entry in the top right corner	
+	ArrayList<String> tags = new ArrayList();
+	// the tag names are variables
+	tags.add("pay1");
+	tags.add("s1");
+	tags.add("vip2");
+	
+	// "elva-tags" is the key name, not a variable
+	map.put("elva-tags",tags); 
+	
+	HashMap<String,Object> config = new HashMap();
+	
+	// "elva-custom-metadata" is the key name, not a variable
+	config.put("elva-custom-metadata",map);	
+	config.put("showContactButtonFlag", "1"); // The display can be accessed from the upper right corner of the FAQ list (if you do not want to display it, you need to delete this parameter)
+	config.put("showConversationFlag", "1"); // Click on the upper right corner of the FAQ to enter the upper right corner of the robot interface. (If you do not want to display, you need to delete this parameter.)
+	config.put("directConversation", "1");// Click on the upper right corner of the FAQ and you will be taken to the manual customer service page (without adding the default to the robot interface. If you don't need it, delete this parameter)
 	
 	ELvaChatServiceSdk.setUserName("user_name"); // set User Name
-	ELvaChatServiceSdk.setUserId("user_id"); // set User Id
-	ELvaChatServiceSdk.setServerId("server_id"); // set Serve Id
-	config.Add ("showContactButtonFlag", "1"); //The display can be accessed from the upper right corner of the FAQ list.
-	config.Add("showConversationFlag", "1"); //The display can enter manual customer service from FAQ
-	
+    ELvaChatServiceSdk.setUserId("user_id"); // set User Id
+    ELvaChatServiceSdk.setServerId("server_id"); // set Serve Id
+
 	ELvaChatServiceSdk.showFAQs(config);
 
 **About Parameters：**
@@ -448,10 +459,15 @@ or
 	HashMap<String,Object> config = new HashMap();
 	
 	// "elva-custom-metadata" is the key name, not a variable
-	config.put("elva-custom-metadata",map);
-	config.Add ("showContactButtonFlag", "1"); //The display can be accessed from the upper right corner of the FAQ list.
-	config.Add("showConversationFlag", "1"); //The display can enter manual customer service from FAQ
+	config.put("elva-custom-metadata",map);	
+	config.put("showContactButtonFlag", "1"); // The display can be accessed from the upper right corner of the FAQ list (if you do not want to display it, you need to delete this parameter)
+	config.put("showConversationFlag", "1"); // Click on the upper right corner of the FAQ to enter the upper right corner of the robot interface. (If you do not want to display, you need to delete this parameter.)
+	config.put("directConversation", "1");// Click on the upper right corner of the FAQ and you will be taken to the manual customer service page (without adding the default to the robot interface. If you don't need it, delete this parameter)
 	
+	ELvaChatServiceSdk.setUserName("user_name"); // set User Name
+    ELvaChatServiceSdk.setUserId("user_id"); // set User Id
+    ELvaChatServiceSdk.setServerId("server_id"); // set Serve Id
+
 	ELvaChatServiceSdk.showFAQSection("1234",config);
 
 **About Parameters：**
@@ -493,14 +509,15 @@ Example map of all FAQ interfaces under the classification:<br>
 	map.put("elva-tags",tags); 
 	
 	HashMap<String,Object> config = new HashMap();
+	config.put("elva-custom-metadata",map);	
+	config.put("showContactButtonFlag", "1"); // The display can be accessed from the upper right corner of the FAQ list (if you do not want to display it, you need to delete this parameter)
+	config.put("showConversationFlag", "1"); // Click on the upper right corner of the FAQ to enter the upper right corner of the robot interface. (If you do not want to display, you need to delete this parameter.)
+	config.put("directConversation", "1");// Click on the upper right corner of the FAQ and you will be taken to the manual customer service page (without adding the default to the robot interface. If you don't need it, delete this parameter)
 	
-	// “elva-custom-metadata" is the key name, not a variable. 
-	config.put("elva-custom-metadata",map);
-	// “showConversationFlag" is the key name, not a variable. 
-	config.put("showConversationFlag","1");// show conversation entry in the top right corner.
-	config.Add ("showContactButtonFlag", "1"); //The display can be accessed from the upper right corner of the FAQ list.
-	config.Add("showConversationFlag", "1"); //The display can enter manual customer service from FAQ
-	
+	ELvaChatServiceSdk.setUserName("user_name"); // set User Name
+    ELvaChatServiceSdk.setUserId("user_id"); // set User Id
+    ELvaChatServiceSdk.setServerId("server_id"); // set Serve Id
+
 	ELvaChatServiceSdk.showSingleFAQ("2345",config);
 
 **About Parameters：**
