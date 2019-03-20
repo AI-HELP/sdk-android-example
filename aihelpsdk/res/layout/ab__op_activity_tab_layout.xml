@@ -11,8 +11,6 @@
         android:id="@+id/ab__title_op"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_alignParentBottom="false"
-        android:layout_alignParentTop="true"
         android:background="#000000"
         android:focusable="true">
 
@@ -37,12 +35,13 @@
             android:id="@+id/ab__main_title_op"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginEnd="60dp"
             android:layout_marginLeft="60dp"
             android:layout_marginRight="60dp"
+            android:layout_marginStart="60dp"
             android:gravity="center_vertical"
-            android:text="@string/main_title"
             android:textColor="#FFFFFF"
-            android:textSize="16sp" />
+            android:textSize="14dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -51,12 +50,6 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/ab__btn_msg_op"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/chat_bot_title_manu" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -68,10 +61,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
                     android:gravity="center_vertical"
                     android:text="@string/goto_Elva"
                     android:textColor="@android:color/white"
-                    android:textSize="16sp"
+                    android:textSize="14dp"
                     android:visibility="gone" />
 
                 <ImageView
@@ -91,15 +86,6 @@
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/chat_bot_head_faqlist" />
-
-            <ImageButton
-                android:id="@+id/ab__btn_manu_op"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/chat_bot_fake_option"
-                android:visibility="gone" />
         </LinearLayout>
     </RelativeLayout>
 
@@ -110,13 +96,6 @@
         android:background="#000000"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/elva_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:layout_scrollFlags="scroll|enterAlways"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-
         <android.support.design.widget.TabLayout
             android:id="@+id/elva_tabs"
             android:layout_width="match_parent"
@@ -124,7 +103,6 @@
             android:background="#FFFFFFFF"
             app:tabIndicatorColor="#FF26A8EE"
             app:tabMode="fixed" />
-
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.view.ViewPager

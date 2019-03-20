@@ -29,7 +29,9 @@
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
             android:orientation="vertical"
+            android:paddingEnd="10dp"
             android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:paddingStart="10dp">
 
             <TextView
@@ -41,8 +43,7 @@
                 android:gravity="top|start"
                 android:lineSpacingMultiplier="1.2"
                 android:maxLines="2"
-                android:text="ELVA AI, The BEST solution for online Product Operating and Customer Service"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/elva_card_date"
@@ -52,11 +53,11 @@
                 android:ellipsize="end"
                 android:gravity="bottom|start"
                 android:maxLines="1"
+                android:paddingEnd="3dp"
                 android:paddingLeft="3dp"
                 android:paddingStart="3dp"
                 android:paddingTop="2dp"
-                android:text="2017/04/20"
-                android:textSize="12sp" />
+                android:textSize="14sp" />
         </RelativeLayout>
     </LinearLayout>
 </android.support.v7.widget.CardView>

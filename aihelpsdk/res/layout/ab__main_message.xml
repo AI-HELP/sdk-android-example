@@ -3,7 +3,7 @@
     xmlns:line="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f3f3f3"
+    android:background="#F5F5F5"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -17,10 +17,9 @@
             android:id="@+id/ab__title"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:layout_alignParentBottom="false"
             android:layout_alignParentTop="true"
-            android:background="#000000"
-            android:focusable="true">
+            android:layout_alignParentBottom="false"
+            android:background="#000000">
 
             <RelativeLayout
                 android:layout_width="50dp"
@@ -33,8 +32,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dp"
                     android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
                     android:background="@drawable/backrow_auto_mirrored"
                     android:clickable="false" />
             </RelativeLayout>
@@ -48,7 +47,7 @@
                 android:gravity="center_vertical"
                 android:text="@string/main_title"
                 android:textColor="#FFFFFF"
-                android:textSize="16sp" />
+                android:textSize="14dp" />
 
             <LinearLayout
                 android:id="@+id/layout_btn_conversation"
@@ -56,87 +55,55 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="5dp"
-                android:orientation="horizontal">
+                android:layout_centerVertical="true">
 
-                <ImageButton
-                    android:id="@+id/ab__btn_msg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/chat_bot_title_manu"
-                    android:onClick="onMsgShowClick"
-                    android:visibility="gone" />
-
-                <LinearLayout
+                <TextView
+                    android:id="@+id/ab__btn_conversation"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center">
-
-                    <TextView
-                        android:id="@+id/ab__btn_conversation"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:clickable="true"
-                        android:gravity="center"
-                        android:onClick="onConversationShowClick"
-                        android:text="@string/goto_Elva"
-                        android:textColor="@android:color/white"
-                        android:textSize="16sp"
-                        android:visibility="gone" />
-
-                    <ImageView
-                        android:id="@+id/iv_reddot_alert"
-                        android:layout_width="10dp"
-                        android:layout_height="10dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/aihelp_reddot_alert"
-                        android:visibility="gone" />
-
-                </LinearLayout>
-
-
-                <ImageButton
-                    android:id="@+id/ab__btn_manu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/chat_bot_fake_option"
-                    android:onClick="onManuClick"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="onConversationShowClick"
+                    android:text="@string/goto_Elva"
+                    android:textColor="@android:color/white"
+                    android:textSize="14dp"
                     android:visibility="gone" />
 
+                <ImageView
+                    android:id="@+id/iv_reddot_alert"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/aihelp_reddot_alert"
+                    android:visibility="gone" />
             </LinearLayout>
         </RelativeLayout>
 
-        <RelativeLayout
+        <ImageView
             android:id="@+id/ab_line_shadow"
             android:layout_width="match_parent"
             android:layout_height="3dp"
             android:layout_below="@+id/ab__title"
-            android:background="@drawable/ab_shadow_line">
-
-        </RelativeLayout>
+            android:background="@drawable/ab_shadow_line" />
 
         <RelativeLayout
             android:id="@+id/ab__msg_list_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@+id/ab__bottom_area"
-            android:layout_alignBottom="@+id/ab__webview_container"
             android:layout_below="@+id/ab_line_shadow">
 
             <ListView
                 android:id="@+id/ab__msg_list"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:divider="@null" />
-
         </RelativeLayout>
 
         <RelativeLayout
@@ -148,7 +115,7 @@
             <ListView
                 android:id="@+id/lv_alert_faq"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"></ListView>
+                android:layout_height="wrap_content" />
         </RelativeLayout>
 
         <FrameLayout
@@ -158,8 +125,9 @@
 
             <ImageView
                 android:id="@+id/iv_conversation_reward"
-                android:layout_width="35dp"
+                android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginLeft="5dp"
                 android:background="@drawable/ab_reward"
                 android:visibility="gone" />
@@ -186,41 +154,18 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:layout_marginTop="5dp"
-                    android:autoText="false"
                     android:text="Powered by AIHELP.NET"
                     android:textColor="#000000"
                     android:textSize="8dp" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/ab__action_bar_top_bg"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentStart="true"
-                android:focusable="false"
-                android:visibility="gone">
-
-                <LinearLayout
-                    android:id="@+id/ab__action_bar_top"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                </LinearLayout>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/ab__func_bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/ab__action_bar_top_bg"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
                 android:gravity="center_vertical">
 
                 <LinearLayout
@@ -232,50 +177,52 @@
                         android:id="@+id/ab__open_album"
                         android:layout_width="36dp"
                         android:layout_height="36dp"
-                        android:layout_marginLeft="5dp"
                         android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"
                         android:layout_marginTop="5dp"
                         android:background="@drawable/chat_bot_addpic"
+                        android:clickable="true"
                         android:onClick="onOpenAlbum"
-                        android:visibility="visible" />
+                        android:visibility="gone" />
                 </LinearLayout>
 
                 <com.ljoy.chatbot.view.view.LineEditText
                     android:id="@+id/ab__input_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
                     android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
                     android:layout_marginTop="5dp"
-                    android:layout_toEndOf="@+id/ab__open_albumParent"
-                    android:layout_toLeftOf="@+id/ab__chat_word_voice"
-                    android:layout_toRightOf="@+id/ab__open_albumParent"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="5dp"
                     android:layout_toStartOf="@+id/ab__chat_word_voice"
+                    android:layout_toLeftOf="@+id/ab__chat_word_voice"
+                    android:layout_toEndOf="@+id/ab__open_albumParent"
+                    android:layout_toRightOf="@+id/ab__open_albumParent"
                     android:background="#00000000"
                     android:ems="10"
                     android:focusable="true"
                     android:hint="@string/question"
-                    android:paddingBottom="10dp"
                     android:paddingTop="10dp"
-                    android:text=""
+                    android:paddingBottom="10dp"
                     android:textColor="#ff000000"
+                    android:textColorHint="#9F9F9F"
                     android:textDirection="locale"
-                    android:textSize="14sp"
+                    android:textSize="14dp"
                     line:lineColorEt="#2960d9" />
 
                 <ImageButton
                     android:id="@+id/ab__chat_word_voice"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
-                    android:layout_marginLeft="2dp"
                     android:layout_marginStart="2dp"
+                    android:layout_marginLeft="2dp"
                     android:layout_marginTop="5dp"
-                    android:layout_toLeftOf="@+id/ab__input_send_btnParent"
                     android:layout_toStartOf="@+id/ab__input_send_btnParent"
+                    android:layout_toLeftOf="@+id/ab__input_send_btnParent"
                     android:background="@drawable/chat_voice"
+                    android:clickable="true"
                     android:onClick="onChangeWordVoice"
                     android:visibility="gone" />
 
@@ -285,14 +232,15 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
+                    android:clickable="true"
                     android:onClick="onSendMsgClick">
 
                     <ImageButton
                         android:id="@+id/ab__input_send_btn"
                         android:layout_width="36dp"
                         android:layout_height="36dp"
-                        android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
                         android:layout_alignParentTop="false"
                         android:layout_centerInParent="true"
                         android:layout_marginTop="10dp"
@@ -302,58 +250,6 @@
                 </RelativeLayout>
             </RelativeLayout>
         </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/ab__webview_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/ab__title"
-            android:background="@drawable/ecs_text_bg_1"
-            android:visibility="gone">
-
-            <WebView
-                android:id="@+id/ab__webview_main"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_above="@+id/ab__reply_layout" />
-
-            <LinearLayout
-                android:id="@+id/ab__reply_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:orientation="horizontal"
-                android:visibility="gone">
-
-                <Button
-                    android:id="@+id/ab__reply_good"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:onClick="onGoodClick"
-                    android:text="good" />
-
-                <Button
-                    android:id="@+id/ab__reply_bad"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:onClick="onBadClick"
-                    android:text="bad" />
-            </LinearLayout>
-
-            <ProgressBar
-                android:id="@+id/ab__msg_web_progress"
-                style="?android:attr/progressBarStyleLarge"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:visibility="visible" />
-
-        </RelativeLayout>
-
     </RelativeLayout>
 
     <RelativeLayout
@@ -368,8 +264,8 @@
             android:id="@+id/imageViewFull"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_centerHorizontal="false"
             android:layout_centerInParent="true"
+            android:layout_centerHorizontal="false"
             android:layout_centerVertical="false"
             android:background="@android:color/black"
             android:scaleType="centerInside"

@@ -8,9 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:autoMirrored="true"
-        android:background="#000000"
-        android:clickable="true">
+        android:background="#000000">
 
         <RelativeLayout
             android:id="@+id/rl_ab_qa_back"
@@ -19,8 +17,7 @@
             android:clickable="true"
             android:onClick="onBackArrowClick">
 
-            <ImageButton
-                android:id="@+id/ab__btn_back"
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -29,7 +26,8 @@
                 android:layout_marginRight="50dp"
                 android:layout_marginStart="5dp"
                 android:background="@drawable/backrow_auto_mirrored"
-                android:clickable="false" />
+                android:clickable="false"
+                android:contentDescription="@null" />
         </RelativeLayout>
 
         <LinearLayout
@@ -38,15 +36,14 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_centerVertical="true"
             android:gravity="center"
             android:visibility="gone">
 
             <ImageView
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_centerVertical="true"
-                android:background="@drawable/aihelp_close" />
+                android:background="@drawable/aihelp_close"
+                android:contentDescription="@null" />
         </LinearLayout>
 
         <TextView
@@ -56,17 +53,14 @@
             android:layout_marginLeft="60dp"
             android:layout_marginRight="60dp"
             android:gravity="center_vertical"
-            android:text="AIHELP"
             android:textColor="@android:color/white"
-            android:textSize="16sp" />
+            android:textSize="14dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="5dp"
             android:gravity="center">
 
             <TextView
@@ -74,24 +68,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
                 android:clickable="true"
                 android:gravity="center"
                 android:onClick="onConversationShowClick"
                 android:text="@string/goto_Elva"
                 android:textColor="@android:color/white"
-                android:textSize="16sp" />
-
+                android:textSize="14dp" />
         </LinearLayout>
-
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/rl_faq_search"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#ffffff"
+        android:layout_height="50dp"
         android:focusableInTouchMode="true"
-        android:minHeight="50dp"
         android:visibility="gone">
 
         <LinearLayout
@@ -100,18 +92,22 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:clickable="true"
             android:onClick="onSearchClick">
 
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="@drawable/aihelp_search" />
+                android:background="@drawable/aihelp_search"
+                android:contentDescription="@null" />
         </LinearLayout>
 
         <EditText
             android:id="@+id/et_faq_search"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -121,24 +117,30 @@
             android:layout_toRightOf="@+id/ll_faq_search_icon"
             android:layout_toStartOf="@+id/iv_faq_search_clear"
             android:background="#00000000"
+            android:textColor="#000000"
             android:hint="@string/question"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
-            android:textColor="#ff000000"
             android:textDirection="locale"
-            android:textSize="14sp" />
+            android:textSize="14dp" />
 
         <ImageView
             android:id="@+id/iv_faq_search_clear"
             android:layout_width="12dp"
             android:layout_height="12dp"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_centerInParent="true"
+            android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/aihelp_clear"
+            android:clickable="true"
             android:onClick="onSearchClearClick"
             android:visibility="gone" />
     </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DDDDDD" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -164,7 +166,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@+id/ab__faq_question_footer"
-            android:background="@drawable/ecs_text_bg_1">
+            android:background="@drawable/ecs_text_bg_1"
+            android:visibility="gone">
 
             <WebView
                 android:id="@+id/ab__faq_web_main"
@@ -176,8 +179,7 @@
                 style="?android:attr/progressBarStyleLarge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:visibility="visible" />
+                android:layout_centerInParent="true" />
         </RelativeLayout>
 
         <LinearLayout
@@ -215,7 +217,7 @@
                     android:gravity="start"
                     android:text="@string/mark_yes_no_question"
                     android:textColor="#aa000000"
-                    android:textSize="17sp" />
+                    android:textSize="16dp" />
 
                 <TextView
                     android:id="@+id/ab__faq_unhelpful_button"
@@ -225,7 +227,7 @@
                     android:gravity="center"
                     android:text="@string/mark_no"
                     android:textColor="#FF0000"
-                    android:textSize="17sp" />
+                    android:textSize="16dp" />
 
                 <TextView
                     android:id="@+id/ab__faq_helpful_button"
@@ -235,8 +237,7 @@
                     android:gravity="center"
                     android:text="@string/mark_yes"
                     android:textColor="#FF0000"
-                    android:textSize="17sp" />
-
+                    android:textSize="16dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -260,7 +261,7 @@
                     android:gravity="center"
                     android:text="@string/mark_yes"
                     android:textColor="#FF0000"
-                    android:textSize="17sp" />
+                    android:textSize="16dp" />
 
                 <TextView
                     android:id="@+id/tv_faq_unhelpful_r"
@@ -270,7 +271,7 @@
                     android:gravity="center"
                     android:text="@string/mark_no"
                     android:textColor="#FF0000"
-                    android:textSize="17sp" />
+                    android:textSize="16dp" />
 
                 <TextView
                     android:id="@+id/tv_faq_question_message_r"
@@ -281,8 +282,7 @@
                     android:gravity="start"
                     android:text="@string/mark_yes_no_question"
                     android:textColor="#aa000000"
-                    android:textDirection="anyRtl"
-                    android:textSize="17sp" />
+                    android:textSize="16dp" />
             </LinearLayout>
         </LinearLayout>
 
@@ -306,7 +306,6 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:layout_marginTop="3dp"
-                    android:autoText="false"
                     android:text="Powered by AIHELP.NET"
                     android:textColor="#ffffff"
                     android:textSize="8dp" />

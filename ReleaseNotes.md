@@ -1,6 +1,15 @@
 # AIHELP Android SDK version update
 [SDK Integration Guide](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README.md)
 
+## 1.4.4
+1. Increase the customer service name of the manual interface
+2. Increase parent sorting
+3. Client evaluation options are customizable, multiple choices, and allow players to enter text
+4. Robotic complaints are subdivided into 8 categories.
+5. Form submission success will be seen on the robot complaint
+6. Form support uploads multiple screenshots
+7. FAQ page point to step on the emergence of manual customer service entrance
+
 ## 1.4.3.2
 1. Modify Iranian proxy IP address
 
