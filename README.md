@@ -206,8 +206,8 @@ public class MyActivity extends Activity {
 |**[showConversation](#showConversation)**|Launch VIP Conversation Interface| Need to [setUserName](#UserName) and [setUserId](#UserId) |
 | **[showSingleFAQ](#showSingleFAQ)** | Show Single FAQ|Need to Configure FAQ,Need to [setUserName](#UserName) and [setUserId](#UserId)|
 | **[setName](#setName)** | Set APP/Game Name|Use it after Initialization|
-| **[setUserName](#UserName)** | Set User In-App name|
-| **[setUserId](#UserId)** | Set Unique User ID|
+| **[setUserName](#UserName)** | Set User In-App name| If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
+| **[setUserId](#UserId)** | Set Unique User ID| If the userid is not available, the empty string "" is passed, and a unique device id is generated.
 | **[setSDKLanguage](#setSDKLanguage)** | Set SDK Language|
 
 
@@ -395,7 +395,11 @@ The operation module is useful when you want to present updates, news, articles 
 **Best Practice：**
 > 1. Use this API to present news, announcements, articles or any useful information to users/players. Configure and publish the information in the AIHelp web console. 
 
-#### <h4 id="showFAQs">5. Display FAQs, use `showFAQs ` (need to set [`setUserName`](#UserName) and [`setUserId`](#UserId))</h4>
+#### <h4 id="showFAQs">5. Display FAQs, use `showFAQs ` 
+	(need to set [`setUserName`](#UserName) and [`setUserId`](#UserId))
+	If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
+	If the userid is not available, the empty string "" is passed, and a unique device id is generated.
+	</h4>
 
 	ELvaChatServiceSdk.showFAQs();
 
@@ -421,8 +425,8 @@ The operation module is useful when you want to present updates, news, articles 
 	config.put("showConversationFlag", "1"); // Click on the upper right corner of the FAQ to enter the upper right corner of the robot interface. (If you do not want to display, you need to delete this parameter.)
 	config.put("directConversation", "1");// Click on the upper right corner of the FAQ and you will be taken to the manual customer service page (without adding the default to the robot interface. If you don't need it, delete this parameter)
 	
-	ELvaChatServiceSdk.setUserName("user_name"); // set User Name
-    ELvaChatServiceSdk.setUserId("user_id"); // set User Id
+	ELvaChatServiceSdk.setUserName("user_name"); // set User Name If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
+    ELvaChatServiceSdk.setUserId("user_id"); // set User Id If the userid is not available, the empty string "" is passed, and a unique device id is generated.
     ELvaChatServiceSdk.setServerId("server_id"); // set Serve Id
 
 	ELvaChatServiceSdk.showFAQs(config);
@@ -436,7 +440,11 @@ The operation module is useful when you want to present updates, news, articles 
 **Best Practice：**
 > 1. Use this method to show FAQs about your APP/Game properly. Configure FAQs in AIHelp Web Console. Each FAQ can be categroized into a section. If the FAQs are many, you can also add Parent Sections to categorize sections to make things clear and organized. 
 
-#### <h4 id="showFAQSection">6. Show all the FAQs in a category, call the `showFAQSection` method (must make sure to set the player name information [setUserName](#UserName) And setting the player's unique id information [setUserId](#UserId) Already called)</h4>
+#### <h4 id="showFAQSection">6. Show all the FAQs in a category, call the `showFAQSection` method 
+    (must make sure to set the player name information [setUserName](#UserName) And setting the player's unique id information [setUserId](#UserId) Already called)
+	If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
+	If the userid is not available, the empty string "" is passed, and a unique device id is generated.
+	</h4>
 
 	ELvaChatServiceSdk.showFAQSection(String sectionPublishId); 
 
@@ -464,8 +472,8 @@ or
 	config.put("showConversationFlag", "1"); // Click on the upper right corner of the FAQ to enter the upper right corner of the robot interface. (If you do not want to display, you need to delete this parameter.)
 	config.put("directConversation", "1");// Click on the upper right corner of the FAQ and you will be taken to the manual customer service page (without adding the default to the robot interface. If you don't need it, delete this parameter)
 	
-	ELvaChatServiceSdk.setUserName("user_name"); // set User Name
-    ELvaChatServiceSdk.setUserId("user_id"); // set User Id
+	ELvaChatServiceSdk.setUserName("user_name"); // set User Name If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
+    ELvaChatServiceSdk.setUserId("user_id"); // set User Id If the userid is not available, the empty string "" is passed, and a unique device id is generated.
     ELvaChatServiceSdk.setServerId("server_id"); // set Serve Id
 
 	ELvaChatServiceSdk.showFAQSection("1234",config);
@@ -484,7 +492,11 @@ Example map of all FAQ interfaces under the classification:<br>
 
 ---
 
-#### <h4 id="showSingleFAQ">7. Show A Specific FAQ, use `showSingleFAQ` (need to set [`setUserName`](#UserName) and [`setUserId`](#UserId))</h4>
+#### <h4 id="showSingleFAQ">7. Show A Specific FAQ, use `showSingleFAQ` 
+	(need to set [`setUserName`](#UserName) and [`setUserId`](#UserId))
+	If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
+	If the userid is not available, the empty string "" is passed, and a unique device id is generated.
+	</h4>
 
 	ELvaChatServiceSdk.showSingleFAQ(String faqId);
 
@@ -494,8 +506,8 @@ Example map of all FAQ interfaces under the classification:<br>
 
 	// Presenting Single FAQ to your customers
 	
-	ELvaChatServiceSdk.setUserName("user_name"); // set User Name
-	ELvaChatServiceSdk.setUserId("user_id"); // set User Id
+	ELvaChatServiceSdk.setUserName("user_name"); // set User Name If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
+	ELvaChatServiceSdk.setUserId("user_id"); // set User Id If the userid is not available, the empty string "" is passed, and a unique device id is generated.
 	ELvaChatServiceSdk.setServerId("server_id"); // set Server Id
 	
 	HashMap<String,Object> map = new HashMap();
@@ -514,8 +526,8 @@ Example map of all FAQ interfaces under the classification:<br>
 	config.put("showConversationFlag", "1"); // Click on the upper right corner of the FAQ to enter the upper right corner of the robot interface. (If you do not want to display, you need to delete this parameter.)
 	config.put("directConversation", "1");// Click on the upper right corner of the FAQ and you will be taken to the manual customer service page (without adding the default to the robot interface. If you don't need it, delete this parameter)
 	
-	ELvaChatServiceSdk.setUserName("user_name"); // set User Name
-    ELvaChatServiceSdk.setUserId("user_id"); // set User Id
+	ELvaChatServiceSdk.setUserName("user_name"); // set User Name If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
+    ELvaChatServiceSdk.setUserId("user_id"); // set User Id If the userid is not available, the empty string "" is passed, and a unique device id is generated.
     ELvaChatServiceSdk.setServerId("server_id"); // set Serve Id
 
 	ELvaChatServiceSdk.showSingleFAQ("2345",config);
@@ -555,11 +567,11 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 #### <h4 id="UserId">7. Set the Unique User ID, use `setUserId`</h4>
 
 
-	ELvaChatServiceSdk.setUserId(String playerUid);
+	ELvaChatServiceSdk.setUserId(String playerUid); If the userid is not available, the empty string "" is passed, and a unique device id is generated.
 
 **Coding Example：**
 
-	ELvaChatServiceSdk.setUserId("123Abc567DEF");
+	ELvaChatServiceSdk.setUserId("123Abc567DEF"); If the userid is not available, the empty string "" is passed, and a unique device id is generated.
 
 **About Parameters：**
 
@@ -570,11 +582,11 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 
 #### <h4 id="UserName">8. Set User Name, use `setUserName`</h4>
 
-	ELvaChatServiceSdk.setUserName (String playerName);
+	ELvaChatServiceSdk.setUserName (String playerName); If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
 
 **Coding Example：**
 
-	ELvaChatServiceSdk.setUserName ("player_name");
+	ELvaChatServiceSdk.setUserName ("player_name"); If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
 
 **About Parameters：**
 
@@ -600,7 +612,10 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 **Best Practice：**
 > 1. Normally you do not need to use this method if you have passed the server ID in other method. However, if you want to use the FAQ's [Self-Service](#selfservice), then you must set the User Id first.
 
-#### <h4 id="showConversation">10. Launch VIP Chat Console, use `showConversation`(need to set [`setUserName`](#UserName))</h4>
+#### <h4 id="showConversation">10. Launch VIP Chat Console, use `showConversation`
+	(need to set [`setUserName`](#UserName))
+	If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.	
+	</h4>
 
 	ELvaChatServiceSdk.showConversation(
 					String playerUid,
@@ -631,7 +646,7 @@ or
 	// “elva-custom-metadata" is the key name, not a variable. 
 	config.put("elva-custom-metadata",map);
 	
-	ELvaChatServiceSdk.setUserName("user_name");
+	ELvaChatServiceSdk.setUserName("user_name"); If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
 	ELvaChatServiceSdk.showConversation("user_id","server_id",config);
 
 **About Parameters：**

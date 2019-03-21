@@ -204,9 +204,9 @@ public class MyActivity extends Activity {
 | **[showFAQSection](#showFAQSection)** | 展示某一分类里的所有FAQ |
 | **[showSingleFAQ](#showSingleFAQ)** | 展示单条FAQ |
 | **[setName](#setName)** | 设置在AIHelp智能客服系统中所展示的游戏名称 | 初始化之后调用，且只需调用一次，不调用此接口则默认显示包名 |
-| **[setUserName](#UserName)** | 设置玩家(用户)名称 | 初始化之后调用，且只需调用一次 |
-| **[setUserId](#UserId)** | 设置玩家(用户)的唯一ID | 初始化之后调用，且只需调用一次 |
-| **[setServerId](#ServerId)** | 设置玩家(用户)所在的服务器ID |
+| **[setUserName](#UserName)** | 设置玩家(用户)名称 | 初始化之后调用，且只需调用一次 | 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
+| **[setUserId](#UserId)** | 设置玩家(用户)的唯一ID | 初始化之后调用，且只需调用一次 | 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id  
+| **[setServerId](#ServerId)** | 设置玩家(用户)所在的服务器ID | 如果游戏方拿不到数据 就传空字符串
 | **[setSDKLanguage](#setSDKLanguage)** | 设置SDK的语言 |
 
 
@@ -399,7 +399,11 @@ public class MyActivity extends Activity {
 
 ---
 
-### <h4 id="showFAQs">5. 展示FAQ列表，调用`showFAQs `方法(必须确保设置玩家名称信息 [setUserName](#UserName) 和设置玩家唯一id信息 [setUserId](#UserId) 已经调用)</h4>
+### <h4 id="showFAQs">5. 展示FAQ列表，调用`showFAQs `方法
+    (必须确保调用以下两个接口,设置玩家名称信息和设置玩家唯一id信息)
+    [setUserName](#UserName) 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
+	[setUserId](#UserId) 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 	
+	</h4>
 
 	ELvaChatServiceSdk.showFAQs();
 
@@ -427,8 +431,8 @@ public class MyActivity extends Activity {
 	config.put("showConversationFlag", "1"); // 点击FAQ右上角后 进入机器人界面右上角是否显示 (如果不想显示 需要删除此参数)
 	config.put("directConversation", "1");// 点击FAQ右上角后 直接会进入到人工客服页面(不加默认进入机器人界面 如果不需要则删除此参数)
 	
-	ELvaChatServiceSdk.setUserName("user_name"); // 设置用户名
-    ELvaChatServiceSdk.setUserId("user_id"); // 设置用户ID
+	ELvaChatServiceSdk.setUserName("user_name"); // 设置用户名 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
+    ELvaChatServiceSdk.setUserId("user_id"); // 设置用户ID 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
     ELvaChatServiceSdk.setServerId("server_id"); // 设置服务ID
 
 	ELvaChatServiceSdk.showFAQs(config);
@@ -447,7 +451,11 @@ FAQ界面示例图:<br>
 
 ---
 
-#### <h4 id="showFAQSection">6. 展示某一分类里的所有FAQ，调用`showFAQSection`方法(必须确保设置玩家名称信息 [setUserName](#UserName) 和设置玩家唯一id信息 [setUserId](#UserId) 已经调用)</h4>
+#### <h4 id="showFAQSection">6. 展示某一分类里的所有FAQ，调用`showFAQSection`方法
+	(必须确保调用以下两个接口,设置玩家名称信息和设置玩家唯一id信息)
+    [setUserName](#UserName) 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
+	[setUserId](#UserId) 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 	
+	</h4>
 
 	ELvaChatServiceSdk.showFAQSection(String sectionPublishId); 
 
@@ -475,8 +483,8 @@ FAQ界面示例图:<br>
 	config.put("showConversationFlag", "1"); // 点击FAQ右上角后 进入机器人界面右上角是否显示 (如果不想显示 需要删除此参数)
 	config.put("directConversation", "1");// 点击FAQ右上角后 直接会进入到人工客服页面(不加默认进入机器人界面 如果不需要则删除此参数)
 	
-	ELvaChatServiceSdk.setUserName("user_name"); // 设置用户名
-    ELvaChatServiceSdk.setUserId("user_id"); // 设置用户ID
+	ELvaChatServiceSdk.setUserName("user_name"); // 设置用户名 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
+    ELvaChatServiceSdk.setUserId("user_id"); // 设置用户ID 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
     ELvaChatServiceSdk.setServerId("server_id"); // 设置服务ID
 
 	ELvaChatServiceSdk.showFAQSection("1234",config);
@@ -496,7 +504,11 @@ FAQ界面示例图:<br>
 
 ---
 
-### <h4 id="showSingleFAQ">7. 展示单条FAQ，调用`showSingleFAQ`方法(必须确保设置玩家名称信息 [setUserName](#UserName) 和设置玩家唯一id信息 [setUserId](#UserId) 已经调用)</h4>
+### <h4 id="showSingleFAQ">7. 展示单条FAQ，调用`showSingleFAQ`方法
+	(必须确保调用以下两个接口,设置玩家名称信息和设置玩家唯一id信息)
+    [setUserName](#UserName) 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
+	[setUserId](#UserId) 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
+	</h4>
 
 	ELvaChatServiceSdk.showSingleFAQ(String faqId);
 
@@ -524,8 +536,8 @@ FAQ界面示例图:<br>
 	config.put("showConversationFlag", "1"); // 点击FAQ右上角后 进入机器人界面右上角是否显示 (如果不想显示 需要删除此参数)
 	config.put("directConversation", "1");// 点击FAQ右上角后 直接会进入到人工客服页面(不加默认进入机器人界面 如果不需要则删除此参数)
 	
-	ELvaChatServiceSdk.setUserName("user_name"); // 设置用户名
-    ELvaChatServiceSdk.setUserId("user_id"); // 设置用户ID
+	ELvaChatServiceSdk.setUserName("user_name"); // 设置用户名 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
+    ELvaChatServiceSdk.setUserId("user_id"); // 设置用户ID 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id
     ELvaChatServiceSdk.setServerId("server_id"); // 设置服务ID
 
 	ELvaChatServiceSdk.showSingleFAQ("2345",config);
@@ -567,11 +579,11 @@ FAQ界面示例图:<br>
 
 ### <h4 id="UserId">9. 设置玩家(用户)的唯一ID，调用`setUserId`方法(初始化AIHelp智能客服之后调用，且只需调用一次)</h4>
 
-	ELvaChatServiceSdk.setUserId(String uid);
+	ELvaChatServiceSdk.setUserId(String uid); 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
 
 **代码示例：**
 
-	ELvaChatServiceSdk.setUserId("123ABC567DEF");
+	ELvaChatServiceSdk.setUserId("123ABC567DEF"); 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
 
 **参数说明：**
 
@@ -586,11 +598,11 @@ FAQ界面示例图:<br>
 
 ### <h4 id="UserName">10. 设置玩家(用户)的昵称，调用`setUserName`方法(初始化AIHelp智能客服之后调用，且只需调用一次)</h4>
 
-	ELvaChatServiceSdk.setUserName (String userName);
+	ELvaChatServiceSdk.setUserName (String userName); 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
 
 **代码示例：**
 
-	ELvaChatServiceSdk.setUserName ("player_name");
+	ELvaChatServiceSdk.setUserName ("player_name"); 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
 
 **参数说明：**
 
