@@ -1,6 +1,9 @@
 # AIHELP Android SDK版本更新
 [进入中文版接入指南](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README_CN.md)
 
+## 1.4.4.1(最新)
+1.faqActivity启动逻辑适配部分机型
+
 ## 1.4.4
 1.增加人工界面的客服名称
 2.增加父分类排序
