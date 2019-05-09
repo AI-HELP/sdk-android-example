@@ -1,7 +1,10 @@
 # AIHELP Android SDK版本更新
 [进入中文版接入指南](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README_CN.md)
 
-## 1.4.4.1(最新)
+## 1.4.4.2(最新)
+1.修复WebActivity未启动问题
+
+## 1.4.4.1
 1.faqActivity启动逻辑适配部分机型
 
 ## 1.4.4

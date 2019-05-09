@@ -1,7 +1,10 @@
 # AIHELP Android SDK version update
 [SDK Integration Guide](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README.md)
 
-## 1.4.4.1(latest)
+## 1.4.4.2(latest)
+1.Fix WebActivity not started issue
+
+## 1.4.4.1
 1.faqActivity Start logic adaptation part of the model
 
 ## 1.4.4
