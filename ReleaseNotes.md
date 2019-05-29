@@ -1,7 +1,11 @@
 # AIHELP Android SDK version update
 [SDK Integration Guide](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README.md)
 
-## 1.4.4.2(latest)
+
+## 1.4.4.3(latest)
+1.Increase automatic reconnection
+
+## 1.4.4.2
 1.Fix WebActivity not started issue
 
 ## 1.4.4.1

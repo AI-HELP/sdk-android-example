@@ -15,7 +15,7 @@ There are two methods to integrate AIHelp Android SDK to your APP's project. If 
 
 	dependencies {
 	 ...
-	    compile 'net.aihelp:elva:1.4.4.3'
+	    compile 'net.aihelp:elva:1.4.4.5'
 	    compile 'com.android.support:appcompat-v7:23.4.0'
 	    compile 'com.android.support:design:23.4.0'
 	    compile 'com.android.support:recyclerview-v7:23.4.0'
@@ -26,7 +26,7 @@ There are two methods to integrate AIHelp Android SDK to your APP's project. If 
 Wait until the build.gradle sync completion and make sure there is no error during sync: Under the "External Libraries" folder of Android Studio Project sturcture view you should be able to find the folder "elva-1.4.4" and other dependencies specified above. If there is an error during sync or you can not find elva folder. Use the Method #2 below:
 
 ### Method #2. Download The AIHelp Android SDK：
-Select "Clone or download" to download Android SDK in the github page, unzip the downloaded file.
+Click "Clone or download" to download Android SDK in the github page, unzip the downloaded file.
 
 **AIHelp-Android-SDK** Contains:
 
@@ -49,8 +49,6 @@ If your project has already imported some of the dependencies, just import those
     compile 'com.android.support:design:23.4.0'
     compile 'com.android.support:recyclerview-v7:23.4.0'
     compile 'com.android.support:cardview-v7:23.4.0'
-    # add this if using appindexing:
-    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
 
 If you use __Eclipse__ that does not use Gradle, you need to import each of the dependencies into your project as a library. You also need to explicitly add dependency relationship between the AIHelp SDK and the libraries:  
 __elvachatservice__ depends on __design__, which depends on __appcompat__, __recyclerview__ and __cardview__.
@@ -272,7 +270,7 @@ or
 **Best Practice：**
 
 > 1. Use this method to launch your APP's customer service. Configure specific welcome texts and AI story lines in the AIHelp Web Console to better the customer support experiences.
-> 2. Enable VIP Conversation Entry to allow user to chat with your human support team with parameters "__showConversationFlag__" setting to "__1__", you may use this method for any user or as a privilege for some users only.
+> 2. Enable VIP Conversation Entry to allow user to chat with your customer support team with parameters "__showConversationFlag__" setting to "__1__", you may use this method for any user or as a privilege for some users only.
 
 #### <h4 id="showConversation">3. Call the `showConversation` method to start the manual customer service interface.</h4>
 

@@ -6,7 +6,7 @@
     <string name="no_png_upload">SD卡不存在或者不可讀寫!</string>
     <string name="goto_Elva">聯系客服</string>
     <string name="self_service_interface">自助服務</string>
-    <string name="break_off_remind">您的鏈接已經斷開,請重新進入!</string>
+    <string name="break_off_remind">您的網絡連接已經斷開,請檢查網絡!</string>
 	<string name="ab_op_help">HELP</string>
     <string name="mark_helpful_toast">妳發現這有幫助</string>
     <string name="mark_no">否</string>

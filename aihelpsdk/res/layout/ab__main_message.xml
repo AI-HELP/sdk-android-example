@@ -22,6 +22,7 @@
             android:background="#000000">
 
             <RelativeLayout
+                android:id="@+id/rl_back"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:clickable="true"
@@ -42,12 +43,23 @@
                 android:id="@+id/ab__main_title"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="60dp"
-                android:layout_marginRight="60dp"
+                android:layout_toEndOf="@+id/rl_back"
+                android:layout_toRightOf="@+id/rl_back"
                 android:gravity="center_vertical"
                 android:text="@string/main_title"
                 android:textColor="#FFFFFF"
                 android:textSize="14dp" />
+
+            <ProgressBar
+                android:id="@+id/pb_loading"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toEndOf="@+id/ab__main_title"
+                android:layout_toRightOf="@+id/ab__main_title"
+                android:indeterminateDrawable="@drawable/ab_progress_loading" />
 
             <LinearLayout
                 android:id="@+id/layout_btn_conversation"
