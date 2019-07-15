@@ -117,12 +117,12 @@ Portrait Display:
  
 
 ### 4. Initialize AIHelp SDK in your Project
-	**Note：**
-	**Party A is obliged to use Party B's services according to the correct plug-in method and calling method described by Party B's documents. **
-	**If Party A uses any technical method to influence Party B's billing, **
-    **Party B will have the right to notify Party A while unilaterally terminating the service immediately **	
-    **And ask Party A to assume responsibility for infulencing the billing of Party B.**
-    **When activiting your app, You must use ELvaChatServiceSdk.init(...) , otherwise you can't use AIHelp service properly. **	
+	**Note：
+	Party A is obliged to use Party B's services according to the correct plug-in method and calling method described by Party B's documents. 
+	If Party A uses any technical method to influence Party B's billing, 
+    Party B will have the right to notify Party A while unilaterally terminating the service immediately 
+    And ask Party A to assume responsibility for infulencing the billing of Party B.
+    When activiting your app, You must use ELvaChatServiceSdk.init(...) , otherwise you can't use AIHelp service properly. **	
 	
 	ELvaChatServiceSdk.init(
 				Activity activity,
