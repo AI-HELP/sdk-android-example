@@ -48,8 +48,8 @@ AIHelp-Android-SDK文件夹包含：
 
 如果您使用了Eclipse，并没有用Gradle，您需要把依赖包导入到您的工程中作为library，并且增加依赖关系给AIHelp SDK。具体依赖关系: AIHelpsdk依赖于design，后者依赖于appcompat，recyclerview 和cardview。
  
-## 接入工程配置 
-## (AIHelp SDK不可以被混淆，若混淆会导致服务不可用)
+### 接入工程配置 
+### (AIHelp SDK不可以被混淆，若混淆会导致服务不可用)
     -keep class com.lioy.** {*;}
     -keep class bitoflife.** {*;}
     -keep class org.fusesource.** {*;}
