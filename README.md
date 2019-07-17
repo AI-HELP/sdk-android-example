@@ -54,12 +54,12 @@ If you use __Eclipse__ that does not use Gradle, you need to import each of the 
 __elvachatservice__ depends on __design__, which depends on __appcompat__, __recyclerview__ and __cardview__.
  
 ### 3. Configure your Android Manifest 
-###(AIHelp SDK should not be obfuscated, otherwise it may result in service  unavailable)
--keep class com.lioy.** {*;}
--keep class bitoflife.** {*;}
--keep class org.fusesource.** {*;}
--keep class com.nostra13.** {*;}
--keep class com.facebook.** {*;}
+### (AIHelp SDK should not be obfuscated, otherwise it may result in service  unavailable)
+    -keep class com.lioy.** {*;}
+    -keep class bitoflife.** {*;}
+    -keep class org.fusesource.** {*;}
+    -keep class com.nostra13.** {*;}
+    -keep class com.facebook.** {*;}
 
   In the AndroidManifest.xml of your project, add the below information：     
   <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23"/>
