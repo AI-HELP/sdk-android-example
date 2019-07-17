@@ -53,7 +53,14 @@ If your project has already imported some of the dependencies, just import those
 If you use __Eclipse__ that does not use Gradle, you need to import each of the dependencies into your project as a library. You also need to explicitly add dependency relationship between the AIHelp SDK and the libraries:  
 __elvachatservice__ depends on __design__, which depends on __appcompat__, __recyclerview__ and __cardview__.
  
-### 3. Configure your Android Manifest
+### 3. Configure your Android Manifest 
+###(AIHelp SDK should not be obfuscated, otherwise it may result in service  unavailable)
+-keep class com.lioy.** {*;}
+-keep class bitoflife.** {*;}
+-keep class org.fusesource.** {*;}
+-keep class com.nostra13.** {*;}
+-keep class com.facebook.** {*;}
+
   In the AndroidManifest.xml of your project, add the below information：     
   <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23"/>
 **a. Add Required Permissions**
