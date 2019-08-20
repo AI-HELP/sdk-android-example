@@ -154,20 +154,6 @@ AIHelp SDK 要求android sdk最低版本为14，目标最低版本为23：
 **甲方有义务按照乙方接入文档说明的正常接入方式和调用方式使用乙方服务，
 如甲方通过技术手段影响乙方计费，乙方有权在通知甲方的同时立即单方面终止服务，并要求甲方承担责任。**
 
-```
-// 在调用初始化init方法之前，设置初始化回调函数
-    public void setInitCallback() {
-        ELvaChatServiceSdk.setOnInitializedCallback(new ELvaChatServiceSdk.OnInitializationCallback() {
-            @Override
-            public void onInitialized() {
-                System.out.println("AIHelp elva Initialization Done!");
-            }
-        });
-    }
-
-```
-
-```
 import com.ljoy.chatbot.sdk.ELvaChatServiceSdk;
 
 public class MyActivity extends Activity {
@@ -176,8 +162,6 @@ public class MyActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
-          // 设置初始化回调函数
-          setInitCallback();
           // 初始化AIHelpSDK
           ELvaChatServiceSdk.init(this,
                                   "YOUR_API_KEY",

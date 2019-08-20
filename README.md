@@ -153,21 +153,6 @@ If your company does not have an account, you need to register an account at [AI
 **Party A is obliged to use Party B's services according to the correct plug-in method and calling method described by Party B's documents. If Party A uses any technical method to influence Party B's billing, Party B will have the right to notify Party A while unilaterally terminating the service immediately and ask Party A to assume responsibility for infulencing the billing of Party B.**
 
 
-```
-// Before Init, set initializaiton callback method
-    public void setInitCallback() {
-        ELvaChatServiceSdk.setOnInitializedCallback(new ELvaChatServiceSdk.OnInitializationCallback() {
-            @Override
-            public void onInitialized() {
-                System.out.println("AIHelp elva Initialization Done!");
-            }
-        });
-    }
-
-```
-
-```
-
 import com.ljoy.chatbot.sdk.ELvaChatServiceSdk;
 
 public class MyActivity extends Activity {
@@ -176,8 +161,6 @@ public class MyActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
-          // Set Init Callback
-          setInitCallback();
           // Init AIHelp SDK
           ELvaChatServiceSdk.init(this,
                                   "your_app_key",
