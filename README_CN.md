@@ -154,6 +154,7 @@ AIHelp SDK 要求android sdk最低版本为14，目标最低版本为23：
 **甲方有义务按照乙方接入文档说明的正常接入方式和调用方式使用乙方服务，
 如甲方通过技术手段影响乙方计费，乙方有权在通知甲方的同时立即单方面终止服务，并要求甲方承担责任。**
 
+```
 import com.ljoy.chatbot.sdk.ELvaChatServiceSdk;
 
 public class MyActivity extends Activity {
@@ -173,10 +174,10 @@ public class MyActivity extends Activity {
     }
 }
 ```
-
 ---
 
-###5. 使用AIHelp智能客服接口
+
+### 5. 使用AIHelp智能客服接口
 
 
 ### 1. 接口说明

@@ -152,7 +152,7 @@ If your company does not have an account, you need to register an account at [AI
 **Coding Example：(Must be called during application initialization, otherwise you can't use AIHelp properly)**<br />
 **Party A is obliged to use Party B's services according to the correct plug-in method and calling method described by Party B's documents. If Party A uses any technical method to influence Party B's billing, Party B will have the right to notify Party A while unilaterally terminating the service immediately and ask Party A to assume responsibility for infulencing the billing of Party B.**
 
-
+```
 import com.ljoy.chatbot.sdk.ELvaChatServiceSdk;
 
 public class MyActivity extends Activity {
