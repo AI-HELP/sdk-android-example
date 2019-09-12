@@ -167,15 +167,13 @@ public class MyActivity extends Activity {
 
 | 接口名 | 作用 |备注|
 |:------------- |:---------------|:---------------|
-
-必须调用的接口
+|建议调用的接口:|
 | **[setName](#setName)** | 设置在AIHelp智能客服系统中所展示的游戏名称 | 初始化之后调用，且只需调用一次，不调用此接口则默认显示包名 |
 | **[setUserName](#UserName)** | 设置玩家(用户)名称 | 初始化之后调用，且只需调用一次 | 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
 | **[setUserId](#UserId)** | 设置玩家(用户)的唯一ID | 初始化之后调用，且只需调用一次 | 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id  
 | **[setServerId](#ServerId)** | 设置玩家(用户)所在的服务器ID | 如果游戏方拿不到数据 就传空字符串""
 | **[setSDKLanguage](#setSDKLanguage)** | 设置SDK的语言 | 初始化之后调用，且只需调用一次 | 注:当游戏内切换语言时也要同时调用一次 保证客服和游戏的语言同步
-
-可选调用的接口:
+|可选调用的接口:|
 | **[showElva](#showElva)** | 启动机器人客服聊天界面 |
 | **[showConversation](#showConversation)** |启动人工客服聊天界面 |
 | **[showElvaOP](#showElvaOP)** | 启动运营界面 | 需在智能客服后台配置运营模块 |
