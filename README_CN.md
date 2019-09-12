@@ -113,12 +113,14 @@ AIHelp SDK 要求android sdk最低版本为14，目标版本为23至最新版本
 **甲方有义务按照乙方接入文档说明的正常接入方式和调用方式使用乙方服务，如甲方通过技术手段影响乙方计费，乙方有权在通知甲方的同时立即单方面终止服务，并要求甲方承担责任。<br />
 在您的应用启动的时候 就调用 ELvaChatServiceSdk.init(...)，传入必要的参数。**
 	
+```java
 	ELvaChatServiceSdk.init(
 				Activity activity,
 				String appKey,
 				String domain,
 				String appId
 				);
+```
 	
 
 * 参数说明：
@@ -137,7 +139,7 @@ AIHelp SDK 要求android sdk最低版本为14，目标版本为23至最新版本
 **甲方有义务按照乙方接入文档说明的正常接入方式和调用方式使用乙方服务，
 如甲方通过技术手段影响乙方计费，乙方有权在通知甲方的同时立即单方面终止服务，并要求甲方承担责任。**
 
-```
+```java
 import com.ljoy.chatbot.sdk.ELvaChatServiceSdk;
 
 public class MyActivity extends Activity {
@@ -186,24 +188,26 @@ public class MyActivity extends Activity {
 ---
 ### <h4 id="showElva">2.调用`showElva`接口，启动机器人客服聊天界面</h4> 
 
-
+```java
 	ELvaChatServiceSdk.showElva(
 				String playerName,
 				String playerUid,
 				String serverId,
 				String showConversationFlag);
+```
 
 或
-
+```java
 	ELvaChatServiceSdk.showElva(
 				String playerName,
 				String playerUid,
 				String serverId,
 				String showConversationFlag,
 				HashMap<String,Object> customData);
+```
 
 **代码示例：**
-
+```java
 	HashMap<String,Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
 	// the tag names are variables
@@ -225,7 +229,7 @@ public class MyActivity extends Activity {
 				"server_id",
 				"1",
 				config);
-
+```
 **参数说明：**
 
 | 参数名 | 类型 | 说明 |
@@ -249,19 +253,20 @@ public class MyActivity extends Activity {
 
 ### <h4 id="showConversation">3. 调用`showConversation`方法，启动人工客服界面</h4>
 
+```java
 	ELvaChatServiceSdk.showConversation(
 					String uid,
 					String serverId);
-
+```
 或
-
+```java
 	ELvaChatServiceSdk.showConversation(
 						String uid,
 						String serverId,
 						HashMap customData);
-						
+```						
 **代码示例：**
-
+```java
 	HashMap<String,Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
 	// the tag names are variables
@@ -281,7 +286,7 @@ public class MyActivity extends Activity {
 				"user_id",
 				"server_id",
 				config);
-
+```
 **参数说明：**
 
 | 参数名 | 类型 | 说明 |
@@ -300,24 +305,24 @@ public class MyActivity extends Activity {
 ---
 
 ### <h4 id="showElvaOP">4. 调用`showElvaOP`方法，启动运营模块界面</h4>
-
+```java
 	ELvaChatServiceSdk.showElvaOP(
 				String playerName,
 				String playerUid,
 				String serverId,
 				String showConversationFlag);
-
+```
 或
-
+```java
 	ELvaChatServiceSdk.showElvaOP(
 				String playerName,
 				String playerUid,
 				String serverId,
 				String showConversationFlag,
 				HashMap<String,Object> config);
-
+```
 或
-
+```java
 	ELvaChatServiceSdk.showElvaOP(
 				String playerName,
 				String playerUid,
@@ -325,10 +330,11 @@ public class MyActivity extends Activity {
 				String showConversationFlag,
 				HashMap<String,Object> config,
 				int defaultTabIndex);
-
+```
 
 **代码示例：**
 
+```java
 	HashMap<String,Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
 	// the tag names are variables
@@ -350,7 +356,7 @@ public class MyActivity extends Activity {
 				"server_id",
 				"1",
 				config);
-
+```
 **参数说明：**
 
 | 参数名 | 类型 | 说明 |
@@ -378,15 +384,15 @@ public class MyActivity extends Activity {
     [setUserName](#UserName) 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
 	[setUserId](#UserId) 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 	
 	</h4>
-
+```java
 	ELvaChatServiceSdk.showFAQs();
-
+```
 或
-
+```java
 	ELvaChatServiceSdk.showFAQs(HashMap config)
-
+```
 **代码示例：**
-
+```java
 	public void ShowFAQs(){
 	
 		HashMap<String, Object> config = new HashMap();
@@ -426,7 +432,7 @@ public class MyActivity extends Activity {
 
 		ELvaChatServiceSdk.showFAQs(config);
 	}
-
+```
 **参数说明：**
 
 | 参数名 | 类型 | 说明 |
@@ -447,15 +453,15 @@ FAQ界面示例图:<br>
     [setUserName](#UserName) 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
 	[setUserId](#UserId) 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 	
 	</h4>
-
+```java
 	ELvaChatServiceSdk.showFAQSection(String sectionPublishId); 
-
+```
 或
-
+```java
 	ELvaChatServiceSdk.showFAQSection(String sectionPublishId,HashMap customData);
-
+```
 **代码示例：**
-
+```java
 	HashMap<String, Object> config = new HashMap();
 	HashMap<String, Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
@@ -492,7 +498,7 @@ FAQ界面示例图:<br>
     ELvaChatServiceSdk.setServerId("server_id"); 
 
 	ELvaChatServiceSdk.showFAQSection("1234",config);
-
+```
 **参数说明：**
 
 | 参数名 | 类型 | 说明 |
@@ -514,15 +520,15 @@ FAQ界面示例图:<br>
     [setUserName](#UserName) 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
 	[setUserId](#UserId) 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
 	</h4>
-
+```java
 	ELvaChatServiceSdk.showSingleFAQ(String faqId);
-
+```
 或
-
+```java
 	ELvaChatServiceSdk.showSingleFAQ(String faqId,HashMap customData);
-
+```
 **代码示例：**
-
+```java
 	HashMap<String, Object> config = new HashMap();
 	HashMap<String, Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
@@ -560,7 +566,7 @@ FAQ界面示例图:<br>
 
 	ELvaChatServiceSdk.showSingleFAQ("2345",config);
         
-
+```
 **参数说明：**
 
 | 参数名 | 类型 | 说明 |
@@ -578,13 +584,13 @@ FAQ界面示例图:<br>
 ---
 
 ### <h4 id="setName">8. 设置游戏名称信息，调用`setName`方法(初始化AIHelp智能客服之后调用，且只需调用一次，不调用此接口则默认显示包名)</h4>
-
+```java
 	ELvaChatServiceSdk.setName(String game_name);
-
+```
 **代码示例：**
-
+```java
 	ELvaChatServiceSdk.setName("Your Game");
-
+```
 **参数说明：**
 
 | 参数名 | 类型 | 说明 |
@@ -597,13 +603,14 @@ FAQ界面示例图:<br>
 ---
 
 ### <h4 id="UserId">9. 设置玩家(用户)的唯一ID，调用`setUserId`方法(初始化AIHelp智能客服之后调用，且只需调用一次)</h4>
-
-	ELvaChatServiceSdk.setUserId(String uid); 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
+```java
+	ELvaChatServiceSdk.setUserId(String uid); //如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
+```
 
 **代码示例：**
-
-	ELvaChatServiceSdk.setUserId("123ABC567DEF"); 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
-
+```java
+	ELvaChatServiceSdk.setUserId("123ABC567DEF"); //如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
+```
 **参数说明：**
 
 | 参数名 | 类型 | 说明 |
@@ -617,13 +624,13 @@ FAQ界面示例图:<br>
 ---
 
 ### <h4 id="UserName">10. 设置玩家(用户)的昵称，调用`setUserName`方法(初始化AIHelp智能客服之后调用，且只需调用一次)</h4>
-
-	ELvaChatServiceSdk.setUserName (String userName); 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
-
+```java
+	ELvaChatServiceSdk.setUserName (String userName); //如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
+```
 **代码示例：**
-
-	ELvaChatServiceSdk.setUserName ("player_name"); 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
-
+```java
+	ELvaChatServiceSdk.setUserName ("player_name"); //如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
+```
 **参数说明：**
 
 | 参数名 | 类型 | 说明 |
@@ -635,13 +642,13 @@ FAQ界面示例图:<br>
 > 1. 在初始化后调用该接口设置玩家(用户)的昵称，这样在后台客户服务页面会展示用户的应用内名称，便于客服在服务用户时个性化称呼对方。
 
 ### <h4 id="ServerId">11. 设置玩家(用户)所在的服务器ID，调用`setServerId`方法</h4>
-
+```java
 	ELvaChatServiceSdk.setServerId(String serverId);
-
+```
 **代码示例：**
-
+```java
 	ELvaChatServiceSdk.setServerId("server_id");
-
+```
 **参数说明：**
 
 | 参数名 | 类型 | 说明 |
@@ -651,14 +658,14 @@ FAQ界面示例图:<br>
 ---
 
 ### <h4 id="setSDKLanguage">12. 设置AIHelp智能客服系统的语言，调用`setSDKLanguage`方法</h4>
-
+```java
 	ELvaChatServiceSdk.setSDKLanguage(String language);
-	
+```	
 **代码示例：**
-
+```java
 	String languageAlias = "zh_CN";
 	ELvaChatServiceSdk.setSDKLanguage(languageAlias);
-
+```
 **参数说明：**
 
 | 参数名 | 类型 | 说明 |
@@ -676,13 +683,13 @@ FAQ界面示例图:<br>
 #### 12. 设置机器人客服界面的另一个欢迎语。
 
 如果您设置了进入机器人客服界面的不同入口，希望用户从不同的入口进入机器人客服界面时显示不同的欢迎语，进入不同故事线，可以通过设置config参数来实现： 
-
+```java
 	// "anotherWelcomeText" is the key name, it's value is the usersay variable
 	map.put("anotherWelcomeText","usersay");
-
+```
 	
 **代码示例：**
-
+```java
 	HashMap<String,Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
 	// the tag names are variables
@@ -708,8 +715,9 @@ FAQ界面示例图:<br>
 				"server_id",
 				"1",
 				config);
+```				
 或
-
+```java
 	// 调用showElvaOP接口进入运营模块界面
 	ELvaChatServiceSdk.showElvaOP(
 				"user_name",
@@ -717,7 +725,7 @@ FAQ界面示例图:<br>
 				"server_id",
 				"1",
 				config);
-
+```
 
 **参数说明：**
 
@@ -729,6 +737,7 @@ FAQ界面示例图:<br>
 ###如果您想定制人工客服的欢迎语,您需要在调用对应接口的config参数里传入一对新的key,value
 key是:"private_welcome_str",value为您想要的定制的内容
 ###代码示例:
+```java
 	HashMap<String,Object> map = new HashMap();
   
 	//"private_welcome_str" 是key,value是您想要的定制的内容,类型是String
@@ -745,12 +754,10 @@ key是:"private_welcome_str",value为您想要的定制的内容
 				"server_id",
 				"1",
 				config);
-
+```
 
 **最佳实践：**
-
 > 1. 引导玩家从不同入口看到不同的故事线欢迎语以提供不同的服务。
-
 [1]:https://AIHelp.net/elva "AIHelp 客服后台"
 [2]:https://AIHelp.net/register "AIHelp 官网注册"
 [showElva-CN-Android]:https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElva-CN-Android.png "机器人客服界面"

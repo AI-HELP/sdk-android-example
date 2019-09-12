@@ -111,14 +111,14 @@ Portrait Display:
 **Note：
 **Party A is obliged to use Party B's services according to the correct plug-in method and calling method described by Party B's documents. If Party A uses any technical method to influence Party B's billing, Party B will have the right to notify Party A while unilaterally terminating the service immediately and ask Party A to assume responsibility for infulencing the billing of Party B.<br />
 When activiting your app, You must use ELvaChatServiceSdk.init(...) , otherwise you can't use AIHelp service properly。**	
-	
+```java	
 	ELvaChatServiceSdk.init(
 				Activity activity,
 				String appKey,
 				String domain,
 				String appId
 				);
-
+```
 **About Parameters：**
 
 | Parameters | Description |
@@ -135,7 +135,7 @@ If your company does not have an account, you need to register an account at [AI
 **Coding Example：(Must be called during application initialization, otherwise you can't use AIHelp properly)**<br />
 **Party A is obliged to use Party B's services according to the correct plug-in method and calling method described by Party B's documents. If Party A uses any technical method to influence Party B's billing, Party B will have the right to notify Party A while unilaterally terminating the service immediately and ask Party A to assume responsibility for infulencing the billing of Party B.**
 
-```
+```java	
 import com.ljoy.chatbot.sdk.ELvaChatServiceSdk;
 
 public class MyActivity extends Activity {
@@ -183,24 +183,24 @@ public class MyActivity extends Activity {
 
 #### <h4 id="showElva">2. Launch the AI Conversation Interface, use `showElva`</h4>
 
-
+```java	
 	ELvaChatServiceSdk.showElva(
 				String playerName,
 				String playerUid,
 				String serverId,
 				String showConversationFlag);
-			
+```			
 or
-
+```java	
 	ELvaChatServiceSdk.showElva(
 				String playerName,
 				String playerUid,
 				String serverId,
 				String showConversationFlag,
 				HashMap<String,Object> customData);
-
+```
 **Coding Example：**
-
+```java	
 	// Presenting AI Help Converation with your customers
 
 	HashMap<String,Object> map = new HashMap();
@@ -225,7 +225,7 @@ or
 				"server_id",
 				"1", // show conversation entry
 				config);
-
+```
 **About Parameters：**
 
 - __playerName__: In-App User Name
@@ -235,7 +235,7 @@ or
 - __showConversationFlag__: Should be "0" or "1". If set at "1", the VIP conversation entry will be displayed in the upper right of the AI conversation interface.
 - __config__: Optional parameterseters for custom HashMap information. You can pass specific Tag information using ArrayList elva-tags, see the above coding example. Please note that you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
 	
-![showElva](https://github.com/AIHELP-NET/Pictures/blob/master/showElva-EN-Android.png "showElva")
+![Robot Customer Service Interface][showElva-EN-Android]
 	
 **Best Practice：**
 
@@ -243,20 +243,20 @@ or
 > 2. Enable VIP Conversation Entry to allow user to chat with your customer support team with parameters "__showConversationFlag__" setting to "__1__", you may use this method for any user or as a privilege for some users only.
 
 #### <h4 id="showConversation">3. Call the `showConversation` method to start the manual customer service interface.</h4>
-
+```java	
 	ELvaChatServiceSdk.showConversation(
 					String uid,
 					String serverId);
-
+```
 or
-
+```java	
 	ELvaChatServiceSdk.showConversation(
 						String uid,
 						String serverId,
 						HashMap customData);
-						
+```						
 **Coding Example：**
-
+```java	
 	HashMap<String,Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
 	// the tag names are variables
@@ -276,9 +276,8 @@ or
 				"user_id",
 				"server_id",
 				config);
-
+```
 **About Parameters：**
-
 
 - __user_id__: Unique User ID
 - __serverId__: The Server ID
@@ -286,7 +285,7 @@ or
 
 
 Manual customer service interface example diagram:<br>
-![Manual customer service interface][showConversation-CN-Android]
+![Manual Customer Service Interface][showConversation-EN-Android]
 
 **Best Practices：**
 
@@ -298,7 +297,7 @@ Manual customer service interface example diagram:<br>
 #### <h4 id="showElvaOP">4. Launch The Operation Interface, use `showElvaOP`</h4>
 
 The operation module is useful when you want to present updates, news, articles or any background information about your APP/Game to users. The AI Help
-
+```java	
 	ELvaChatServiceSdk.showElvaOP(
 				String playerName,
 				String playerUid,
@@ -322,9 +321,9 @@ The operation module is useful when you want to present updates, news, articles 
 				String showConversationFlag,
 				HashMap<String,Object> config,
 				int defaultTabIndex);
-
+```
 **Coding Example：**
-
+```java	
 	// Presenting Operation Info to your customers
 	HashMap<String,Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
@@ -348,7 +347,7 @@ The operation module is useful when you want to present updates, news, articles 
 				"server_id",
 				"1", // show conversation entry
 				config);
-
+```
 **About Parameters：**
 
 - __playerName__: User Name in Game/APP
@@ -359,7 +358,7 @@ The operation module is useful when you want to present updates, news, articles 
 - __config__: Optional parameters for custom HashMap information. You can pass specific Tag information using ArrayList elva-tags, see the above coding example. Please note that you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
 - __defaultTabIndex__: Optional. The index of the first tab to be shown when entering the operation interface. Default value is 0, default value is the left-most tab, if you would like to show the AI conversation interface(the right-most) set it to 999.
 	
-![showElva](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElvaOP_Android.png "showElvaOP")
+![Operation Module Interface][showElvaOP-EN-Android]
 
 **Best Practice：**
 
@@ -370,13 +369,13 @@ The operation module is useful when you want to present updates, news, articles 
 	If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
 	If the userid is not available, the empty string "" is passed, and a unique device id is generated.
 	</h4>
-
+```java	
 	ELvaChatServiceSdk.showFAQs();
 
 	ELvaChatServiceSdk.showFAQs (HashMap config)
-
+```
 **Coding Example：**
-
+```java	
 	public void ShowFAQs(){
 	
 		HashMap<String, Object> config = new HashMap();
@@ -418,12 +417,12 @@ The operation module is useful when you want to present updates, news, articles 
 
 		ELvaChatServiceSdk.showFAQs(config);
 	}
-
+```
 **About Parameters：**
 
 - __config__: Optional parameters for custom HashMap information. You can pass specific Tag information using the ArrayList elva-tags, see the above coding example. Please note that you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
 	
-![showElva](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showFAQs-EN-Android.png "showFAQs")
+![FAQ Interface][showFAQs-EN-Android]
 
 **Best Practice：**
 
@@ -434,15 +433,15 @@ The operation module is useful when you want to present updates, news, articles 
 	If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
 	If the userid is not available, the empty string "" is passed, and a unique device id is generated.
 	</h4>
-
+```java	
 	ELvaChatServiceSdk.showFAQSection(String sectionPublishId); 
-
+```
 or
-
+```java	
 	ELvaChatServiceSdk.showFAQSection(String sectionPublishId,HashMap customData);
-
+```
 **Coding Example：**
-
+```java	
 	HashMap<String, Object> config = new HashMap();
 	HashMap<String, Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
@@ -481,6 +480,7 @@ or
     ELvaChatServiceSdk.setServerId("server_id"); 
 
 	ELvaChatServiceSdk.showFAQSection("1234",config);
+```
 
 **About Parameters：**
 
@@ -489,7 +489,7 @@ or
 - __config__: Optional parameters for custom HashMap information. You can pass specific Tag information using the ArrayList elva-tags, see the above coding example. Please note that you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
 	
 Example map of all FAQ interfaces under the classification:<br>
-![All FAQ screens under category][showFAQSection-CN-Android]
+![All FAQ Interfaces under Category][showFAQSection-EN-Android]
 
 **Best Practices:**
 
@@ -502,13 +502,13 @@ Example map of all FAQ interfaces under the classification:<br>
 	If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
 	If the userid is not available, the empty string "" is passed, and a unique device id is generated.
 	</h4>
-
+```java
 	ELvaChatServiceSdk.showSingleFAQ(String faqId);
 
 	ELvaChatServiceSdk.showSingleFAQ(String faqId,HashMap config);
-
+```
 **Coding Example：**
-
+```java
 	HashMap<String, Object> config = new HashMap();
 	HashMap<String, Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
@@ -547,13 +547,13 @@ Example map of all FAQ interfaces under the classification:<br>
     ELvaChatServiceSdk.setServerId("server_id"); 
 
 	ELvaChatServiceSdk.showSingleFAQ("2345",config);
-
+```
 **About Parameters：**
 
 - __faqId__: The PublishID of the FAQ item, you can check it at [AIHelp Web Console](https://aihelp.net/elva): Find the FAQ in the FAQ menu and copy its PublishID.
 - __config__: Optional parameters for custom HashMap information. You can pass specific Tag information using ArrayList elva-tags, see the above coding example. Please note that you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
 	
-![showSingleFAQ](https://github.com/AIHELP-NET/Pictures/blob/master/showSingleFAQ-EN-Android.png "showSingleFAQ")
+![Single FAQ Interface][showSingleFAQ-EN-Android]
 
 <h4 id="selfservice"></h4>
 
@@ -566,13 +566,13 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 > 1. Use this method when you want to show a specific FAQ in a proper location of your APP/Game.
 
 #### <h4 id="setName">6. Set Your APP's name for AIHelp SDK to display, use `setName`</h4>
-
+```java
 	ELvaChatServiceSdk.setName(String game_name);
-
+```
 **Coding Example：**
-
+```java
 	ELvaChatServiceSdk.setName("Your Game");
-
+```
 **About Parameters：**
 
 - __game_name__: APP/Game Name
@@ -582,13 +582,13 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 
 #### <h4 id="UserId">7. Set the Unique User ID, use `setUserId`</h4>
 
-
-	ELvaChatServiceSdk.setUserId(String playerUid); If the userid is not available, the empty string "" is passed, and a unique device id is generated.
-
+```java
+	ELvaChatServiceSdk.setUserId(String playerUid); //If the userid is not available, the empty string "" is passed, and a unique device id is generated.
+```
 **Coding Example：**
-
-	ELvaChatServiceSdk.setUserId("123Abc567DEF"); If the userid is not available, the empty string "" is passed, and a unique device id is generated.
-
+```java
+	ELvaChatServiceSdk.setUserId("123Abc567DEF"); //If the userid is not available, the empty string "" is passed, and a unique device id is generated.
+```
 **About Parameters：**
 
 - __playerUid__:Unique User ID
@@ -598,13 +598,13 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 > 1. Normally you do not need to use this method if you have passed the user ID in another method. However, if you want to use the FAQ's [Self-Service](#selfservice), then you must set the User Id first.
 
 #### <h4 id="UserName">8. Set User Name, use `setUserName`</h4>
-
-	ELvaChatServiceSdk.setUserName (String playerName); If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
-
+```java
+	ELvaChatServiceSdk.setUserName (String playerName); //If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
+```
 **Coding Example：**
-
-	ELvaChatServiceSdk.setUserName ("player_name"); If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
-
+```java
+	ELvaChatServiceSdk.setUserName ("player_name"); //If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
+```
 **About Parameters：**
 
 - __playerName:__ User/Player Name
@@ -635,20 +635,20 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 	(need to set [`setUserName`](#UserName))
 	If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.	
 	</h4>
-
+```java
 	ELvaChatServiceSdk.showConversation(
 					String playerUid,
 					String serverId);
-
+```
 or
-
+```java
 	ELvaChatServiceSdk.showConversation(
 					String playerUid,
 					String serverId,
 					HashMap config);
-	
+```	
 **Coding Example：**
-
+```java
 	// Presenting Single FAQ to your customers
 	HashMap<String,Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
@@ -667,7 +667,7 @@ or
 	
 	ELvaChatServiceSdk.setUserName("user_name"); If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
 	ELvaChatServiceSdk.showConversation("user_id","server_id",config);
-
+```
 **About Parameters：**
 
 - __playerUid__:Unique User ID
@@ -678,25 +678,25 @@ or
 
 > 1. Normally you do not need to use this method unless you intend to allow users to enter VIP conversations without engaging with the AI chat. You may use this method as a privilege for some users.
 
-![showConversation](https://github.com/AIHELP-NET/Pictures/blob/master/showConversation-EN-Android.png "showConversation")
+![Manual Customer Service Interface][showConversation-EN-Android]
 
 
 #### <h4 id="setSDKLanguage">11. Set SDK Lanague, use `setSDKLanguage`
 </h4>
 Setting the SDK Language will change the FAQs, Operational information, AI Chat and SDK display language. 
-
+```java
 	ELvaChatServiceSdk.setSDKLanguage(string language);
-	
+```	
 **Coding Example：**
-
+```java
 	string languageAlias = "zh_CN"
 	ELvaChatServiceSdk.setSDKLanguage(languageAlias);
-
+```
 **About Parameters：**
 
 - __language:__ Standard Language Alias. For example: en is for English, zh_CN is for Simplified Chinese. More language label can be selected through AIHelp Web Console:"Settings"-->"Language"->Alias.
 
-![language](https://github.com/AI-HELP/Docs-Screenshots/blob/master/Language-alias.png "Language Alias")
+![Partial Language Short Name][language]
 
 **Best Practice：**
 
@@ -712,7 +712,7 @@ If your APP provides multiple entries to AIHelp, and you intend to introduce dif
 
 **Coding Example：**
 
-
+```java
 	// Presenting Single FAQ to your customers
 	HashMap<String,Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
@@ -741,8 +741,9 @@ If your APP provides multiple entries to AIHelp, and you intend to introduce dif
 				"server_id",
 				"1", // show conversation entry
 				config);
+```
 Or
-
+```java
 	// Enter operational module
 	ELvaChatServiceSdk.showElvaOP(
 				"user_name",
@@ -750,12 +751,13 @@ Or
 				"server_id",
 				"1", // show conversation entry
 				config);
-				
+```				
 #### 13. Want to customize the welcome message of manual customer service
 ###If you want to customize the welcome message of the manual customer service, 
 you need to pass a new pair of keys in the configuration parameters of the corresponding interface.
 The key is: "private_welcome_str", valued for the customized content you want
 ###code example:
+```java
 	HashMap <String,Object> map = new HashMap();
 
 	//"private_welcome_str" is the key, the value is the custom content you want, the type is a string
@@ -772,19 +774,17 @@ The key is: "private_welcome_str", valued for the customized content you want
 				"server_id",
 				"1",
 				config);
-
+```
 
 **Best Practice：**
-
 > 1. Introduce different story lines to users from different sources.
-
 [1]: https://AIHelp.net/elva "AIHelp Customer Service Backstage"
 [2]: https://AIHelp.net/register "AIHelp official website registration"
-[showElva-CN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElva-CN-Android.png "Robot Customer Service Interface"
-[showConversation-CN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showConversation-CN-Android.png "Manual Customer Service Interface"
-[showElvaOP-CN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElvaOP-CN-Android.png "Operation Module Interface"
-[showFAQs-CN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showFAQs-CN-Android.png "FAQ Interface"
-[showFAQSection-CN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showFAQSection-CN-Android.png "All FAQ Interfaces under Category"
-[showSingleFAQ-CN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showSingleFAQ-CN-Android.png "Single FAQ Interface"
+[showElva-EN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElva-EN-Android.png "Robot Customer Service Interface"
+[showConversation-EN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showConversation-EN-Android.png "Manual Customer Service Interface"
+[showElvaOP-EN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElvaOP-EN-Android.png "Operation Module Interface"
+[showFAQs-EN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showFAQs-EN-Android.png "FAQ Interface"
+[showFAQSection-EN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showFAQSection-EN-Android.png "All FAQ Interfaces under Category"
+[showSingleFAQ-EN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showSingleFAQ-EN-Android.png "Single FAQ Interface"
 [language]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/Language-alias.png "Partial Language Short Name"
 
