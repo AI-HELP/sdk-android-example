@@ -757,7 +757,9 @@ key是:"private_welcome_str",value为您想要的定制的内容
 ```
 
 **最佳实践：**
+
 > 1. 引导玩家从不同入口看到不同的故事线欢迎语以提供不同的服务。
+
 [1]:https://AIHelp.net/elva "AIHelp 客服后台"
 [2]:https://AIHelp.net/register "AIHelp 官网注册"
 [showElva-CN-Android]:https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElva-CN-Android.png "机器人客服界面"

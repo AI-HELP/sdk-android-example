@@ -1,7 +1,7 @@
 [查看中文接入文档](https://github.com/AI-HELP/AIhelp-Android-SDK/blob/master/README_CN.md)
 
 ## AIHelp SDK Integration Guide
-There are two methods to integrate AIHelp Android SDK to your APP's project. If you use Android Studio or another development platform which supports Gradle. We recommand you use method #1: 
+**There are two methods to integrate AIHelp Android SDK to your APP's project. If you use Android Studio or another development platform which supports Gradle. We recommand you use method #1:** 
 ### Method #1. Use Gradle to integrate AIHelp SDK online: 
 
 #### 1. Add Below Lines in your Project's build.gradle:
@@ -777,7 +777,9 @@ The key is: "private_welcome_str", valued for the customized content you want
 ```
 
 **Best Practice：**
+
 > 1. Introduce different story lines to users from different sources.
+
 [1]: https://AIHelp.net/elva "AIHelp Customer Service Backstage"
 [2]: https://AIHelp.net/register "AIHelp official website registration"
 [showElva-EN-Android]: https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElva-EN-Android.png "Robot Customer Service Interface"
