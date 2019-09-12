@@ -294,6 +294,7 @@ public class MyActivity extends Activity {
 ![人工客服界面][showConversation-CN-Android]
 
 **最佳实践：**
+
 > 1. 通常您不需要调用这个接口，除非您想在应用里设置触发点，让用户有机会直接进入人工客服聊天界面。
 
 ---
@@ -365,6 +366,7 @@ public class MyActivity extends Activity {
 ![运营模块界面][showElvaOP-CN-Android]
 
 **最佳实践：**
+
 > 1. 在您应用的运营入口触发这个接口的调用。
 在[AIHelp 客服后台][1]配置运营分页（tab)并且发布跟应用相关的运营公告内容。就可以通过AIHelp智能客服系统的运营模块界面展示这些内容给用户。运营界面的最后一个tab分页总是机器人客服聊天界面。
 > 2. 在tab页面，用户可以在页面右上角进入FAQ页面查看；在机器人客服页面（Help页面），用户可以在页面右上角进入人工客服界面，此人工客服入口可以通过showConversationFlag参数设置是否开启，根据条件打开或关闭，您可以只让一部分用户看到这个入口。
@@ -384,6 +386,7 @@ public class MyActivity extends Activity {
 	ELvaChatServiceSdk.showFAQs(HashMap config)
 
 **代码示例：**
+
 	HashMap<String, Object> config = new HashMap();
 	HashMap<String, Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
@@ -431,6 +434,7 @@ FAQ界面示例图:<br>
 ![FAQ界面][showFAQs-CN-Android]
 
 **最佳实践：**
+
 > 1. 在您应用的FAQ主入口触发这个接口的调用。在[AIHelp 客服后台][1]页面配置并分类FAQ，如果您的FAQ较多，可以增加一个父级分类。
 
 ---
@@ -448,6 +452,7 @@ FAQ界面示例图:<br>
 	ELvaChatServiceSdk.showFAQSection(String sectionPublishId,HashMap customData);
 
 **代码示例：**
+
 	HashMap<String, Object> config = new HashMap();
 	HashMap<String, Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
@@ -496,6 +501,7 @@ FAQ界面示例图:<br>
 ![分类下所有FAQ界面][showFAQSection-CN-Android]
 
 **最佳实践：**
+
 > 1. 在您应用的FAQ分入口，触发这个接口的调用。例如您在[AIHelp 客服后台][1]页面配置了有关商城或充值的分类FAQ，在您的商城界面或充值界面调用这个接口后，这一分类的所有FAQ将被展示。
 
 ---
@@ -513,6 +519,7 @@ FAQ界面示例图:<br>
 	ELvaChatServiceSdk.showSingleFAQ(String faqId,HashMap customData);
 
 **代码示例：**
+
 	HashMap<String, Object> config = new HashMap();
 	HashMap<String, Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
@@ -562,6 +569,7 @@ FAQ界面示例图:<br>
 ![单条FAQ界面][showSingleFAQ-CN-Android]
 
 **最佳实践：**
+
 > 1. 在您应用的特定功能入口触发这个接口的调用，可以方便用户了解具体功能相关的FAQ。
 
 ---
@@ -600,6 +608,7 @@ FAQ界面示例图:<br>
 | uid | String | 玩家(用户)的唯一ID |
 
 **最佳实践：**
+
 > 1. 在初始化后调用该接口设置玩家(用户)的唯一ID。
 
 ---
@@ -619,6 +628,7 @@ FAQ界面示例图:<br>
 | userName | String | 玩家(用户)的名称 |
 
 **最佳实践：**
+
 > 1. 在初始化后调用该接口设置玩家(用户)的昵称，这样在后台客户服务页面会展示用户的应用内名称，便于客服在服务用户时个性化称呼对方。
 
 ### <h4 id="ServerId">11. 设置玩家(用户)所在的服务器ID，调用`setServerId`方法</h4>
@@ -656,6 +666,7 @@ FAQ界面示例图:<br>
 ![部分语言简称][language]
 
 **最佳实践：**
+
 > 1. 通常AIHelp智能客服系统的语言会使用手机的系统语言设置，如果您的应用使用跟手机设置不一样的语言，那么您需要在AIHelp智能客服系统初始化之后调用此接口修改默认语言。
 > 2. 如果您的应用允许用户更改语言，那么每次更改语言之后，也需要调用此接口重新设置AIHelp智能客服系统的语言。
 
@@ -734,6 +745,7 @@ key是:"private_welcome_str",value为您想要的定制的内容
 
 
 **最佳实践：**
+
 > 1. 引导玩家从不同入口看到不同的故事线欢迎语以提供不同的服务。
 
 [1]:https://AIHelp.net/elva "AIHelp 客服后台"

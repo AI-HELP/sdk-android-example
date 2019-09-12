@@ -69,6 +69,7 @@ Click "Clone or download" to download Android SDK in the github page, unzip the 
     <meta-data
         android:name="android.notch_support"
         android:value="true" />
+		
 **b. Add AIHelp Activities:**
 
 	<!--需要的Activity-->
@@ -288,6 +289,7 @@ Manual customer service interface example diagram:<br>
 ![Manual customer service interface][showConversation-CN-Android]
 
 **Best Practices：**
+
 > 1. Usually you don't need to call this interface unless you want to set a trigger point in the app, giving the user a chance to go directly to the manual chat interface.
 
 ---
@@ -360,6 +362,7 @@ The operation module is useful when you want to present updates, news, articles 
 ![showElva](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showElvaOP_Android.png "showElvaOP")
 
 **Best Practice：**
+
 > 1. Use this API to present news, announcements, articles or any useful information to users/players. Configure and publish the information in the AIHelp web console. 
 
 #### <h4 id="showFAQs">5. Display FAQs, use `showFAQs ` 
@@ -373,6 +376,7 @@ The operation module is useful when you want to present updates, news, articles 
 	ELvaChatServiceSdk.showFAQs (HashMap config)
 
 **Coding Example：**
+
 	HashMap<String, Object> config = new HashMap();
 	HashMap<String, Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
@@ -419,6 +423,7 @@ The operation module is useful when you want to present updates, news, articles 
 ![showElva](https://github.com/AI-HELP/Docs-Screenshots/blob/master/showFAQs-EN-Android.png "showFAQs")
 
 **Best Practice：**
+
 > 1. Use this method to show FAQs about your APP/Game properly. Configure FAQs in AIHelp Web Console. Each FAQ can be categroized into a section. If the FAQs are many, you can also add Parent Sections to categorize sections to make things clear and organized. 
 
 #### <h4 id="showFAQSection">6. Show all the FAQs in a category, call the `showFAQSection` method 
@@ -434,6 +439,7 @@ or
 	ELvaChatServiceSdk.showFAQSection(String sectionPublishId,HashMap customData);
 
 **Coding Example：**
+
 	HashMap<String, Object> config = new HashMap();
 	HashMap<String, Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
@@ -483,6 +489,7 @@ Example map of all FAQ interfaces under the classification:<br>
 ![All FAQ screens under category][showFAQSection-CN-Android]
 
 **Best Practices:**
+
 > 1. In the FAQ entry of your application, trigger the call of this interface. For example, you have configured the category FAQ about the mall or recharge in the [AIHelp Customer Support] [1] page. After you call this interface in your store interface or recharge interface, all the FAQs in this category will be displayed.
 
 ---
@@ -498,6 +505,7 @@ Example map of all FAQ interfaces under the classification:<br>
 	ELvaChatServiceSdk.showSingleFAQ(String faqId,HashMap config);
 
 **Coding Example：**
+
 	HashMap<String, Object> config = new HashMap();
 	HashMap<String, Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
@@ -583,6 +591,7 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 - __playerUid__:Unique User ID
 
 **Best Practice：**
+
 > 1. Normally you do not need to use this method if you have passed the user ID in another method. However, if you want to use the FAQ's [Self-Service](#selfservice), then you must set the User Id first.
 
 #### <h4 id="UserName">8. Set User Name, use `setUserName`</h4>
@@ -598,6 +607,7 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 - __playerName:__ User/Player Name
 
 **Best Practice：**
+
 > 1. Use this method to set the user name, which will be shown in the web console's conversation page for the user. You can address the user with this name during the chat.
 > 2. Normally you do not need to use this method if you have passed the user name in another method. However, if you want to use FAQ's [Self-Service](#selfservice), then you must set the User Id first.
 
@@ -615,6 +625,7 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 - __serverId:__ The Unique Server ID
 
 **Best Practice：**
+
 > 1. Normally you do not need to use this method if you have passed the server ID in other method. However, if you want to use the FAQ's [Self-Service](#selfservice), then you must set the User Id first.
 
 #### <h4 id="showConversation">10. Launch VIP Chat Console, use `showConversation`
@@ -661,6 +672,7 @@ or
 - __config__: Optional parameters for custom HashMap information. You can pass specific Tag information using the ArrayList elva-tags, see the above coding example. Please note that you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
 
 **Best Practice：**
+
 > 1. Normally you do not need to use this method unless you intend to allow users to enter VIP conversations without engaging with the AI chat. You may use this method as a privilege for some users.
 
 ![showConversation](https://github.com/AIHELP-NET/Pictures/blob/master/showConversation-EN-Android.png "showConversation")
@@ -684,6 +696,7 @@ Setting the SDK Language will change the FAQs, Operational information, AI Chat 
 ![language](https://github.com/AI-HELP/Docs-Screenshots/blob/master/Language-alias.png "Language Alias")
 
 **Best Practice：**
+
 > 1. Normally AIHelp will use the mobile's lanaguge configuration by default. If you intend to make a different language setting, you need to use this method right after the SDK initialization.
 > 2. If your allow users to change the APP language, then you need to call this method to make AIHelp the same lanague with your APP.
 
@@ -759,6 +772,7 @@ The key is: "private_welcome_str", valued for the customized content you want
 
 
 **Best Practice：**
+
 > 1. Introduce different story lines to users from different sources.
 
 [1]: https://AIHelp.net/elva "AIHelp Customer Service Backstage"
