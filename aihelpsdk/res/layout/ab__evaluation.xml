@@ -29,7 +29,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textColor="#000000"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -340,7 +341,8 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:textColor="#000000"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -370,7 +372,8 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:textColor="#000000"/>
 
         <LinearLayout
             android:layout_width="match_parent"

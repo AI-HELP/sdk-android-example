@@ -14,15 +14,11 @@
 
 	dependencies {
 	 ...
-	    compile 'net.aihelp:elva:1.4.4.5'
-	    compile 'com.android.support:appcompat-v7:23.4.0'
-	    compile 'com.android.support:design:23.4.0'
-	    compile 'com.android.support:recyclerview-v7:23.4.0'
-	    compile 'com.android.support:cardview-v7:23.4.0'
+	    compile 'net.aihelp:elva:1.5.0'
     ...
     }
 
-确保build.gradle同步成功: 在Android Studio的External Libraries下面能够看到加载成功elva-1.4.4文件夹以及上述依赖包。如果无法自动加载，请采用第二种导入方式：
+确保build.gradle同步成功: 在Android Studio的External Libraries下面能够看到加载成功elva-1.5.0文件夹。如果无法自动加载，请采用第二种导入方式：
 
 ### 导入方式二： 下载AIHelp Android SDK：
 点击页面右上角的"Clone or Download”按钮下载Android SDK，下载完成后解压文件。
@@ -30,26 +26,14 @@ AIHelp-Android-SDK文件夹包含：
 
 | 文件夹 | 说明 |
 |:------------- |:---------------|
-| **aars**    | AIHelp Android SDK 所需的依赖包|
 | **aihelpsdk**    | AIHelp Android SDK文件|
 #### 把AIHelp SDK 放入您的Android 工程：
 **a. 把aihelpsdk中libs子文件夹中全部包拷贝到您的工程app中的libs文件夹下**
 
 **b. 把aihelpsdk中的res子文件夹中全部包拷贝到您的工程app中的的res文件夹下**
 
-**c. 把aars所需要的依赖包导入您工程：**
-
-如果您的项目已经包含了某些依赖包，只需导入其他的。如果您使用了Gradle，那么只需要修改build.gradle，增加如下依赖(如果您的build.gradle没有类似的依赖关系)
-
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.android.support:design:23.4.0'
-    compile 'com.android.support:recyclerview-v7:23.4.0'
-    compile 'com.android.support:cardview-v7:23.4.0'
-
-如果您使用了Eclipse，并没有用Gradle，您需要把依赖包导入到您的工程中作为library，并且增加依赖关系给AIHelp SDK。具体依赖关系: AIHelpsdk依赖于design，后者依赖于appcompat，recyclerview 和cardview。
- 
 ### 接入工程配置 
-### (AIHelp SDK不可以被混淆，若混淆会导致服务不可用)
+### (如果您的 apk 最终会经过代码混淆，请在 proguard 配置文件中加入以下代码：)
     -keep class com.lioy.** {*;}
     -keep class bitoflife.** {*;}
     -keep class org.fusesource.** {*;}
@@ -60,7 +44,7 @@ AIHelp-Android-SDK文件夹包含：
   
 **1. 打包版本要求**
 
-AIHelp SDK 要求android sdk最低版本为14，目标最低版本为23：
+AIHelp SDK 要求android sdk最低版本为14，目标版本为23至最新版本：
 
 	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23"/>
      
@@ -68,50 +52,49 @@ AIHelp SDK 要求android sdk最低版本为14，目标最低版本为23：
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />//上传表单图片的时候需要此权限
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />//上传表单图片的时候需要此权限
+	<!-- 上传表单图片的时候需要此权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<!-- 上传表单图片的时候需要此权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	
+	<!--需要的刘海屏适配 -->
+	<!--google刘海适配-->
+    <meta-data
+        android:name="android.max_aspect"
+        android:value="2.1" />
+    <!--小米手机开启刘海适配-->
+    <meta-data
+        android:name="notch.config"
+        android:value="portrait|landscape" />
+    <!--华为手机开启刘海适配-->
+    <meta-data
+        android:name="android.notch_support"
+        android:value="true" />
+	
 **3. 增加activity:**
-
-    <activity
-       android:name="com.ljoy.chatbot.ChatMainActivity"
-       android:configChanges="orientation|screenSize|locale"
-       android:screenOrientation="sensor">
-    </activity>
-    <activity
-       android:name="com.ljoy.chatbot.FAQActivity"
-       android:configChanges="orientation|screenSize|locale"
-       android:screenOrientation="sensor"
-       android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
-       <intent-filter android:label="@string/app_name">
-          <action android:name="android.intent.action.VIEW" />
-          <category android:name="android.intent.category.DEFAULT" />
-          <category android:name="android.intent.category.BROWSABLE" />
-          <data android:scheme="https"
-                android:host="cs30.net"
-                android:pathPrefix="/elvaFAQ" />
-       </intent-filter>
-    </activity>
-    <activity
-       android:name="com.ljoy.chatbot.OPActivity"
-       android:configChanges="orientation|screenSize|locale"
-       android:screenOrientation="sensor"
-       android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-    </activity>
-    <activity 
-       android:name="com.ljoy.chatbot.WebViewActivity"
-       android:screenOrientation="sensor"
-       android:configChanges="orientation|screenSize|locale"
-       android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
-       <intent-filter android:label="@string/app_name">
-          <action android:name="android.intent.action.VIEW" />
-          <category android:name="android.intent.category.DEFAULT" />
-          <category android:name="android.intent.category.BROWSABLE" />
-       </intent-filter>
-    </activity>
-    <activity
-            android:name="com.ljoy.chatbot.QAWebActivity"
-            android:configChanges="orientation|screenSize|locale" >
-    </activity>
+    
+	<!--需要的Activity-->
+	<activity
+		android:name="com.ljoy.chatbot.ChatMainActivity"
+		android:configChanges="keyboardHidden|orientation|screenSize"
+		android:windowSoftInputMode="adjustResize|stateHidden" />
+	<activity
+		android:name="com.ljoy.chatbot.OPActivity"
+		android:configChanges="keyboardHidden|orientation|screenSize"
+		android:windowSoftInputMode="adjustResize|stateHidden" />
+	<activity
+		android:name="com.ljoy.chatbot.FAQActivity"
+		android:configChanges="keyboardHidden|orientation|screenSize"
+		android:windowSoftInputMode="adjustResize|stateHidden" />
+	<activity
+		android:name="com.ljoy.chatbot.WebViewActivity"
+		android:configChanges="keyboardHidden|orientation|screenSize"
+		android:windowSoftInputMode="adjustResize|stateHidden" />
+	<activity
+		android:name="com.ljoy.chatbot.QAWebActivity"
+		android:configChanges="keyboardHidden|orientation|screenSize"
+		android:windowSoftInputMode="adjustResize|stateHidden" />
+	<!--需要的Activity -->
     
     
 关于横竖屏显示：上述配置中
@@ -184,17 +167,21 @@ public class MyActivity extends Activity {
 
 | 接口名 | 作用 |备注|
 |:------------- |:---------------|:---------------|
+
+必须调用的接口
+| **[setName](#setName)** | 设置在AIHelp智能客服系统中所展示的游戏名称 | 初始化之后调用，且只需调用一次，不调用此接口则默认显示包名 |
+| **[setUserName](#UserName)** | 设置玩家(用户)名称 | 初始化之后调用，且只需调用一次 | 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
+| **[setUserId](#UserId)** | 设置玩家(用户)的唯一ID | 初始化之后调用，且只需调用一次 | 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id  
+| **[setServerId](#ServerId)** | 设置玩家(用户)所在的服务器ID | 如果游戏方拿不到数据 就传空字符串""
+| **[setSDKLanguage](#setSDKLanguage)** | 设置SDK的语言 | 初始化之后调用，且只需调用一次 | 注:当游戏内切换语言时也要同时调用一次 保证客服和游戏的语言同步
+
+可选调用的接口:
 | **[showElva](#showElva)** | 启动机器人客服聊天界面 |
 | **[showConversation](#showConversation)** |启动人工客服聊天界面 |
 | **[showElvaOP](#showElvaOP)** | 启动运营界面 | 需在智能客服后台配置运营模块 |
 | **[showFAQs](#showFAQs)** | 展示全部FAQ菜单 |
 | **[showFAQSection](#showFAQSection)** | 展示某一分类里的所有FAQ |
 | **[showSingleFAQ](#showSingleFAQ)** | 展示单条FAQ |
-| **[setName](#setName)** | 设置在AIHelp智能客服系统中所展示的游戏名称 | 初始化之后调用，且只需调用一次，不调用此接口则默认显示包名 |
-| **[setUserName](#UserName)** | 设置玩家(用户)名称 | 初始化之后调用，且只需调用一次 | 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
-| **[setUserId](#UserId)** | 设置玩家(用户)的唯一ID | 初始化之后调用，且只需调用一次 | 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id  
-| **[setServerId](#ServerId)** | 设置玩家(用户)所在的服务器ID | 如果游戏方拿不到数据 就传空字符串
-| **[setSDKLanguage](#setSDKLanguage)** | 设置SDK的语言 |
 
 
 #### 注：您并不需要调用以上所有接口，尤其当您的游戏/应用只设置一个客服入口时，有的接口所展示的界面包含了其他接口，详情见下：
@@ -399,28 +386,40 @@ public class MyActivity extends Activity {
 	ELvaChatServiceSdk.showFAQs(HashMap config)
 
 **代码示例：**
-
-	HashMap<String,Object> map = new HashMap();
+	HashMap<String, Object> config = new HashMap();
+	HashMap<String, Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
-	// the tag names are variables
-	tags.add("pay1");
-	tags.add("s1");
-	tags.add("vip2");
+	tags.add("vip1");//第一种方式自定义 需要和后台保持一致(针对key形式)	
 	
 	// "elva-tags" 是key值 不可以变 
-	map.put("elva-tags",tags); 
+	map.put("elva-tags", tags);	
 	
-	HashMap<String,Object> config = new HashMap();
+	map.put("udid", "123456789");//第二种方式自定义 不需要去后台配置(针对key-value形式)	
 	
 	// "elva-custom-metadata" 是key值 不可以变 
-	config.put("elva-custom-metadata",map);	
-	config.put("showContactButtonFlag", "1"); // 显示可以从FAQ列表右上角进入机器人客服(如果不想显示 需要删除此参数)
-	config.put("showConversationFlag", "1"); // 点击FAQ右上角后 进入机器人界面右上角是否显示 (如果不想显示 需要删除此参数)
-	config.put("directConversation", "1");// 点击FAQ右上角后 直接会进入到人工客服页面(不加默认进入机器人界面 如果不需要则删除此参数)
+	config.put("elva-custom-metadata", map);
 	
-	ELvaChatServiceSdk.setUserName("user_name"); // 设置用户名 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
-    ELvaChatServiceSdk.setUserId("user_id"); // 设置用户ID 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
-    ELvaChatServiceSdk.setServerId("server_id"); // 设置服务ID
+	// 加入此参数,其中key是不可变的 优先级最高 加上后faq右上角则永不显示
+	// (如果想显示 需要删除此参数 并加入 config.put("showContactButtonFlag", "1");
+	config.put("hideContactButtonFlag", "1");
+		
+	// 显示可以从FAQ列表右上角进入机器人客服(如果不想显示 需要删除此参数)
+	config.put("showContactButtonFlag", "1"); 
+	
+	// 点击FAQ右上角后 进入机器人界面右上角是否显示 (如果不想显示 需要删除此参数)
+	config.put("showConversationFlag", "1"); 
+	
+	// 点击FAQ右上角后 直接会进入到人工客服页面(不加默认进入机器人界面 如果不需要则删除此参数)
+	config.put("directConversation", "1");
+	
+	// 设置用户名 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
+	ELvaChatServiceSdk.setUserName("user_name"); 
+	
+	// 设置用户ID 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
+    ELvaChatServiceSdk.setUserId("user_id"); 
+	
+	// 设置服务ID
+    ELvaChatServiceSdk.setServerId("server_id"); 
 
 	ELvaChatServiceSdk.showFAQs(config);
 
@@ -451,28 +450,40 @@ FAQ界面示例图:<br>
 	ELvaChatServiceSdk.showFAQSection(String sectionPublishId,HashMap customData);
 
 **代码示例：**
-
-	HashMap<String,Object> map = new HashMap();
+	HashMap<String, Object> config = new HashMap();
+	HashMap<String, Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
-	// the tag names are variables
-	tags.add("pay1");
-	tags.add("s1");
-	tags.add("vip2");
+	tags.add("vip1");//第一种方式自定义 需要和后台保持一致(针对key形式)	
 	
 	// "elva-tags" 是key值 不可以变 
-	map.put("elva-tags",tags); 
+	map.put("elva-tags", tags);	
 	
-	HashMap<String,Object> config = new HashMap();
+	map.put("udid", "123456789");//第二种方式自定义 不需要去后台配置(针对key-value形式)	
 	
 	// "elva-custom-metadata" 是key值 不可以变 
-	config.put("elva-custom-metadata",map);	
-	config.put("showContactButtonFlag", "1"); // 显示可以从FAQ列表右上角进入机器人客服(如果不想显示 需要删除此参数)
-	config.put("showConversationFlag", "1"); // 点击FAQ右上角后 进入机器人界面右上角是否显示 (如果不想显示 需要删除此参数)
-	config.put("directConversation", "1");// 点击FAQ右上角后 直接会进入到人工客服页面(不加默认进入机器人界面 如果不需要则删除此参数)
+	config.put("elva-custom-metadata", map);
 	
-	ELvaChatServiceSdk.setUserName("user_name"); // 设置用户名 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
-    ELvaChatServiceSdk.setUserId("user_id"); // 设置用户ID 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
-    ELvaChatServiceSdk.setServerId("server_id"); // 设置服务ID
+	// 加入此参数,其中key是不可变的 优先级最高 加上后faq右上角则永不显示
+	// (如果想显示 需要删除此参数 并加入 config.put("showContactButtonFlag", "1");
+	config.put("hideContactButtonFlag", "1");
+		
+	// 显示可以从FAQ列表右上角进入机器人客服(如果不想显示 需要删除此参数)
+	config.put("showContactButtonFlag", "1"); 
+	
+	// 点击FAQ右上角后 进入机器人界面右上角是否显示 (如果不想显示 需要删除此参数)
+	config.put("showConversationFlag", "1"); 
+	
+	// 点击FAQ右上角后 直接会进入到人工客服页面(不加默认进入机器人界面 如果不需要则删除此参数)
+	config.put("directConversation", "1");
+	
+	// 设置用户名 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
+	ELvaChatServiceSdk.setUserName("user_name"); 
+	
+	// 设置用户ID 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
+    ELvaChatServiceSdk.setUserId("user_id"); 
+	
+	// 设置服务ID
+    ELvaChatServiceSdk.setServerId("server_id"); 
 
 	ELvaChatServiceSdk.showFAQSection("1234",config);
 
@@ -504,28 +515,40 @@ FAQ界面示例图:<br>
 	ELvaChatServiceSdk.showSingleFAQ(String faqId,HashMap customData);
 
 **代码示例：**
-
-	HashMap<String,Object> map = new HashMap();
+	HashMap<String, Object> config = new HashMap();
+	HashMap<String, Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
-	// the tag names are variables
-	tags.add("pay1");
-	tags.add("s1");
-	tags.add("vip2");
+	tags.add("vip1");//第一种方式自定义 需要和后台保持一致(针对key形式)	
 	
 	// "elva-tags" 是key值 不可以变 
-	map.put("elva-tags",tags); 
+	map.put("elva-tags", tags);	
 	
-	HashMap<String,Object> config = new HashMap();
+	map.put("udid", "123456789");//第二种方式自定义 不需要去后台配置(针对key-value形式)	
 	
 	// "elva-custom-metadata" 是key值 不可以变 
-	config.put("elva-custom-metadata",map);	
-	config.put("showContactButtonFlag", "1"); // 显示可以从FAQ列表右上角进入机器人客服(如果不想显示 需要删除此参数)
-	config.put("showConversationFlag", "1"); // 点击FAQ右上角后 进入机器人界面右上角是否显示 (如果不想显示 需要删除此参数)
-	config.put("directConversation", "1");// 点击FAQ右上角后 直接会进入到人工客服页面(不加默认进入机器人界面 如果不需要则删除此参数)
+	config.put("elva-custom-metadata", map);
 	
-	ELvaChatServiceSdk.setUserName("user_name"); // 设置用户名 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
-    ELvaChatServiceSdk.setUserId("user_id"); // 设置用户ID 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id
-    ELvaChatServiceSdk.setServerId("server_id"); // 设置服务ID
+	// 加入此参数,其中key是不可变的 优先级最高 加上后faq右上角则永不显示
+	// (如果想显示 需要删除此参数 并加入 config.put("showContactButtonFlag", "1");
+	config.put("hideContactButtonFlag", "1");
+		
+	// 显示可以从FAQ列表右上角进入机器人客服(如果不想显示 需要删除此参数)
+	config.put("showContactButtonFlag", "1"); 
+	
+	// 点击FAQ右上角后 进入机器人界面右上角是否显示 (如果不想显示 需要删除此参数)
+	config.put("showConversationFlag", "1"); 
+	
+	// 点击FAQ右上角后 直接会进入到人工客服页面(不加默认进入机器人界面 如果不需要则删除此参数)
+	config.put("directConversation", "1");
+	
+	// 设置用户名 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
+	ELvaChatServiceSdk.setUserName("user_name"); 
+	
+	// 设置用户ID 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
+    ELvaChatServiceSdk.setUserId("user_id"); 
+	
+	// 设置服务ID
+    ELvaChatServiceSdk.setServerId("server_id"); 
 
 	ELvaChatServiceSdk.showSingleFAQ("2345",config);
         

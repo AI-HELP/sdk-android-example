@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_faq_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f7f7f7"
@@ -21,10 +22,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginEnd="50dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="50dp"
                 android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginRight="50dp"
                 android:background="@drawable/backrow_auto_mirrored"
                 android:clickable="false"
                 android:contentDescription="@null" />
@@ -75,8 +76,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
             android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
             android:clickable="true"
             android:onClick="onSearchClick">
 
@@ -92,17 +93,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
             android:layout_marginTop="5dp"
-            android:layout_toEndOf="@+id/ll_faq_search_icon"
-            android:layout_toLeftOf="@+id/iv_faq_search_clear"
-            android:layout_toRightOf="@+id/ll_faq_search_icon"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
             android:layout_toStartOf="@+id/iv_faq_search_clear"
+            android:layout_toLeftOf="@+id/iv_faq_search_clear"
+            android:layout_toEndOf="@+id/ll_faq_search_icon"
+            android:layout_toRightOf="@+id/ll_faq_search_icon"
             android:background="#00000000"
-            android:textColor="#000000"
             android:hint="@string/question"
+            android:imeOptions="flagNoExtractUi"
+            android:textColor="#000000"
             android:textDirection="locale"
             android:textSize="14dp" />
 
@@ -136,13 +138,26 @@
             android:id="@+id/ab__faq_list_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/ab__faq_question_footer">
+            android:layout_above="@+id/ab__faq_question_footer"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:id="@+id/tv_search_faq_not_found"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="@string/ab_search_faq_no_found"
+                android:textColor="@android:color/black"
+                android:textSize="14dp"
+                android:visibility="gone" />
 
             <ListView
                 android:id="@+id/ab__faq_list"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_alignParentTop="true" />
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="5dp" />
         </RelativeLayout>
 
         <RelativeLayout

@@ -15,15 +15,11 @@ There are two methods to integrate AIHelp Android SDK to your APP's project. If 
 
 	dependencies {
 	 ...
-	    compile 'net.aihelp:elva:1.4.4.5'
-	    compile 'com.android.support:appcompat-v7:23.4.0'
-	    compile 'com.android.support:design:23.4.0'
-	    compile 'com.android.support:recyclerview-v7:23.4.0'
-	    compile 'com.android.support:cardview-v7:23.4.0'
+	    compile 'net.aihelp:elva:1.5.0'
     ...
     }
 
-Wait until the build.gradle sync completion and make sure there is no error during sync: Under the "External Libraries" folder of Android Studio Project sturcture view you should be able to find the folder "elva-1.4.4" and other dependencies specified above. If there is an error during sync or you can not find elva folder. Use the Method #2 below:
+Wait until the build.gradle sync completion and make sure there is no error during sync: Under the "External Libraries" folder of Android Studio Project sturcture view you should be able to find the folder "elva-1.5.0". If there is an error during sync or you can not find elva folder. Use the Method #2 below:
 
 ### Method #2. Download The AIHelp Android SDK：
 Click "Clone or download" to download Android SDK in the github page, unzip the downloaded file.
@@ -32,7 +28,6 @@ Click "Clone or download" to download Android SDK in the github page, unzip the 
 
 | Subfolder name | Description |
 |:------------- |:---------------|
-| **android-libs**    | AIHelp Android SDK dependencies|
 | **aihelpsdk**    | AIHelp Android SDK core files|
  
 
@@ -41,20 +36,9 @@ Click "Clone or download" to download Android SDK in the github page, unzip the 
 
 **b.** Copy files under folder * aihelpsdk/res* to the res folder of your APP's project.
 
-**c.** Import dependencies under *android-libs* to your Project：
 
-If your project has already imported some of the dependencies, just import those you do not have. If you use Gradle, all you need to do is add the below dependencies in your _build.gradle_:
-
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.android.support:design:23.4.0'
-    compile 'com.android.support:recyclerview-v7:23.4.0'
-    compile 'com.android.support:cardview-v7:23.4.0'
-
-If you use __Eclipse__ that does not use Gradle, you need to import each of the dependencies into your project as a library. You also need to explicitly add dependency relationship between the AIHelp SDK and the libraries:  
-__elvachatservice__ depends on __design__, which depends on __appcompat__, __recyclerview__ and __cardview__.
- 
 ### 3. Configure your Android Manifest 
-### (AIHelp SDK should not be obfuscated, otherwise it may result in service  unavailable)
+### (If your apk will go through the process of obfuscating eventually, please add following code in proguard file)
     -keep class com.lioy.** {*;}
     -keep class bitoflife.** {*;}
     -keep class org.fusesource.** {*;}
@@ -62,55 +46,53 @@ __elvachatservice__ depends on __design__, which depends on __appcompat__, __rec
     -keep class com.facebook.** {*;}
 
   In the AndroidManifest.xml of your project, add the below information：     
-  <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23"/>
+  The AIHelp SDK requires a minimum version of android sdk of 14, and a target version of 23 to the latest version.
+  <uses-sdk android:minSdkVersion="14" 
+  android:targetSdkVersion="23"/>
+  
 **a. Add Required Permissions**
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />//This permission is required when uploading a form image
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />//This permission is required when uploading a form image
+	<!-- This permission is required when uploading a form image -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<!-- This permission is required when uploading a form image -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	
+	<!--Needed Liu Haiping adaptation -->
+    <meta-data
+        android:name="android.max_aspect"
+        android:value="2.1" />
+    <meta-data
+        android:name="notch.config"
+        android:value="portrait|landscape" />
+    <meta-data
+        android:name="android.notch_support"
+        android:value="true" />
 **b. Add AIHelp Activities:**
 
-    <activity
-       android:name="com.ljoy.chatbot.ChatMainActivity"
-       android:configChanges="orientation|screenSize|locale"
-       android:screenOrientation="sensor">
-    </activity>
-    <activity
-       android:name="com.ljoy.chatbot.FAQActivity"
-       android:configChanges="orientation|screenSize|locale"
-       android:screenOrientation="sensor"
-       android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
-       <intent-filter android:label="@string/app_name">
-          <action android:name="android.intent.action.VIEW" />
-          <category android:name="android.intent.category.DEFAULT" />
-          <category android:name="android.intent.category.BROWSABLE" />
-          <data android:scheme="https"
-                android:host="cs30.net"
-                android:pathPrefix="/elvaFAQ" />
-       </intent-filter>
-    </activity>
-    <activity
-       android:name="com.ljoy.chatbot.OPActivity"
-       android:configChanges="orientation|screenSize|locale"
-       android:screenOrientation="sensor"
-       android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-    </activity>
-    <activity 
-       android:name="com.ljoy.chatbot.WebViewActivity"
-       android:screenOrientation="sensor"
-       android:configChanges="orientation|screenSize|locale"
-       android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
-       <intent-filter android:label="@string/app_name">
-          <action android:name="android.intent.action.VIEW" />
-          <category android:name="android.intent.category.DEFAULT" />
-          <category android:name="android.intent.category.BROWSABLE" />
-       </intent-filter>
-    </activity>	
-    <activity
-            android:name="com.ljoy.chatbot.QAWebActivity"
-            android:configChanges="orientation|screenSize|locale" >
-    </activity>
+	<!--需要的Activity-->
+	<activity
+		android:name="com.ljoy.chatbot.ChatMainActivity"
+		android:configChanges="keyboardHidden|orientation|screenSize"
+		android:windowSoftInputMode="adjustResize|stateHidden" />
+	<activity
+		android:name="com.ljoy.chatbot.OPActivity"
+		android:configChanges="keyboardHidden|orientation|screenSize"
+		android:windowSoftInputMode="adjustResize|stateHidden" />
+	<activity
+		android:name="com.ljoy.chatbot.FAQActivity"
+		android:configChanges="keyboardHidden|orientation|screenSize"
+		android:windowSoftInputMode="adjustResize|stateHidden" />
+	<activity
+		android:name="com.ljoy.chatbot.WebViewActivity"
+		android:configChanges="keyboardHidden|orientation|screenSize"
+		android:windowSoftInputMode="adjustResize|stateHidden" />
+	<activity
+		android:name="com.ljoy.chatbot.QAWebActivity"
+		android:configChanges="keyboardHidden|orientation|screenSize"
+		android:windowSoftInputMode="adjustResize|stateHidden" />
+	<!--需要的Activity -->
     
 About the screen orientations: 
 **android:screenOrientation="sensor"** means AIHelp User Interface will adjust display orientation according to the mobile's screen orientation, if you intend to fixate AIHelp UI display, use below setting:
@@ -181,15 +163,21 @@ public class MyActivity extends Activity {
 
 | Method Name| Purpose |Prerequisites|
 |:------------- |:---------------|:---------------|
-| **[showElva](#showElva)**      | Launch AI Conversation Interface| 
-| **[showElvaOP](#showElvaOP)** | Launch Operation Interface| Need to configure Operation Sections|
-| **[showFAQs](#showFAQs)** | Show all FAQs by Sections|Need to configure FAQs,Need to [setUserName](#UserName) and [setUserId](#UserId)|
-|**[showConversation](#showConversation)**|Launch VIP Conversation Interface| Need to [setUserName](#UserName) and [setUserId](#UserId) |
-| **[showSingleFAQ](#showSingleFAQ)** | Show Single FAQ|Need to Configure FAQ,Need to [setUserName](#UserName) and [setUserId](#UserId)|
+
+Interface that must be called
 | **[setName](#setName)** | Set APP/Game Name|Use it after Initialization|
 | **[setUserName](#UserName)** | Set User In-App name| If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
 | **[setUserId](#UserId)** | Set Unique User ID| If the userid is not available, the empty string "" is passed, and a unique device id is generated.
-| **[setSDKLanguage](#setSDKLanguage)** | Set SDK Language|
+| **[setServerId](#ServerId)** | Set the server ID where the player (user) is located | If the game party can't get the data, pass the empty string ""
+| **[setSDKLanguage](#setSDKLanguage)** | Set SDK Language| Note: When switching the language in the game, you must also call it once to ensure the language synchronization of the customer service and the game.
+
+Optional interface
+| **[showElva](#showElva)**      | Launch AI Conversation Interface| 
+|**[showConversation](#showConversation)**|Launch VIP Conversation Interface| Need to [setUserName](#UserName) and [setUserId](#UserId) |
+| **[showElvaOP](#showElvaOP)** | Launch Operation Interface| Need to configure Operation Sections|
+| **[showFAQs](#showFAQs)** | Show all FAQs by Sections|Need to configure FAQs,Need to [setUserName](#UserName) and [setUserId](#UserId)|
+| **[showFAQSection](#showFAQSection)** | Show all FAQs in a category |
+| **[showSingleFAQ](#showSingleFAQ)** | Show Single FAQ|Need to Configure FAQ,Need to [setUserName](#UserName) and [setUserId](#UserId)|
 
 
 **Note：It is not necessary for you to use all the APIs, especially when you only have one user interface for the customer service in your application. Some APIs already contains entry to other APIs, see below for details：**
@@ -387,28 +375,42 @@ The operation module is useful when you want to present updates, news, articles 
 	ELvaChatServiceSdk.showFAQs (HashMap config)
 
 **Coding Example：**
-
-	HashMap<String,Object> map = new HashMap();
+	HashMap<String, Object> config = new HashMap();
+	HashMap<String, Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
-	// the tag names are variables
-	tags.add("pay1");
-	tags.add("s1");
-	tags.add("vip2");
+	// The first way to customize needs to be consistent with the background (for the key form)
+	tags.add("vip1");
 	
-	// "elva-tags" is the key name, not a variable
-	map.put("elva-tags",tags); 
+	// "elva-tags" Is the key value can not be changed
+	map.put("elva-tags", tags);	
 	
-	HashMap<String,Object> config = new HashMap();
+	// The second way to customize does not need to go to the background configuration (for the key-value form)
+	map.put("udid", "123456789");
 	
-	// "elva-custom-metadata" is the key name, not a variable
-	config.put("elva-custom-metadata",map);	
-	config.put("showContactButtonFlag", "1"); // The display can be accessed from the upper right corner of the FAQ list (if you do not want to display it, you need to delete this parameter)
-	config.put("showConversationFlag", "1"); // Click on the upper right corner of the FAQ to enter the upper right corner of the robot interface. (If you do not want to display, you need to delete this parameter.)
-	config.put("directConversation", "1");// Click on the upper right corner of the FAQ and you will be taken to the manual customer service page (without adding the default to the robot interface. If you don't need it, delete this parameter)
+	// "elva-custom-metadata" Is the key value can not be changed
+	config.put("elva-custom-metadata", map);
 	
-	ELvaChatServiceSdk.setUserName("user_name"); // set User Name If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
-    ELvaChatServiceSdk.setUserId("user_id"); // set User Id If the userid is not available, the empty string "" is passed, and a unique device id is generated.
-    ELvaChatServiceSdk.setServerId("server_id"); // set Serve Id
+	// Add this parameter, where the key is immutable. The highest priority. Plus the upper right corner of the post faq will never show.
+	// (If you want to display, you need to delete this parameter and join config.put("showContactButtonFlag", "1");
+	config.put("hideContactButtonFlag", "1");
+		
+	// The display can be accessed from the upper right corner of the FAQ list (if you do not want to display it, you need to delete this parameter)
+	config.put("showContactButtonFlag", "1"); 
+	
+	// Click on the upper right corner of the FAQ to enter the upper right corner of the robot interface. (If you do not want to display, you need to delete this parameter.)
+	config.put("showConversationFlag", "1"); 
+	
+	// Click on the upper right corner of the FAQ and you will be taken to the manual customer service page (without adding the default to the robot interface. If you don't need it, delete this parameter)
+	config.put("directConversation", "1");
+	
+	// Set the username If you don't get the username, pass in the empty string "" and the default nickname "anonymous" will be used.
+	ELvaChatServiceSdk.setUserName("user_name"); 
+	
+	// Set the user ID. If you don't get the userid, pass in the empty string "" and the system will generate a unique device id.
+    ELvaChatServiceSdk.setUserId("user_id"); 
+	
+	// Set the service ID
+    ELvaChatServiceSdk.setServerId("server_id"); 
 
 	ELvaChatServiceSdk.showFAQs(config);
 
@@ -434,28 +436,42 @@ or
 	ELvaChatServiceSdk.showFAQSection(String sectionPublishId,HashMap customData);
 
 **Coding Example：**
-
-	HashMap<String,Object> map = new HashMap();
+	HashMap<String, Object> config = new HashMap();
+	HashMap<String, Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
-	// the tag names are variables
-	tags.add("pay1");
-	tags.add("s1");
-	tags.add("vip2");
+	// The first way to customize needs to be consistent with the background (for the key form)
+	tags.add("vip1");
 	
-	// "elva-tags" is the key name, not a variable
-	map.put("elva-tags",tags); 
+	// "elva-tags" Is the key value can not be changed
+	map.put("elva-tags", tags);	
 	
-	HashMap<String,Object> config = new HashMap();
+	// The second way to customize does not need to go to the background configuration (for the key-value form)
+	map.put("udid", "123456789");
 	
-	// "elva-custom-metadata" is the key name, not a variable
-	config.put("elva-custom-metadata",map);	
-	config.put("showContactButtonFlag", "1"); // The display can be accessed from the upper right corner of the FAQ list (if you do not want to display it, you need to delete this parameter)
-	config.put("showConversationFlag", "1"); // Click on the upper right corner of the FAQ to enter the upper right corner of the robot interface. (If you do not want to display, you need to delete this parameter.)
-	config.put("directConversation", "1");// Click on the upper right corner of the FAQ and you will be taken to the manual customer service page (without adding the default to the robot interface. If you don't need it, delete this parameter)
+	// "elva-custom-metadata" Is the key value can not be changed
+	config.put("elva-custom-metadata", map);
 	
-	ELvaChatServiceSdk.setUserName("user_name"); // set User Name If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
-    ELvaChatServiceSdk.setUserId("user_id"); // set User Id If the userid is not available, the empty string "" is passed, and a unique device id is generated.
-    ELvaChatServiceSdk.setServerId("server_id"); // set Serve Id
+	// Add this parameter, where the key is immutable. The highest priority. Plus the upper right corner of the post faq will never show.
+	// (If you want to display, you need to delete this parameter and join config.put("showContactButtonFlag", "1");
+	config.put("hideContactButtonFlag", "1");
+		
+	// The display can be accessed from the upper right corner of the FAQ list (if you do not want to display it, you need to delete this parameter)
+	config.put("showContactButtonFlag", "1"); 
+	
+	// Click on the upper right corner of the FAQ to enter the upper right corner of the robot interface. (If you do not want to display, you need to delete this parameter.)
+	config.put("showConversationFlag", "1"); 
+	
+	// Click on the upper right corner of the FAQ and you will be taken to the manual customer service page (without adding the default to the robot interface. If you don't need it, delete this parameter)
+	config.put("directConversation", "1");
+	
+	// Set the username If you don't get the username, pass in the empty string "" and the default nickname "anonymous" will be used.
+	ELvaChatServiceSdk.setUserName("user_name"); 
+	
+	// Set the user ID. If you don't get the userid, pass in the empty string "" and the system will generate a unique device id.
+    ELvaChatServiceSdk.setUserId("user_id"); 
+	
+	// Set the service ID
+    ELvaChatServiceSdk.setServerId("server_id"); 
 
 	ELvaChatServiceSdk.showFAQSection("1234",config);
 
@@ -484,32 +500,42 @@ Example map of all FAQ interfaces under the classification:<br>
 	ELvaChatServiceSdk.showSingleFAQ(String faqId,HashMap config);
 
 **Coding Example：**
-
-	// Presenting Single FAQ to your customers
-	
-	ELvaChatServiceSdk.setUserName("user_name"); // set User Name If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
-	ELvaChatServiceSdk.setUserId("user_id"); // set User Id If the userid is not available, the empty string "" is passed, and a unique device id is generated.
-	ELvaChatServiceSdk.setServerId("server_id"); // set Server Id
-	
-	HashMap<String,Object> map = new HashMap();
+	HashMap<String, Object> config = new HashMap();
+	HashMap<String, Object> map = new HashMap();
 	ArrayList<String> tags = new ArrayList();
-	// the tag names are variables
-	tags.add("pay1");
-	tags.add("s1");
-	tags.add("vip2");
+	// The first way to customize needs to be consistent with the background (for the key form)
+	tags.add("vip1");
 	
-	// “elva-tags" is the key name, not a variable. 
-	map.put("elva-tags",tags); 
+	// "elva-tags" Is the key value can not be changed
+	map.put("elva-tags", tags);	
 	
-	HashMap<String,Object> config = new HashMap();
-	config.put("elva-custom-metadata",map);	
-	config.put("showContactButtonFlag", "1"); // The display can be accessed from the upper right corner of the FAQ list (if you do not want to display it, you need to delete this parameter)
-	config.put("showConversationFlag", "1"); // Click on the upper right corner of the FAQ to enter the upper right corner of the robot interface. (If you do not want to display, you need to delete this parameter.)
-	config.put("directConversation", "1");// Click on the upper right corner of the FAQ and you will be taken to the manual customer service page (without adding the default to the robot interface. If you don't need it, delete this parameter)
+	// The second way to customize does not need to go to the background configuration (for the key-value form)
+	map.put("udid", "123456789");
 	
-	ELvaChatServiceSdk.setUserName("user_name"); // set User Name If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
-    ELvaChatServiceSdk.setUserId("user_id"); // set User Id If the userid is not available, the empty string "" is passed, and a unique device id is generated.
-    ELvaChatServiceSdk.setServerId("server_id"); // set Serve Id
+	// "elva-custom-metadata" Is the key value can not be changed
+	config.put("elva-custom-metadata", map);
+	
+	// Add this parameter, where the key is immutable. The highest priority. Plus the upper right corner of the post faq will never show.
+	// (If you want to display, you need to delete this parameter and join config.put("showContactButtonFlag", "1");
+	config.put("hideContactButtonFlag", "1");
+		
+	// The display can be accessed from the upper right corner of the FAQ list (if you do not want to display it, you need to delete this parameter)
+	config.put("showContactButtonFlag", "1"); 
+	
+	// Click on the upper right corner of the FAQ to enter the upper right corner of the robot interface. (If you do not want to display, you need to delete this parameter.)
+	config.put("showConversationFlag", "1"); 
+	
+	// Click on the upper right corner of the FAQ and you will be taken to the manual customer service page (without adding the default to the robot interface. If you don't need it, delete this parameter)
+	config.put("directConversation", "1");
+	
+	// Set the username If you don't get the username, pass in the empty string "" and the default nickname "anonymous" will be used.
+	ELvaChatServiceSdk.setUserName("user_name"); 
+	
+	// Set the user ID. If you don't get the userid, pass in the empty string "" and the system will generate a unique device id.
+    ELvaChatServiceSdk.setUserId("user_id"); 
+	
+	// Set the service ID
+    ELvaChatServiceSdk.setServerId("server_id"); 
 
 	ELvaChatServiceSdk.showSingleFAQ("2345",config);
 

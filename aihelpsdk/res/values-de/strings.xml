@@ -25,4 +25,8 @@
     <string name="ab_reward_failed">Fehlgeschlagen</string>
     <string name="ab_reward_your_points_is_insufficient">Tokens reichen nicht aus</string>
     <string name="ab_faq_need_more_help">Benötigen weitere Hilfe?</string>
+    <string name="ab_search_faq_no_found">Tut mir Leid,Keine Ergebnisse gefunden</string>
+    <string name="ab_alert_success">Success</string>
+    <string name="ab_alert_fail">Failed</string>
+    <string name="ab_feedback_title">Please tell us more details</string>
 </resources>

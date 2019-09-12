@@ -1,8 +1,14 @@
 # AIHELP Android SDK version update
 [SDK Integration Guide](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README.md)
 
+## 1.5.0(latest)
+1.Added faq point stamping information collection popup
+2.Add client to add draft function
+3.Added system automatic reconnection function after player disconnection
+4.Added AndroidFAQ details page video playback function
+5.New operational module client article list can be customized by background color
 
-## 1.4.4.3(latest)
+## 1.4.4.3
 1.Increase automatic reconnection
 
 ## 1.4.4.2

@@ -25,4 +25,8 @@
     <string name="ab_reward_failed">Misslyckades</string>
     <string name="ab_reward_your_points_is_insufficient">Du har inte tillräckligt med poäng</string>
     <string name="ab_faq_need_more_help">Behöver mer hjälp?</string>
+    <string name="ab_search_faq_no_found">Oops,no relevant results were found</string>
+    <string name="ab_alert_success">Success</string>
+    <string name="ab_alert_fail">Failed</string>
+    <string name="ab_feedback_title">Please tell us more details</string>
 </resources>

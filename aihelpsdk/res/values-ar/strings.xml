@@ -26,4 +26,8 @@
     <string name="ab_reward_failed">فشل</string>
     <string name="ab_reward_your_points_is_insufficient">الرموز الخاصة بك غير كافية</string>
     <string name="ab_faq_need_more_help">هل تريد المزيد من المساعدة؟</string>
+    <string name="ab_search_faq_no_found">Oops,no relevant results were found</string>
+    <string name="ab_alert_success">Success</string>
+    <string name="ab_alert_fail">Failed</string>
+    <string name="ab_feedback_title">Please tell us more details</string>
 </resources>
