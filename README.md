@@ -377,44 +377,47 @@ The operation module is useful when you want to present updates, news, articles 
 
 **Coding Example：**
 
-	HashMap<String, Object> config = new HashMap();
-	HashMap<String, Object> map = new HashMap();
-	ArrayList<String> tags = new ArrayList();
-	// The first way to customize needs to be consistent with the background (for the key form)
-	tags.add("vip1");
+	public void ShowFAQs(){
 	
-	// "elva-tags" Is the key value can not be changed
-	map.put("elva-tags", tags);	
-	
-	// The second way to customize does not need to go to the background configuration (for the key-value form)
-	map.put("udid", "123456789");
-	
-	// "elva-custom-metadata" Is the key value can not be changed
-	config.put("elva-custom-metadata", map);
-	
-	// Add this parameter, where the key is immutable. The highest priority. Plus the upper right corner of the post faq will never show.
-	// (If you want to display, you need to delete this parameter and join config.put("showContactButtonFlag", "1");
-	config.put("hideContactButtonFlag", "1");
+		HashMap<String, Object> config = new HashMap();
+		HashMap<String, Object> map = new HashMap();
+		ArrayList<String> tags = new ArrayList();
+		// The first way to customize needs to be consistent with the background (for the key form)
+		tags.add("vip1");
 		
-	// The display can be accessed from the upper right corner of the FAQ list (if you do not want to display it, you need to delete this parameter)
-	config.put("showContactButtonFlag", "1"); 
-	
-	// Click on the upper right corner of the FAQ to enter the upper right corner of the robot interface. (If you do not want to display, you need to delete this parameter.)
-	config.put("showConversationFlag", "1"); 
-	
-	// Click on the upper right corner of the FAQ and you will be taken to the manual customer service page (without adding the default to the robot interface. If you don't need it, delete this parameter)
-	config.put("directConversation", "1");
-	
-	// Set the username If you don't get the username, pass in the empty string "" and the default nickname "anonymous" will be used.
-	ELvaChatServiceSdk.setUserName("user_name"); 
-	
-	// Set the user ID. If you don't get the userid, pass in the empty string "" and the system will generate a unique device id.
-    ELvaChatServiceSdk.setUserId("user_id"); 
-	
-	// Set the service ID
-    ELvaChatServiceSdk.setServerId("server_id"); 
+		// "elva-tags" Is the key value can not be changed
+		map.put("elva-tags", tags);	
+		
+		// The second way to customize does not need to go to the background configuration (for the key-value form)
+		map.put("udid", "123456789");
+		
+		// "elva-custom-metadata" Is the key value can not be changed
+		config.put("elva-custom-metadata", map);
+		
+		// Add this parameter, where the key is immutable. The highest priority. Plus the upper right corner of the post faq will never show.
+		// (If you want to display, you need to delete this parameter and join config.put("showContactButtonFlag", "1");
+		config.put("hideContactButtonFlag", "1");
+			
+		// The display can be accessed from the upper right corner of the FAQ list (if you do not want to display it, you need to delete this parameter)
+		config.put("showContactButtonFlag", "1"); 
+		
+		// Click on the upper right corner of the FAQ to enter the upper right corner of the robot interface. (If you do not want to display, you need to delete this parameter.)
+		config.put("showConversationFlag", "1"); 
+		
+		// Click on the upper right corner of the FAQ and you will be taken to the manual customer service page (without adding the default to the robot interface. If you don't need it, delete this parameter)
+		config.put("directConversation", "1");
+		
+		// Set the username If you don't get the username, pass in the empty string "" and the default nickname "anonymous" will be used.
+		ELvaChatServiceSdk.setUserName("user_name"); 
+		
+		// Set the user ID. If you don't get the userid, pass in the empty string "" and the system will generate a unique device id.
+		ELvaChatServiceSdk.setUserId("user_id"); 
+		
+		// Set the service ID
+		ELvaChatServiceSdk.setServerId("server_id"); 
 
-	ELvaChatServiceSdk.showFAQs(config);
+		ELvaChatServiceSdk.showFAQs(config);
+	}
 
 **About Parameters：**
 

@@ -387,42 +387,45 @@ public class MyActivity extends Activity {
 
 **代码示例：**
 
-	HashMap<String, Object> config = new HashMap();
-	HashMap<String, Object> map = new HashMap();
-	ArrayList<String> tags = new ArrayList();
-	tags.add("vip1");//第一种方式自定义 需要和后台保持一致(针对key形式)	
+	public void ShowFAQs(){
 	
-	// "elva-tags" 是key值 不可以变 
-	map.put("elva-tags", tags);	
-	
-	map.put("udid", "123456789");//第二种方式自定义 不需要去后台配置(针对key-value形式)	
-	
-	// "elva-custom-metadata" 是key值 不可以变 
-	config.put("elva-custom-metadata", map);
-	
-	// 加入此参数,其中key是不可变的 优先级最高 加上后faq右上角则永不显示
-	// (如果想显示 需要删除此参数 并加入 config.put("showContactButtonFlag", "1");
-	config.put("hideContactButtonFlag", "1");
+		HashMap<String, Object> config = new HashMap();
+		HashMap<String, Object> map = new HashMap();
+		ArrayList<String> tags = new ArrayList();
+		tags.add("vip1");//第一种方式自定义 需要和后台保持一致(针对key形式)	
 		
-	// 显示可以从FAQ列表右上角进入机器人客服(如果不想显示 需要删除此参数)
-	config.put("showContactButtonFlag", "1"); 
-	
-	// 点击FAQ右上角后 进入机器人界面右上角是否显示 (如果不想显示 需要删除此参数)
-	config.put("showConversationFlag", "1"); 
-	
-	// 点击FAQ右上角后 直接会进入到人工客服页面(不加默认进入机器人界面 如果不需要则删除此参数)
-	config.put("directConversation", "1");
-	
-	// 设置用户名 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
-	ELvaChatServiceSdk.setUserName("user_name"); 
-	
-	// 设置用户ID 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
-    ELvaChatServiceSdk.setUserId("user_id"); 
-	
-	// 设置服务ID
-    ELvaChatServiceSdk.setServerId("server_id"); 
+		// "elva-tags" 是key值 不可以变 
+		map.put("elva-tags", tags);	
+		
+		map.put("udid", "123456789");//第二种方式自定义 不需要去后台配置(针对key-value形式)	
+		
+		// "elva-custom-metadata" 是key值 不可以变 
+		config.put("elva-custom-metadata", map);
+		
+		// 加入此参数,其中key是不可变的 优先级最高 加上后faq右上角则永不显示
+		// (如果想显示 需要删除此参数 并加入 config.put("showContactButtonFlag", "1");
+		config.put("hideContactButtonFlag", "1");
+			
+		// 显示可以从FAQ列表右上角进入机器人客服(如果不想显示 需要删除此参数)
+		config.put("showContactButtonFlag", "1"); 
+		
+		// 点击FAQ右上角后 进入机器人界面右上角是否显示 (如果不想显示 需要删除此参数)
+		config.put("showConversationFlag", "1"); 
+		
+		// 点击FAQ右上角后 直接会进入到人工客服页面(不加默认进入机器人界面 如果不需要则删除此参数)
+		config.put("directConversation", "1");
+		
+		// 设置用户名 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
+		ELvaChatServiceSdk.setUserName("user_name"); 
+		
+		// 设置用户ID 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
+		ELvaChatServiceSdk.setUserId("user_id"); 
+		
+		// 设置服务ID
+		ELvaChatServiceSdk.setServerId("server_id"); 
 
-	ELvaChatServiceSdk.showFAQs(config);
+		ELvaChatServiceSdk.showFAQs(config);
+	}
 
 **参数说明：**
 
