@@ -176,10 +176,10 @@ public class MyActivity extends Activity {
 |:------------- |:---------------|:---------------|
 |建议调用的接口:|
 | **[setName](#setName)** | 设置在AIHelp智能客服系统中所展示的游戏名称 | 初始化之后调用，且只需调用一次，不调用此接口则默认显示包名 |
-| **[setUserName](#UserName)** | 设置(用户)名称 | 初始化之后调用，且只需调用一次 | 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
-| **[setUserId](#UserId)** | 设置(用户)的唯一ID | 初始化之后调用，且只需调用一次 | 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id  
-| **[setServerId](#ServerId)** | 设置(用户)所在的服务器ID | 如果游戏方拿不到数据 就传空字符串""
-| **[setSDKLanguage](#setSDKLanguage)** | 设置SDK的语言 | 初始化之后调用，且只需调用一次 | 注:默认是使用手机系统语言设置，设置后可以调用应用内的设置语言
+| **[setUserName](#UserName)** | 设置(用户)名称 | 初始化之后调用，且只需调用一次 | 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous" |
+| **[setUserId](#UserId)** | 设置(用户)的唯一ID | 初始化之后调用，且只需调用一次 | 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id  | 
+| **[setServerId](#ServerId)** | 设置(用户)所在的服务器ID | 如果游戏方拿不到数据 就传空字符串"" |
+| **[setSDKLanguage](#setSDKLanguage)** | 设置SDK的语言 | 初始化之后调用，且只需调用一次 | 注:默认是使用手机系统语言设置，设置后可以调用应用内的设置语言 |
 |可选调用的接口:|
 | **[showElva](#showElva)** | 启动机器人客服聊天界面 |
 | **[showConversation](#showConversation)** |启动人工客服聊天界面 |

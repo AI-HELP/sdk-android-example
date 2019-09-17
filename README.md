@@ -20,8 +20,7 @@
     }
 	
 	Note:
-    If you don't have "android-support-v4.jar" in your project, 
-	you need to copy the "android-support-v4.jar" to the project libs file.(The download location is in the libs file in aihelpsdk)
+    If you don't have "android-support-v4.jar" in your project,you need to copy the "android-support-v4.jar" to the project libs file.(The download location is in the libs file in aihelpsdk)
 	
     Ignore if there is "android-support-v4.jar" in your project
 
@@ -171,11 +170,11 @@ public class MyActivity extends Activity {
 | Method Name| Purpose |Prerequisites|
 |:------------- |:---------------|:---------------|
 |Recommended interface:|
-| **[setName](#setName)** | Set APP/Game Name|Use it after Initialization|
-| **[setUserName](#UserName)** | Set User In-App name| If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
-| **[setUserId](#UserId)** | Set Unique User ID| If the userid is not available, the empty string "" is passed, and a unique device id is generated.
-| **[setServerId](#ServerId)** | Set the server ID where the  (user) is located | If the game party can't get the data, pass the empty string ""
-| **[setSDKLanguage](#setSDKLanguage)** | Set SDK Language| Note: The default is to use the phone system language setting, you can call the setting language in the app after setting.
+| **[setName](#setName)** | Set APP/Game Name|Use it after Initialization |
+| **[setUserName](#UserName)** | Set User In-App name| If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used. |
+| **[setUserId](#UserId)** | Set Unique User ID| If the userid is not available, the empty string "" is passed, and a unique device id is generated. |
+| **[setServerId](#ServerId)** | Set the server ID where the  (user) is located | If the game party can't get the data, pass the empty string "" |
+| **[setSDKLanguage](#setSDKLanguage)** | Set SDK Language| Note: The default is to use the phone system language setting, you can call the setting language in the app after setting. |
 |Optional interface:|
 | **[showElva](#showElva)**      | Launch AI Conversation Interface| 
 |**[showConversation](#showConversation)**|Launch VIP Conversation Interface| Need to [setUserName](#UserName) and [setUserId](#UserId) |
