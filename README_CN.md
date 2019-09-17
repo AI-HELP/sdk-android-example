@@ -176,10 +176,10 @@ public class MyActivity extends Activity {
 |:------------- |:---------------|:---------------|
 |建议调用的接口:|
 | **[setName](#setName)** | 设置在AIHelp智能客服系统中所展示的游戏名称 | 初始化之后调用，且只需调用一次，不调用此接口则默认显示包名 |
-| **[setUserName](#UserName)** | 设置玩家(用户)名称 | 初始化之后调用，且只需调用一次 | 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
-| **[setUserId](#UserId)** | 设置玩家(用户)的唯一ID | 初始化之后调用，且只需调用一次 | 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id  
-| **[setServerId](#ServerId)** | 设置玩家(用户)所在的服务器ID | 如果游戏方拿不到数据 就传空字符串""
-| **[setSDKLanguage](#setSDKLanguage)** | 设置SDK的语言 | 初始化之后调用，且只需调用一次 | 注:当游戏内切换语言时也要同时调用一次 保证客服和游戏的语言同步
+| **[setUserName](#UserName)** | 设置(用户)名称 | 初始化之后调用，且只需调用一次 | 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
+| **[setUserId](#UserId)** | 设置(用户)的唯一ID | 初始化之后调用，且只需调用一次 | 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id  
+| **[setServerId](#ServerId)** | 设置(用户)所在的服务器ID | 如果游戏方拿不到数据 就传空字符串""
+| **[setSDKLanguage](#setSDKLanguage)** | 设置SDK的语言 | 初始化之后调用，且只需调用一次 | 注:默认是使用手机系统语言设置，设置后可以调用应用内的设置语言
 |可选调用的接口:|
 | **[showElva](#showElva)** | 启动机器人客服聊天界面 |
 | **[showConversation](#showConversation)** |启动人工客服聊天界面 |
@@ -385,7 +385,7 @@ public class MyActivity extends Activity {
 ---
 
 ### <h4 id="showFAQs">5. 展示FAQ列表，调用`showFAQs `方法
-    (必须确保调用以下两个接口,设置玩家名称信息和设置玩家唯一id信息)
+    (必须确保调用以下两个接口,设置用户名称信息和设置用户唯一id信息)
     [setUserName](#UserName) 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
 	[setUserId](#UserId) 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 	
 	</h4>
@@ -454,7 +454,7 @@ FAQ界面示例图:<br>
 ---
 
 #### <h4 id="showFAQSection">6. 展示某一分类里的所有FAQ，调用`showFAQSection`方法
-	(必须确保调用以下两个接口,设置玩家名称信息和设置玩家唯一id信息)
+	(必须确保调用以下两个接口,设置用户名称信息和设置用户唯一id信息)
     [setUserName](#UserName) 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
 	[setUserId](#UserId) 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 	
 	</h4>
@@ -521,7 +521,7 @@ FAQ界面示例图:<br>
 ---
 
 ### <h4 id="showSingleFAQ">7. 展示单条FAQ，调用`showSingleFAQ`方法
-	(必须确保调用以下两个接口,设置玩家名称信息和设置玩家唯一id信息)
+	(必须确保调用以下两个接口,设置用户名称信息和设置用户唯一id信息)
     [setUserName](#UserName) 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
 	[setUserId](#UserId) 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
 	</h4>
@@ -607,7 +607,7 @@ FAQ界面示例图:<br>
 
 ---
 
-### <h4 id="UserId">9. 设置玩家(用户)的唯一ID，调用`setUserId`方法(初始化AIHelp智能客服之后调用，且只需调用一次)</h4>
+### <h4 id="UserId">9. 设置(用户)的唯一ID，调用`setUserId`方法(初始化AIHelp智能客服之后调用，且只需调用一次)</h4>
 ```java
 	ELvaChatServiceSdk.setUserId(String uid); //如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
 ```
@@ -620,15 +620,15 @@ FAQ界面示例图:<br>
 
 | 参数名 | 类型 | 说明 |
 |:------------- |:---------------|:---------------|
-| uid | String | 玩家(用户)的唯一ID |
+| uid | String | (用户)的唯一ID |
 
 **最佳实践：**
 
-> 1. 在初始化后调用该接口设置玩家(用户)的唯一ID。
+> 1. 在初始化后调用该接口设置(用户)的唯一ID。
 
 ---
 
-### <h4 id="UserName">10. 设置玩家(用户)的昵称，调用`setUserName`方法(初始化AIHelp智能客服之后调用，且只需调用一次)</h4>
+### <h4 id="UserName">10. 设置(用户)的昵称，调用`setUserName`方法(初始化AIHelp智能客服之后调用，且只需调用一次)</h4>
 ```java
 	ELvaChatServiceSdk.setUserName (String userName); //如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
 ```
@@ -640,13 +640,13 @@ FAQ界面示例图:<br>
 
 | 参数名 | 类型 | 说明 |
 |:------------- |:---------------|:---------------|
-| userName | String | 玩家(用户)的名称 |
+| userName | String | (用户)的名称 |
 
 **最佳实践：**
 
-> 1. 在初始化后调用该接口设置玩家(用户)的昵称，这样在后台客户服务页面会展示用户的应用内名称，便于客服在服务用户时个性化称呼对方。
+> 1. 在初始化后调用该接口设置(用户)的昵称，这样在后台客户服务页面会展示用户的应用内名称，便于客服在服务用户时个性化称呼对方。
 
-### <h4 id="ServerId">11. 设置玩家(用户)所在的服务器ID，调用`setServerId`方法</h4>
+### <h4 id="ServerId">11. 设置(用户)所在的服务器ID，调用`setServerId`方法</h4>
 ```java
 	ELvaChatServiceSdk.setServerId(String serverId);
 ```
@@ -658,7 +658,7 @@ FAQ界面示例图:<br>
 
 | 参数名 | 类型 | 说明 |
 |:------------- |:---------------|:---------------|
-| serverId | String | 玩家(用户)所在服务器的ID |
+| serverId | String | (用户)所在服务器的ID |
 
 ---
 
@@ -763,7 +763,7 @@ key是:"private_welcome_str",value为您想要的定制的内容
 
 **最佳实践：**
 
-> 1. 引导玩家从不同入口看到不同的故事线欢迎语以提供不同的服务。
+> 1. 引导用户从不同入口看到不同的故事线欢迎语以提供不同的服务。
 
 [1]:https://AIHelp.net/elva "AIHelp 客服后台"
 [2]:https://AIHelp.net/register "AIHelp 官网注册"

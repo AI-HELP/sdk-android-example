@@ -174,8 +174,8 @@ public class MyActivity extends Activity {
 | **[setName](#setName)** | Set APP/Game Name|Use it after Initialization|
 | **[setUserName](#UserName)** | Set User In-App name| If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
 | **[setUserId](#UserId)** | Set Unique User ID| If the userid is not available, the empty string "" is passed, and a unique device id is generated.
-| **[setServerId](#ServerId)** | Set the server ID where the player (user) is located | If the game party can't get the data, pass the empty string ""
-| **[setSDKLanguage](#setSDKLanguage)** | Set SDK Language| Note: When switching the language in the game, you must also call it once to ensure the language synchronization of the customer service and the game.
+| **[setServerId](#ServerId)** | Set the server ID where the  (user) is located | If the game party can't get the data, pass the empty string ""
+| **[setSDKLanguage](#setSDKLanguage)** | Set SDK Language| Note: The default is to use the phone system language setting, you can call the setting language in the app after setting.
 |Optional interface:|
 | **[showElva](#showElva)**      | Launch AI Conversation Interface| 
 |**[showConversation](#showConversation)**|Launch VIP Conversation Interface| Need to [setUserName](#UserName) and [setUserId](#UserId) |
@@ -368,7 +368,7 @@ The operation module is useful when you want to present updates, news, articles 
 
 **Best Practice：**
 
-> 1. Use this API to present news, announcements, articles or any useful information to users/players. Configure and publish the information in the AIHelp web console. 
+> 1. Use this API to present news, announcements, articles or any useful information to users. Configure and publish the information in the AIHelp web console. 
 
 #### <h4 id="showFAQs">5. Display FAQs, use `showFAQs ` 
 	(need to set [`setUserName`](#UserName) and [`setUserId`](#UserId))
@@ -435,7 +435,7 @@ The operation module is useful when you want to present updates, news, articles 
 > 1. Use this method to show FAQs about your APP/Game properly. Configure FAQs in AIHelp Web Console. Each FAQ can be categroized into a section. If the FAQs are many, you can also add Parent Sections to categorize sections to make things clear and organized. 
 
 #### <h4 id="showFAQSection">6. Show all the FAQs in a category, call the `showFAQSection` method 
-    (must make sure to set the player name information [setUserName](#UserName) And setting the player's unique id information [setUserId](#UserId) Already called)
+    (must make sure to set the user name information [setUserName](#UserName) And setting the user's unique id information [setUserId](#UserId) Already called)
 	If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
 	If the userid is not available, the empty string "" is passed, and a unique device id is generated.
 	</h4>
@@ -613,7 +613,7 @@ If you configure the "self-service" link in the FAQ's configuration, and set [Us
 ```
 **About Parameters：**
 
-- __playerName:__ User/Player Name
+- __playerName:__ User/user Name
 
 **Best Practice：**
 
