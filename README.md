@@ -15,9 +15,15 @@
 
 	dependencies {
 	 ...
-	    compile 'net.aihelp:elva:1.5.0'
+	    implementation 'net.aihelp:elva:1.5.0.1'
     ...
     }
+	
+	Note:
+    If you don't have "android-support-v4.jar" in your project, 
+	you need to copy the "android-support-v4.jar" to the project libs file.(The download location is in the libs file in aihelpsdk)
+	
+    Ignore if there is "android-support-v4.jar" in your project
 
 Wait until the build.gradle sync completion and make sure there is no error during sync: Under the "External Libraries" folder of Android Studio Project sturcture view you should be able to find the folder "elva-1.5.0". If there is an error during sync or you can not find elva folder. Use the Method #2 below:
 

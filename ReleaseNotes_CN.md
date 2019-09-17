@@ -1,7 +1,10 @@
 # AIHELP Android SDK版本更新
 [进入中文版接入指南](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README_CN.md)
 
-## 1.5.0(最新)
+## 1.5.0.1(最新)
+1.删除v4包
+
+## 1.5.0
 1.新增faq点踩信息收集弹窗
 2.新增客户端增加草稿功能 
 3.新增玩家断线后系统自动重连功能 

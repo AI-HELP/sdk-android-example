@@ -14,9 +14,14 @@
 
 	dependencies {
 	 ...
-	    compile 'net.aihelp:elva:1.5.0'
+	    implementation 'net.aihelp:elva:1.5.0.1'
     ...
     }
+	
+	注:
+	如果您的工程里没有 "android-support-v4.jar" 就需要下载后的"android-support-v4.jar"(下载位置在aihelpsdk中的libs文件中) 复制到工程libs文件下
+	如果您的工程里有"android-support-v4.jar" 则忽略
+	
 
 确保build.gradle同步成功: 在Android Studio的External Libraries下面能够看到加载成功elva-1.5.0文件夹。如果无法自动加载，请采用第二种导入方式：
 

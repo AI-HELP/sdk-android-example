@@ -1,7 +1,10 @@
 # AIHELP Android SDK version update
 [SDK Integration Guide](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README.md)
 
-## 1.5.0(latest)
+## 1.5.0.1(latest)
+1.Delete v4 package
+
+## 1.5.0
 1.Added faq point stamping information collection popup
 2.Add client to add draft function
 3.Added system automatic reconnection function after player disconnection
