@@ -101,15 +101,24 @@ Click "Clone or download" to download Android SDK in the github page, unzip the 
 	<!--需要的Activity -->
     
 About the screen orientations: 
-**android:screenOrientation="sensor"** means AIHelp User Interface will adjust display orientation according to the mobile's screen orientation, if you intend to fixate AIHelp UI display, use below setting:
+**android:screenOrientation="portrait"** 
+means AIHelp User Interface will adjust display orientation according to the mobile's screen orientation, if you intend to fixate AIHelp UI display, use below setting:
 
-Landscape Display:
+    Coding Example:
+    <activity
+	    android:name="com.ljoy.chatbot.ChatMainActivity"
+	    android:configChanges="keyboardHidden|orientation|screenSize"
+	    android:windowSoftInputMode="adjustResize|stateHidden" 
+	    android:screenOrientation="portrait"/>
+	
+    Portrait Display:
+	android:screenOrientation="portrait"(Recommended: the vertical screen display is better)
 
+    Landscape Display:
 	android:screenOrientation="landscape"
-Portrait Display:
-
-	android:screenOrientation="portrait"
- 
+	
+    Mobile phone physical sensor display：
+	android:screenOrientation="sensor"
 
 ### 4. SDK initialization（Must be called during application initialization, otherwise you can't use AIHelp properly）
 
