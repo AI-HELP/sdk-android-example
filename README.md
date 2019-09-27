@@ -71,9 +71,6 @@ Click "Clone or download" to download Android SDK in the github page, unzip the 
     <meta-data
         android:name="notch.config"
         android:value="portrait|landscape" />
-    <meta-data
-        android:name="android.notch_support"
-        android:value="true" />
 		
 **b. Add AIHelp Activities:**
 

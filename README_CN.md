@@ -71,10 +71,6 @@ AIHelp SDK 要求android sdk最低版本为14，目标版本为23至最新版本
     <meta-data
         android:name="notch.config"
         android:value="portrait|landscape" />
-    <!--华为手机开启刘海适配-->
-    <meta-data
-        android:name="android.notch_support"
-        android:value="true" />
 	
 **3. 增加activity:**
     
