@@ -1,7 +1,7 @@
 ## 前言
 ## 接入说明
 **有两种方式可以接入AIHelp智能客服系统的Android版SDK。如果您使用了Android Studio等可以支持Gradle的环境，推荐使用第一种方式导入：**
-### 导入方式一： 无需手动下载AIHelp Android SDK，通过gradle自动导入：
+### 导入方式一： 依赖安装AIHelp Android SDK，通过gradle自动导入：
 
 #### 1. 在Project级别的build.gradle中加入:
 
@@ -26,7 +26,7 @@
 
 确保build.gradle同步成功: 在Android Studio的External Libraries下面能够看到加载成功elva-1.5.0文件夹。如果无法自动加载，请采用第二种导入方式：
 
-### 导入方式二： 下载AIHelp Android SDK：
+### 导入方式二： 通过jar安装，下载AIHelp Android SDK：
 点击页面右上角的"Clone or Download”按钮下载Android SDK，下载完成后解压文件。
 AIHelp-Android-SDK文件夹包含：
 
@@ -72,7 +72,17 @@ AIHelp SDK 要求android sdk最低版本为14，目标版本为23至最新版本
     <meta-data
         android:name="notch.config"
         android:value="portrait|landscape" />
-	
+        
+   $color{red}{注意：}$ 
+     $color{red}{
+       1. android6.0以下系统，在下载本版本安装游戏时，会提示需要读取和写入权限，玩家点击安装就可以。
+	  2. android6.0以上系统，目前只有玩家客诉上传图片的时候才会动态申请提示权限设置。
+     }$
+     
+     $\color{red}{注意}$ is
+  
+  
+    
 **3. 增加activity:**
     
 	<!--需要的Activity-->
