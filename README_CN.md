@@ -54,6 +54,10 @@ AIHelp SDK 要求android sdk最低版本为14，目标版本为23至最新版本
 
 	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23"/>
  
+ <font color="red" size="4" >注意：</font><font color="red" size="2">
+ 1.Android 6.0以下系统，在安装本版本游戏时，会提示读取和写入权限，玩家点击安装即可
+ 2.Android 6.0以上系统，目前只有在玩家客诉上传图片时才会动态申请提示读权限设置
+ </font>
      
 **2. 增加需要的权限**
 
