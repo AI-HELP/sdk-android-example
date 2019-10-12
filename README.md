@@ -20,7 +20,7 @@
     }
 	
 	Note:
-    If you don't have "android-support-v4.jar" in your project,you need to copy the "android-support-v4.jar" to the project libs file.(The download location is in the libs file in aihelpsdk)
+    If you don't have "android-support-v4.jar" in your project, you need to copy the "android-support-v4.jar" to the project libs file.(The download location is in the libs file in aihelpsdk)
 	
     Ignore if there is "android-support-v4.jar" in your project
 
@@ -35,11 +35,7 @@ Click "Clone or download" to download Android SDK in the github page, unzip the 
 |:------------- |:---------------|
 | **aihelpsdk**    | AIHelp Android SDK core files|
  
-
 #### Add AIHelp to your Android project:
-**a.** Copy files under folder *aihelpsdk/libs* to the the libs folder of your APP's project.
-
-**b.** Copy files under folder * aihelpsdk/res* to the res folder of your APP's project.
 
 
 ### 3. Configure your Android Manifest 
