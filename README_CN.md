@@ -1,9 +1,10 @@
 ## 前言
 ## 接入说明
 **有两种方式可以接入AIHelp智能客服系统的Android版SDK。如果您使用了Android Studio等可以支持Gradle的环境，推荐使用第一种方式导入：**
-### 导入方式一： 依赖安装AIHelp Android SDK，通过gradle自动导入：
 
-#### 1. 在Project级别的build.gradle中加入:
+### Android Studio 导入, 方式一：通过gradle自动导入 AIHelp Android SDK：
+
+#### 1. 在 Project 级别的 build.gradle 中加入:
 
 	allprojects {
 		repositories {
@@ -11,32 +12,59 @@
 		}
 	}
 	
-#### 2. 在使用AIHelp SDK的app或module级别的build.gradle中加入依赖：
+#### 2. 在使用 AIHelp SDK 的 app 或 module 级别的 build.gradle 中加入依赖：
 
 	dependencies {
 	 ...
 	    implementation 'net.aihelp:elva:1.5.0.1'
-    ...
+     ...
     }
-	
+    
 	注:
-	如果您的工程里没有 "android-support-v4.jar" 就需要下载后的"android-support-v4.jar"(下载位置在aihelpsdk中的libs文件中) 复制到工程libs文件下
-	如果您的工程里有"android-support-v4.jar" 则忽略
-	
+    SDK 需要使用 "android-support-v4.jar"，鉴于这个 jar 文件版本太多，如果您的项目本来就有的话，可能会对接入造成困扰，所以 aar 中没有带入该 jar 文件。
+    如果您的项目里没有 "android-support-v4.jar"，请复制该jar（aihelpsdk/libs/android-support-v4.jar）到您项目对应的libs文件下。
+    如果您的项目里已经存在 "android-support-v4.jar" 则无需再做额外操作。
+    如果您用到了 appcompat-v7，因为 appcompat-v7 其实包含了 android-support-v4，所以也无需再做额外操作。
 
-确保build.gradle同步成功: 在Android Studio的External Libraries下面能够看到加载成功elva-1.5.0文件夹。如果无法自动加载，请采用第二种导入方式：
+请确保 build.gradle 同步成功: 在 Android Studio 的 External Libraries 下面能够看到 "Gradle: net.aihelp:elva:1.6.0@aar" 相关内容。
+如果无法自动加载，请采用第二种导入方式：
 
-### 导入方式二： 通过jar安装，下载AIHelp Android SDK：
-点击页面右上角的"Clone or Download”按钮下载Android SDK，下载完成后解压文件。
-AIHelp-Android-SDK文件夹包含：
+### Android Studio 导入, 方式二： 下载 AIHelp Android SDK 进行本地接入：
 
-| 文件夹 | 说明 |
-|:------------- |:---------------|
-| **aihelpsdk**    | AIHelp Android SDK文件|
-#### 把AIHelp SDK 放入您的Android 工程：
-**a. 把aihelpsdk中libs子文件夹中全部包拷贝到您的工程app中的libs文件夹下**
+#### 1. 手动下载最新的 SDK 版本 (aar 文件在 aihelpsdk 目录中，没有其他需求的话请选择最新版本接入)
 
-**b. 把aihelpsdk中的res子文件夹中全部包拷贝到您的工程app中的的res文件夹下**
+#### 2. 把下载的 aar 文件放入项目的 libs 目录中，没有 libs 目录的话，请在 src 同级目录新建一个 libs 目录
+
+#### 3. 打开使用 AIHelp SDK 的 app 或 module 级别的 build.gradle 修改 dependencies 节点，如下:
+    将 
+        implementation fileTree(include: ['*.jar'], dir: 'libs')
+    修改为（没有上面这行就直接追加下面这行即可）
+        implementation fileTree(include: ['*.jar','*.aar'], dir: 'libs')
+
+	注:
+	SDK 需要使用 "android-support-v4.jar"，鉴于这个 jar 文件版本太多，如果您的项目本来就有的话，可能会对接入造成困扰，所以 aar 中没有带入该 jar 文件。
+	如果您的项目里没有 "android-support-v4.jar"，请复制该jar（aihelpsdk/libs/android-support-v4.jar）到您项目对应的libs文件下。
+	如果您的项目里已经存在 "android-support-v4.jar" 则无需再做额外操作。
+    如果您用到了 appcompat-v7，因为 appcompat-v7 其实包含了 android-support-v4，所以也无需再做额外操作。
+
+### eclipse 导入方式： 下载 AIHelp Android SDK 进行本地接入：
+
+#### 1. 手动下载最新的 SDK 版本 (aar 文件在 aihelpsdk 目录中，没有其他需求的话请选择最新版本 aar )
+
+#### 2. 把下载的 aar 文件修改后缀为 zip，然后新建一个文件夹，把该zip的内容全部提取出来放入文件夹中
+    由于 aar 本身是为 Android Studio 准备的，所以，eclipse需要手动处理一下：
+        1，删掉 R.txt
+        2，把 classes.jar 放入 libs 目录中
+        3，如果您的项目里没有 "android-support-v4.jar"，请复制该jar（aihelpsdk/libs/android-support-v4.jar）到 libs 文件下。
+           如果您的项目里已经存在 "android-support-v4.jar" 则无需再做额外操作。
+           如果您用到了 appcompat-v7，因为 appcompat-v7 其实包含了 android-support-v4，所以也无需再做额外操作。
+           
+#### 3. 把第2步解压得到的目录，作为 Android Library 导入到 eclipse 中
+    1,导入操作
+        File -> Import -> Android -> Existing Android Code Into Workspace
+    2,导入进来之后设定 Build Target 为 Android 6 以上（API Level >= 23）
+    3,修改项目属性为Library（属性页勾选 Is Library 即可） 
+    4,为您的项目添加对本SDK的依赖关系
 
 ### 接入工程配置 
 ### (如果您的 apk 最终会经过代码混淆，请在 proguard 配置文件中加入以下代码：)
@@ -50,15 +78,10 @@ AIHelp-Android-SDK文件夹包含：
   
 **1. 打包版本要求**
 
-AIHelp SDK 要求android sdk最低版本为14，目标版本为23至最新版本：
+AIHelp SDK 要求android sdk最低版本 >= 14，目标版本 >= 23：
 
 	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23"/>
  
- <font color="red" size="4" >注意：</font><font color="red" size="2">
- 1.Android 6.0以下系统，在安装本版本游戏时，会提示读取和写入权限，玩家点击安装即可
- 2.Android 6.0以上系统，目前只有在玩家客诉上传图片时才会动态申请提示读权限设置
- </font>
-     
 **2. 增加需要的权限**
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -78,9 +101,12 @@ AIHelp SDK 要求android sdk最低版本为14，目标版本为23至最新版本
         android:name="notch.config"
         android:value="portrait|landscape" />
         
-  
-  
-    
+    <!--
+    备注：关于 WRITE_EXTERNAL_STORAGE 和 READ_EXTERNAL_STORAGE 权限
+        1.Android 6.0以下系统，在安装本版本游戏时，会提示授予读取和写入权限
+        2.Android 6.0以上系统，目前只有在玩家客诉上传图片时才会提示授予读权限设置
+    -->
+     
 **3. 增加activity:**
     
 	<!--需要的Activity-->
