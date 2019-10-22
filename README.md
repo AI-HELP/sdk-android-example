@@ -760,10 +760,11 @@ Or
 				config);
 ```				
 #### 13. Want to customize the welcome message of manual customer service
-###If you want to customize the welcome message of the manual customer service, 
+### If you want to customize the welcome message of the manual customer service, 
 you need to pass a new pair of keys in the configuration parameters of the corresponding interface.
 The key is: "private_welcome_str", valued for the customized content you want
-###code example:
+
+### code example:
 ```java
 	HashMap <String,Object> map = new HashMap();
 
