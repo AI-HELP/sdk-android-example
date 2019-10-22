@@ -780,9 +780,10 @@ FAQ界面示例图:<br>
 
 
 ### 13.想定制人工客服的欢迎语
-###如果您想定制人工客服的欢迎语,您需要在调用对应接口的config参数里传入一对新的key,value
+### 如果您想定制人工客服的欢迎语,您需要在调用对应接口的config参数里传入一对新的key,value
 key是:"private_welcome_str",value为您想要的定制的内容
-###代码示例:
+
+### 代码示例:
 ```java
 	HashMap<String,Object> map = new HashMap();
   
