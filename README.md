@@ -73,29 +73,29 @@ Click "Clone or download" to download Android SDK in the github page, unzip the 
 	<!--需要的Activity-->
 	<activity
 		android:name="com.ljoy.chatbot.ChatMainActivity" 
-	    android:screenOrientation="portrait"
 		android:configChanges="keyboardHidden|orientation|screenSize"
-		android:windowSoftInputMode="adjustResize|stateHidden" />
+		android:windowSoftInputMode="adjustResize|stateHidden" 
+		android:screenOrientation="portrait"/>
 	<activity
 		android:name="com.ljoy.chatbot.OPActivity" 
-	    android:screenOrientation="portrait"
 		android:configChanges="keyboardHidden|orientation|screenSize"
-		android:windowSoftInputMode="adjustResize|stateHidden" />
+		android:windowSoftInputMode="adjustResize|stateHidden" 
+		android:screenOrientation="portrait"/>
 	<activity
 		android:name="com.ljoy.chatbot.FAQActivity" 
-	    android:screenOrientation="portrait"
 		android:configChanges="keyboardHidden|orientation|screenSize"
-		android:windowSoftInputMode="adjustResize|stateHidden" />
+		android:windowSoftInputMode="adjustResize|stateHidden" 
+		android:screenOrientation="portrait"/>
 	<activity
 		android:name="com.ljoy.chatbot.WebViewActivity" 
-	    android:screenOrientation="portrait"
 		android:configChanges="keyboardHidden|orientation|screenSize"
-		android:windowSoftInputMode="adjustResize|stateHidden" />
+		android:windowSoftInputMode="adjustResize|stateHidden" 
+		android:screenOrientation="portrait"/>
 	<activity
 		android:name="com.ljoy.chatbot.QAWebActivity" 
-	    android:screenOrientation="portrait"
 		android:configChanges="keyboardHidden|orientation|screenSize"
-		android:windowSoftInputMode="adjustResize|stateHidden" />
+		android:windowSoftInputMode="adjustResize|stateHidden" 
+		android:screenOrientation="portrait"/>
 	<!--需要的Activity -->
     
 About the screen orientations: 
