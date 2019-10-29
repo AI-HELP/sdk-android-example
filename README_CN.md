@@ -111,23 +111,28 @@ AIHelp SDK 要求android sdk最低版本 >= 14，目标版本 >= 23：
     
 	<!--需要的Activity-->
 	<activity
-		android:name="com.ljoy.chatbot.ChatMainActivity"
+		android:name="com.ljoy.chatbot.ChatMainActivity" 
+	    android:screenOrientation="portrait"
 		android:configChanges="keyboardHidden|orientation|screenSize"
 		android:windowSoftInputMode="adjustResize|stateHidden" />
 	<activity
-		android:name="com.ljoy.chatbot.OPActivity"
+		android:name="com.ljoy.chatbot.OPActivity" 
+	    android:screenOrientation="portrait"
 		android:configChanges="keyboardHidden|orientation|screenSize"
 		android:windowSoftInputMode="adjustResize|stateHidden" />
 	<activity
-		android:name="com.ljoy.chatbot.FAQActivity"
+		android:name="com.ljoy.chatbot.FAQActivity" 
+	    android:screenOrientation="portrait"
 		android:configChanges="keyboardHidden|orientation|screenSize"
 		android:windowSoftInputMode="adjustResize|stateHidden" />
 	<activity
-		android:name="com.ljoy.chatbot.WebViewActivity"
+		android:name="com.ljoy.chatbot.WebViewActivity" 
+	    android:screenOrientation="portrait"
 		android:configChanges="keyboardHidden|orientation|screenSize"
 		android:windowSoftInputMode="adjustResize|stateHidden" />
 	<activity
-		android:name="com.ljoy.chatbot.QAWebActivity"
+		android:name="com.ljoy.chatbot.QAWebActivity" 
+	    android:screenOrientation="portrait"
 		android:configChanges="keyboardHidden|orientation|screenSize"
 		android:windowSoftInputMode="adjustResize|stateHidden" />
 	<!--需要的Activity -->
