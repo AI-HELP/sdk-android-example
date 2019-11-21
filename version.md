@@ -1,5 +1,8 @@
 
-#version = 1.5.1(最新)
+#version = 1.6.0(最新)
+#time = 2019-11-21
+
+#version = 1.5.1
 #time = 2019-10-17
 
 #version = 1.5.0.1

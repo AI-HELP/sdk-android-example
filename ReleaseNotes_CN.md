@@ -1,7 +1,10 @@
 # AIHELP Android SDK版本更新
 [进入中文版接入指南](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README_CN.md)
 
-## 1.5.1(最新)
+## 1.6.0(最新)
+1.优化请求(GZIP) 
+
+## 1.5.1
 1.有未完成客诉时，直接进入人工 
 
 ## 1.5.0.1
