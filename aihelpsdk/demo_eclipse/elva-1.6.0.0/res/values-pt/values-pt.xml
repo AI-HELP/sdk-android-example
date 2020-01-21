@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ab_alert_fail">Failed</string>
+    <string name="ab_alert_success">Success</string>
+    <string name="ab_faq_need_more_help">Precisa mais ajuda?</string>
+    <string name="ab_feedback_title">Please tell us more details</string>
+    <string name="ab_op_help">HELP</string>
+    <string name="ab_reward_earn_points">Ganha pontos~</string>
+    <string name="ab_reward_failed">Recompense não com sucesso</string>
+    <string name="ab_reward_go_to_the">Chegar</string>
+    <string name="ab_reward_points"> </string>
+    <string name="ab_reward_qa_community">Comunidade de pergunta e resposta</string>
+    <string name="ab_reward_success">Recompense com sucesso</string>
+    <string name="ab_reward_your_points">Seus saldos de ponto:</string>
+    <string name="ab_reward_your_points_is_insufficient">Saldos insuficientes</string>
+    <string name="ab_search_faq_no_found">Oops,no relevant results were found</string>
+    <string name="break_off_remind">Sua conexão foi desconectada, entre novamente!</string>
+    <string name="goto_Elva">Contate-Nos</string>
+    <string name="hate_it">Não gosto!</string>
+    <string name="like_it">Gosto!</string>
+    <string name="main_title">Elva</string>
+    <string name="mark_helpful_toast">Isso é útil</string>
+    <string name="mark_no">Não</string>
+    <string name="mark_unhelpful_toast">Isso não é útil</string>
+    <string name="mark_yes">Sim</string>
+    <string name="mark_yes_no_question">É útil?</string>
+    <string name="no_more_than_chars">Não pode ser mais de %s palavras!</string>
+    <string name="no_png_upload">O cartão SD não existe ou não pode ler!</string>
+    <string name="permission_denied_message">Precisa da permissão armazenada para fazer enviar de imagem</string>
+    <string name="question">Entra a pergunta</string>
+    <string name="self_service_interface">Self-Service</string>
+    <string name="setting">Configuração</string>
+</resources>

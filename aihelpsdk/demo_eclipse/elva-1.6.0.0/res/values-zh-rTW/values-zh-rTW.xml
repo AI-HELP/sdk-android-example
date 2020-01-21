@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ab_alert_fail">失敗</string>
+    <string name="ab_alert_success">成功</string>
+    <string name="ab_faq_need_more_help">需要更多幫助?</string>
+    <string name="ab_feedback_title">請告知我們具體原因</string>
+    <string name="ab_op_help">HELP</string>
+    <string name="ab_reward_earn_points">賺點積分~</string>
+    <string name="ab_reward_failed">打賞失敗</string>
+    <string name="ab_reward_go_to_the">到</string>
+    <string name="ab_reward_points">分</string>
+    <string name="ab_reward_qa_community">問答社區</string>
+    <string name="ab_reward_success">打賞成功</string>
+    <string name="ab_reward_your_points">您的積分餘額:</string>
+    <string name="ab_reward_your_points_is_insufficient">餘額不足</string>
+    <string name="ab_search_faq_no_found">抱歉,未找到相關結果</string>
+    <string name="break_off_remind">您的網絡連接已經斷開,請檢查網絡!</string>
+    <string name="goto_Elva">聯繫客服</string>
+    <string name="hate_it">不喜歡!</string>
+    <string name="like_it">喜歡!</string>
+    <string name="main_title">Elva</string>
+    <string name="mark_helpful_toast">妳發現這有幫助</string>
+    <string name="mark_no">否</string>
+    <string name="mark_unhelpful_toast">妳發現這無幫助</string>
+    <string name="mark_yes">是</string>
+    <string name="mark_yes_no_question">這有幫助嗎?</string>
+    <string name="no_more_than_chars">不能超過%s個字!</string>
+    <string name="no_png_upload">SD卡不存在或者不可讀寫!</string>
+    <string name="permission_denied_message">需要存儲權限來上傳圖片</string>
+    <string name="question">輸入問題</string>
+    <string name="self_service_interface">自助服務</string>
+    <string name="setting">設定</string>
+</resources>

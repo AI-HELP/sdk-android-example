@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:line="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_chatmain_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F3F3"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_id1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <RelativeLayout
+            android:id="@+id/ab__title"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="false"
+            android:background="#000000">
+
+            <RelativeLayout
+                android:id="@+id/rl_back"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:onClick="onBackArrowClick">
+
+                <ImageButton
+                    android:id="@+id/ab__btn_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/backrow_auto_mirrored"
+                    android:clickable="false" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/ab__main_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@+id/rl_back"
+                android:layout_toRightOf="@+id/rl_back"
+                android:gravity="center_vertical"
+                android:text="@string/main_title"
+                android:textColor="#FFFFFF"
+                android:textSize="14dp" />
+
+            <ProgressBar
+                android:id="@+id/pb_loading"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toEndOf="@+id/ab__main_title"
+                android:layout_toRightOf="@+id/ab__main_title"
+                android:indeterminateDrawable="@drawable/ab_progress_loading" />
+
+            <LinearLayout
+                android:id="@+id/layout_btn_conversation"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true">
+
+                <TextView
+                    android:id="@+id/ab__btn_conversation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="onConversationShowClick"
+                    android:text="@string/goto_Elva"
+                    android:textColor="@android:color/white"
+                    android:textSize="14dp"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/iv_reddot_alert"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/aihelp_reddot_alert"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/ab_line_shadow"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_below="@+id/ab__title"
+            android:background="@drawable/ab_shadow_line" />
+
+        <RelativeLayout
+            android:id="@+id/ab__msg_list_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/ab__bottom_area"
+            android:layout_below="@+id/ab_line_shadow">
+
+            <ListView
+                android:id="@+id/ab__msg_list"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:divider="@null" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ab__bottom_area"
+            android:background="#ffffff">
+
+            <ListView
+                android:id="@+id/lv_alert_faq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ab__bottom_area">
+
+            <ImageView
+                android:id="@+id/iv_conversation_reward"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/ab_reward"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/ab__bottom_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#ffffff"
+            android:focusable="true"
+            android:minHeight="50dp">
+
+            <RelativeLayout
+                android:id="@+id/ab__power"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="5dp"
+                    android:text="Powered by AIHELP.NET"
+                    android:textColor="#000000"
+                    android:textSize="8dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:id="@+id/ab__open_albumParent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/ab__open_album"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/chat_bot_addpic"
+                        android:clickable="true"
+                        android:onClick="onOpenAlbum"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <com.ljoy.chatbot.view.view.LineEditText
+                    android:id="@+id/ab__input_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toStartOf="@+id/ab__chat_word_voice"
+                    android:layout_toLeftOf="@+id/ab__chat_word_voice"
+                    android:layout_toEndOf="@+id/ab__open_albumParent"
+                    android:layout_toRightOf="@+id/ab__open_albumParent"
+                    android:background="#00000000"
+                    android:ems="10"
+                    android:focusable="true"
+                    android:hint="@string/question"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="#ff000000"
+                    android:textColorHint="#9F9F9F"
+                    android:textDirection="locale"
+                    android:textSize="14dp"
+                    line:lineColorEt="#2960d9" />
+
+                <ImageButton
+                    android:id="@+id/ab__chat_word_voice"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toStartOf="@+id/ab__input_send_btnParent"
+                    android:layout_toLeftOf="@+id/ab__input_send_btnParent"
+                    android:background="@drawable/chat_voice"
+                    android:clickable="true"
+                    android:onClick="onChangeWordVoice"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/ab__input_send_btnParent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:clickable="true"
+                    android:onClick="onSendMsgClick">
+
+                    <ImageButton
+                        android:id="@+id/ab__input_send_btn"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="false"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/chat_bot_send"
+                        android:clickable="false"
+                        android:visibility="visible" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_id2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:visibility="gone">
+
+        <com.ljoy.chatbot.PhotoView.PhotoView
+            android:id="@+id/imageViewFull"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="false"
+            android:layout_centerVertical="false"
+            android:background="@android:color/black"
+            android:scaleType="centerInside"
+            android:src="@drawable/amin_pgbar"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>

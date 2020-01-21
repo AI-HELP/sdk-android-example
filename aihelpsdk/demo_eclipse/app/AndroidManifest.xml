@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.aihelp.demo"
+    android:versionCode="1"
+    android:versionName="1.0.0" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 上传表单图片的时候需要此权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 上传表单图片的时候需要此权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!--需要的刘海屏适配 -->
+    <!--google刘海适配-->
+    <meta-data
+        android:name="android.max_aspect"
+        android:value="2.1" />
+    <!--小米手机开启刘海适配-->
+    <meta-data
+        android:name="notch.config"
+        android:value="portrait|landscape" />
+    
+    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="24"/>
+
+    <application
+        android:name="com.aihelp.demo.MyApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <activity
+            android:name="com.aihelp.demo.MainActivity"
+            android:configChanges="orientation|screenSize|locale"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- SDK Activity Start -->
+        <activity
+            android:name="com.ljoy.chatbot.ChatMainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="com.ljoy.chatbot.OPActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="com.ljoy.chatbot.FAQActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="com.ljoy.chatbot.WebViewActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <!-- SDK Activity End -->
+    </application>
+</manifest>

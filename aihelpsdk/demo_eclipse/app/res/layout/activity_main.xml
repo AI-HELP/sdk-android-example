@@ -1,0 +1,127 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sv_main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="ifContentScrolls">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        tools:context="com.aihelp.demo.Main_activity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/et_sw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="zh_CN" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:clickable="true"
+                android:onClick="onSWLanClick"
+                android:text="@string/btn_change_lang" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:clickable="true"
+                android:onClick="onStartClick"
+                android:text="@string/btn_elva_chat_show" />
+
+            <Button
+                android:id="@+id/OpBtnSecond"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:clickable="true"
+                android:onClick="onOpSecondClick"
+                android:text="@string/btn_elva_chat_hide" />
+
+            <Button
+                android:id="@+id/OpBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:clickable="true"
+                android:onClick="onOpClick"
+                android:text="@string/btn_op_list_show" />
+
+            <Button
+                android:id="@+id/OpBtn2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:clickable="true"
+                android:onClick="onOpClick2"
+                android:text="@string/btn_op_list_hide" />
+
+            <Button
+                android:id="@+id/vipChatBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:clickable="true"
+                android:onClick="onVipChatClick"
+                android:text="@string/btn_conversation" />
+
+            <Button
+                android:id="@+id/faqlistBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:onClick="onShowFAQlist"
+                android:text="@string/btn_faq1" />
+
+            <Button
+                android:id="@+id/faqlistBtn2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:onClick="onShowFAQlist2"
+                android:text="@string/btn_faq2" />
+
+            <Button
+                android:id="@+id/faqlistBtn3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:onClick="onShowFAQlist3"
+                android:text="@string/btn_faq3" />
+
+            <Button
+                android:id="@+id/oneFaq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:onClick="onShowFAQClick"
+                android:text="@string/btn_simple_faq1" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:onClick="onShowFAQClick2"
+                android:text="@string/btn_simple_faq2" />
+
+            <Button
+                android:id="@+id/ShowUrlBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:onClick="onShowUrlBtnClick"
+                android:text="@string/btn_show_url" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

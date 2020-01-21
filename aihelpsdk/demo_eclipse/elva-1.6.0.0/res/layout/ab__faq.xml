@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_faq_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f7f7f7"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#000000">
+
+        <RelativeLayout
+            android:id="@+id/rl_ab_qa_back"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:onClick="onBackArrowClick">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/backrow_auto_mirrored"
+                android:clickable="false"
+                android:contentDescription="@null" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_faq_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:gravity="center_vertical"
+            android:textColor="@android:color/white"
+            android:textSize="14dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_faq_conversation"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:onClick="onConversationShowClick"
+                android:text="@string/goto_Elva"
+                android:textColor="@android:color/white"
+                android:textSize="14dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_faq_search"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:focusableInTouchMode="true"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/ll_faq_search_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:clickable="true"
+            android:onClick="onSearchClick">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/aihelp_search"
+                android:contentDescription="@null" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_faq_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toStartOf="@+id/iv_faq_search_clear"
+            android:layout_toLeftOf="@+id/iv_faq_search_clear"
+            android:layout_toEndOf="@+id/ll_faq_search_icon"
+            android:layout_toRightOf="@+id/ll_faq_search_icon"
+            android:background="#00000000"
+            android:hint="@string/question"
+            android:imeOptions="flagNoExtractUi"
+            android:textColor="#000000"
+            android:textDirection="locale"
+            android:textSize="14dp" />
+
+        <ImageView
+            android:id="@+id/iv_faq_search_clear"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/aihelp_clear"
+            android:clickable="true"
+            android:onClick="onSearchClearClick"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DDDDDD" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <RelativeLayout
+            android:id="@+id/ab__faq_list_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/ab__faq_question_footer"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:id="@+id/tv_search_faq_not_found"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="@string/ab_search_faq_no_found"
+                android:textColor="@android:color/black"
+                android:textSize="14dp"
+                android:visibility="gone" />
+
+            <ListView
+                android:id="@+id/ab__faq_list"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="5dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ab__faq_bottom_area"
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_alignParentBottom="true"
+            android:background="#000000"
+            android:focusable="true">
+
+            <RelativeLayout
+                android:id="@+id/ab__faq_power"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal">
+
+                <TextView
+                    android:id="@+id/ab__faq_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="3dp"
+                    android:text="Powered by AIHELP.NET"
+                    android:textColor="#ffffff"
+                    android:textSize="8dp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

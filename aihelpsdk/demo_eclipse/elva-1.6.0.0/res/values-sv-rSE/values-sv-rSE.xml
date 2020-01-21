@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ab_alert_fail">Failed</string>
+    <string name="ab_alert_success">Success</string>
+    <string name="ab_faq_need_more_help">Behöver mer hjälp?</string>
+    <string name="ab_feedback_title">Please tell us more details</string>
+    <string name="ab_op_help">HELP</string>
+    <string name="ab_reward_earn_points">Skaffa poäng~</string>
+    <string name="ab_reward_failed">Misslyckades</string>
+    <string name="ab_reward_go_to_the">Gå till</string>
+    <string name="ab_reward_points"> </string>
+    <string name="ab_reward_qa_community">Frågeforum</string>
+    <string name="ab_reward_success">Lyckades</string>
+    <string name="ab_reward_your_points">Dina poäng:</string>
+    <string name="ab_reward_your_points_is_insufficient">Du har inte tillräckligt med poäng</string>
+    <string name="ab_search_faq_no_found">Oops,no relevant results were found</string>
+    <string name="break_off_remind">Anslutning bruten, försök igen!</string>
+    <string name="goto_Elva">Kontakta KS</string>
+    <string name="hate_it">Ogillar!</string>
+    <string name="like_it">Gillar!</string>
+    <string name="main_title">Elva</string>
+    <string name="mark_helpful_toast">Fick du hjälp av detta?</string>
+    <string name="mark_no">Nej</string>
+    <string name="mark_unhelpful_toast">Fick du inte hjälp av detta?</string>
+    <string name="mark_yes">Ja</string>
+    <string name="mark_yes_no_question">Fick du hjälp av detta?</string>
+    <string name="no_more_than_chars">Får inte vara längre än %s tecken!</string>
+    <string name="no_png_upload">SD-kort saknas eller kan inte läsas!</string>
+    <string name="permission_denied_message">Appen behöver komma åt ditt lagringsutrymme för att ladda upp bilder</string>
+    <string name="question">Ange fråga</string>
+    <string name="self_service_interface">Självservice</string>
+    <string name="setting">Inställningar</string>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ab_alert_fail">Failed</string>
+    <string name="ab_alert_success">Success</string>
+    <string name="ab_faq_need_more_help">ต้องการความช่วยเหลือ?</string>
+    <string name="ab_feedback_title">Please tell us more details</string>
+    <string name="ab_op_help">HELP</string>
+    <string name="ab_reward_earn_points">หาแต้ม~</string>
+    <string name="ab_reward_failed">ให้รางวัลล้มเหลว</string>
+    <string name="ab_reward_go_to_the">ถึง</string>
+    <string name="ab_reward_points"> </string>
+    <string name="ab_reward_qa_community">ถามตอบ</string>
+    <string name="ab_reward_success">ให้รางวัลสำเร็จ</string>
+    <string name="ab_reward_your_points">แต้มของคุณเหลือ:</string>
+    <string name="ab_reward_your_points_is_insufficient">จำนวนคงเหลือไม่พอ</string>
+    <string name="ab_search_faq_no_found">Oops,no relevant results were found</string>
+    <string name="break_off_remind">การเชื่อมต่อผิดพลาด กรุณาเข้าระบบอีกครั้ง!</string>
+    <string name="goto_Elva">ติดต่อเรา</string>
+    <string name="hate_it">ไม่ชอบ!</string>
+    <string name="like_it">ชอบ!</string>
+    <string name="main_title">Elva</string>
+    <string name="mark_helpful_toast">คำถามนี้ถูกระบุว่ามีประโยชน์</string>
+    <string name="mark_no">ไม่ใช่</string>
+    <string name="mark_unhelpful_toast">คำถามนี้ถูกระบุว่าไม่มีประโยชน์</string>
+    <string name="mark_yes">ใช่</string>
+    <string name="mark_yes_no_question">ข้อมูลดังกล่าวมีประโยชน์หรือไม่</string>
+    <string name="no_more_than_chars">ไม่เกิน %s ตัวอักษร!</string>
+    <string name="no_png_upload">ไม่มีSDการ์ดอยู่หรือไม่สามารถเขียนได้!</string>
+    <string name="permission_denied_message">ต้องได้รับสิทธิ์อัพโหลดรูป</string>
+    <string name="question">คำถามของคุณ</string>
+    <string name="self_service_interface">Self-Service</string>
+    <string name="setting">ตั้งค่า</string>
+</resources>
