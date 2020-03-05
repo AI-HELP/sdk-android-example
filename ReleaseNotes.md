@@ -1,8 +1,13 @@
 # AIHELP Android SDK version update
 [SDK Integration Guide](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README.md)
 
+## 1.7.2.0(latest)
+1. Added message sending status prompt and resend function
+2. Added push function: Push, Aurora, APNS
+3. Statistics of exact and similar answers
+4. Added network information collection function
 
-## 1.6.0(latest)
+## 1.6.0
 1.Optimization Request (GZIP)
 
 ## 1.5.1

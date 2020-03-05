@@ -1,3 +1,7 @@
+
+* 2020-03-05
+version 1.7.2.0 release 
+
 * 2019-11-21  
 version 1.6.0 release  
 

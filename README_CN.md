@@ -16,7 +16,7 @@
 
 	dependencies {
 	 ...
-	    implementation 'net.aihelp:elva:1.6.0'
+	    implementation 'net.aihelp:elva:1.7.2.0'
      ...
     }
     
@@ -111,30 +111,35 @@ AIHelp SDK 要求android sdk最低版本 >= 14，目标版本 >= 23：
     
 	<!--需要的Activity-->
 	<activity
-		android:name="com.ljoy.chatbot.ChatMainActivity" 
+		android:name="com.ljoy.chatbot.ChatMainActivity"
 		android:configChanges="keyboardHidden|orientation|screenSize"
-		android:windowSoftInputMode="adjustResize|stateHidden" 
-		android:screenOrientation="portrait"/>
+		android:screenOrientation="portrait"
+		android:theme="@style/showBgStyleFullscreen"
+		android:windowSoftInputMode="adjustResize|stateHidden" />
 	<activity
-		android:name="com.ljoy.chatbot.OPActivity" 
+		android:name="com.ljoy.chatbot.OPActivity"
 		android:configChanges="keyboardHidden|orientation|screenSize"
-		android:windowSoftInputMode="adjustResize|stateHidden" 
-		android:screenOrientation="portrait"/>
+		android:screenOrientation="portrait"
+		android:theme="@style/showBgStyleFullscreen"
+		android:windowSoftInputMode="adjustResize|stateHidden" />
 	<activity
-		android:name="com.ljoy.chatbot.FAQActivity" 
+		android:name="com.ljoy.chatbot.FAQActivity"
 		android:configChanges="keyboardHidden|orientation|screenSize"
-		android:windowSoftInputMode="adjustResize|stateHidden" 
-		android:screenOrientation="portrait"/>
+		android:screenOrientation="portrait"
+		android:theme="@style/showBgStyleFullscreen"
+		android:windowSoftInputMode="adjustResize|stateHidden" />
 	<activity
-		android:name="com.ljoy.chatbot.WebViewActivity" 
+		android:name="com.ljoy.chatbot.WebViewActivity"
 		android:configChanges="keyboardHidden|orientation|screenSize"
-		android:windowSoftInputMode="adjustResize|stateHidden" 
-		android:screenOrientation="portrait"/>
+		android:screenOrientation="portrait"
+		android:theme="@style/showBgStyleFullscreen"
+		android:windowSoftInputMode="adjustResize|stateHidden" />
 	<activity
-		android:name="com.ljoy.chatbot.QAWebActivity" 
+		android:name="com.ljoy.chatbot.QAWebActivity"
 		android:configChanges="keyboardHidden|orientation|screenSize"
-		android:windowSoftInputMode="adjustResize|stateHidden" 
-		android:screenOrientation="portrait"/>
+		android:screenOrientation="portrait"
+		android:theme="@style/showBgStyleFullscreen"
+		android:windowSoftInputMode="adjustResize|stateHidden" />
 	<!--需要的Activity -->
     
     
