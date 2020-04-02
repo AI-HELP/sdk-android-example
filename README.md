@@ -10,21 +10,21 @@
 		repositories {
 			jcenter()
 	}
-	
+
 #### 2. Add Below Dependencies in the build.gradle of your APP or Module which intracts with AIHelp sdk:
 
 	dependencies {
 	 ...
-	    implementation 'net.aihelp:elva:1.7.2.0'
-    ...
-    }
+	    implementation 'net.aihelp:elva:1.7.2.1'
+	...
+	}
 	
 	Note:
-    If you don't have "android-support-v4.jar" in your project, you need to copy the "android-support-v4.jar" to the project libs file.(The download location is in the libs file in aihelpsdk)
+	If you don't have "android-support-v4.jar" in your project, you need to copy the "android-support-v4.jar" to the project libs file.(The download location is in the libs file in aihelpsdk)
 	
-    Ignore if there is "android-support-v4.jar" in your project
+	Ignore if there is "android-support-v4.jar" in your project
 
-Wait until the build.gradle sync completion and make sure there is no error during sync: Under the "External Libraries" folder of Android Studio Project sturcture view you should be able to find the folder "elva-1.6.0". If there is an error during sync or you can not find elva folder. Use the Method #2 below:
+Wait until the build.gradle sync completion and make sure there is no error during sync: Under the "External Libraries" folder of Android Studio Project sturcture view you should be able to find the folder "elva-1.7.2.1". If there is an error during sync or you can not find elva folder. Use the Method #2 below:
 
 ### Method #2. Download The AIHelp Android SDK：
 Click "Clone or download" to download Android SDK in the github page, unzip the downloaded file.
@@ -34,7 +34,7 @@ Click "Clone or download" to download Android SDK in the github page, unzip the 
 | Subfolder name | Description |
 |:------------- |:---------------|
 | **aihelpsdk**    | AIHelp Android SDK core files|
- 
+
 #### Add AIHelp to your Android project:
 
 
@@ -50,24 +50,24 @@ Click "Clone or download" to download Android SDK in the github page, unzip the 
   The AIHelp SDK requires a minimum version of android sdk of 14, and a target version of 23 to the latest version.
   <uses-sdk android:minSdkVersion="14" 
   android:targetSdkVersion="23"/>
-  
+
 **a. Add Required Permissions**
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-	<!-- This permission is required when uploading a form image -->
+    <!-- This permission is required when uploading a form image -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-	<!-- This permission is required when uploading a form image -->
+    <!-- This permission is required when uploading a form image -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-	
-	<!--Needed Liu Haiping adaptation -->
+    
+    <!--Needed Liu Haiping adaptation -->
     <meta-data
         android:name="android.max_aspect"
         android:value="2.1" />
     <meta-data
         android:name="notch.config"
         android:value="portrait|landscape" />
-		
+
 **b. Add AIHelp Activities:**
 
 	<!--需要的Activity-->
@@ -102,26 +102,26 @@ Click "Clone or download" to download Android SDK in the github page, unzip the 
 		android:theme="@style/showBgStyleFullscreen"
 		android:windowSoftInputMode="adjustResize|stateHidden" />
 	<!--需要的Activity -->
-    
+
 About the screen orientations: 
 **android:screenOrientation="portrait"** 
 means AIHelp User Interface will adjust display orientation according to the mobile's screen orientation, if you intend to fixate AIHelp UI display, use below setting:
 
     Coding Example:
     <activity
-	    android:name="com.ljoy.chatbot.ChatMainActivity"
-	    android:configChanges="keyboardHidden|orientation|screenSize"
-	    android:windowSoftInputMode="adjustResize|stateHidden" 
-	    android:screenOrientation="portrait"/>
-	
+        android:name="com.ljoy.chatbot.ChatMainActivity"
+        android:configChanges="keyboardHidden|orientation|screenSize"
+        android:windowSoftInputMode="adjustResize|stateHidden" 
+        android:screenOrientation="portrait"/>
+    
     Portrait Display:
-	android:screenOrientation="portrait"(Recommended: the vertical screen display is better)
-
+    android:screenOrientation="portrait"(Recommended: the vertical screen display is better)
+    
     Landscape Display:
-	android:screenOrientation="landscape"
-	
+    android:screenOrientation="landscape"
+    
     Mobile phone physical sensor display：
-	android:screenOrientation="sensor"
+    android:screenOrientation="sensor"
 
 ### 4. SDK initialization（Must be called during application initialization, otherwise you can't use AIHelp properly）
 
@@ -143,7 +143,7 @@ When activiting your app, You must use ELvaChatServiceSdk.init(...) , otherwise 
 | activity    | Your App's Activty|
 | appKey    | Your Unique Developer API Key|
 | domain     | Your AIHelp Domain Name. For Example: foo.AIHELP.NET|
-| appId     | A Unique ID Assigned to your App.| 
+| appId     | A Unique ID Assigned to your App.|
 
 Note: Please log in [AIHelp Web Console](https://console.aihelp.net/elva) with your registration email account to find the __appKey__, __domain__ and __appId__ In the _Application_ page of the _Settings_ Menu. 
 If your company does not have an account, you need to register an account at [AIHelp Website](http://aihelp.net/index.html)
@@ -188,7 +188,7 @@ public class MyActivity extends Activity {
 | **[setServerId](#ServerId)** | Set the server ID where the  (user) is located | If the game party can't get the data, pass the empty string "" |
 | **[setSDKLanguage](#setSDKLanguage)** | Set SDK Language| Note: The default is to use the phone system language setting, you can call the setting language in the app after setting. |
 |Optional interface:|
-| **[showElva](#showElva)**      | Launch AI Conversation Interface| 
+| **[showElva](#showElva)**      | Launch AI Conversation Interface|
 |**[showConversation](#showConversation)**|Launch VIP Conversation Interface| Need to [setUserName](#UserName) and [setUserId](#UserId) |
 | **[showElvaOP](#showElvaOP)** | Launch Operation Interface| Need to configure Operation Sections|
 | **[showFAQs](#showFAQs)** | Show all FAQs by Sections|Need to configure FAQs,Need to [setUserName](#UserName) and [setUserId](#UserId)|
@@ -206,7 +206,7 @@ public class MyActivity extends Activity {
 				String playerUid,
 				String serverId,
 				String showConversationFlag);
-```			
+```
 or
 ```java	
 	ELvaChatServiceSdk.showElva(
@@ -252,6 +252,7 @@ or
 - __showConversationFlag__: Should be "0" or "1". If set at "1", the VIP conversation entry will be displayed in the upper right of the AI conversation interface.
 - __config__: Optional parameterseters for custom HashMap information. You can pass specific Tag information using ArrayList elva-tags, see the above coding example. Please note that you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
 	
+
 ![Robot Customer Service Interface][showElva-EN-Android]
 	
 **Best Practice：**
@@ -271,7 +272,7 @@ or
 						String uid,
 						String serverId,
 						HashMap customData);
-```						
+```
 **Coding Example：**
 ```java	
 	HashMap<String,Object> map = new HashMap();
@@ -375,6 +376,7 @@ The operation module is useful when you want to present updates, news, articles 
 - __config__: Optional parameters for custom HashMap information. You can pass specific Tag information using ArrayList elva-tags, see the above coding example. Please note that you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
 - __defaultTabIndex__: Optional. The index of the first tab to be shown when entering the operation interface. Default value is 0, default value is the left-most tab, if you would like to show the AI conversation interface(the right-most) set it to 999.
 	
+
 ![Operation Module Interface][showElvaOP-EN-Android]
 
 **Best Practice：**
@@ -439,6 +441,7 @@ The operation module is useful when you want to present updates, news, articles 
 
 - __config__: Optional parameters for custom HashMap information. You can pass specific Tag information using the ArrayList elva-tags, see the above coding example. Please note that you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
 	
+
 ![FAQ Interface][showFAQs-EN-Android]
 
 **Best Practice：**
@@ -447,9 +450,9 @@ The operation module is useful when you want to present updates, news, articles 
 
 #### <h4 id="showFAQSection">6. Show all the FAQs in a category, call the `showFAQSection` method 
     (must make sure to set the user name information [setUserName](#UserName) And setting the user's unique id information [setUserId](#UserId) Already called)
-	If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
-	If the userid is not available, the empty string "" is passed, and a unique device id is generated.
-	</h4>
+    If the username is not obtained, the empty string "" is passed, and the default nickname "anonymous" is used.
+    If the userid is not available, the empty string "" is passed, and a unique device id is generated.
+    </h4>
 ```java	
 	ELvaChatServiceSdk.showFAQSection(String sectionPublishId); 
 ```
@@ -505,6 +508,7 @@ or
 
 - __config__: Optional parameters for custom HashMap information. You can pass specific Tag information using the ArrayList elva-tags, see the above coding example. Please note that you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
 	
+
 Example map of all FAQ interfaces under the classification:<br>
 ![All FAQ Interfaces under Category][showFAQSection-EN-Android]
 
@@ -570,6 +574,7 @@ Example map of all FAQ interfaces under the classification:<br>
 - __faqId__: The PublishID of the FAQ item, you can check it at [AIHelp Web Console](https://aihelp.net/elva): Find the FAQ in the FAQ menu and copy its PublishID.
 - __config__: Optional parameters for custom HashMap information. You can pass specific Tag information using ArrayList elva-tags, see the above coding example. Please note that you also need to configure the same tag information in the Web console so that each conversation can be correctly tagged.
 	
+
 ![Single FAQ Interface][showSingleFAQ-EN-Android]
 
 <h4 id="selfservice"></h4>
@@ -663,7 +668,7 @@ or
 					String playerUid,
 					String serverId,
 					HashMap config);
-```	
+```
 **Coding Example：**
 ```java
 	// Presenting Single FAQ to your customers
@@ -703,7 +708,7 @@ or
 Setting the SDK Language will change the FAQs, Operational information, AI Chat and SDK display language. 
 ```java
 	ELvaChatServiceSdk.setSDKLanguage(string language);
-```	
+```
 **Coding Example：**
 ```java
 	string languageAlias = "zh_CN"
@@ -768,7 +773,7 @@ Or
 				"server_id",
 				"1", // show conversation entry
 				config);
-```				
+```
 #### 13. Want to customize the welcome message of manual customer service
 ### If you want to customize the welcome message of the manual customer service, 
 you need to pass a new pair of keys in the configuration parameters of the corresponding interface.

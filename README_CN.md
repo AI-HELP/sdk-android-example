@@ -11,22 +11,22 @@
 			jcenter()
 		}
 	}
-	
+
 #### 2. 在使用 AIHelp SDK 的 app 或 module 级别的 build.gradle 中加入依赖：
 
 	dependencies {
 	 ...
-	    implementation 'net.aihelp:elva:1.7.2.0'
-     ...
-    }
-    
+	    implementation 'net.aihelp:elva:1.7.2.1'
+	 ...
+	}
+	
 	注:
-    SDK 需要使用 "android-support-v4.jar"，鉴于这个 jar 文件版本太多，如果您的项目本来就有的话，可能会对接入造成困扰，所以 aar 中没有带入该 jar 文件。
-    如果您的项目里没有 "android-support-v4.jar"，请复制该jar（aihelpsdk/libs/android-support-v4.jar）到您项目对应的libs文件下。
-    如果您的项目里已经存在 "android-support-v4.jar" 则无需再做额外操作。
-    如果您用到了 appcompat-v7，因为 appcompat-v7 其实包含了 android-support-v4，所以也无需再做额外操作。
+	SDK 需要使用 "android-support-v4.jar"，鉴于这个 jar 文件版本太多，如果您的项目本来就有的话，可能会对接入造成困扰，所以 aar 中没有带入该 jar 文件。
+	如果您的项目里没有 "android-support-v4.jar"，请复制该jar（aihelpsdk/libs/android-support-v4.jar）到您项目对应的libs文件下。
+	如果您的项目里已经存在 "android-support-v4.jar" 则无需再做额外操作。
+	如果您用到了 appcompat-v7，因为 appcompat-v7 其实包含了 android-support-v4，所以也无需再做额外操作。
 
-请确保 build.gradle 同步成功: 在 Android Studio 的 External Libraries 下面能够看到 "Gradle: net.aihelp:elva:1.6.0@aar" 相关内容。
+请确保 build.gradle 同步成功: 在 Android Studio 的 External Libraries 下面能够看到 "Gradle: net.aihelp:elva:1.7.2.1@aar" 相关内容。
 如果无法自动加载，请采用第二种导入方式：
 
 ### Android Studio 导入, 方式二： 下载 AIHelp Android SDK 进行本地接入：
@@ -40,11 +40,11 @@
         implementation fileTree(include: ['*.jar'], dir: 'libs')
     修改为（没有上面这行就直接追加下面这行即可）
         implementation fileTree(include: ['*.jar','*.aar'], dir: 'libs')
-
-	注:
-	SDK 需要使用 "android-support-v4.jar"，鉴于这个 jar 文件版本太多，如果您的项目本来就有的话，可能会对接入造成困扰，所以 aar 中没有带入该 jar 文件。
-	如果您的项目里没有 "android-support-v4.jar"，请复制该jar（aihelpsdk/libs/android-support-v4.jar）到您项目对应的libs文件下。
-	如果您的项目里已经存在 "android-support-v4.jar" 则无需再做额外操作。
+    
+    注:
+    SDK 需要使用 "android-support-v4.jar"，鉴于这个 jar 文件版本太多，如果您的项目本来就有的话，可能会对接入造成困扰，所以 aar 中没有带入该 jar 文件。
+    如果您的项目里没有 "android-support-v4.jar"，请复制该jar（aihelpsdk/libs/android-support-v4.jar）到您项目对应的libs文件下。
+    如果您的项目里已经存在 "android-support-v4.jar" 则无需再做额外操作。
     如果您用到了 appcompat-v7，因为 appcompat-v7 其实包含了 android-support-v4，所以也无需再做额外操作。
 
 ### eclipse 导入方式： 下载 AIHelp Android SDK 进行本地接入：
@@ -58,7 +58,7 @@
         3，如果您的项目里没有 "android-support-v4.jar"，请复制该jar（aihelpsdk/libs/android-support-v4.jar）到 libs 文件下。
            如果您的项目里已经存在 "android-support-v4.jar" 则无需再做额外操作。
            如果您用到了 appcompat-v7，因为 appcompat-v7 其实包含了 android-support-v4，所以也无需再做额外操作。
-           
+
 #### 3. 把第2步解压得到的目录，作为 Android Library 导入到 eclipse 中
     1,导入操作
         File -> Import -> Android -> Existing Android Code Into Workspace
@@ -75,24 +75,24 @@
     -keep class com.facebook.** {*;}
 
 在您的Android工程的AndroidManifest.xml，增加需要的配置：  
-  
+
 **1. 打包版本要求**
 
 AIHelp SDK 要求android sdk最低版本 >= 14，目标版本 >= 23：
 
 	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23"/>
- 
+
 **2. 增加需要的权限**
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-	<!-- 上传表单图片的时候需要此权限 -->
+    <!-- 上传表单图片的时候需要此权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-	<!-- 上传表单图片的时候需要此权限 -->
+    <!-- 上传表单图片的时候需要此权限 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-	
-	<!--需要的刘海屏适配 -->
-	<!--google刘海适配-->
+    
+    <!--需要的刘海屏适配 -->
+    <!--google刘海适配-->
     <meta-data
         android:name="android.max_aspect"
         android:value="2.1" />
@@ -106,7 +106,7 @@ AIHelp SDK 要求android sdk最低版本 >= 14，目标版本 >= 23：
         1.Android 6.0以下系统，在安装本版本游戏时，会提示授予读取和写入权限
         2.Android 6.0以上系统，目前只有在玩家客诉上传图片时才会提示授予读权限设置
     -->
-     
+
 **3. 增加activity:**
     
 	<!--需要的Activity-->
@@ -141,27 +141,28 @@ AIHelp SDK 要求android sdk最低版本 >= 14，目标版本 >= 23：
 		android:theme="@style/showBgStyleFullscreen"
 		android:windowSoftInputMode="adjustResize|stateHidden" />
 	<!--需要的Activity -->
-    
-    
+
+
+​    
 关于横竖屏显示：上述配置中
 **android:screenOrientation="portrait"**
 代表AIHelp的UI会根据手机屏幕方向自动调整横竖屏。如果您要固定AIHelp屏幕展示，请做如下修改：
 
     例如:
     <activity
-	    android:name="com.ljoy.chatbot.ChatMainActivity"
-	    android:configChanges="keyboardHidden|orientation|screenSize"
-	    android:windowSoftInputMode="adjustResize|stateHidden" 
-	    android:screenOrientation="portrait"/>
-
+        android:name="com.ljoy.chatbot.ChatMainActivity"
+        android:configChanges="keyboardHidden|orientation|screenSize"
+        android:windowSoftInputMode="adjustResize|stateHidden" 
+        android:screenOrientation="portrait"/>
+    
     竖屏展示：
-	android:screenOrientation="portrait"(推荐使用:竖屏显示效果比较好)
-
+    android:screenOrientation="portrait"(推荐使用:竖屏显示效果比较好)
+    
     横屏展示：
-	android:screenOrientation="landscape"
-		
+    android:screenOrientation="landscape"
+    	
     手机物理传感器展示：
-	android:screenOrientation="sensor"
+    android:screenOrientation="sensor"
 
 
 ### 4.SDK初始化（必须在应用启动阶段调用）
@@ -177,7 +178,7 @@ AIHelp SDK 要求android sdk最低版本 >= 14，目标版本 >= 23：
 				String appId
 				);
 ```
-	
+
 
 * 参数说明：
 
@@ -186,7 +187,7 @@ AIHelp SDK 要求android sdk最低版本 >= 14，目标版本 >= 23：
 | activity    | 应用的Activty|
 | appKey    | app唯一密钥，从[AIHelp 客服后台][1]获取|
 | domain     | 您的AIHelp域名，从[AIHelp 客服后台][1]获取，例如foo.AIHelp.NET|
-| appId     | app唯一标识，从[AIHelp 客服后台][1]获取| 
+| appId     | app唯一标识，从[AIHelp 客服后台][1]获取|
 
 注：请使用注册邮箱登录 [AIHelp 客服后台][1]。在设置菜单应用页面查看。初次使用，需登录[AIHelp 官网注册][2]自助注册。
 
@@ -228,7 +229,7 @@ public class MyActivity extends Activity {
 |建议调用的接口:|
 | **[setName](#setName)** | 设置在AIHelp智能客服系统中所展示的游戏名称 | 初始化之后调用，且只需调用一次，不调用此接口则默认显示包名 |
 | **[setUserName](#UserName)** | 设置(用户)名称 | 初始化之后调用，且只需调用一次  如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous" |
-| **[setUserId](#UserId)** | 设置(用户)的唯一ID | 初始化之后调用，且只需调用一次  如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id  | 
+| **[setUserId](#UserId)** | 设置(用户)的唯一ID | 初始化之后调用，且只需调用一次  如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id  |
 | **[setServerId](#ServerId)** | 设置(用户)所在的服务器ID | 如果游戏方拿不到数据 就传空字符串"" |
 | **[setSDKLanguage](#setSDKLanguage)** | 设置SDK的语言 | 初始化之后调用，且只需调用一次 注:默认是使用手机系统语言设置，设置后可以调用应用内的设置语言 |
 |可选调用的接口:|
@@ -293,7 +294,7 @@ public class MyActivity extends Activity {
 | playerName | String | 用户在游戏/应用中的名称 |
 | playerUid | String | 用户在游戏/应用里的唯一标识 |
 | serverId | String | 用户所在的服务器编号 |
-| showConversationFlag | String | 参数的值是"0"或"1"，标识是否开启人工入口.为"1"时，将在机器人客服聊天界面右上角，提供人工客服聊天的入口。如下图。 | 
+| showConversationFlag | String | 参数的值是"0"或"1"，标识是否开启人工入口.为"1"时，将在机器人客服聊天界面右上角，提供人工客服聊天的入口。如下图。 |
 | customData | HashMap\<String,Object> | 可选参数，自定义HashMap信息。可以在此处设置特定的Tag信息。说明：elva-tags对应的值为ArrayList类型，此处传入自定义的Tag，需要在[AIHelp 客服后台][1]配置同名称的Tag才能生效。 |
 
 机器人客服界面示例图:<br>
@@ -320,7 +321,7 @@ public class MyActivity extends Activity {
 						String uid,
 						String serverId,
 						HashMap customData);
-```						
+```
 **代码示例：**
 ```java
 	HashMap<String,Object> map = new HashMap();
@@ -420,9 +421,9 @@ public class MyActivity extends Activity {
 | playerName | String | 用户在游戏/应用中的名称 |
 | playerUid | String | 用户在游戏/应用里的唯一标识 |
 | serverId | String | 用户所在的服务器编号 |
-| showConversationFlag | String | 参数的值是"0"或"1"，标识是否开启人工入口.为"1"时，将在机器人客服聊天界面右上角，提供人工客服聊天的入口。如下图。 | 
+| showConversationFlag | String | 参数的值是"0"或"1"，标识是否开启人工入口.为"1"时，将在机器人客服聊天界面右上角，提供人工客服聊天的入口。如下图。 |
 | customData | HashMap\<String,Object> | 可选参数，自定义HashMap信息。可以在此处设置特定的Tag信息。说明：elva-tags对应的值为ArrayList类型，此处传入自定义的Tag，需要在[AIHelp 客服后台][1]配置同名称的Tag才能生效。 |
-| defaultTabIndex | int | 可选参数，进入运营界面时默认展示的tab页的编号。默认值为0，默认为第一个tab页，若需默认展示客服界面tab页，设置值为999。| 
+| defaultTabIndex | int | 可选参数，进入运营界面时默认展示的tab页的编号。默认值为0，默认为第一个tab页，若需默认展示客服界面tab页，设置值为999。|
 
 运营模块界面示例图:<br>
 ![运营模块界面][showElvaOP-CN-Android]
@@ -438,8 +439,8 @@ public class MyActivity extends Activity {
 ### <h4 id="showFAQs">5. 展示FAQ列表，调用`showFAQs `方法
     (必须确保调用以下两个接口,设置用户名称信息和设置用户唯一id信息)
     [setUserName](#UserName) 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
-	[setUserId](#UserId) 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 	
-	</h4>
+    [setUserId](#UserId) 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 	
+    </h4>
 ```java
 	ELvaChatServiceSdk.showFAQs();
 ```
@@ -494,7 +495,7 @@ public class MyActivity extends Activity {
 | 参数名 | 类型 | 说明 |
 |:------------- |:---------------|:---------------|
 | config | HashMap | 可选参数，自定义HashMap信息。可以在此处设置特定的Tag信息。说明：elva-tags对应的值为ArrayList类型，此处传入自定义的Tag，需要在[AIHelp 客服后台][1]配置同名称的Tag才能生效。 |
-	
+
 FAQ界面示例图:<br>
 ![FAQ界面][showFAQs-CN-Android]
 
@@ -506,7 +507,7 @@ FAQ界面示例图:<br>
 
 #### <h4 id="showFAQSection">6. 展示某一分类里的所有FAQ，调用`showFAQSection`方法
 	(必须确保调用以下两个接口,设置用户名称信息和设置用户唯一id信息)
-    [setUserName](#UserName) 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
+	[setUserName](#UserName) 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
 	[setUserId](#UserId) 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 	
 	</h4>
 ```java
@@ -561,7 +562,7 @@ FAQ界面示例图:<br>
 |:------------- |:---------------|:---------------|
 | sectionPublishId | String | FAQ分类的分类编号。打开[AIHelp 客服后台][1]，在**机器人→常见问题→[分类]**页面下找到指定FAQ类别的分类编号。注意：此sectionPublishId不能填写客服后台未存在的分类编号。 |
 | config | HashMap | 可选参数，自定义HashMap信息。可以在此处设置特定的Tag信息。说明：elva-tags对应的值为ArrayList类型，此处传入自定义的Tag，需要在[AIHelp 客服后台][1]配置同名称的Tag才能生效。 |
-	
+
 分类下所有FAQ界面示例图:<br>
 ![分类下所有FAQ界面][showFAQSection-CN-Android]
 
@@ -573,7 +574,7 @@ FAQ界面示例图:<br>
 
 ### <h4 id="showSingleFAQ">7. 展示单条FAQ，调用`showSingleFAQ`方法
 	(必须确保调用以下两个接口,设置用户名称信息和设置用户唯一id信息)
-    [setUserName](#UserName) 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
+	[setUserName](#UserName) 如果拿不到username，就传入空字符串""，会使用默认昵称"anonymous"
 	[setUserId](#UserId) 如果拿不到userid，就传入空字符串""，系统会生成一个唯一设备id 
 	</h4>
 ```java
@@ -716,7 +717,7 @@ FAQ界面示例图:<br>
 ### <h4 id="setSDKLanguage">12. 设置AIHelp智能客服系统的语言，调用`setSDKLanguage`方法</h4>
 ```java
 	ELvaChatServiceSdk.setSDKLanguage(String language);
-```	
+```
 **代码示例：**
 ```java
 	String languageAlias = "zh_CN";
@@ -743,7 +744,7 @@ FAQ界面示例图:<br>
 	// "anotherWelcomeText" is the key name, it's value is the usersay variable
 	map.put("anotherWelcomeText","usersay");
 ```
-	
+
 **代码示例：**
 ```java
 	HashMap<String,Object> map = new HashMap();
@@ -771,7 +772,7 @@ FAQ界面示例图:<br>
 				"server_id",
 				"1",
 				config);
-```				
+```
 或
 ```java
 	// 调用showElvaOP接口进入运营模块界面
