@@ -16,7 +16,7 @@
 
 	dependencies {
 	 ...
-	    implementation 'net.aihelp:elva:1.7.2.1'
+	    implementation 'net.aihelp:elva:1.7.2.2'
 	 ...
 	}
 	

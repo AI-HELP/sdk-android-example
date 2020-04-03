@@ -1,11 +1,15 @@
 # AIHELP Android SDK版本更新
 [进入中文版接入指南](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README_CN.md)
 
+## 1.7.2.2（最新）
+
+1.日志上传功能
+
 ## 1.7.2.1
 
 1.修复已知问题
 
-## 1.7.2.0(最新)
+## 1.7.2.0
 
 1. 新增消息发送状态提示及重发功能
 2. 新增推送功能：个推，极光，APNS
