@@ -827,3 +827,21 @@ key是:"private_welcome_str",value为您想要的定制的内容
 [showFAQSection-CN-Android]:https://github.com/AI-HELP/Docs-Screenshots/blob/master/showFAQSection-CN-Android.png "分类下所有FAQ界面"
 [showSingleFAQ-CN-Android]:https://github.com/AI-HELP/Docs-Screenshots/blob/master/showSingleFAQ-CN-Android.png "单条FAQ界面"
 [language]:https://github.com/AI-HELP/Docs-Screenshots/blob/master/Language-alias.png "部分语言简称"
+
+## LICENSE
+
+```
+Copyright 2015 ShareFun Network Limited.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
