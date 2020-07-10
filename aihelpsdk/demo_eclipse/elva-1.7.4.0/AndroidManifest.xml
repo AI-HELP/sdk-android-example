@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ljoy.chatbot"
-    android:versionCode="4"
-    android:versionName="1.7" >
+    android:versionName="1.7.4" >
 
     <uses-sdk
         android:minSdkVersion="14"
