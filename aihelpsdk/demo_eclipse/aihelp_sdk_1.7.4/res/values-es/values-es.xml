@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ab_alert_fail">Failed</string>
+    <string name="ab_alert_success">Success</string>
+    <string name="ab_faq_detail">Ver detalles</string>
+    <string name="ab_faq_need_more_help">Necesitas más ayuda?</string>
+    <string name="ab_faq_useful">Útil</string>
+    <string name="ab_faq_useless">Inútil</string>
+    <string name="ab_feedback_title">Please tell us more details</string>
+    <string name="ab_net_desc">Network Error, Please check your network</string>
+    <string name="ab_net_loading">Loading......</string>
+    <string name="ab_net_retry">Retry</string>
+    <string name="ab_op_help">HELP</string>
+    <string name="ab_search_faq_no_found">Lo sentimos mucho que no se puede encontrar ningún dato</string>
+    <string name="ab_send_fail_need_evaluate">Envío fallido, evalúe el ticket actual y vuelva a enviar uno</string>
+    <string name="break_off_remind">Su red está desconectada, inténtelo de nuevo más tarde.</string>
+    <string name="goto_Elva">CONTÁCTANOS</string>
+    <string name="hate_it">no me gusta!</string>
+    <string name="like_it">¡Me encantó!</string>
+    <string name="main_title">Elva</string>
+    <string name="mark_helpful_toast">Le resultó útil</string>
+    <string name="mark_no">NO</string>
+    <string name="mark_unhelpful_toast">No le resultó útil</string>
+    <string name="mark_yes">Sí</string>
+    <string name="mark_yes_no_question">¿Sirvió de ayuda</string>
+    <string name="media_upload_err_format">Unsupported files. Currently, only "mp4, 3gp, png, jpg, jpeg, gif" available when uploading.</string>
+    <string name="media_upload_err_net">Transmission timed out, file uploading failed.</string>
+    <string name="media_upload_err_size">El tamaño del archivo excede el límite, cargue el archivo de menos de %d MB</string>
+    <string name="network_ping">Ya sea que nos envíe condiciones de red, lo que nos ayudará a mejorar la calidad de su conexión de red</string>
+    <string name="network_ping_ok">Después de verificar, la red está disponible</string>
+    <string name="no_more_than_chars">No más de %s caracteres!!</string>
+    <string name="no_png_upload">¡La tarjeta SD no existe o no se puede escribir!!</string>
+    <string name="permission_denied_message">Se requiere permiso de almacenamiento para subir la imagen</string>
+    <string name="question">Tu pregunta</string>
+    <string name="self_service_interface">Autoservicio</string>
+    <string name="setting">Ajustes</string>
+    <string name="settings_enable_storage">Habilite Configuración> Permisos> Almacenamiento para cargar imágenes.</string>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ab_alert_fail">Failed</string>
+    <string name="ab_alert_success">Success</string>
+    <string name="ab_faq_detail">Detayları göster</string>
+    <string name="ab_faq_need_more_help">Ihtiyacınız yardıma?</string>
+    <string name="ab_faq_useful">İşe yarar</string>
+    <string name="ab_faq_useless">Faydasız</string>
+    <string name="ab_feedback_title">Please tell us more details</string>
+    <string name="ab_net_desc">Network Error, Please check your network</string>
+    <string name="ab_net_loading">Loading......</string>
+    <string name="ab_net_retry">Retry</string>
+    <string name="ab_op_help">HELP</string>
+    <string name="ab_search_faq_no_found">Oops,no relevant results were found</string>
+    <string name="ab_send_fail_need_evaluate">Gönderme başarısız oldu, lütfen geçerli bileti değerlendirin ve bir tanesini tekrar gönderin</string>
+    <string name="break_off_remind">Bağlantı hatası,lütfen tekrar deneyin!</string>
+    <string name="goto_Elva">İletişim</string>
+    <string name="hate_it">Sevmedim!</string>
+    <string name="like_it">Sevdim!</string>
+    <string name="main_title">Elva</string>
+    <string name="mark_helpful_toast">Bunu faydalı buldum!</string>
+    <string name="mark_no">Hayır</string>
+    <string name="mark_unhelpful_toast">Bunu faydalı bulmadım!</string>
+    <string name="mark_yes">Evet</string>
+    <string name="mark_yes_no_question">Bunu faydalı buldunuz mu?</string>
+    <string name="media_upload_err_format">Unsupported files. Currently, only "mp4, 3gp, png, jpg, jpeg, gif" available when uploading.</string>
+    <string name="media_upload_err_net">Transmission timed out, file uploading failed.</string>
+    <string name="media_upload_err_size">Dosya boyutu sınırı aşıyor, lütfen dosyayı %d MB\'tan küçük yükleyin</string>
+    <string name="network_ping">Ağ bağlantınızın kalitesini artırmamıza yardımcı olacak ağ koşullarının bize gönderilip gönderilmeyeceği</string>
+    <string name="network_ping_ok">Kontrol ettikten sonra ağ kullanılabilir</string>
+    <string name="no_more_than_chars">En fazla %s karakter kullanılabilir!</string>
+    <string name="no_png_upload">SD kartınız yok ya da üzerine yazılamıyor!</string>
+    <string name="permission_denied_message">Fotoğraf yüklenmesi için depolamaya erişim izni gerekiyor!</string>
+    <string name="question">Sorunuzu girin!</string>
+    <string name="self_service_interface">Kendin Hallet</string>
+    <string name="setting">Ayarlar</string>
+    <string name="settings_enable_storage">Resim yüklemek için lütfen Ayarlar> İzinler> Depolama\'yı etkinleştirin.</string>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ab_alert_fail">Failed</string>
+    <string name="ab_alert_success">Success</string>
+    <string name="ab_faq_detail">Melihat rincian</string>
+    <string name="ab_faq_need_more_help">butuh lebih bantuan?</string>
+    <string name="ab_faq_useful">Berguna</string>
+    <string name="ab_faq_useless">Tak berguna</string>
+    <string name="ab_feedback_title">Please tell us more details</string>
+    <string name="ab_net_desc">Network Error, Please check your network</string>
+    <string name="ab_net_loading">Loading......</string>
+    <string name="ab_net_retry">Retry</string>
+    <string name="ab_op_help">HELP</string>
+    <string name="ab_search_faq_no_found">Oops,no relevant results were found</string>
+    <string name="ab_send_fail_need_evaluate">Gagal kirim, harap evaluasi tiket saat ini kemudian kirimkan kembali</string>
+    <string name="break_off_remind">Koneksi internet anda terputus, harap coba beberapa saat lagi!</string>
+    <string name="goto_Elva">Hubungi Kami</string>
+    <string name="hate_it">Tidak suka!</string>
+    <string name="like_it">Suka!</string>
+    <string name="main_title">Elva</string>
+    <string name="mark_helpful_toast">Anda merasa terbantu</string>
+    <string name="mark_no">TIDAK</string>
+    <string name="mark_unhelpful_toast">Anda merasa tidak terbantu</string>
+    <string name="mark_yes">YA</string>
+    <string name="mark_yes_no_question">Apakah ini membantu?</string>
+    <string name="media_upload_err_format">Unsupported files. Currently, only "mp4, 3gp, png, jpg, jpeg, gif" available when uploading.</string>
+    <string name="media_upload_err_net">Transmission timed out, file uploading failed.</string>
+    <string name="media_upload_err_size">Ukuran file melebihi batas, harap unggah file lebih kecil dari %d MB</string>
+    <string name="network_ping">Apakah akan mengirimi kami kondisi jaringan, yang akan membantu kami meningkatkan kualitas koneksi jaringan Anda</string>
+    <string name="network_ping_ok">Setelah memeriksa, jaringan tersedia</string>
+    <string name="no_more_than_chars">Tidak dapat melebihi %s karakter!</string>
+    <string name="no_png_upload">Kartu SD tidak dapat terbaca!</string>
+    <string name="permission_denied_message">Izin penyimpanan diperlukan untuk mengunggah gambar</string>
+    <string name="question">masukkan pertanyaan</string>
+    <string name="self_service_interface">Self-Service</string>
+    <string name="setting">Pengaturan</string>
+    <string name="settings_enable_storage">Harap aktifkan Pengaturan> Izin> Penyimpanan untuk mengunggah gambar.</string>
+</resources>

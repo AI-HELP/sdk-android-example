@@ -1,7 +1,11 @@
 # AIHELP Android SDK version update
 [SDK Integration Guide](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README.md)
 
-## 1.7.2.2 (latest)
+## 1.7.4 (latest)
+
+1. bugfix
+
+## 1.7.2.2
 
 1. upload log
 

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ab_alert_fail">Failed</string>
+    <string name="ab_alert_success">Success</string>
+    <string name="ab_faq_detail">Details anzeigen</string>
+    <string name="ab_faq_need_more_help">Benötigen weitere Hilfe?</string>
+    <string name="ab_faq_useful">Nützlich</string>
+    <string name="ab_faq_useless">Nutzlos</string>
+    <string name="ab_feedback_title">Please tell us more details</string>
+    <string name="ab_net_desc">Network Error, Please check your network</string>
+    <string name="ab_net_loading">Loading......</string>
+    <string name="ab_net_retry">Retry</string>
+    <string name="ab_op_help">HELP</string>
+    <string name="ab_search_faq_no_found">Tut mir Leid,Keine Ergebnisse gefunden</string>
+    <string name="ab_send_fail_need_evaluate">Senden fehlgeschlagen, bitte bewerten Sie das aktuelle Ticket und reichen Sie es erneut ein</string>
+    <string name="break_off_remind">Ihr Netzwerk ist getrennt,bitte versuchen Sie es später noch einmal!</string>
+    <string name="goto_Elva">Kontaktieren uns</string>
+    <string name="hate_it">Mag es nicht!</string>
+    <string name="like_it">Liebte es!</string>
+    <string name="main_title">Elva</string>
+    <string name="mark_helpful_toast">Sie fanden es hilfreich.</string>
+    <string name="mark_no">Nein</string>
+    <string name="mark_unhelpful_toast">Sie finden es nicht hilfreich.</string>
+    <string name="mark_yes">Ja</string>
+    <string name="mark_yes_no_question">Hilft das?</string>
+    <string name="media_upload_err_format">Unsupported files. Currently, only "mp4, 3gp, png, jpg, jpeg, gif" available when uploading.</string>
+    <string name="media_upload_err_net">Transmission timed out, file uploading failed.</string>
+    <string name="media_upload_err_size">Die Dateigröße überschreitet das Limit. Bitte laden Sie die Datei mit einer Größe von weniger als %d MB hoch</string>
+    <string name="network_ping">Geben Sie an, ob Sie uns Netzwerkbedingungen senden möchten, mit denen wir die Qualität Ihrer Netzwerkverbindung verbessern können</string>
+    <string name="network_ping_ok">Nach der Überprüfung ist das Netzwerk verfügbar</string>
+    <string name="no_more_than_chars">Nicht mehr als %s Zeichen!</string>
+    <string name="no_png_upload">SD-Karte existiert nicht oder ist nicht lesbar oder beschreibbar!</string>
+    <string name="permission_denied_message">Speicher Erlaubnis ist erforderlich,um Bilder hochzuladen.</string>
+    <string name="question">Ihre Frage</string>
+    <string name="self_service_interface">Selbst-Service</string>
+    <string name="setting">Einstellungen</string>
+    <string name="settings_enable_storage">Bitte aktivieren Sie Einstellungen> Berechtigungen> Speicher, um Bilder hochzuladen.</string>
+</resources>

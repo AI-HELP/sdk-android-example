@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="12.5dp"
+    android:paddingBottom="12.5dp"
+    android:visibility="visible">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/imageView1Parent"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp">
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:src="@drawable/default_player_elva" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ab__msg_right_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toStartOf="@id/imageView1Parent"
+            android:layout_toLeftOf="@id/imageView1Parent"
+            android:background="@drawable/chat_bot_msg_bg_right"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/ab__msg_right_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.3"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#ff000000"
+                android:textIsSelectable="true"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/upload_image_prog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/amin_pgbar"
+                    android:visibility="gone" />
+
+                <com.ljoy.chatbot.view.ProcessImageView
+                    android:id="@+id/ab__upload_img"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/pb_loading_content"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerInParent="true"
+            android:layout_toStartOf="@+id/ab__msg_right_area"
+            android:layout_toLeftOf="@+id/ab__msg_right_area"
+            android:indeterminateDrawable="@drawable/ab_progress_loading"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_gantanhao_content"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerInParent="true"
+            android:layout_toStartOf="@+id/ab__msg_right_area"
+            android:layout_toLeftOf="@+id/ab__msg_right_area"
+            android:background="@drawable/ab_gantanhao"
+            android:visibility="gone" />
+    </RelativeLayout>
+</RelativeLayout>

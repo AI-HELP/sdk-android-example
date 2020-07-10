@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ab_alert_fail">失败</string>
+    <string name="ab_alert_success">成功</string>
+    <string name="ab_faq_detail">查看详情</string>
+    <string name="ab_faq_need_more_help">需要更多帮助?</string>
+    <string name="ab_faq_useful">有用</string>
+    <string name="ab_faq_useless">无用</string>
+    <string name="ab_feedback_title">请告知我们具体原因</string>
+    <string name="ab_net_desc">网络请求失败，请检查您的网络</string>
+    <string name="ab_net_loading">正在全力加载</string>
+    <string name="ab_net_retry">重试</string>
+    <string name="ab_op_help">HELP</string>
+    <string name="ab_search_faq_no_found">抱歉,未找到相关结果</string>
+    <string name="ab_send_fail_need_evaluate">发送失败，请评价后重新提交客诉</string>
+    <string name="break_off_remind">您的网络连接已经断开,请检查网络!</string>
+    <string name="goto_Elva">联系客服</string>
+    <string name="hate_it">不喜欢!</string>
+    <string name="like_it">喜欢!</string>
+    <string name="main_title">Elva</string>
+    <string name="mark_helpful_toast">你发现这有帮助</string>
+    <string name="mark_no">否</string>
+    <string name="mark_unhelpful_toast">你发现这无帮助</string>
+    <string name="mark_yes">是</string>
+    <string name="mark_yes_no_question">这有帮助吗?</string>
+    <string name="media_upload_err_format">文件格式不支持，目前只能上传 mp4, 3gp, png, jpg, jpeg, gif 格式的文件</string>
+    <string name="media_upload_err_net">网络传输超时，文件上传失败</string>
+    <string name="media_upload_err_size">文件大小超过限制，请上传小于 %d M的文件</string>
+    <string name="network_ping">是否将网络状况发送给我们，这将帮助我们改善与您的网络连接质量</string>
+    <string name="network_ping_ok">经检测，网络是正常的</string>
+    <string name="no_more_than_chars">不能超过%s个字!</string>
+    <string name="no_png_upload">SD卡不存在或者不可读写!</string>
+    <string name="permission_denied_message">需要存储权限来上传图片</string>
+    <string name="question">输入问题</string>
+    <string name="self_service_interface">自助服务</string>
+    <string name="setting">设置</string>
+    <string name="settings_enable_storage">请启用设置>权限>存储以上传图片</string>
+</resources>

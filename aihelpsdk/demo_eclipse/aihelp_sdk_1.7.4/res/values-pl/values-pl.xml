@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ab_alert_fail">Failed</string>
+    <string name="ab_alert_success">Success</string>
+    <string name="ab_faq_detail">Pokaż szczegóły</string>
+    <string name="ab_faq_need_more_help">Bisogno Di Più Aiuto？</string>
+    <string name="ab_faq_useful">Przydatny</string>
+    <string name="ab_faq_useless">Nieprzydatny</string>
+    <string name="ab_feedback_title">Please tell us more details</string>
+    <string name="ab_net_desc">Network Error, Please check your network</string>
+    <string name="ab_net_loading">Loading......</string>
+    <string name="ab_net_retry">Retry</string>
+    <string name="ab_op_help">HELP</string>
+    <string name="ab_search_faq_no_found">Oops,no relevant results were found</string>
+    <string name="ab_send_fail_need_evaluate">Wysyłanie nie powiodło się, sprawdź aktualny bilet, a następnie prześlij go ponownie</string>
+    <string name="break_off_remind">Brak dostępu do sieci, proszę spróbuj ponownie później.</string>
+    <string name="goto_Elva">Obsługa klienta</string>
+    <string name="hate_it">Nie lubię!</string>
+    <string name="like_it">Lubię to!</string>
+    <string name="main_title">Elva</string>
+    <string name="mark_helpful_toast">Uznałeś to za przydatne.</string>
+    <string name="mark_no">Nie</string>
+    <string name="mark_unhelpful_toast">Nie uznałeś tego za przydatne.</string>
+    <string name="mark_yes">Tak</string>
+    <string name="mark_yes_no_question">Czy było to przydatne?</string>
+    <string name="media_upload_err_format">Unsupported files. Currently, only "mp4, 3gp, png, jpg, jpeg, gif" available when uploading.</string>
+    <string name="media_upload_err_net">Transmission timed out, file uploading failed.</string>
+    <string name="media_upload_err_size">Rozmiar pliku przekracza limit, prześlij plik mniejszy niż %d MB</string>
+    <string name="network_ping">Czy wysłać nam warunki sieciowe, które pomogą nam poprawić jakość twojego połączenia sieciowego</string>
+    <string name="network_ping_ok">Po sprawdzeniu sieć jest dostępna</string>
+    <string name="no_more_than_chars">Nie więcej niż %s znaków!</string>
+    <string name="no_png_upload">Brak karty SD lub nie można jej odczytać!</string>
+    <string name="permission_denied_message">Dostęp do pamięci jest potrzebny, aby dodać zdjęcie.</string>
+    <string name="question">Wprowadź pytanie.</string>
+    <string name="self_service_interface">Samoobsługa</string>
+    <string name="setting">Ustawienia</string>
+    <string name="settings_enable_storage">Proszę włączyć Ustawienia> Uprawnienia> Pamięć, aby przesyłać zdjęcia.</string>
+</resources>
