@@ -16,7 +16,7 @@
 
 	dependencies {
 	 ...
-	    implementation 'net.aihelp:elva:1.7.4.0'
+	    implementation 'net.aihelp:elva:1.7.4.2'
 	 ...
 	}
 	
@@ -26,7 +26,7 @@
 	如果您的项目里已经存在 "android-support-v4.jar" 则无需再做额外操作。
 	如果您用到了 appcompat-v7，因为 appcompat-v7 其实包含了 android-support-v4，所以也无需再做额外操作。
 
-请确保 build.gradle 同步成功: 在 Android Studio 的 External Libraries 下面能够看到 "Gradle: net.aihelp:elva:1.7.4@aar" 相关内容。
+请确保 build.gradle 同步成功: 在 Android Studio 的 External Libraries 下面能够看到 "Gradle: net.aihelp:elva:1.7.4.2@aar" 相关内容。
 如果无法自动加载，请采用第二种导入方式：
 
 ### Android Studio 导入, 方式二： 下载 AIHelp Android SDK 进行本地接入：

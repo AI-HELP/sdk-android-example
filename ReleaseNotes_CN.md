@@ -1,7 +1,7 @@
 # AIHELP Android SDK版本更新
 [进入中文版接入指南](https://github.com/AI-HELP/cocos-android-SDK/blob/master/README_CN.md)
 
-## 1.7.4.0（最新）
+## 1.7.4.2（最新）
 
 1.修复了一些问题
 

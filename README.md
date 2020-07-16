@@ -15,7 +15,7 @@
 
 	dependencies {
 	 ...
-	    implementation 'net.aihelp:elva:1.7.4.0'
+	    implementation 'net.aihelp:elva:1.7.4.2'
 	...
 	}
 	
@@ -24,7 +24,7 @@
 	
 	Ignore if there is "android-support-v4.jar" in your project
 
-Wait until the build.gradle sync completion and make sure there is no error during sync: Under the "External Libraries" folder of Android Studio Project sturcture view you should be able to find the folder "elva-1.7.4". If there is an error during sync or you can not find elva folder. Use the Method #2 below:
+Wait until the build.gradle sync completion and make sure there is no error during sync: Under the "External Libraries" folder of Android Studio Project sturcture view you should be able to find the folder "elva-1.7.4.2". If there is an error during sync or you can not find elva folder. Use the Method #2 below:
 
 ### Method #2. Download The AIHelp Android SDK：
 Click "Clone or download" to download Android SDK in the github page, unzip the downloaded file.

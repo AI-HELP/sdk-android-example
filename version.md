@@ -1,7 +1,7 @@
 
-* 2020-07-10
+* 2020-07-16
 
-  version 1.7.4.0 release 
+  version 1.7.4.2 release 
 
 * 2020-04-03
 
