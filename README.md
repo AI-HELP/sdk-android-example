@@ -49,7 +49,7 @@ Click "Clone or download" to download Android SDK in the github page, unzip the 
   In the AndroidManifest.xml of your project, add the below information：     
   The AIHelp SDK requires a minimum version of android sdk of 14, and a target version of 23 to the latest version.
   <uses-sdk android:minSdkVersion="14" 
-  android:targetSdkVersion="23"/>
+  android:targetSdkVersion="28/>
 
 **a. Add Required Permissions**
 
@@ -75,33 +75,48 @@ Click "Clone or download" to download Android SDK in the github page, unzip the 
 		android:name="com.ljoy.chatbot.ChatMainActivity"
 		android:configChanges="keyboardHidden|orientation|screenSize"
 		android:screenOrientation="portrait"
-		android:theme="@style/showBgStyleFullscreen"
+		android:theme="@style/Theme.AppCompat.Light.NoActionBar"
 		android:windowSoftInputMode="adjustResize|stateHidden" />
 	<activity
 		android:name="com.ljoy.chatbot.OPActivity"
 		android:configChanges="keyboardHidden|orientation|screenSize"
 		android:screenOrientation="portrait"
-		android:theme="@style/showBgStyleFullscreen"
+		android:theme="@style/Theme.AppCompat.Light.NoActionBar"
 		android:windowSoftInputMode="adjustResize|stateHidden" />
 	<activity
 		android:name="com.ljoy.chatbot.FAQActivity"
 		android:configChanges="keyboardHidden|orientation|screenSize"
 		android:screenOrientation="portrait"
-		android:theme="@style/showBgStyleFullscreen"
+		android:theme="@style/Theme.AppCompat.Light.NoActionBar"
 		android:windowSoftInputMode="adjustResize|stateHidden" />
 	<activity
 		android:name="com.ljoy.chatbot.WebViewActivity"
 		android:configChanges="keyboardHidden|orientation|screenSize"
 		android:screenOrientation="portrait"
-		android:theme="@style/showBgStyleFullscreen"
+		android:theme="@style/Theme.AppCompat.Light.NoActionBar"
 		android:windowSoftInputMode="adjustResize|stateHidden" />
 	<activity
 		android:name="com.ljoy.chatbot.QAWebActivity"
 		android:configChanges="keyboardHidden|orientation|screenSize"
 		android:screenOrientation="portrait"
-		android:theme="@style/showBgStyleFullscreen"
+		android:theme="@style/Theme.AppCompat.Light.NoActionBar"
 		android:windowSoftInputMode="adjustResize|stateHidden" />
 	<!--需要的Activity -->
+
+
+
+**c. others**
+
+If you are building your app with API29, then you need to configure your application node in your AndroidManifest.xml as follows:
+
+```xml
+<application
+    android:requestLegacyExternalStorage="true"
+    android:usesCleartextTraffic="true">
+</application>
+```
+
+
 
 About the screen orientations: 
 **android:screenOrientation="portrait"** 

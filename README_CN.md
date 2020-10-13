@@ -80,7 +80,7 @@
 
 AIHelp SDK 要求android sdk最低版本 >= 14，目标版本 >= 23：
 
-	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23"/>
+	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="28"/>
 
 **2. 增加需要的权限**
 
@@ -109,41 +109,53 @@ AIHelp SDK 要求android sdk最低版本 >= 14，目标版本 >= 23：
 
 **3. 增加activity:**
     
+
 	<!--需要的Activity-->
 	<activity
 		android:name="com.ljoy.chatbot.ChatMainActivity"
 		android:configChanges="keyboardHidden|orientation|screenSize"
 		android:screenOrientation="portrait"
-		android:theme="@style/showBgStyleFullscreen"
+		android:theme="@style/Theme.AppCompat.Light.NoActionBar"
 		android:windowSoftInputMode="adjustResize|stateHidden" />
 	<activity
 		android:name="com.ljoy.chatbot.OPActivity"
 		android:configChanges="keyboardHidden|orientation|screenSize"
 		android:screenOrientation="portrait"
-		android:theme="@style/showBgStyleFullscreen"
+		android:theme="@style/Theme.AppCompat.Light.NoActionBar"
 		android:windowSoftInputMode="adjustResize|stateHidden" />
 	<activity
 		android:name="com.ljoy.chatbot.FAQActivity"
 		android:configChanges="keyboardHidden|orientation|screenSize"
 		android:screenOrientation="portrait"
-		android:theme="@style/showBgStyleFullscreen"
+		android:theme="@style/Theme.AppCompat.Light.NoActionBar"
 		android:windowSoftInputMode="adjustResize|stateHidden" />
 	<activity
 		android:name="com.ljoy.chatbot.WebViewActivity"
 		android:configChanges="keyboardHidden|orientation|screenSize"
 		android:screenOrientation="portrait"
-		android:theme="@style/showBgStyleFullscreen"
+		android:theme="@style/Theme.AppCompat.Light.NoActionBar"
 		android:windowSoftInputMode="adjustResize|stateHidden" />
 	<activity
 		android:name="com.ljoy.chatbot.QAWebActivity"
 		android:configChanges="keyboardHidden|orientation|screenSize"
 		android:screenOrientation="portrait"
-		android:theme="@style/showBgStyleFullscreen"
+		android:theme="@style/Theme.AppCompat.Light.NoActionBar"
 		android:windowSoftInputMode="adjustResize|stateHidden" />
 	<!--需要的Activity -->
 
+**4. 其他**
 
-​    
+如果您的应用基于 API29 构建，那么为了可以正常访问外部存储，您需要在主工程的 application 节点加入如下配置：
+
+```xml
+<application
+    android:requestLegacyExternalStorage="true"
+    android:usesCleartextTraffic="true">
+</application>
+```
+
+
+
 关于横竖屏显示：上述配置中
 **android:screenOrientation="portrait"**
 代表AIHelp的UI会根据手机屏幕方向自动调整横竖屏。如果您要固定AIHelp屏幕展示，请做如下修改：
