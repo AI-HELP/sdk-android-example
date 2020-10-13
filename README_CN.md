@@ -78,7 +78,7 @@
 
 **1. 打包版本要求**
 
-AIHelp SDK 要求android sdk最低版本 >= 14，目标版本 >= 23：
+AIHelp SDK 要求android sdk最低版本 >= 14，目标版本 >= 28：
 
 	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="28"/>
 

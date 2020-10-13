@@ -47,7 +47,7 @@ Click "Clone or download" to download Android SDK in the github page, unzip the 
     -keep class com.facebook.** {*;}
 
   In the AndroidManifest.xml of your project, add the below information：     
-  The AIHelp SDK requires a minimum version of android sdk of 14, and a target version of 23 to the latest version.
+  The AIHelp SDK requires a minimum version of android sdk of 14, and a target version of 28 to the latest version.
   <uses-sdk android:minSdkVersion="14" 
   android:targetSdkVersion="28/>
 
