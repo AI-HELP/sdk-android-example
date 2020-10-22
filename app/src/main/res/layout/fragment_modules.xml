@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:padding="20dp"
+    tools:context=".ui.fragment.ModulesFragment">
+
+    <TextView
+        android:id="@+id/tv_conversation_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Conversation"
+        android:textColor="#333333"
+        android:textSize="25sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_conversation_title"
+        android:layout_alignStart="@id/tv_conversation_title"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_robot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:textAllCaps="false"
+            android:text="Robot" />
+
+        <Button
+            android:id="@+id/btn_manual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:textAllCaps="false"
+            android:text="Manual" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_faq_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_conversation_title"
+        android:layout_marginTop="80dp"
+        android:text="FAQ"
+        android:textColor="#333333"
+        android:textSize="25sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_faq_title"
+        android:layout_alignStart="@id/tv_faq_title"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_all_sections"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textAllCaps="false"
+            android:layout_marginEnd="10dp"
+            android:text="All\nSections" />
+
+        <Button
+            android:id="@+id/btn_single_section"
+            android:textAllCaps="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="Single\nSection" />
+
+        <Button
+            android:id="@+id/btn_single_faq"
+            android:textAllCaps="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="Single\nFAQ" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_op_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_faq_title"
+        android:layout_marginTop="80dp"
+        android:text="Operation"
+        android:textColor="#333333"
+        android:textSize="25sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_op_title"
+        android:layout_alignStart="@id/tv_op_title"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_operation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textAllCaps="false"
+            android:layout_marginEnd="10dp"
+            android:text="showOperation" />
+
+    </LinearLayout>
+
+</RelativeLayout>
