@@ -1,4 +1,4 @@
-[<p align="center"><img src="https://cdn.aihelp.net/logo/logo.png" data-canonical-src="https://cdn.aihelp.net/logo/logo.png" width="145" height="46" align="center"/></p>](https://crowdin.com)
+[<p align="center"><img src="https://cdn.aihelp.net/logo/logo.png" data-canonical-src="https://cdn.aihelp.net/logo/logo.png" width="200" height="70" align="center"/></p>](https://crowdin.com)
 
 
 
@@ -10,7 +10,7 @@ This reposirory contains all code examples of AIHelp Android SDK v2.1.0.
 
 With this sample project, you can learn how to integrated AIHelp into a real project.
 
-**Note: To run the example project, you need to fill in SDK configuration in the App.java.**
+***Note: To run the example project, you need to fill in SDK configuration in the App.java.***
 
 
 
