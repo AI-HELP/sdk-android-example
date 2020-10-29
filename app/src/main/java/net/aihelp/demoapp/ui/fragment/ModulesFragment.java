@@ -9,7 +9,7 @@ import net.aihelp.config.ConversationConfig;
 import net.aihelp.config.FaqConfig;
 import net.aihelp.config.OperationConfig;
 import net.aihelp.config.enums.ConversationIntent;
-import net.aihelp.config.enums.ShowContactUsMoment;
+import net.aihelp.config.enums.ShowConversationMoment;
 import net.aihelp.demoapp.R;
 import net.aihelp.init.AIHelpSupport;
 
@@ -83,7 +83,7 @@ public class ModulesFragment extends Fragment implements View.OnClickListener {
                 .setWelcomeMessage("This is special configured welcome message for FAQ entrance.")
                 .build();
         FaqConfig config = new FaqConfig.Builder()
-                .setShowContactUsMoment(ShowContactUsMoment.AFTER_MARKING_UNHELPFUL)
+                .setShowConversationMoment(ShowConversationMoment.AFTER_MARKING_UNHELPFUL)
                 .setConversationConfig(faqConversationConfig)
                 .build();
         AIHelpSupport.showAllFAQSections(config);
@@ -95,7 +95,7 @@ public class ModulesFragment extends Fragment implements View.OnClickListener {
                 .setWelcomeMessage("Hi, there, is there anything I can do for you?")
                 .build();
         FaqConfig config = new FaqConfig.Builder()
-                .setShowContactUsMoment(ShowContactUsMoment.ALWAYS)
+                .setShowConversationMoment(ShowConversationMoment.ALWAYS)
                 .setConversationConfig(faqConversationConfig)
                 .build();
         AIHelpSupport.showFAQSection("Section ID", config);
@@ -107,7 +107,7 @@ public class ModulesFragment extends Fragment implements View.OnClickListener {
                 .setWelcomeMessage("Hi, there, is there anything I can do for you?")
                 .build();
         FaqConfig config = new FaqConfig.Builder()
-                .setShowContactUsMoment(ShowContactUsMoment.ONLY_IN_ANSWER_PAGE)
+                .setShowConversationMoment(ShowConversationMoment.ONLY_IN_ANSWER_PAGE)
                 .setConversationConfig(faqConversationConfig)
                 .build();
         AIHelpSupport.showSingleFAQ("FAQ ID", config);

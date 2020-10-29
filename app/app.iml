@@ -141,6 +141,6 @@
     <orderEntry type="library" name="Gradle: androidx.navigation:navigation-common:2.3.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.interpolator:interpolator:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.annotation:annotation-experimental:1.0.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: net.aihelp:android-aihelp-aar:2.1.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: net.aihelp:android-aihelp-aar:2.1.2@aar" level="project" />
   </component>
 </module>
