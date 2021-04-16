@@ -2,10 +2,11 @@ package net.aihelp.demoapp
 
 import android.app.Application
 import android.widget.Toast
+import androidx.multidex.MultiDexApplication
 import net.aihelp.init.AIHelpSupport
 import net.aihelp.ui.listener.OnAIHelpInitializedCallback
 
-class App : Application(), OnAIHelpInitializedCallback {
+class App : MultiDexApplication(), OnAIHelpInitializedCallback {
     override fun onCreate() {
         super.onCreate()
         AIHelpSupport.init(this,
