@@ -1,0 +1,49 @@
+package net.aihelp.demoapp.ui.fragment
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import net.aihelp.config.UserConfig
+import net.aihelp.demoapp.R
+import net.aihelp.init.AIHelpSupport
+import org.json.JSONObject
+
+class ConfigurationFragment : Fragment(), View.OnClickListener {
+    override fun onCreateView(inflater: LayoutInflater,
+                              container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val root = inflater.inflate(R.layout.fragment_configuration, container, false)
+        root.findViewById<View>(R.id.btn_login).setOnClickListener(this)
+        root.findViewById<View>(R.id.btn_logout).setOnClickListener(this)
+        root.findViewById<View>(R.id.btn_update_lan).setOnClickListener(this)
+        return root
+    }
+
+    override fun onClick(v: View) {
+        when (v.id) {
+            R.id.btn_login -> updateUserInfo()
+            R.id.btn_logout -> AIHelpSupport.resetUserInfo()
+            R.id.btn_update_lan -> AIHelpSupport.updateSDKLanguage("ja")
+        }
+    }
+
+    private fun updateUserInfo() {
+        val customData = JSONObject()
+        try {
+            customData.put("level", 34)
+            customData.put("total_recharge", 300)
+            customData.put("remaining", 56)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        val userConfig = UserConfig.Builder()
+                .setUserId("UID")
+                .setServerId("SERVER ID")
+                .setUserName("USER NAME")
+                .setUserTags("pay1,s1,vip2")
+                .setCustomData(customData.toString())
+                .build()
+        AIHelpSupport.updateUserInfo(userConfig)
+    }
+}

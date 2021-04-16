@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AIHelp Demo</string>
+    <string name="app_name">AIHelp Support</string>
     <string name="title_home">Modules</string>
     <string name="title_dashboard">Configuration</string>
     <string name="title_notifications">Others</string>
