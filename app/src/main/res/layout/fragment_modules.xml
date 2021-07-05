@@ -1,123 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:padding="20dp"
-    tools:context=".ui.fragment.ModulesFragment">
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal">
 
-    <TextView
-        android:id="@+id/tv_conversation_title"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Conversation"
-        android:textColor="#333333"
-        android:textSize="25sp" />
+        android:gravity="center_horizontal"
+        tools:context=".ui.fragment.ModulesFragment">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_conversation_title"
-        android:layout_alignStart="@id/tv_conversation_title"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btn_robot"
+        <TextView
+            android:id="@+id/tv_conversation_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:textAllCaps="false"
-            android:text="Robot" />
+            android:text="Conversation"
+            android:textColor="#333333"
+            android:textSize="25sp" />
 
-        <Button
-            android:id="@+id/btn_manual"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:textAllCaps="false"
-            android:text="Manual" />
+            android:layout_below="@id/tv_conversation_title"
+            android:layout_alignStart="@id/tv_conversation_title"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/btn_robot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="Robot"
+                android:textAllCaps="false" />
 
-    <TextView
-        android:id="@+id/tv_faq_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_conversation_title"
-        android:layout_marginTop="80dp"
-        android:text="FAQ"
-        android:textColor="#333333"
-        android:textSize="25sp" />
+            <Button
+                android:id="@+id/btn_manual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="Manual"
+                android:textAllCaps="false" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_faq_title"
-        android:layout_alignStart="@id/tv_faq_title"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/btn_all_sections"
+        <TextView
+            android:id="@+id/tv_faq_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:textAllCaps="false"
-            android:layout_marginEnd="10dp"
-            android:text="All\nSections" />
+            android:layout_below="@id/tv_conversation_title"
+            android:layout_marginTop="80dp"
+            android:text="FAQ"
+            android:textColor="#333333"
+            android:textSize="25sp" />
 
-        <Button
-            android:id="@+id/btn_single_section"
-            android:textAllCaps="false"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:text="Single\nSection" />
+            android:layout_below="@id/tv_faq_title"
+            android:layout_alignStart="@id/tv_faq_title"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btn_single_faq"
-            android:textAllCaps="false"
+            <Button
+                android:id="@+id/btn_all_sections"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="All\nSections"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_single_section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="Single\nSection"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_single_faq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="Single\nFAQ"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_op_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:text="Single\nFAQ" />
+            android:layout_below="@id/tv_faq_title"
+            android:layout_marginTop="80dp"
+            android:text="Operation"
+            android:textColor="#333333"
+            android:textSize="25sp" />
 
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/tv_op_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_faq_title"
-        android:layout_marginTop="80dp"
-        android:text="Operation"
-        android:textColor="#333333"
-        android:textSize="25sp" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_op_title"
-        android:layout_alignStart="@id/tv_op_title"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btn_operation"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:textAllCaps="false"
-            android:layout_marginEnd="10dp"
-            android:text="showOperation" />
+            android:layout_below="@id/tv_op_title"
+            android:layout_alignStart="@id/tv_op_title"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/btn_operation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="showOperation"
+                android:textAllCaps="false" />
 
-</RelativeLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>

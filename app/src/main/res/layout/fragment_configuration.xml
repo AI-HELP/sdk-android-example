@@ -1,75 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:padding="20dp">
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal">
 
-    <TextView
-        android:id="@+id/tv_user_title"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Updating User Info"
-        android:textColor="#333333"
-        android:textSize="25sp" />
+        android:gravity="center_horizontal">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_user_title"
-        android:layout_alignStart="@id/tv_user_title"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btn_login"
+        <TextView
+            android:id="@+id/tv_user_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:textAllCaps="false"
-            android:text="When user login" />
+            android:text="Updating User Info"
+            android:textColor="#333333"
+            android:textSize="25sp" />
 
-        <Button
-            android:id="@+id/btn_logout"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:textAllCaps="false"
-            android:text="When user logout" />
+            android:layout_below="@id/tv_user_title"
+            android:layout_alignStart="@id/tv_user_title"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="When user login"
+                android:textAllCaps="false" />
 
-    <TextView
-        android:id="@+id/tv_lan_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_user_title"
-        android:layout_marginTop="80dp"
-        android:text="Going International"
-        android:textColor="#333333"
-        android:textSize="25sp" />
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="When user logout"
+                android:textAllCaps="false" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_lan_title"
-        android:layout_alignStart="@id/tv_lan_title"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/btn_update_lan"
+        <TextView
+            android:id="@+id/tv_lan_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:textAllCaps="false"
-            android:layout_marginEnd="10dp"
-            android:text="Updating SDK Language" />
+            android:layout_below="@id/tv_user_title"
+            android:layout_marginTop="80dp"
+            android:text="Going International"
+            android:textColor="#333333"
+            android:textSize="25sp" />
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_lan_title"
+            android:layout_alignStart="@id/tv_lan_title"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
-</RelativeLayout>
+            <Button
+                android:id="@+id/btn_update_lan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="Updating SDK Language"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>
