@@ -1,6 +1,10 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
+Properties properties = new Properties()
+InputStream inputStream = project.rootProject.file('local.properties').newDataInputStream() ;
+properties.load( inputStream )
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
@@ -15,11 +19,16 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildTypes {
+    signingConfigs {
+        config {
+            storeFile file(properties.getProperty('jksPath'))
+            storePassword properties.getProperty('jksPassword')
+            keyAlias properties.getProperty('jksAlias')
+            keyPassword properties.getProperty('jksPassword')
+        }
+    }
 
-        Properties properties = new Properties()
-        InputStream inputStream = project.rootProject.file('local.properties').newDataInputStream() ;
-        properties.load( inputStream )
+    buildTypes {
 
         def appKey = properties.getProperty('appKey')
         def domain = properties.getProperty('domain')
@@ -29,12 +38,14 @@ android {
             buildConfigField 'String', 'THIS_IS_YOUR_APP_KEY', "\"$appKey\""
             buildConfigField 'String', 'THIS_IS_YOUR_DOMAIN', "\"$domain\""
             buildConfigField 'String', 'THIS_IS_YOUR_APP_ID', "\"$appId\""
+            signingConfig signingConfigs.config
         }
 
         release {
             buildConfigField 'String', 'THIS_IS_YOUR_APP_KEY', "\"$appKey\""
             buildConfigField 'String', 'THIS_IS_YOUR_DOMAIN', "\"$domain\""
             buildConfigField 'String', 'THIS_IS_YOUR_APP_ID', "\"$appId\""
+            signingConfig signingConfigs.config
         }
     }
 
