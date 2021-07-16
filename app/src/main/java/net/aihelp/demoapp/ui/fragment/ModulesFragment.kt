@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import net.aihelp.common.Const
 import net.aihelp.config.ConversationConfig
 import net.aihelp.config.FaqConfig
 import net.aihelp.config.OperationConfig
@@ -12,6 +13,7 @@ import net.aihelp.config.enums.ConversationIntent
 import net.aihelp.config.enums.ShowConversationMoment
 import net.aihelp.demoapp.R
 import net.aihelp.init.AIHelpSupport
+
 
 class ModulesFragment : Fragment(), View.OnClickListener {
     override fun onCreateView(inflater: LayoutInflater,
@@ -101,5 +103,12 @@ class ModulesFragment : Fragment(), View.OnClickListener {
                 .setConversationConfig(operationConversationConfig)
                 .build()
         AIHelpSupport.showOperation(config)
+
+        val opConfigBuilder = OperationConfig.Builder()
+        val conversationBuilder = ConversationConfig.Builder()
+        conversationBuilder.setConversationIntent(ConversationIntent.HUMAN_SUPPORT)
+        opConfigBuilder.setSelectIndex(Int.MAX_VALUE)
+                .setConversationTitle("")
+                .setConversationConfig(conversationBuilder.build())
     }
 }

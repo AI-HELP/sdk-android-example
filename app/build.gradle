@@ -16,9 +16,25 @@ android {
     }
 
     buildTypes {
+
+        Properties properties = new Properties()
+        InputStream inputStream = project.rootProject.file('local.properties').newDataInputStream() ;
+        properties.load( inputStream )
+
+        def appKey = properties.getProperty('appKey')
+        def domain = properties.getProperty('domain')
+        def appId = properties.getProperty('appId')
+
+        debug {
+            buildConfigField 'String', 'THIS_IS_YOUR_APP_KEY', "\"$appKey\""
+            buildConfigField 'String', 'THIS_IS_YOUR_DOMAIN', "\"$domain\""
+            buildConfigField 'String', 'THIS_IS_YOUR_APP_ID', "\"$appId\""
+        }
+
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField 'String', 'THIS_IS_YOUR_APP_KEY', "\"$appKey\""
+            buildConfigField 'String', 'THIS_IS_YOUR_DOMAIN', "\"$domain\""
+            buildConfigField 'String', 'THIS_IS_YOUR_APP_ID', "\"$appId\""
         }
     }
 
@@ -31,20 +47,15 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    // demo application
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation "androidx.multidex:multidex:2.0.1"
-    implementation 'com.google.android.material:material:1.2.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
-    implementation 'androidx.vectordrawable:vectordrawable:1.0.1'
     implementation 'androidx.navigation:navigation-fragment:2.3.1'
     implementation 'androidx.navigation:navigation-ui:2.3.1'
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
-
-    implementation "androidx.core:core-ktx:+"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    implementation 'net.aihelp:android-aihelp-aar:2.2.+'
+    // AIHelp
+    implementation 'net.aihelp:android-aihelp-aar:2.4.+'
 
 }
 repositories {
