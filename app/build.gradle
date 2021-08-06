@@ -1,9 +1,13 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
-Properties properties = new Properties()
-InputStream inputStream = project.rootProject.file('local.properties').newDataInputStream() ;
-properties.load( inputStream )
+Properties gradleProperties = new Properties()
+InputStream gradleInputStream = project.rootProject.file('gradle.properties').newDataInputStream() ;
+gradleProperties.load( gradleInputStream )
+
+Properties localProperties = new Properties()
+InputStream localInputStream = project.rootProject.file('local.properties').newDataInputStream() ;
+localProperties.load( localInputStream )
 
 android {
     compileSdkVersion 29
@@ -21,18 +25,18 @@ android {
 
     signingConfigs {
         config {
-            storeFile file(properties.getProperty('jksPath'))
-            storePassword properties.getProperty('jksPassword')
-            keyAlias properties.getProperty('jksAlias')
-            keyPassword properties.getProperty('jksPassword')
+            storeFile file(gradleProperties.getProperty('storeFilePath'))
+            storePassword gradleProperties.getProperty('storePassword')
+            keyAlias gradleProperties.getProperty('keyAlias')
+            keyPassword gradleProperties.getProperty('keyPassword')
         }
     }
 
     buildTypes {
 
-        def appKey = properties.getProperty('appKey')
-        def domain = properties.getProperty('domain')
-        def appId = properties.getProperty('appId')
+        def appKey = localProperties.getProperty('appKey')
+        def domain = localProperties.getProperty('domain')
+        def appId = localProperties.getProperty('appId')
 
         debug {
             buildConfigField 'String', 'THIS_IS_YOUR_APP_KEY', "\"$appKey\""
@@ -66,8 +70,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     // AIHelp
-    implementation 'net.aihelp:android-aihelp-aar:2.4.+'
-
+    implementation 'net.aihelp:android-aihelp-aar:2.5.+'
 }
 repositories {
     mavenCentral()
