@@ -14,14 +14,16 @@ This reposirory contains all code examples of AIHelp Android latest SDK.
 
 With this sample project, you can learn how to integrated AIHelp into a real project.
 
-***Note: To run the example project, you need to fill in SDK configuration in the App.kt.***
-1. Fill in SDK configuration in the App.kt
-2. Configure your AIHelp params in your local.properties like follows:
-   ```
-   appKey=THIS IS YOUR APP KEY
-   domain=THIS IS YOUR DOMAIN
-   appId=THIS IS YOUR APP ID
-   ```
+***Note: To run the example project, you need to configure your AIHelp params in your local.properties at first.***
+
+ ```
+ sdk.dir=YOUR_ANDROID_SDK_LOCATION
+ 
+ appKey=THIS IS YOUR APP KEY
+ domain=THIS IS YOUR DOMAIN
+ appId=THIS IS YOUR APP ID
+ ```
+
 
 
 ## Requirements
