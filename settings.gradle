@@ -1,2 +1,3 @@
 rootProject.name='DemoApp'
-include ':app'
+include ':demo-v3'
+include ':demo-v4'

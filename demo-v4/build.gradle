@@ -1,0 +1,77 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+Properties gradleProperties = new Properties()
+InputStream gradleInputStream = project.rootProject.file('gradle.properties').newDataInputStream() ;
+gradleProperties.load( gradleInputStream )
+
+Properties localProperties = new Properties()
+InputStream localInputStream = project.rootProject.file('local.properties').newDataInputStream() ;
+localProperties.load( localInputStream )
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "net.aihelp.demoapp"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        config {
+            storeFile file(gradleProperties.getProperty('storeFilePath'))
+            storePassword gradleProperties.getProperty('storePassword')
+            keyAlias gradleProperties.getProperty('keyAlias')
+            keyPassword gradleProperties.getProperty('keyPassword')
+        }
+    }
+
+    buildTypes {
+
+        def appKey = localProperties.getProperty('appKey')
+        def domain = localProperties.getProperty('domain')
+        def appId = localProperties.getProperty('appId')
+
+        debug {
+            buildConfigField 'String', 'THIS_IS_YOUR_APP_KEY', "\"$appKey\""
+            buildConfigField 'String', 'THIS_IS_YOUR_DOMAIN', "\"$domain\""
+            buildConfigField 'String', 'THIS_IS_YOUR_APP_ID', "\"$appId\""
+            signingConfig signingConfigs.config
+        }
+
+        release {
+            buildConfigField 'String', 'THIS_IS_YOUR_APP_KEY', "\"$appKey\""
+            buildConfigField 'String', 'THIS_IS_YOUR_DOMAIN', "\"$domain\""
+            buildConfigField 'String', 'THIS_IS_YOUR_APP_ID', "\"$appId\""
+            signingConfig signingConfigs.config
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // demo application
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation "androidx.multidex:multidex:2.0.1"
+    implementation 'androidx.navigation:navigation-fragment:2.3.1'
+    implementation 'androidx.navigation:navigation-ui:2.3.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    // AIHelp
+    implementation 'net.aihelp:android-aihelp-aar:4.1.+'
+}
+repositories {
+    mavenCentral()
+}
