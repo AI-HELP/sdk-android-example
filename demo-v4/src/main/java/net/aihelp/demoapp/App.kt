@@ -21,7 +21,7 @@ class App : MultiDexApplication(), OnAIHelpInitializedCallback {
         Toast.makeText(this, "Be patient, loading AIHelp...", Toast.LENGTH_SHORT).show()
     }
 
-    override fun onAIHelpInitialized() {
+    override fun onAIHelpInitialized(isSuccess: Boolean, message: String) {
         Toast.makeText(applicationContext, "Everything is prepared now.", Toast.LENGTH_SHORT).show()
         AIHelpSupport.enableLogging(true)
 
