@@ -70,7 +70,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     // AIHelp
-    implementation 'net.aihelp:android-aihelp-aar:3.3.+'
+    implementation 'net.aihelp:android-aihelp-aar:3.4.+'
 }
 repositories {
     mavenCentral()
